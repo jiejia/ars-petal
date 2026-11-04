@@ -156,6 +156,9 @@ a:hover > .mark { transform: rotate(90deg); }
 /* Topic swatch tile */
 .swatch-tile { display: grid; place-items: center; aspect-ratio: 1; border-radius: 1.1rem; transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.25s; }
 .swatch-tile:hover { transform: translateY(-4px) rotate(-3deg); box-shadow: 0 16px 30px -14px oklch(20% 0.02 280 / 0.45); }
+/* Avatar ring: a gradient in the topic colors, then a thin page-color gap, then the picture or letter */
+.avatar-ring { background: conic-gradient(from 200deg, var(--color-secondary), var(--color-primary), var(--color-accent), var(--color-warning), var(--color-secondary)); }
+.avatar-ring > * { position: absolute; inset: 3px !important; box-sizing: border-box; width: calc(100% - 6px) !important; height: calc(100% - 6px) !important; border: 2px solid var(--color-base-100); border-radius: inherit; }
 
 /* Large topic card: semantic color + white artwork */
 .cat-card { position: relative; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; min-height: 11rem; padding: 1.4rem; border-radius: 1.5rem; transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1); }

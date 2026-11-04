@@ -1,6 +1,6 @@
 <?php
 /**
- * Home page, laid out like a component library's landing page: the featured carousel, the latest and popular
+ * Home page, laid out like a component library's landing page: the featured carousel, the hosts and guests, the latest and popular
  * episodes, topic color cards, recent posts and the subscribe block. Without A Ripple Song the same sections show posts and categories.
  * A static front page shows that page.
  *
@@ -39,8 +39,10 @@ if ($latest) {
     // Featured episodes first; without any, the latest three.
     $featured = Podcast::featured();
     Template::render('front/hero', ['items' => $featured ?: array_slice($episodes, 0, 3), 'featured' => $featured !== []]);
+    Template::render('front/people');
     Template::render('front/latest', ['episodes' => $episodes]);
     Template::render('front/popular', ['episodes' => Podcast::popular(5)]);
+    Template::render('front/numbers');
     Template::render('front/topics', [
         'podcast' => true,
         'topics' => array_map(static fn (array $category): array => $category + ['url' => Podcast::categoryUrl($category['term']), 'image' => Podcast::categoryImage($category['term'])], array_slice($categories, 0, 4)),

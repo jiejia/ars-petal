@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Petal 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
-"POT-Creation-Date: 2026-11-04T03:45:46+00:00\n"
+"POT-Creation-Date: 2026-11-04T07:47:31+00:00\n"
 "PO-Revision-Date: 2026-11-04 12:00+0800\n"
 "Last-Translator: jiejia\n"
 "Language-Team: Chinese (China)\n"
@@ -118,8 +118,9 @@ msgstr "首页标语"
 
 #: app/Customizer/Customizer.php:52
 msgid ""
-"One sentence above the big numbers on the home page. Leave empty to hide it."
-msgstr "首页大数字上方的一句话。留空则不显示。"
+"One sentence above the big numbers on the home page; a new line breaks it on "
+"wide screens. Leave empty to use the site tagline."
+msgstr "首页大数字上方的一句话，换行处在宽屏上会断行。留空则使用站点副标题。"
 
 #: app/Customizer/Customizer.php:54
 msgid "Newsletter form action URL"
@@ -315,7 +316,8 @@ msgctxt "author page section"
 msgid "Posts"
 msgstr "文章"
 
-#: resources/templates/author.php:39 resources/templates/page-about.php:87
+#: resources/templates/author.php:39 resources/templates/front/people.php:21
+#: resources/templates/page-about.php:87
 #: resources/templates/single-ars_podcast.php:98
 msgid "Hosts"
 msgstr "主播"
@@ -482,6 +484,38 @@ msgstr "向左滚动"
 #: resources/templates/front/latest.php:34
 msgid "Scroll right"
 msgstr "向右滚动"
+
+#: resources/templates/front/numbers.php:24
+#: resources/templates/page-about.php:29
+msgid "episode"
+msgid_plural "episodes"
+msgstr[0] "期节目"
+
+#: resources/templates/front/numbers.php:25
+msgid "Average length"
+msgstr "平均每期时长"
+
+#: resources/templates/front/numbers.php:26
+msgid "category"
+msgid_plural "categories"
+msgstr[0] "个分类"
+
+#: resources/templates/front/numbers.php:27
+msgid "Total plays"
+msgstr "累计收听"
+
+#: resources/templates/front/numbers.php:31
+msgid "Podcast in numbers"
+msgstr "播客数据"
+
+#: resources/templates/front/people.php:20
+msgid "Hosts and guests"
+msgstr "主播与嘉宾"
+
+#: resources/templates/front/people.php:22
+#: resources/templates/single-ars_podcast.php:99
+msgid "Guests"
+msgstr "嘉宾"
 
 #: resources/templates/front/popular.php:19
 msgctxt "home heading, bold part"
@@ -667,11 +701,6 @@ msgstr "输入关键词开始搜索"
 msgid "Close"
 msgstr "关闭"
 
-#: resources/templates/page-about.php:29
-msgid "episode"
-msgid_plural "episodes"
-msgstr[0] "期节目"
-
 #: resources/templates/page-about.php:30
 msgid "topic"
 msgid_plural "topics"
@@ -847,10 +876,6 @@ msgstr "%s 次播放"
 #: resources/templates/single-ars_podcast.php:88
 msgid "Download audio"
 msgstr "下载音频"
-
-#: resources/templates/single-ars_podcast.php:99
-msgid "Guests"
-msgstr "嘉宾"
 
 #: resources/templates/single-ars_podcast.php:114
 msgid "This episode has no summary yet."

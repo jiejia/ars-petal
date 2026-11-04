@@ -17,7 +17,7 @@ if ($topics === []) {
     return;
 }
 ?>
-<section class="mt-8" aria-labelledby="topics-title">
+<section class="mt-16" aria-labelledby="topics-title">
   <?php
   Template::render('front/heading', [
       'id' => 'topics-title',
@@ -25,7 +25,7 @@ if ($topics === []) {
       'light' => _x('categories', 'home heading, light part', 'ars-petal'),
   ]);
   ?>
-  <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+  <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
     <?php foreach ($topics as $topic) : ?>
       <a href="<?php echo esc_url($topic['url']); ?>" class="cat-card <?php echo esc_attr(Topics::block($topic['term'])); ?>">
         <span class="mono text-xs opacity-75">/<?php echo esc_html(urldecode($topic['term']->slug)); ?></span>

@@ -48,8 +48,8 @@ final class Customizer
         $this->add($customizer, 'headline_light', __('Home headline, light part', 'ars-petal'), 'text', [
             'description' => __('Leave empty for the tagline.', 'ars-petal'),
         ]);
-        $this->add($customizer, 'statement', __('Home statement', 'ars-petal'), 'text', [
-            'description' => __('One sentence above the big numbers on the home page. Leave empty to hide it.', 'ars-petal'),
+        $this->add($customizer, 'statement', __('Home statement', 'ars-petal'), 'textarea', [
+            'description' => __('One sentence above the big numbers on the home page; a new line breaks it on wide screens. Leave empty to use the site tagline.', 'ars-petal'),
         ]);
         $this->add($customizer, 'newsletter_action', __('Newsletter form action URL', 'ars-petal'), 'url', [
             'description' => __('Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section.', 'ars-petal'),

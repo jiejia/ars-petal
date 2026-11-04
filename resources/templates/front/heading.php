@@ -12,7 +12,7 @@
 defined('ABSPATH') || exit;
 
 $id ??= '';
-$class ??= 'text-2xl sm:text-3xl';
+$class ??= 'text-4xl sm:text-5xl';
 // "Latest episodes" needs a space between the parts, "最新节目" does not.
 $space = preg_match('/[\p{Han}\p{Hiragana}\p{Katakana}\p{Hangul}\p{P}\s]$/u', $strong) ? '' : ' ';
 ?>

@@ -394,6 +394,28 @@ final class Podcast
     }
 
     /**
+     * The guests of recent episodes, most recent first. Empty without the plugin.
+     *
+     * @return array<int,\WP_User>
+     */
+    public static function guests(): array
+    {
+        if (! self::isActive()) {
+            return [];
+        }
+
+        $guests = [];
+
+        foreach (get_posts(['post_type' => self::POST_TYPE, 'numberposts' => 50, 'post_status' => 'publish']) as $post) {
+            foreach ((new Episode($post))->guests() as $user) {
+                $guests[$user->ID] = $user;
+            }
+        }
+
+        return array_values($guests);
+    }
+
+    /**
      * Return the plugin's episode categories (ars_podcast_category) with their episode counts, most used first,
      * then by name. Empty categories are included, so categories show as soon as they exist.
      *
