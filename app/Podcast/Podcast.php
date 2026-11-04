@@ -17,6 +17,11 @@ final class Podcast
     public const POST_TYPE = 'ars_podcast';
 
     /**
+     * The plugin's episode category taxonomy.
+     */
+    public const CATEGORY = 'ars_podcast_category';
+
+    /**
      * Handle of the plugin's player script, enqueued only when the player shows on this page.
      */
     private const PLAYER_HANDLE = 'ars_player';
@@ -79,6 +84,25 @@ final class Podcast
         $value = (new $class())->value($key);
 
         return is_scalar($value) ? (string) $value : '';
+    }
+
+    /**
+     * The release schedule from the plugin's Release Schedule settings, e.g. "每周四、周五 11:40", or the custom
+     * schedule text when one is filled in. Empty when no schedule is set or the plugin is missing.
+     *
+     * @return string
+     */
+    public static function schedule(): string
+    {
+        $class = self::pluginClass('Settings\\PodcastSetting');
+
+        if ($class === null || ! method_exists($class, 'schedule')) {
+            return '';
+        }
+
+        $schedule = (new $class())->schedule();
+
+        return is_array($schedule) ? trim((string) ($schedule['text'] ?? '')) : '';
     }
 
     /**
@@ -162,6 +186,28 @@ final class Podcast
         $posts = get_posts(['post_type' => self::POST_TYPE, 'numberposts' => 1, 'post_status' => 'publish']);
 
         return $posts !== [] ? new Episode($posts[0]) : null;
+    }
+
+    /**
+     * Published episodes switched to "featured" in the admin (the plugin's featured field), newest first.
+     *
+     * @return array<int,Episode>
+     */
+    public static function featured(): array
+    {
+        if (! self::isActive()) {
+            return [];
+        }
+
+        $posts = get_posts([
+            'post_type' => self::POST_TYPE,
+            'post_status' => 'publish',
+            'numberposts' => -1,
+            'meta_key' => '_' . self::POST_TYPE . '_featured',
+            'meta_value' => 'yes',
+        ]);
+
+        return array_map(static fn (\WP_Post $post): Episode => new Episode($post), $posts);
     }
 
     /**
@@ -345,6 +391,62 @@ final class Podcast
         }
 
         return array_values($hosts);
+    }
+
+    /**
+     * Return the plugin's episode categories (ars_podcast_category) with their episode counts, most used first,
+     * then by name. Empty categories are included, so categories show as soon as they exist.
+     *
+     * @param int $parent Parent term ID; 0 for the top level.
+     * @return array<int,array{term:\WP_Term,count:int}>
+     */
+    public static function categories(int $parent = 0): array
+    {
+        if (! self::isActive() || ! taxonomy_exists(self::CATEGORY)) {
+            return [];
+        }
+
+        $terms = get_terms([
+            'taxonomy' => self::CATEGORY,
+            'parent' => $parent,
+            'hide_empty' => false,
+            'orderby' => 'count',
+            'order' => 'DESC',
+        ]);
+
+        if (! is_array($terms)) {
+            return [];
+        }
+
+        usort($terms, static fn (\WP_Term $a, \WP_Term $b): int => [$b->count, $a->name] <=> [$a->count, $b->name]);
+
+        return array_map(static fn (\WP_Term $term): array => ['term' => $term, 'count' => (int) $term->count], $terms);
+    }
+
+    /**
+     * Return the archive URL of an episode category.
+     *
+     * @param \WP_Term $term Category.
+     * @return string
+     */
+    public static function categoryUrl(\WP_Term $term): string
+    {
+        $url = get_term_link($term);
+
+        return is_string($url) ? $url : self::archiveUrl();
+    }
+
+    /**
+     * Return the square image the plugin stores for an episode category, or ''.
+     *
+     * @param \WP_Term $term Category.
+     * @return string
+     */
+    public static function categoryImage(\WP_Term $term): string
+    {
+        $class = self::pluginClass('Taxonomies\\PodcastCategoryTaxonomy');
+
+        return $class !== null ? (string) (new $class())->image($term->term_id) : '';
     }
 
     /**

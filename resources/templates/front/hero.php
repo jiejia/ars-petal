@@ -3,12 +3,14 @@
  * Home: the featured carousel on a soft glow block. Episodes get a play button with their duration;
  * posts a read button. Slides 3.7:1 on large screens, as in the prototype.
  *
- * @var array<int,\Jiejia\ArsPetal\Podcast\Episode|\WP_Post> $items Up to three episodes or posts.
+ * @var array<int,\Jiejia\ArsPetal\Podcast\Episode|\WP_Post> $items Featured episodes / sticky posts, else the latest three.
+ * @var bool $featured Whether $items are the featured ones; the badge then says "Featured", else "Latest".
  * @package ArsPetal
  */
 
 defined('ABSPATH') || exit;
 
+use Jiejia\ArsPetal\Podcast\Covers;
 use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Episode;
@@ -17,6 +19,9 @@ use Jiejia\ArsPetal\View\Format;
 if ($items === []) {
     return;
 }
+
+$featured ??= false;
+$badge = $featured ? _x('Featured', 'home carousel badge', 'ars-petal') : _x('Latest', 'home carousel badge', 'ars-petal');
 
 // Full class names, so Tailwind finds them.
 $colors = [
@@ -37,14 +42,14 @@ $count = count($items);
         $meta = $episode
             ? implode(' · ', array_filter(['EP.' . $episode->number(), $tag ? $tag->name : '']))
             : implode(' · ', array_filter([Format::date($post), $tag ? $tag->name : '']));
-        $cover = $episode ? $episode->cover('medium_large') : (string) get_the_post_thumbnail_url($post, 'medium_large');
+        $cover = $episode ? $episode->cover('medium_large') : Covers::post($post);
         $heading = $index === 0 ? 'h1' : 'h2';
         ?>
       <article class="petal-item carousel-item w-full lg:h-full" :inert="active !== <?php echo (int) $index; ?>" aria-roledescription="slide" aria-label="<?php echo esc_attr(sprintf(/* translators: 1: slide number, 2: number of slides. */ __('Slide %1$d of %2$d', 'ars-petal'), $index + 1, $count)); ?>">
         <div class="flex w-full items-center justify-between gap-8 px-6 pb-12 pt-8 sm:px-10 lg:pb-8">
           <div class="relative z-10 min-w-0 flex-1">
             <p class="flex flex-wrap items-center gap-2 text-sm">
-              <span class="badge <?php echo esc_attr($color['badge']); ?> font-medium"><span class="petal-when-idle"><?php esc_html_e('Featured', 'ars-petal'); ?></span><span class="petal-when-playing"><?php esc_html_e('Now playing', 'ars-petal'); ?></span></span>
+              <span class="badge <?php echo esc_attr($color['badge']); ?> font-medium"><span class="petal-when-idle"><?php echo esc_html($badge); ?></span><span class="petal-when-playing"><?php esc_html_e('Now playing', 'ars-petal'); ?></span></span>
               <span class="mono mute"><?php echo esc_html($meta); ?></span>
             </p>
             <<?php echo tag_escape($heading); ?> class="display mt-3 line-clamp-2 text-balance text-3xl sm:text-4xl"><a href="<?php echo esc_url($url); ?>" class="hover:underline hover:decoration-4 hover:underline-offset-8 <?php echo esc_attr($color['line']); ?>"><?php echo esc_html(get_the_title($post)); ?></a></<?php echo tag_escape($heading); ?>>

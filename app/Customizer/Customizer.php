@@ -5,7 +5,7 @@ namespace Jiejia\ArsPetal\Customizer;
 defined('ABSPATH') || exit;
 
 /**
- * The theme's Customizer section: color scheme, schedule, home headline, newsletter, footer.
+ * The theme's Customizer section: color scheme, home headline, newsletter, footer.
  */
 final class Customizer
 {
@@ -41,9 +41,6 @@ final class Customizer
                 'system' => __('Follow the visitor’s system', 'ars-petal'),
             ],
             'description' => __('Visitors can still switch with the sun / moon button.', 'ars-petal'),
-        ]);
-        $this->add($customizer, 'schedule', __('Release schedule', 'ars-petal'), 'text', [
-            'description' => __('E.g. “Thursdays 21:00”. Shown in the announcement bar and the episode archive.', 'ars-petal'),
         ]);
         $this->add($customizer, 'headline_strong', __('Home headline, bold part', 'ars-petal'), 'text', [
             'description' => __('The big two-weight headline on the home page. Leave empty for the site name.', 'ars-petal'),

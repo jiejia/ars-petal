@@ -10,7 +10,6 @@
 
 defined('ABSPATH') || exit;
 
-use Jiejia\ArsPetal\Customizer\Options;
 use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Navigation\Menu;
@@ -19,7 +18,7 @@ use Jiejia\ArsPetal\Podcast\Podcast;
 $menu = Menu::tree('primary');
 $latest = Podcast::latest();
 $newest = $latest ? null : (get_posts(['numberposts' => 1])[0] ?? null);
-$schedule = Options::get('schedule');
+$schedule = Podcast::schedule();
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>

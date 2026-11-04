@@ -56,14 +56,14 @@ final class Integration
     }
 
     /**
-     * Page size and sort order of the episode archive (also when filtered by ?tag=).
+     * Page size and sort order of the episode archive (also when filtered by ?tag=) and of episode category pages.
      *
      * @param \WP_Query $query Query.
      * @return void
      */
     public function archiveQuery(\WP_Query $query): void
     {
-        if (is_admin() || ! $query->is_main_query() || ! $query->is_post_type_archive(Podcast::POST_TYPE)) {
+        if (is_admin() || ! $query->is_main_query() || ! ($query->is_post_type_archive(Podcast::POST_TYPE) || $query->is_tax(Podcast::CATEGORY))) {
             return;
         }
 

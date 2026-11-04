@@ -16,7 +16,7 @@ if ($items === []) {
     return;
 }
 ?>
-<nav class="mt-12 flex flex-wrap items-center justify-center gap-2" aria-label="<?php esc_attr_e('Pagination', 'ars-petal'); ?>">
+<nav class="mt-8 flex flex-wrap items-center justify-center gap-2" aria-label="<?php esc_attr_e('Pagination', 'ars-petal'); ?>">
   <?php foreach ($items as $item) : ?>
     <?php if ($item['icon'] !== '' && $item['url'] !== '') : ?>
       <a href="<?php echo esc_url($item['url']); ?>" class="btn-white size-11 rounded-full" aria-label="<?php echo esc_attr($item['label']); ?>"><?php Icon::render($item['icon'], 'size-5'); ?></a>

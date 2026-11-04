@@ -26,7 +26,7 @@ $listen = Podcast::listenLinks();
 <?php EpisodeRegistry::print(); ?>
 </main>
 
-<footer class="site-footer mt-28 border-t border-base-300 bg-base-200 pb-16">
+<footer class="site-footer mt-16 border-t border-base-300 bg-base-200 pb-16">
   <div class="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-10 px-4 pt-16 sm:px-6 md:grid-cols-6">
     <div class="col-span-2">
       <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex items-center gap-2.5">

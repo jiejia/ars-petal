@@ -26,7 +26,7 @@ foreach ($pages as $page) {
     }
 }
 
-if (count($items) < 2) {
+if ($items === []) {
     return;
 }
 

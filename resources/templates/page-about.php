@@ -9,7 +9,6 @@
 
 defined('ABSPATH') || exit;
 
-use Jiejia\ArsPetal\Customizer\Options;
 use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Podcast;
@@ -25,7 +24,7 @@ while (have_posts()) :
     $intro = has_excerpt() ? get_the_excerpt() : (Podcast::setting('description') ?: get_bloginfo('description'));
     $hosts = Podcast::hosts();
     $stats = Podcast::stats();
-    $schedule = Options::get('schedule');
+    $schedule = Podcast::schedule();
     $numbers = array_values(array_filter([
         $stats['episodes'] > 0 ? ['value' => number_format_i18n($stats['episodes']), 'label' => _n('episode', 'episodes', $stats['episodes'], 'ars-petal')] : null,
         Podcast::tags() !== [] ? ['value' => number_format_i18n(count(Podcast::tags())), 'label' => _n('topic', 'topics', count(Podcast::tags()), 'ars-petal')] : null,

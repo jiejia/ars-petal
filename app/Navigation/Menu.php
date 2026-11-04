@@ -88,7 +88,7 @@ final class Menu
     }
 
     /**
-     * Links shown before a menu is assigned: home, episodes (with a topics dropdown), blog and the top-level pages.
+     * Links shown before a menu is assigned: home, episodes (with an episode categories dropdown), blog and the top-level pages.
      * The blog link appears where the home page is not the post list: podcast mode, or a static front page.
      *
      * @return array<int,Item>
@@ -101,17 +101,22 @@ final class Menu
             $episodes = self::node(
                 __('Podcast', 'ars-petal'),
                 Podcast::archiveUrl(),
-                is_post_type_archive(Podcast::POST_TYPE) || is_singular(Podcast::POST_TYPE),
+                is_post_type_archive(Podcast::POST_TYPE) || is_tax(Podcast::CATEGORY) || is_singular(Podcast::POST_TYPE),
                 self::FALLBACK_ICONS['episodes']
             );
-            $topics = array_slice(Podcast::tags(), 0, 8);
+            $categories = array_slice(Podcast::categories(), 0, 8);
 
-            if ($topics !== []) {
-                $current = sanitize_title((string) get_query_var('tag'));
-                $episodes['children'][] = self::node(__('All episodes', 'ars-petal'), Podcast::archiveUrl(), is_post_type_archive(Podcast::POST_TYPE) && $current === '');
+            if ($categories !== []) {
+                $episodes['children'][] = self::node(__('All episodes', 'ars-petal'), Podcast::archiveUrl(), is_post_type_archive(Podcast::POST_TYPE));
 
-                foreach ($topics as $topic) {
-                    $episodes['children'][] = self::node($topic['term']->name, Podcast::tagUrl($topic['term']), $current === $topic['term']->slug);
+                foreach ($categories as $category) {
+                    $node = self::node($category['term']->name, Podcast::categoryUrl($category['term']), is_tax(Podcast::CATEGORY, $category['term']->term_id));
+
+                    foreach (Podcast::categories($category['term']->term_id) as $child) {
+                        $node['children'][] = self::node($child['term']->name, Podcast::categoryUrl($child['term']), is_tax(Podcast::CATEGORY, $child['term']->term_id));
+                    }
+
+                    $episodes['children'][] = $node;
                 }
             }
 

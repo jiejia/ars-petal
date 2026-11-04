@@ -14,7 +14,6 @@ final class Options
      */
     public const DEFAULTS = [
         'color_scheme' => 'light',
-        'schedule' => '',
         'headline_strong' => '',
         'headline_light' => '',
         'statement' => '',

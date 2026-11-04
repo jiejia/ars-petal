@@ -4,7 +4,7 @@ import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
 
 const icons = [
   'archive', 'arrow-down-to-line', 'arrow-left', 'arrow-right', 'arrow-up-right', 'at-sign', 'audio-lines',
-  'book-audio', 'book-open', 'calendar', 'check', 'chevron-down', 'chevron-left', 'chevron-right',
+  'book-audio', 'book-open', 'calendar', 'calendar-clock', 'check', 'chevron-down', 'chevron-left', 'chevron-right',
   'circle-help', 'clock', 'copy', 'file-text', 'flame', 'folder', 'globe', 'hash', 'headphones', 'heart',
   'house', 'info', 'layout-grid', 'link', 'list', 'mail', 'menu', 'message-circle', 'messages-square', 'mic',
   'moon', 'music-2', 'newspaper', 'orbit', 'pause', 'pen-tool', 'play', 'podcast', 'radio', 'rss', 'search',

@@ -1,7 +1,7 @@
 <?php
 /**
  * Page: the site's pages in the left sidebar; a title bar and the content card on the right.
- * With fewer than two pages there is no sidebar.
+ * Always two columns, like the prototype; the sidebar lists the current page even when it is the only one.
  *
  * @package ArsPetal
  */
@@ -23,7 +23,7 @@ while (have_posts()) :
   <?php endif; ?>
   <div class="min-w-0">
     <div class="panel-sm mb-4 flex min-h-[4.5rem] items-center px-6">
-      <h1 class="display min-w-0 text-lg sm:text-xl"><?php the_title(); ?></h1>
+      <h1 class="display min-w-0 text-lg sm:text-xl"><?php echo esc_html(sprintf(/* translators: %s: page title. */ __('Page: %s', 'ars-petal'), wp_strip_all_tags(get_the_title()))); ?></h1>
     </div>
     <?php if (has_post_thumbnail()) : ?>
       <figure class="mb-4"><?php the_post_thumbnail('large', ['class' => 'aspect-[16/7] w-full rounded-[1.5rem] object-cover']); ?></figure>
