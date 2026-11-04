@@ -75,7 +75,14 @@ $schedule = Options::get('schedule');
         <span x-show="$store.ui.dark"><?php Icon::render('sun', 'size-[1.15rem]'); ?></span>
         <span x-show="!$store.ui.dark" x-cloak><?php Icon::render('moon', 'size-[1.15rem]'); ?></span>
       </button>
-      <a href="<?php echo esc_url(Podcast::feedUrl()); ?>" data-no-swup class="btn-plain hidden h-10 gap-1.5 rounded-xl px-2.5 text-sm sm:inline-flex" aria-label="<?php esc_attr_e('RSS feed', 'ars-petal'); ?>"><?php Icon::render('rss', 'size-4'); ?>RSS</a>
+      <?php // The podcast apps filled in under the plugin's Subscription Settings, then the RSS feed. ?>
+      <div class="dropdown dropdown-end hidden sm:block">
+        <div tabindex="0" role="button" class="btn btn-primary ml-1 h-10 min-h-0 gap-1.5 rounded-full border-0 px-5 text-sm font-semibold shadow-none" aria-haspopup="menu"><?php Icon::render('podcast', 'size-4'); ?><?php esc_html_e('Subscribe', 'ars-petal'); ?></div>
+        <ul tabindex="0" class="dropdown-content menu z-50 mt-3 max-h-[70vh] w-64 flex-nowrap gap-0.5 overflow-y-auto rounded-3xl border border-base-300 bg-base-100 p-3 shadow-xl [&_svg]:size-5">
+          <li class="menu-title text-sm font-medium"><?php echo esc_html(Podcast::isActive() ? __('Listen in a podcast app', 'ars-petal') : __('Follow', 'ars-petal')); ?></li>
+          <?php Template::render('parts/listen-links', ['style' => 'menu']); ?>
+        </ul>
+      </div>
 
       <div class="dropdown dropdown-end lg:hidden">
         <div tabindex="0" role="button" class="btn-plain size-10 rounded-xl" aria-label="<?php esc_attr_e('Open menu', 'ars-petal'); ?>"><?php Icon::render('menu', 'size-5'); ?></div>
