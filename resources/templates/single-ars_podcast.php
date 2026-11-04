@@ -1,0 +1,133 @@
+<?php
+/**
+ * Episode page (A Ripple Song). Left sidebar: more episodes and the topics. Main column: the episode card
+ * (cover, meta line, title, excerpt, play and an action pill with share / favorite / download), the hosts
+ * and guests, a card with the summary / chapters / transcript tabs and the tags, the previous / next
+ * episode and the comments.
+ *
+ * @package ArsPetal
+ */
+
+defined('ABSPATH') || exit;
+
+use Jiejia\ArsPetal\Libraries\Icon;
+use Jiejia\ArsPetal\Libraries\Template;
+use Jiejia\ArsPetal\Podcast\Episode;
+use Jiejia\ArsPetal\Podcast\Podcast;
+use Jiejia\ArsPetal\Setup\TemplateLoader;
+use Jiejia\ArsPetal\View\Format;
+use Jiejia\ArsPetal\View\Topics;
+
+TemplateLoader::part('header');
+
+while (have_posts()) :
+    the_post();
+    $episode = Episode::from(get_post());
+    $tag = $episode->tag();
+    $playable = $episode->playable();
+    $more = array_map(static fn (\WP_Post $post): Episode => new Episode($post), get_posts(['post_type' => Podcast::POST_TYPE, 'numberposts' => 4, 'post__not_in' => [$episode->id()]]));
+    $topics = array_map(static fn (array $item): array => [
+        'label' => $item['term']->name,
+        /* translators: %s: number of episodes. */
+        'meta' => sprintf(_n('%s episode', '%s episodes', $item['count'], 'ars-petal'), number_format_i18n($item['count'])),
+        'url' => Podcast::tagUrl($item['term']),
+        'current' => $tag && $tag->term_id === $item['term']->term_id,
+        'image' => Topics::image($item['term']),
+    ], array_slice(Podcast::tags(), 0, 6));
+    $separator = '<span class="mx-1 opacity-40">/</span>';
+    $tabs = [
+        'notes' => __('Summary', 'ars-petal'),
+        'chapters' => __('Chapters', 'ars-petal'),
+        'transcript' => __('Transcript', 'ars-petal'),
+    ];
+    ?>
+<article x-data="episodePage(<?php echo (int) $episode->id(); ?>)" <?php post_class(); ?>>
+  <div class="mt-2 grid grid-cols-1 items-start gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-8">
+    <div class="order-2 min-w-0 space-y-3 lg:sticky lg:top-24 lg:order-1">
+      <?php if ($more !== []) : ?>
+        <aside class="panel-sm p-4 lg:p-5" aria-label="<?php esc_attr_e('More episodes', 'ars-petal'); ?>">
+          <h2 class="display text-xl"><?php esc_html_e('More episodes', 'ars-petal'); ?></h2>
+          <ol class="mt-4 space-y-2">
+            <?php foreach ($more as $item) : ?>
+              <?php Template::render('cards/episode-row', ['episode' => $item, 'compact' => true]); ?>
+            <?php endforeach; ?>
+          </ol>
+        </aside>
+      <?php endif; ?>
+      <?php Template::render('parts/side-list', ['title' => __('Topics', 'ars-petal'), 'items' => $topics, 'wrap' => true]); ?>
+    </div>
+
+    <div class="order-1 min-w-0 lg:order-2">
+      <header class="petal-item panel p-4 sm:p-5">
+        <div class="flex flex-col gap-5 sm:flex-row sm:gap-6">
+          <?php Template::render('parts/cover', ['url' => $episode->cover('large'), 'alt' => sprintf(/* translators: %s: episode number. */ __('EP.%s cover', 'ars-petal'), $episode->number()), 'class' => 'aspect-[4/3] w-full shrink-0 self-start rounded-2xl object-cover sm:w-56', 'lazy' => false]); ?>
+          <div class="flex min-w-0 flex-1 flex-col">
+            <p class="mute text-sm">
+              <?php if ($tag) : ?>
+                <a href="<?php echo esc_url(Podcast::tagUrl($tag)); ?>" class="hover:text-base-content"><?php echo esc_html($tag->name); ?></a><?php echo wp_kses_post($separator); ?>
+              <?php endif; ?>
+              EP.<?php echo (int) $episode->number(); ?><?php echo wp_kses_post($separator); ?><?php echo esc_html(Format::date()); ?>
+              <?php if ($episode->duration() > 0) : ?>
+                <?php echo wp_kses_post($separator); ?><?php echo esc_html(Format::duration($episode->duration())); ?>
+              <?php endif; ?>
+              <?php echo wp_kses_post($separator); ?><span class="whitespace-nowrap"><?php Icon::render('headphones', 'mr-1 inline-block size-3.5 align-[-0.15em]'); ?><span data-ars-plays="<?php echo (int) $episode->id(); ?>" data-ars-plays-one="<?php /* translators: %s: play count. */ echo esc_attr__('%s play', 'ars-petal'); ?>" data-ars-plays-other="<?php /* translators: %s: play count. */ echo esc_attr__('%s plays', 'ars-petal'); ?>"><?php echo esc_html(sprintf(/* translators: %s: play count. */ _n('%s play', '%s plays', $episode->plays(), 'ars-petal'), number_format_i18n($episode->plays()))); ?></span></span>
+            </p>
+            <h1 class="display mt-1.5 text-balance text-2xl sm:text-3xl"><?php the_title(); ?></h1>
+            <?php if (has_excerpt()) : ?>
+              <?php // Only a hand-written excerpt: the automatic one repeats the summary tab below. ?>
+              <p class="mute mt-2 line-clamp-2 leading-relaxed"><?php echo esc_html(get_the_excerpt()); ?></p>
+            <?php endif; ?>
+            <div class="mt-auto flex flex-wrap items-center gap-3 pt-4">
+              <?php Template::render('parts/play-button', ['episode' => $episode, 'class' => 'btn-black h-12 rounded-full px-7 text-sm', 'icon' => 'size-4', 'label' => true]); ?>
+              <div class="flex items-center gap-1 rounded-full bg-base-200 p-1">
+                <?php Template::render('parts/share'); ?>
+                <?php if ($playable) : ?>
+                  <button type="button" class="btn-gray size-10 rounded-full !bg-transparent" data-ars-fav="<?php echo (int) $episode->id(); ?>" aria-pressed="false" aria-label="<?php esc_attr_e('Favorite', 'ars-petal'); ?>"><?php Icon::render('heart'); ?></button>
+                <?php endif; ?>
+                <?php if ($episode->audio() !== '') : ?>
+                  <a href="<?php echo esc_url($episode->audio()); ?>" download data-no-swup class="btn-gray size-10 rounded-full !bg-transparent" aria-label="<?php esc_attr_e('Download audio', 'ars-petal'); ?>"><?php Icon::render('arrow-down-to-line'); ?></a>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <?php if ($episode->members() !== [] || $episode->guests() !== []) : ?>
+        <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <?php Template::render('parts/people', ['title' => __('Hosts', 'ars-petal'), 'users' => $episode->members()]); ?>
+          <?php Template::render('parts/people', ['title' => __('Guests', 'ars-petal'), 'users' => $episode->guests()]); ?>
+        </div>
+      <?php endif; ?>
+
+      <div class="panel mt-4 p-4 sm:p-8">
+        <div role="tablist" class="mb-6 flex w-fit max-w-full overflow-x-auto rounded-full bg-base-200 p-1">
+          <?php foreach ($tabs as $key => $label) : ?>
+            <button type="button" role="tab" class="shrink-0 rounded-full px-5 py-2.5 text-sm font-medium transition" :class="tab === '<?php echo esc_js($key); ?>' ? 'bg-primary text-primary-content' : 'hover:bg-base-300'" :aria-selected="tab === '<?php echo esc_js($key); ?>'" @click="tab = '<?php echo esc_js($key); ?>'"><?php echo esc_html($label); ?></button>
+          <?php endforeach; ?>
+        </div>
+        <div x-show="tab === 'notes'" role="tabpanel" class="entry-content">
+          <?php if (trim(get_the_content()) !== '') : ?>
+            <?php the_content(); ?>
+            <?php wp_link_pages(); ?>
+          <?php else : ?>
+            <?php Template::render('episode/empty', ['text' => __('This episode has no summary yet.', 'ars-petal')]); ?>
+          <?php endif; ?>
+        </div>
+        <?php Template::render('episode/chapters', ['chapters' => $episode->chapters(), 'playable' => $playable]); ?>
+        <?php Template::render('episode/transcript', ['transcript' => $episode->transcript(), 'playable' => $playable]); ?>
+        <?php Template::render('parts/tags', ['terms' => get_the_tags() ?: [], 'url' => [Podcast::class, 'tagUrl'], 'inline' => true]); ?>
+      </div>
+
+      <?php Template::render('parts/adjacent', ['newest' => __('This is the newest episode', 'ars-petal'), 'oldest' => __('This is the first episode', 'ars-petal'), 'number' => true]); ?>
+
+      <?php if (comments_open() || get_comments_number()) : ?>
+        <?php comments_template(); ?>
+      <?php endif; ?>
+    </div>
+  </div>
+</article>
+    <?php
+endwhile;
+
+TemplateLoader::part('footer');

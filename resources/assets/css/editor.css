@@ -1,0 +1,27 @@
+/*
+ * Block editor styles (add_editor_style → public/dist/editor.css): the day theme's colors, the fonts
+ * and the post content typography. WordPress prefixes every rule with .editor-styles-wrapper.
+ */
+@import "./themes.css";
+@import "./content.css";
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Noto Sans SC", sans-serif;
+  --font-display: "Outfit", "Noto Sans SC", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+}
+
+body {
+  background: var(--color-base-100);
+  color: var(--color-base-content);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.editor-post-title,
+.wp-block-post-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}

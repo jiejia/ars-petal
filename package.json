@@ -1,0 +1,24 @@
+{
+  "name": "ars-petal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:icons && npm run build:css && npm run build:js",
+    "build:icons": "node bin/copy-icons.mjs",
+    "build:css": "tailwindcss -i resources/assets/css/theme.css -o public/dist/theme.css --minify && tailwindcss -i resources/assets/css/editor.css -o public/dist/editor.css --minify",
+    "build:js": "esbuild resources/assets/js/app.js --bundle --minify --format=iife --target=es2020 --outfile=public/dist/app.js",
+    "watch:css": "tailwindcss -i resources/assets/css/theme.css -o public/dist/theme.css --watch",
+    "watch:js": "esbuild resources/assets/js/app.js --bundle --format=iife --target=es2020 --outfile=public/dist/app.js --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "daisyui": "^5.7.50",
+    "esbuild": "^0.28.2",
+    "lucide-static": "^1.64.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "alpinejs": "^3.17.5",
+    "swup": "^4.10.0"
+  }
+}

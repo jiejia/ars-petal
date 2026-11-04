@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "760px",
+			"wideSize": "1152px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": [
+				{ "slug": "base-100", "name": "Background", "color": "light-dark(oklch(98.5% 0.004 110), oklch(19% 0.012 265))" },
+				{ "slug": "base-200", "name": "Surface", "color": "light-dark(oklch(95.5% 0.006 110), oklch(16.5% 0.01 265))" },
+				{ "slug": "base-300", "name": "Border", "color": "light-dark(oklch(89% 0.008 110), oklch(25% 0.012 265))" },
+				{ "slug": "base-content", "name": "Text", "color": "light-dark(oklch(21% 0.012 265), oklch(93% 0.01 110))" },
+				{ "slug": "primary", "name": "Signal green", "color": "light-dark(oklch(47% 0.13 135), oklch(91% 0.2 125))" },
+				{ "slug": "secondary", "name": "Lilac", "color": "light-dark(oklch(48% 0.17 295), oklch(80% 0.11 295))" },
+				{ "slug": "accent", "name": "Orange", "color": "light-dark(oklch(66% 0.17 50), oklch(76% 0.16 50))" }
+			]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{ "slug": "sans", "name": "Noto Sans SC", "fontFamily": "\"Noto Sans SC\", system-ui, sans-serif" },
+				{ "slug": "display", "name": "Space Grotesk", "fontFamily": "\"Space Grotesk\", \"Noto Sans SC\", system-ui, sans-serif" },
+				{ "slug": "mono", "name": "JetBrains Mono", "fontFamily": "\"JetBrains Mono\", ui-monospace, monospace" }
+			],
+			"fontSizes": [
+				{ "slug": "small", "name": "Small", "size": "0.875rem" },
+				{ "slug": "medium", "name": "Medium", "size": "1.0625rem" },
+				{ "slug": "large", "name": "Large", "size": "1.375rem" },
+				{ "slug": "x-large", "name": "Extra large", "size": "2rem" }
+			]
+		}
+	}
+}

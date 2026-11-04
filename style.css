@@ -1,0 +1,18 @@
+/*
+Theme Name:        Petal
+Theme URI:         https://github.com/jiejia/ars-petal
+Author:            jiejia
+Author URI:        https://github.com/jiejia/
+Description:       A bright, component-library style podcast theme: white space, bold / light mixed headlines, indigo, magenta, teal and yellow color blocks and soft glows, with a blue-gray night mode. With the A Ripple Song plugin it becomes a podcast site (featured episodes, episode archive, chapters, transcript, a site-wide player); without it, it is a plain blog theme.
+Version:           1.0.0
+Requires at least: 6.6
+Tested up to:      7.1
+Requires PHP:      8.2
+License:           GPL-3.0
+License URI:       https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain:       ars-petal
+Domain Path:       /resources/lang
+Tags:              blog, light, dark, two-columns, left-sidebar, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+/* Styles are built from resources/assets/css into public/dist by `npm run build`. */

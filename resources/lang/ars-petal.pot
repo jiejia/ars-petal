@@ -1,0 +1,1033 @@
+# Copyright (C) 2026 jiejia
+# This file is distributed under the GPL-3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: Petal 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-04T02:31:51+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: ars-petal\n"
+
+#. Theme Name of the theme
+#: style.css
+#: app/Customizer/Customizer.php:33
+msgid "Petal"
+msgstr ""
+
+#. Theme URI of the theme
+#: style.css
+msgid "https://github.com/jiejia/ars-petal"
+msgstr ""
+
+#. Description of the theme
+#: style.css
+msgid "A bright, component-library style podcast theme: white space, bold / light mixed headlines, indigo, magenta, teal and yellow color blocks and soft glows, with a blue-gray night mode. With the A Ripple Song plugin it becomes a podcast site (featured episodes, episode archive, chapters, transcript, a site-wide player); without it, it is a plain blog theme."
+msgstr ""
+
+#. Author of the theme
+#: style.css
+msgid "jiejia"
+msgstr ""
+
+#. Author URI of the theme
+#: style.css
+msgid "https://github.com/jiejia/"
+msgstr ""
+
+#: app/Blog/Blog.php:85
+#: resources/templates/cards/post-row.php:50
+#: resources/templates/index.php:35
+msgid "Blog"
+msgstr ""
+
+#: app/Comments/CommentForm.php:35
+msgid "Leave a comment"
+msgstr ""
+
+#: app/Comments/CommentForm.php:39
+msgid "Your e-mail address will not be published. Required fields are marked *"
+msgstr ""
+
+#: app/Comments/CommentForm.php:40
+msgid "Comment"
+msgstr ""
+
+#: app/Comments/CommentForm.php:64
+msgid "Name"
+msgstr ""
+
+#: app/Comments/CommentForm.php:65
+msgid "E-mail"
+msgstr ""
+
+#: app/Comments/CommentForm.php:66
+#: resources/templates/author.php:55
+msgid "Website"
+msgstr ""
+
+#: app/Customizer/Customizer.php:37
+msgid "Default color scheme"
+msgstr ""
+
+#: app/Customizer/Customizer.php:39
+msgid "Light (day)"
+msgstr ""
+
+#: app/Customizer/Customizer.php:40
+msgid "Dark (night)"
+msgstr ""
+
+#: app/Customizer/Customizer.php:41
+msgid "Follow the visitor’s system"
+msgstr ""
+
+#: app/Customizer/Customizer.php:43
+msgid "Visitors can still switch with the sun / moon button."
+msgstr ""
+
+#: app/Customizer/Customizer.php:45
+msgid "Release schedule"
+msgstr ""
+
+#: app/Customizer/Customizer.php:46
+msgid "E.g. “Thursdays 21:00”. Shown in the announcement bar and the episode archive."
+msgstr ""
+
+#: app/Customizer/Customizer.php:48
+msgid "Home headline, bold part"
+msgstr ""
+
+#: app/Customizer/Customizer.php:49
+msgid "The big two-weight headline on the home page. Leave empty for the site name."
+msgstr ""
+
+#: app/Customizer/Customizer.php:51
+msgid "Home headline, light part"
+msgstr ""
+
+#: app/Customizer/Customizer.php:52
+msgid "Leave empty for the tagline."
+msgstr ""
+
+#: app/Customizer/Customizer.php:54
+msgid "Home statement"
+msgstr ""
+
+#: app/Customizer/Customizer.php:55
+msgid "One sentence above the big numbers on the home page. Leave empty to hide it."
+msgstr ""
+
+#: app/Customizer/Customizer.php:57
+msgid "Newsletter form action URL"
+msgstr ""
+
+#: app/Customizer/Customizer.php:58
+msgid "Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section."
+msgstr ""
+
+#: app/Customizer/Customizer.php:60
+msgid "Newsletter e-mail field name"
+msgstr ""
+
+#: app/Customizer/Customizer.php:61
+msgid "Newsletter title"
+msgstr ""
+
+#: app/Customizer/Customizer.php:62
+msgid "Newsletter text"
+msgstr ""
+
+#: app/Customizer/Customizer.php:63
+msgid "Footer copyright text"
+msgstr ""
+
+#: app/Customizer/Customizer.php:64
+msgid "Leave empty for “© year site name”."
+msgstr ""
+
+#: app/Navigation/Menu.php:98
+#: app/View/Archive.php:87
+msgid "Home"
+msgstr ""
+
+#: app/Navigation/Menu.php:102
+#: resources/templates/cards/episode-row.php:47
+#: resources/templates/index.php:32
+msgid "Podcast"
+msgstr ""
+
+#. translators: %s: search terms.
+#. translators: %s: "All episodes" or a topic.
+#: app/Navigation/Menu.php:111
+#: app/View/Archive.php:24
+#: app/View/Archive.php:90
+#: resources/templates/404.php:24
+#: resources/templates/archive-ars_podcast.php:44
+#: resources/templates/front/intro.php:51
+#: resources/templates/front/latest.php:23
+msgid "All episodes"
+msgstr ""
+
+#: app/Podcast/Podcast.php:117
+#: resources/templates/layouts/header.php:79
+msgid "RSS feed"
+msgstr ""
+
+#: app/Setup/Assets.php:104
+msgid "Episode"
+msgstr ""
+
+#: app/Setup/Assets.php:105
+msgid "Post"
+msgstr ""
+
+#: app/Setup/Assets.php:106
+#: resources/templates/cards/post-row.php:50
+msgid "Page"
+msgstr ""
+
+#: app/Setup/Assets.php:107
+#: resources/templates/parts/share.php:22
+msgid "Link copied"
+msgstr ""
+
+#: app/Setup/Assets.php:108
+#: resources/templates/cards/episode.php:36
+#: resources/templates/front/hero.php:47
+msgid "Now playing"
+msgstr ""
+
+#: app/Setup/ThemeSetup.php:47
+msgid "Header menu"
+msgstr ""
+
+#: app/Setup/ThemeSetup.php:48
+msgid "Footer menu"
+msgstr ""
+
+#. translators: %s: search terms.
+#: app/View/Archive.php:23
+#, php-format
+msgid "Search: %s"
+msgstr ""
+
+#: app/View/Archive.php:26
+#: resources/templates/single.php:42
+#: resources/templates/single.php:43
+msgid "Latest posts"
+msgstr ""
+
+#. translators: Month heading of archive lists, a PHP date format.
+#: app/View/Archive.php:59
+msgctxt "archive month heading"
+msgid "F Y"
+msgstr ""
+
+#: app/View/Archive.php:74
+msgid "Newest"
+msgstr ""
+
+#: app/View/Archive.php:75
+msgid "Oldest"
+msgstr ""
+
+#: app/View/Archive.php:76
+msgid "Shortest"
+msgstr ""
+
+#: app/View/Archive.php:127
+msgid "Previous page"
+msgstr ""
+
+#: app/View/Archive.php:139
+msgid "Next page"
+msgstr ""
+
+#. translators: %s: number of episodes.
+#: app/View/Author.php:65
+#, php-format
+msgctxt "author page summary"
+msgid "%s episode"
+msgid_plural "%s episodes"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of posts.
+#: app/View/Author.php:67
+#: resources/templates/front/intro.php:105
+#: resources/templates/front/topics.php:38
+#: resources/templates/index.php:44
+#: resources/templates/index.php:51
+#: resources/templates/index.php:61
+#: resources/templates/single.php:29
+#, php-format
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: minutes.
+#: app/View/Format.php:64
+#, php-format
+msgid "%d min"
+msgid_plural "%d min"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/404.php:18
+msgid "Page not found"
+msgstr ""
+
+#: resources/templates/404.php:19
+msgid "This page does not exist or has moved. Try a search, or start from the home page."
+msgstr ""
+
+#: resources/templates/404.php:22
+msgid "Home page"
+msgstr ""
+
+#. translators: %s: number of episodes.
+#: resources/templates/archive-ars_podcast.php:30
+#: resources/templates/front/intro.php:101
+#: resources/templates/front/topics.php:38
+#: resources/templates/single-ars_podcast.php:32
+#, php-format
+msgid "%s episode"
+msgid_plural "%s episodes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/archive-ars_podcast.php:32
+#: resources/templates/index.php:29
+#: resources/templates/index.php:44
+msgid "All"
+msgstr ""
+
+#. translators: %s: "All episodes" or a topic.
+#: resources/templates/archive-ars_podcast.php:44
+#, php-format
+msgid "Episodes: %s"
+msgstr ""
+
+#: resources/templates/archive-ars_podcast.php:49
+#: resources/templates/front/intro.php:86
+#: resources/templates/single-ars_podcast.php:57
+msgid "Topics"
+msgstr ""
+
+#: resources/templates/archive-ars_podcast.php:66
+msgid "No episodes match these filters."
+msgstr ""
+
+#: resources/templates/author.php:24
+msgctxt "author page section"
+msgid "Episodes"
+msgstr ""
+
+#: resources/templates/author.php:25
+msgctxt "author page section"
+msgid "Posts"
+msgstr ""
+
+#: resources/templates/author.php:39
+#: resources/templates/page-about.php:88
+#: resources/templates/single-ars_podcast.php:98
+msgid "Hosts"
+msgstr ""
+
+#: resources/templates/author.php:39
+#: resources/templates/page-about.php:88
+msgid "Authors"
+msgstr ""
+
+#: resources/templates/author.php:48
+msgid "Host / guest"
+msgstr ""
+
+#: resources/templates/author.php:48
+msgid "Author"
+msgstr ""
+
+#: resources/templates/author.php:86
+#: resources/templates/index.php:92
+msgid "Nothing has been published here yet."
+msgstr ""
+
+#: resources/templates/cards/episode-row.php:54
+#: resources/templates/single-ars_podcast.php:85
+msgid "Favorite"
+msgstr ""
+
+#: resources/templates/cards/episode.php:35
+#: resources/templates/layouts/footer.php:63
+#: resources/templates/layouts/footer.php:64
+#: resources/templates/layouts/header.php:86
+msgid "Listen"
+msgstr ""
+
+#: resources/templates/cards/post-row.php:25
+#: resources/templates/cards/post.php:33
+msgid "(no title)"
+msgstr ""
+
+#. translators: %d: minutes.
+#: resources/templates/cards/post-row.php:30
+#: resources/templates/cards/post.php:31
+#: resources/templates/single.php:66
+#, php-format
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/cards/post-row.php:53
+#: resources/templates/cards/post.php:26
+#: resources/templates/front/hero.php:29
+#: resources/templates/front/hero.php:47
+msgid "Featured"
+msgstr ""
+
+#: resources/templates/comments.php:22
+msgid "Listener comments"
+msgstr ""
+
+#: resources/templates/comments.php:22
+msgid "Reader comments"
+msgstr ""
+
+#: resources/templates/comments.php:34
+msgid "Comments are closed."
+msgstr ""
+
+#: resources/templates/comments/comment.php:28
+msgid "Host"
+msgstr ""
+
+#: resources/templates/comments/comment.php:33
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: resources/templates/episode/chapters.php:18
+msgid "This episode has no chapters."
+msgstr ""
+
+#: resources/templates/episode/chapters.php:33
+msgid "Current chapter"
+msgstr ""
+
+#: resources/templates/episode/transcript.php:20
+msgid "This episode has no transcript."
+msgstr ""
+
+#. translators: %s: timestamp.
+#: resources/templates/episode/transcript.php:44
+#, php-format
+msgid "Play from %s"
+msgstr ""
+
+#: resources/templates/episode/transcript.php:56
+msgid "The transcript is available as a file."
+msgstr ""
+
+#: resources/templates/episode/transcript.php:58
+msgid "Open the transcript file"
+msgstr ""
+
+#: resources/templates/front-page.php:50
+#: resources/templates/page-about.php:30
+msgid "episode"
+msgid_plural "episodes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/front-page.php:51
+msgid "average length"
+msgstr ""
+
+#: resources/templates/front-page.php:52
+#: resources/templates/page-about.php:33
+msgid "play"
+msgid_plural "plays"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/front-page.php:53
+#: resources/templates/page-about.php:31
+msgid "topic"
+msgid_plural "topics"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/front-page.php:73
+msgid "post"
+msgid_plural "posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/front-page.php:74
+msgid "category"
+msgid_plural "categories"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: slide number, 2: number of slides.
+#: resources/templates/front/hero.php:43
+#, php-format
+msgid "Slide %1$d of %2$d"
+msgstr ""
+
+#. translators: %s: episode duration.
+#: resources/templates/front/hero.php:60
+#, php-format
+msgid "Play · %s"
+msgstr ""
+
+#. translators: %s: episode duration.
+#: resources/templates/front/hero.php:60
+#: resources/templates/parts/play-button.php:36
+msgid "Play episode"
+msgstr ""
+
+#: resources/templates/front/hero.php:63
+#: resources/templates/front/hero.php:65
+msgid "Show notes"
+msgstr ""
+
+#: resources/templates/front/hero.php:65
+msgid "Read more"
+msgstr ""
+
+#: resources/templates/front/hero.php:77
+msgid "Choose a slide"
+msgstr ""
+
+#. translators: %d: slide number.
+#: resources/templates/front/hero.php:79
+#, php-format
+msgid "Slide %d"
+msgstr ""
+
+#: resources/templates/front/intro.php:36
+#: resources/templates/front/subscribe.php:49
+msgid "Copy the feed address"
+msgstr ""
+
+#: resources/templates/front/intro.php:53
+#: resources/templates/front/intro.php:55
+#: resources/templates/page-about.php:54
+msgid "Start with the latest"
+msgstr ""
+
+#: resources/templates/front/intro.php:58
+msgid "Read the blog"
+msgstr ""
+
+#. translators: %s: number of plays.
+#: resources/templates/front/intro.php:62
+#, php-format
+msgid "%s play so far"
+msgid_plural "%s plays so far"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/front/intro.php:71
+msgid "Listen on"
+msgstr ""
+
+#: resources/templates/front/intro.php:71
+#: resources/templates/layouts/footer.php:64
+msgid "Follow"
+msgstr ""
+
+#: resources/templates/front/intro.php:78
+#: resources/templates/layouts/footer.php:76
+msgid "Night mode"
+msgstr ""
+
+#. translators: %s: average duration.
+#: resources/templates/front/intro.php:102
+#, php-format
+msgid "About %s each"
+msgstr ""
+
+#: resources/templates/front/intro.php:112
+msgid "Open RSS feed"
+msgstr ""
+
+#: resources/templates/front/intro.php:112
+msgid "Works in any podcast app"
+msgstr ""
+
+#: resources/templates/front/intro.php:112
+msgid "Works in any feed reader"
+msgstr ""
+
+#: resources/templates/front/latest.php:21
+msgctxt "home heading, bold part"
+msgid "Latest"
+msgstr ""
+
+#: resources/templates/front/latest.php:21
+msgctxt "home heading, light part"
+msgid "episodes"
+msgstr ""
+
+#: resources/templates/front/latest.php:25
+msgid "Scroll left"
+msgstr ""
+
+#: resources/templates/front/latest.php:26
+msgid "Scroll right"
+msgstr ""
+
+#: resources/templates/front/posts.php:21
+msgctxt "home heading, bold part"
+msgid "Recent"
+msgstr ""
+
+#: resources/templates/front/posts.php:21
+msgctxt "home heading, light part"
+msgid "posts"
+msgstr ""
+
+#: resources/templates/front/posts.php:23
+msgid "All posts"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:21
+msgid "New episodes and full notes in your inbox. No ads, unsubscribe any time."
+msgstr ""
+
+#: resources/templates/front/subscribe.php:22
+msgid "Add the feed to your podcast app and every new episode arrives by itself."
+msgstr ""
+
+#: resources/templates/front/subscribe.php:34
+msgid "Don’t want to miss one?"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:35
+msgid "We’ll send it to you"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:35
+msgid "Subscribe to the feed"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:41
+msgid "E-mail address"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:43
+msgid "Subscribe"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:49
+msgid "Copied"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:56
+msgid "# add the show in any podcast app"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:56
+msgid "# follow in any feed reader"
+msgstr ""
+
+#. translators: %s: site name.
+#: resources/templates/front/subscribe.php:60
+#, php-format
+msgid "# or search for “%s” on"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:65
+msgid "new episodes land here first"
+msgstr ""
+
+#: resources/templates/front/subscribe.php:65
+msgid "new posts land here first"
+msgstr ""
+
+#. translators: %s: number of topics shown.
+#: resources/templates/front/topics.php:25
+#, php-format
+msgctxt "home heading, bold part"
+msgid "%s topic, "
+msgid_plural "%s topics, "
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: number of topics shown.
+#: resources/templates/front/topics.php:27
+#, php-format
+msgctxt "home heading, light part"
+msgid "%s color"
+msgid_plural "%s colors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/front/topics.php:30
+msgid "Every topic has its own color: badges, tiles and cards follow it."
+msgstr ""
+
+#: resources/templates/front/topics.php:30
+msgid "Every category has its own color: badges, tiles and cards follow it."
+msgstr ""
+
+#: resources/templates/index.php:36
+#: resources/templates/index.php:71
+#: resources/templates/index.php:72
+#: resources/templates/layouts/header.php:70
+#: resources/templates/layouts/header.php:73
+#: resources/templates/layouts/header.php:98
+#: resources/templates/parts/searchform.php:17
+#: resources/templates/parts/searchform.php:22
+msgid "Search"
+msgstr ""
+
+#. translators: %s: number of results.
+#: resources/templates/index.php:38
+#, php-format
+msgid "%s result"
+msgid_plural "%s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: resources/templates/index.php:75
+msgid "Type"
+msgstr ""
+
+#: resources/templates/index.php:77
+#: resources/templates/single.php:51
+msgid "Categories"
+msgstr ""
+
+#: resources/templates/index.php:92
+msgid "Nothing matched your search. Try other words."
+msgstr ""
+
+#: resources/templates/layouts/footer.php:23
+msgid "Browse"
+msgstr ""
+
+#: resources/templates/layouts/header.php:34
+msgid "Skip to content"
+msgstr ""
+
+#: resources/templates/layouts/header.php:42
+msgid "New episode"
+msgstr ""
+
+#: resources/templates/layouts/header.php:45
+msgid "New post"
+msgstr ""
+
+#: resources/templates/layouts/header.php:62
+msgid "Latest episode"
+msgstr ""
+
+#: resources/templates/layouts/header.php:65
+msgid "Main menu"
+msgstr ""
+
+#: resources/templates/layouts/header.php:71
+msgid "Search…"
+msgstr ""
+
+#: resources/templates/layouts/header.php:74
+msgid "Switch to day mode"
+msgstr ""
+
+#: resources/templates/layouts/header.php:74
+msgid "Switch to night mode"
+msgstr ""
+
+#: resources/templates/layouts/header.php:74
+msgid "Switch color scheme"
+msgstr ""
+
+#: resources/templates/layouts/header.php:82
+msgid "Open menu"
+msgstr ""
+
+#: resources/templates/layouts/header.php:99
+msgid "Search episodes and posts…"
+msgstr ""
+
+#: resources/templates/layouts/header.php:99
+msgid "Search posts…"
+msgstr ""
+
+#: resources/templates/layouts/header.php:109
+msgid "See all results"
+msgstr ""
+
+#: resources/templates/layouts/header.php:111
+msgid "Nothing found. Press Enter for a full search."
+msgstr ""
+
+#: resources/templates/layouts/header.php:112
+msgid "Type to search"
+msgstr ""
+
+#: resources/templates/layouts/header.php:115
+msgid "Close"
+msgstr ""
+
+#: resources/templates/page-about.php:32
+msgid "per episode"
+msgstr ""
+
+#. translators: %s: site name.
+#: resources/templates/page-about.php:46
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: resources/templates/page-about.php:56
+msgid "Browse all episodes"
+msgstr ""
+
+#: resources/templates/page-about.php:70
+msgid "The show in numbers"
+msgstr ""
+
+#: resources/templates/parts/adjacent.php:21
+msgid "Previous episode"
+msgstr ""
+
+#: resources/templates/parts/adjacent.php:21
+msgid "Previous post"
+msgstr ""
+
+#: resources/templates/parts/adjacent.php:22
+msgid "Next episode"
+msgstr ""
+
+#: resources/templates/parts/adjacent.php:22
+msgid "Next post"
+msgstr ""
+
+#: resources/templates/parts/adjacent.php:25
+msgid "More"
+msgstr ""
+
+#: resources/templates/parts/empty.php:17
+msgid "Clear filters"
+msgstr ""
+
+#. translators: %s: menu item, e.g. "Podcast".
+#: resources/templates/parts/nav-mobile.php:23
+#, php-format
+msgid "All: %s"
+msgstr ""
+
+#: resources/templates/parts/pages-sidebar.php:33
+msgid "Pages"
+msgstr ""
+
+#: resources/templates/parts/pagination.php:19
+msgid "Pagination"
+msgstr ""
+
+#. translators: 1: episode number, 2: episode title.
+#: resources/templates/parts/play-button.php:26
+#, php-format
+msgid "Play EP.%1$s %2$s"
+msgstr ""
+
+#: resources/templates/parts/play-button.php:33
+#: resources/templates/parts/play-button.php:37
+msgid "Pause"
+msgstr ""
+
+#: resources/templates/parts/play-button.php:36
+msgid "Resume"
+msgstr ""
+
+#: resources/templates/parts/searchform.php:18
+msgid "Search episodes and posts"
+msgstr ""
+
+#: resources/templates/parts/searchform.php:18
+msgid "Search posts"
+msgstr ""
+
+#: resources/templates/parts/share.php:16
+msgid "Share"
+msgstr ""
+
+#: resources/templates/parts/share.php:22
+msgid "Copy link"
+msgstr ""
+
+#: resources/templates/parts/share.php:25
+msgid "Share on Weibo"
+msgstr ""
+
+#: resources/templates/parts/share.php:26
+msgid "Share on X"
+msgstr ""
+
+#: resources/templates/parts/tags.php:25
+#: resources/templates/parts/tags.php:31
+#: resources/templates/parts/tags.php:32
+msgid "Tags"
+msgstr ""
+
+#: resources/templates/parts/title-bar.php:29
+msgid "Sort"
+msgstr ""
+
+#: resources/templates/parts/title-bar.php:38
+msgid "View"
+msgstr ""
+
+#: resources/templates/parts/title-bar.php:39
+msgid "List view"
+msgstr ""
+
+#: resources/templates/parts/title-bar.php:40
+msgid "Grid view"
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:39
+msgid "Summary"
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:40
+msgid "Chapters"
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:41
+msgid "Transcript"
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:48
+#: resources/templates/single-ars_podcast.php:49
+msgid "More episodes"
+msgstr ""
+
+#. translators: %s: episode number.
+#: resources/templates/single-ars_podcast.php:63
+#, php-format
+msgid "EP.%s cover"
+msgstr ""
+
+#. translators: %s: play count.
+#: resources/templates/single-ars_podcast.php:73
+#, php-format
+msgid "%s play"
+msgid_plural "%s plays"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: play count.
+#: resources/templates/single-ars_podcast.php:73
+#, php-format
+msgid "%s plays"
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:88
+msgid "Download audio"
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:99
+msgid "Guests"
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:114
+msgid "This episode has no summary yet."
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:122
+msgid "This is the newest episode"
+msgstr ""
+
+#: resources/templates/single-ars_podcast.php:122
+msgid "This is the first episode"
+msgstr ""
+
+#: resources/templates/single.php:99
+msgid "This is the newest post"
+msgstr ""
+
+#: resources/templates/single.php:99
+msgid "This is the first post"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Surface"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Border"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Text"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Signal green"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Lilac"
+msgstr ""
+
+#: theme.json
+msgctxt "Color name"
+msgid "Orange"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Noto Sans SC"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "Space Grotesk"
+msgstr ""
+
+#: theme.json
+msgctxt "Font family name"
+msgid "JetBrains Mono"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr ""
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra large"
+msgstr ""
