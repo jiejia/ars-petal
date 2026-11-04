@@ -61,7 +61,7 @@ $people = array_map(static fn (\WP_User $person): array => [
       <?php if ($user) : ?>
         <header class="panel p-4 sm:p-5">
           <div class="flex flex-col gap-5 sm:flex-row sm:gap-6">
-            <?php Template::render('parts/avatar', ['user' => $user, 'class' => 'aspect-square w-40 self-center rounded-full shadow-lg sm:w-44 sm:self-start', 'text' => 'text-7xl']); ?>
+            <?php Template::render('parts/avatar', ['user' => $user, 'class' => 'petal-avatar-lg aspect-square w-40 self-center rounded-full sm:w-44 sm:self-start', 'text' => 'text-7xl']); ?>
             <div class="flex min-w-0 flex-1 flex-col">
               <p class="mute text-sm"><?php echo esc_html($role); ?></p>
               <h1 class="display mt-1.5 text-2xl sm:text-3xl"><?php echo esc_html($user->display_name); ?></h1>

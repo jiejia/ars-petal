@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Petal 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
-"POT-Creation-Date: 2026-11-04T07:53:30+00:00\n"
+"POT-Creation-Date: 2026-11-04T08:11:42+00:00\n"
 "PO-Revision-Date: 2026-11-04 12:00+0800\n"
 "Last-Translator: jiejia\n"
 "Language-Team: Chinese (China)\n"
@@ -334,8 +334,7 @@ msgstr "嘉宾"
 msgid "Author"
 msgstr "作者"
 
-#: resources/templates/author.php:57 resources/templates/front/people.php:21
-#: resources/templates/page-about.php:87
+#: resources/templates/author.php:57 resources/templates/page-about.php:87
 #: resources/templates/single-ars_podcast.php:98
 msgid "Hosts"
 msgstr "主播"
@@ -518,9 +517,24 @@ msgstr "播客数据"
 msgid "Hosts and guests"
 msgstr "主播与嘉宾"
 
+#: resources/templates/front/people.php:21
+msgctxt "home heading, bold part"
+msgid "Host"
+msgstr "主播"
+
+#: resources/templates/front/people.php:21
+msgctxt "home heading, light part"
+msgid "lineup"
+msgstr "阵容"
+
 #: resources/templates/front/people.php:22
-#: resources/templates/single-ars_podcast.php:99
-msgid "Guests"
+msgctxt "home heading, bold part"
+msgid "Guest"
+msgstr "做客"
+
+#: resources/templates/front/people.php:22
+msgctxt "home heading, light part"
+msgid "appearances"
 msgstr "嘉宾"
 
 #: resources/templates/front/popular.php:19
@@ -882,6 +896,10 @@ msgstr "%s 次播放"
 #: resources/templates/single-ars_podcast.php:88
 msgid "Download audio"
 msgstr "下载音频"
+
+#: resources/templates/single-ars_podcast.php:99
+msgid "Guests"
+msgstr "嘉宾"
 
 #: resources/templates/single-ars_podcast.php:114
 msgid "This episode has no summary yet."
