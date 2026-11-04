@@ -12,6 +12,7 @@
 
 defined('ABSPATH') || exit;
 
+use Jiejia\ArsPetal\Podcast\Covers;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\View\Format;
 
@@ -21,7 +22,7 @@ $compact ??= false;
 $url = get_permalink($post);
 $categories = $post->post_type === 'post' ? get_the_category($post->ID) : [];
 $minutes = Format::readingMinutes($post);
-$image = (string) get_the_post_thumbnail_url($post, $compact ? 'thumbnail' : 'medium');
+$image = Covers::post($post, $compact ? 'thumbnail' : 'medium');
 $title = get_the_title($post) ?: __('(no title)', 'ars-petal');
 $meta = array_filter([
     $categories !== [] ? $categories[0]->name : '',

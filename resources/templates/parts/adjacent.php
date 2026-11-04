@@ -10,6 +10,7 @@
 
 defined('ABSPATH') || exit;
 
+use Jiejia\ArsPetal\Podcast\Covers;
 use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Episode;
@@ -28,7 +29,7 @@ $sides = [
       ?>
     <?php if ($post instanceof \WP_Post) :
         $episode = Episode::from($post);
-        $cover = $episode ? $episode->cover('thumbnail') : (string) get_the_post_thumbnail_url($post, 'thumbnail');
+        $cover = $episode ? $episode->cover('thumbnail') : Covers::post($post, 'thumbnail');
         ?>
       <a href="<?php echo esc_url(get_permalink($post)); ?>" rel="<?php echo esc_attr($side['rel']); ?>" class="panel-sm group flex items-center gap-4 p-4 transition-colors hover:bg-base-200">
         <?php Template::render('parts/cover', ['url' => $cover, 'alt' => '', 'class' => ($episode ? 'size-16' : 'aspect-[4/3] w-20') . ' shrink-0 rounded-2xl object-cover']); ?>

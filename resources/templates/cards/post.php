@@ -9,6 +9,7 @@
 
 defined('ABSPATH') || exit;
 
+use Jiejia\ArsPetal\Podcast\Covers;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\View\Format;
 
@@ -19,7 +20,7 @@ $minutes = Format::readingMinutes($post);
 ?>
 <article class="group min-w-0">
   <a href="<?php echo esc_url($url); ?>" tabindex="-1" aria-hidden="true" class="zoom block rounded-[1.25rem]">
-    <?php Template::render('parts/cover', ['url' => (string) get_the_post_thumbnail_url($post, 'medium_large'), 'alt' => '', 'class' => 'aspect-[16/10] w-full object-cover']); ?>
+    <?php Template::render('parts/cover', ['url' => Covers::post($post), 'alt' => '', 'class' => 'aspect-[16/10] w-full object-cover']); ?>
   </a>
   <p class="mt-4 flex items-center gap-2 text-xs">
     <?php if (is_sticky($post->ID)) : ?>

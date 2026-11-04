@@ -10,6 +10,7 @@
 defined('ABSPATH') || exit;
 
 use Jiejia\ArsPetal\Libraries\Template;
+use Jiejia\ArsPetal\Podcast\Covers;
 use Jiejia\ArsPetal\Setup\TemplateLoader;
 use Jiejia\ArsPetal\View\Format;
 use Jiejia\ArsPetal\View\Topics;
@@ -22,6 +23,7 @@ while (have_posts()) :
     $minutes = Format::readingMinutes();
     $author = get_userdata((int) get_the_author_meta('ID'));
     $isPost = get_post_type() === 'post';
+    $image = Covers::post(get_post());
     $latest = $isPost ? get_posts(['numberposts' => 3, 'post__not_in' => [get_the_ID()]]) : [];
     $topics = $isPost ? array_map(static fn (\WP_Term $term): array => [
         'label' => $term->name,
@@ -55,10 +57,10 @@ while (have_posts()) :
     <div class="order-1 min-w-0 lg:order-2">
       <header class="panel p-4 sm:p-5">
         <div class="flex flex-col gap-5 sm:flex-row sm:gap-6">
-          <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('medium_large', ['class' => 'aspect-[4/3] w-full shrink-0 self-start rounded-2xl object-cover sm:w-56']); ?>
+          <?php if ($image !== '') : ?>
+            <?php Template::render('parts/cover', ['url' => $image, 'alt' => '', 'class' => 'aspect-[4/3] w-full shrink-0 self-start rounded-2xl object-cover sm:w-56', 'lazy' => false]); ?>
           <?php endif; ?>
-          <div class="flex min-w-0 flex-1 flex-col <?php echo has_post_thumbnail() ? '' : 'p-1 sm:p-3'; ?>">
+          <div class="flex min-w-0 flex-1 flex-col <?php echo $image !== '' ? '' : 'p-1 sm:p-3'; ?>">
             <p class="mute text-sm">
               <?php if ($categories !== []) : ?>
                 <a href="<?php echo esc_url(get_category_link($categories[0])); ?>" class="hover:text-base-content"><?php echo esc_html($categories[0]->name); ?></a><?php echo wp_kses_post($separator); ?>
