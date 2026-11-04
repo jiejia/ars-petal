@@ -1,8 +1,8 @@
 <?php
 /**
  * Site header, printed by TemplateLoader::part('header'): <head>, the monospace announcement bar, the
- * frosted sticky top bar (petal mark, centered icon menu with dropdown cards, ⌘K search, color scheme
- * swatch) with the search dialog, and the opening of the swup container. Everything outside
+ * frosted sticky top bar (petal mark, centered icon menu with dropdown cards, ⌘K search, sun / moon
+ * button) with the search dialog, and the opening of the swup container. Everything outside
  * <main id="swup"> stays across swup page swaps; the menus are refreshed from the new page ([data-swup-sync]).
  *
  * @package ArsPetal
@@ -71,10 +71,9 @@ $schedule = Options::get('schedule');
         <?php Icon::render('search', 'mute size-4'); ?><span><?php esc_html_e('Search…', 'ars-petal'); ?></span><kbd class="kbd kbd-sm">/</kbd>
       </button>
       <button type="button" class="btn-plain size-10 rounded-xl xl:hidden" @click="open()" aria-label="<?php esc_attr_e('Search', 'ars-petal'); ?>"><?php Icon::render('search', 'size-[1.15rem]'); ?></button>
-      <button type="button" class="btn-plain h-10 gap-1.5 rounded-xl px-2" @click="$store.ui.toggleTheme()" :aria-label="$store.ui.dark ? '<?php echo esc_js(__('Switch to day mode', 'ars-petal')); ?>' : '<?php echo esc_js(__('Switch to night mode', 'ars-petal')); ?>'" aria-label="<?php esc_attr_e('Switch color scheme', 'ars-petal'); ?>">
-        <span class="swatch" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span x-show="$store.ui.dark"><?php Icon::render('sun', 'size-4'); ?></span>
-        <span x-show="!$store.ui.dark" x-cloak><?php Icon::render('moon', 'size-4'); ?></span>
+      <button type="button" class="btn-plain size-10 rounded-xl" @click="$store.ui.toggleTheme()" :aria-label="$store.ui.dark ? '<?php echo esc_js(__('Switch to day mode', 'ars-petal')); ?>' : '<?php echo esc_js(__('Switch to night mode', 'ars-petal')); ?>'" aria-label="<?php esc_attr_e('Switch color scheme', 'ars-petal'); ?>">
+        <span x-show="$store.ui.dark"><?php Icon::render('sun', 'size-[1.15rem]'); ?></span>
+        <span x-show="!$store.ui.dark" x-cloak><?php Icon::render('moon', 'size-[1.15rem]'); ?></span>
       </button>
       <a href="<?php echo esc_url(Podcast::feedUrl()); ?>" data-no-swup class="btn-plain hidden h-10 gap-1.5 rounded-xl px-2.5 text-sm sm:inline-flex" aria-label="<?php esc_attr_e('RSS feed', 'ars-petal'); ?>"><?php Icon::render('rss', 'size-4'); ?>RSS</a>
 
