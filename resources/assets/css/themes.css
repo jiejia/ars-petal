@@ -43,6 +43,10 @@
   --glow-a: oklch(80% 0.12 354 / 0.32);
   --glow-b: oklch(85% 0.1 232 / 0.32);
   --glow-c: oklch(90% 0.12 84 / 0.36);
+  /* The glow hues at full strength, for the avatar ring */
+  --ring-a: oklch(84% 0.09 354);
+  --ring-b: oklch(86% 0.08 232);
+  --ring-c: oklch(90% 0.1 84);
   --win: oklch(97.5% 0.002 286);
 }
 
@@ -83,5 +87,8 @@
   --glow-a: oklch(50% 0.2 354 / 0.22);
   --glow-b: oklch(55% 0.14 232 / 0.22);
   --glow-c: oklch(60% 0.14 84 / 0.16);
+  --ring-a: oklch(55% 0.12 354);
+  --ring-b: oklch(58% 0.09 232);
+  --ring-c: oklch(62% 0.09 84);
   --win: oklch(25.33% 0.016 252.42);
 }

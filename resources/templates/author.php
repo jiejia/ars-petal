@@ -24,7 +24,25 @@ $labels = [
     Author::EPISODES => _x('Episodes', 'author page section', 'ars-petal'),
     Author::POSTS => _x('Posts', 'author page section', 'ars-petal'),
 ];
-$summary = $user ? Author::summary($user) : '';
+// Host, guest or both (by the episodes they appear in); else author.
+$hostIds = array_map(static fn (\WP_User $person): int => $person->ID, Podcast::hosts());
+$guestIds = array_map(static fn (\WP_User $person): int => $person->ID, Podcast::guests());
+$isHost = $user && in_array($user->ID, $hostIds, true);
+$isGuest = $user && in_array($user->ID, $guestIds, true);
+$role = match (true) {
+    $isHost && $isGuest => __('Host / guest', 'ars-petal'),
+    $isHost => __('Host', 'ars-petal'),
+    $isGuest => __('Guest', 'ars-petal'),
+    default => __('Author', 'ars-petal'),
+};
+// The counts with bold numbers, as in the prototype: "**2** episodes · **1** post".
+$bold = static fn (int $number): string => '<span class="font-bold text-base-content">' . esc_html(number_format_i18n($number)) . '</span>';
+$stats = array_filter([
+    /* translators: %s: number of episodes. */
+    $counts[Author::EPISODES] > 0 ? sprintf(esc_html(_nx('%s episode', '%s episodes', $counts[Author::EPISODES], 'author page summary', 'ars-petal')), $bold($counts[Author::EPISODES])) : '',
+    /* translators: %s: number of posts. */
+    $counts[Author::POSTS] > 0 ? sprintf(esc_html(_n('%s post', '%s posts', $counts[Author::POSTS], 'ars-petal')), $bold($counts[Author::POSTS])) : '',
+]);
 $people = array_map(static fn (\WP_User $person): array => [
     'label' => $person->display_name,
     'meta' => Author::summary($person),
@@ -43,9 +61,9 @@ $people = array_map(static fn (\WP_User $person): array => [
       <?php if ($user) : ?>
         <header class="panel p-4 sm:p-5">
           <div class="flex flex-col gap-5 sm:flex-row sm:gap-6">
-            <?php Template::render('parts/avatar', ['user' => $user, 'class' => 'aspect-square w-full rounded-2xl border border-base-300 shadow-lg sm:w-44', 'text' => 'text-7xl']); ?>
+            <?php Template::render('parts/avatar', ['user' => $user, 'class' => 'aspect-square w-40 self-center rounded-full shadow-lg sm:w-44 sm:self-start', 'text' => 'text-7xl']); ?>
             <div class="flex min-w-0 flex-1 flex-col">
-              <p class="mute text-sm"><?php echo esc_html($counts[Author::EPISODES] > 0 ? __('Host / guest', 'ars-petal') : __('Author', 'ars-petal')); ?></p>
+              <p class="mute text-sm"><?php echo esc_html($role); ?></p>
               <h1 class="display mt-1.5 text-2xl sm:text-3xl"><?php echo esc_html($user->display_name); ?></h1>
               <?php if ($user->description !== '') : ?>
                 <p class="mute mt-2 leading-relaxed"><?php echo esc_html($user->description); ?></p>
@@ -54,8 +72,8 @@ $people = array_map(static fn (\WP_User $person): array => [
                 <?php if ($user->user_url !== '') : ?>
                   <a href="<?php echo esc_url($user->user_url); ?>" data-no-swup target="_blank" rel="noopener" class="chip"><?php Icon::render('globe', 'size-4'); ?><?php esc_html_e('Website', 'ars-petal'); ?></a>
                 <?php endif; ?>
-                <?php if ($summary !== '') : ?>
-                  <span class="mute ml-auto text-sm"><?php echo esc_html($summary); ?></span>
+                <?php if ($stats !== []) : ?>
+                  <span class="mute ml-auto text-sm"><?php echo implode(' · ', $stats); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped parts above. ?></span>
                 <?php endif; ?>
               </div>
             </div>

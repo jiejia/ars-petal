@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Petal 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
-"POT-Creation-Date: 2026-11-04T07:47:31+00:00\n"
+"POT-Creation-Date: 2026-11-04T07:53:30+00:00\n"
 "PO-Revision-Date: 2026-11-04 12:00+0800\n"
 "Last-Translator: jiejia\n"
 "Language-Team: Chinese (China)\n"
@@ -71,7 +71,7 @@ msgstr "昵称"
 msgid "E-mail"
 msgstr "邮箱"
 
-#: app/Comments/CommentForm.php:66 resources/templates/author.php:55
+#: app/Comments/CommentForm.php:66 resources/templates/author.php:73
 msgid "Website"
 msgstr "网站"
 
@@ -240,7 +240,7 @@ msgid "Next page"
 msgstr "下一页"
 
 #. translators: %s: number of episodes.
-#: app/View/Author.php:65
+#: app/View/Author.php:65 resources/templates/author.php:42
 #, php-format
 msgctxt "author page summary"
 msgid "%s episode"
@@ -248,9 +248,10 @@ msgid_plural "%s episodes"
 msgstr[0] "%s 期节目"
 
 #. translators: %s: number of posts.
-#: app/View/Author.php:67 resources/templates/front/topics.php:34
-#: resources/templates/index.php:44 resources/templates/index.php:51
-#: resources/templates/index.php:61 resources/templates/single.php:31
+#: app/View/Author.php:67 resources/templates/author.php:44
+#: resources/templates/front/topics.php:34 resources/templates/index.php:44
+#: resources/templates/index.php:51 resources/templates/index.php:61
+#: resources/templates/single.php:31
 #, php-format
 msgid "%s post"
 msgid_plural "%s posts"
@@ -316,25 +317,34 @@ msgctxt "author page section"
 msgid "Posts"
 msgstr "文章"
 
-#: resources/templates/author.php:39 resources/templates/front/people.php:21
+#: resources/templates/author.php:33
+msgid "Host / guest"
+msgstr "主播 / 嘉宾"
+
+#: resources/templates/author.php:34
+#: resources/templates/comments/comment.php:28
+msgid "Host"
+msgstr "主播"
+
+#: resources/templates/author.php:35
+msgid "Guest"
+msgstr "嘉宾"
+
+#: resources/templates/author.php:36
+msgid "Author"
+msgstr "作者"
+
+#: resources/templates/author.php:57 resources/templates/front/people.php:21
 #: resources/templates/page-about.php:87
 #: resources/templates/single-ars_podcast.php:98
 msgid "Hosts"
 msgstr "主播"
 
-#: resources/templates/author.php:39 resources/templates/page-about.php:87
+#: resources/templates/author.php:57 resources/templates/page-about.php:87
 msgid "Authors"
 msgstr "作者"
 
-#: resources/templates/author.php:48
-msgid "Host / guest"
-msgstr "主播 / 嘉宾"
-
-#: resources/templates/author.php:48
-msgid "Author"
-msgstr "作者"
-
-#: resources/templates/author.php:86 resources/templates/index.php:92
+#: resources/templates/author.php:104 resources/templates/index.php:92
 msgid "Nothing has been published here yet."
 msgstr "这里还没有发布内容。"
 
@@ -379,10 +389,6 @@ msgstr "读者留言"
 #: resources/templates/comments.php:34
 msgid "Comments are closed."
 msgstr "留言已关闭。"
-
-#: resources/templates/comments/comment.php:28
-msgid "Host"
-msgstr "主播"
 
 #: resources/templates/comments/comment.php:33
 msgid "Your comment is awaiting moderation."
