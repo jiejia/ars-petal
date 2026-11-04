@@ -27,11 +27,12 @@ if ($topics === []) {
   ?>
   <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
     <?php foreach ($topics as $topic) : ?>
+      <?php $count = (int) $topic['count']; ?>
       <a href="<?php echo esc_url($topic['url']); ?>" class="cat-card <?php echo esc_attr(Topics::block($topic['term'])); ?>">
         <span class="mono text-xs opacity-75">/<?php echo esc_html(urldecode($topic['term']->slug)); ?></span>
         <span class="relative z-10">
           <span class="display block text-2xl"><?php echo esc_html($topic['term']->name); ?></span>
-          <span class="mt-1 block text-sm opacity-80"><?php echo esc_html($podcast ? sprintf(/* translators: %s: number of episodes. */ _n('%s episode', '%s episodes', $topic['count'], 'ars-petal'), number_format_i18n($topic['count'])) : sprintf(/* translators: %s: number of posts. */ _n('%s post', '%s posts', $topic['count'], 'ars-petal'), number_format_i18n($topic['count']))); ?></span>
+          <span class="mt-1 block text-sm opacity-80"><?php echo esc_html($podcast ? sprintf(/* translators: %s: number of episodes. */ _n('%s episode', '%s episodes', $count, 'ars-petal'), number_format_i18n($count)) : sprintf(/* translators: %s: number of posts. */ _n('%s post', '%s posts', $count, 'ars-petal'), number_format_i18n($count))); ?></span>
         </span>
         <img src="<?php echo esc_url(($topic['image'] ?? '') ?: Topics::image($topic['term'])); ?>" alt="" loading="lazy">
       </a>

@@ -25,11 +25,13 @@ while (have_posts()) :
     $hosts = Podcast::hosts();
     $stats = Podcast::stats();
     $schedule = Podcast::schedule();
+    $episodes = (int) $stats['episodes'];
+    $plays = (int) $stats['plays'];
     $numbers = array_values(array_filter([
-        $stats['episodes'] > 0 ? ['value' => number_format_i18n($stats['episodes']), 'label' => _n('episode', 'episodes', $stats['episodes'], 'ars-petal')] : null,
+        $episodes > 0 ? ['value' => number_format_i18n($episodes), 'label' => _n('episode', 'episodes', $episodes, 'ars-petal')] : null,
         Podcast::tags() !== [] ? ['value' => number_format_i18n(count(Podcast::tags())), 'label' => _n('topic', 'topics', count(Podcast::tags()), 'ars-petal')] : null,
         $stats['duration'] > 0 ? ['value' => '~' . max(1, (int) round($stats['duration'] / 60)) . '′', 'label' => __('per episode', 'ars-petal')] : null,
-        $stats['plays'] > 0 ? ['value' => Format::compact($stats['plays']), 'label' => _n('play', 'plays', $stats['plays'], 'ars-petal')] : null,
+        $plays > 0 ? ['value' => Format::compact($plays), 'label' => _n('play', 'plays', $plays, 'ars-petal')] : null,
     ]));
     $sidebar = Template::capture('parts/pages-sidebar');
     $images = Theme::URL . 'resources/assets/images/';

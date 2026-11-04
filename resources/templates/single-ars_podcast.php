@@ -26,14 +26,18 @@ while (have_posts()) :
     $tag = $episode->tag();
     $playable = $episode->playable();
     $more = array_map(static fn (\WP_Post $post): Episode => new Episode($post), get_posts(['post_type' => Podcast::POST_TYPE, 'numberposts' => 4, 'post__not_in' => [$episode->id()]]));
-    $topics = array_map(static fn (array $item): array => [
-        'label' => $item['term']->name,
-        /* translators: %s: number of episodes. */
-        'meta' => sprintf(_n('%s episode', '%s episodes', $item['count'], 'ars-petal'), number_format_i18n($item['count'])),
-        'url' => Podcast::tagUrl($item['term']),
-        'current' => $tag && $tag->term_id === $item['term']->term_id,
-        'image' => Topics::image($item['term']),
-    ], array_slice(Podcast::tags(), 0, 6));
+    $topics = array_map(static function (array $item) use ($tag): array {
+        $count = (int) $item['count'];
+
+        return [
+            'label' => $item['term']->name,
+            /* translators: %s: number of episodes. */
+            'meta' => sprintf(_n('%s episode', '%s episodes', $count, 'ars-petal'), number_format_i18n($count)),
+            'url' => Podcast::tagUrl($item['term']),
+            'current' => $tag && $tag->term_id === $item['term']->term_id,
+            'image' => Topics::image($item['term']),
+        ];
+    }, array_slice(Podcast::tags(), 0, 6));
     $separator = '<span class="mx-1 opacity-40">/</span>';
     $tabs = [
         'notes' => __('Summary', 'ars-petal'),

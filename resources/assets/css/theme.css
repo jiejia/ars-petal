@@ -250,6 +250,8 @@ body.has-ars-player .site-footer { padding-bottom: calc(var(--ars-player-height,
 .comment-list .children > li { border-radius: 1rem; background: var(--color-base-200); padding: 0.85rem 1rem; }
 .comment-reply-title small a { font-size: 0.875rem; text-decoration: underline; }
 .comment-form .required { color: var(--color-error); }
+/* Comments by the post author get a primary accent next to the Host badge. */
+.comment-list .bypostauthor > div { border-left: 3px solid var(--color-primary); padding-left: 0.75rem; }
 
 /* Screen-reader text used by WordPress markup. */
 .screen-reader-text { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }

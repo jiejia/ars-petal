@@ -98,12 +98,7 @@ $schedule = Podcast::schedule();
 
   <dialog x-ref="dialog" class="modal modal-top sm:modal-middle" @close="q = ''; results = []">
     <div class="modal-box max-w-2xl rounded-3xl border border-base-300 bg-base-100 p-3 shadow-2xl">
-      <form x-ref="form" action="<?php echo esc_url(home_url('/')); ?>" method="get" role="search" class="flex items-center gap-3 rounded-2xl bg-base-200 px-4 py-3" @submit.prevent="submit()">
-        <?php Icon::render('search', 'mute size-5 shrink-0'); ?>
-        <label for="site-search" class="sr-only"><?php esc_html_e('Search', 'ars-petal'); ?></label>
-        <input id="site-search" name="s" x-ref="input" x-model="q" @input="search()" type="search" autocomplete="off" placeholder="<?php echo esc_attr(Podcast::isActive() ? __('Search episodes and posts…', 'ars-petal') : __('Search posts…', 'ars-petal')); ?>" class="w-full border-0 bg-transparent text-lg outline-none">
-        <kbd class="kbd kbd-sm hidden sm:inline-flex">esc</kbd>
-      </form>
+      <?php get_search_form(['petal_variant' => 'modal']); ?>
       <div class="mt-2 max-h-96 overflow-y-auto">
         <template x-for="result in results" :key="result.subtype + result.id">
           <a :href="result.url" @click="close()" class="flex items-center gap-3 rounded-2xl p-3 hover:bg-base-200">

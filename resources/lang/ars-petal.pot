@@ -2,22 +2,21 @@
 # This file is distributed under the GPL-3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Petal 1.0.0\n"
+"Project-Id-Version: ARS Petal 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-04T08:11:42+00:00\n"
+"POT-Creation-Date: 2026-11-04T23:46:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ars-petal\n"
 
 #. Theme Name of the theme
 #: style.css
-#: app/Customizer/Customizer.php:33
-msgid "Petal"
+msgid "ARS Petal"
 msgstr ""
 
 #. Theme URI of the theme
@@ -69,6 +68,10 @@ msgstr ""
 #: app/Comments/CommentForm.php:66
 #: resources/templates/author.php:73
 msgid "Website"
+msgstr ""
+
+#: app/Customizer/Customizer.php:33
+msgid "Petal"
 msgstr ""
 
 #: app/Customizer/Customizer.php:37
@@ -193,6 +196,10 @@ msgstr ""
 msgid "Now playing"
 msgstr ""
 
+#: app/Setup/TemplateLoader.php:72
+msgid "About the show"
+msgstr ""
+
 #: app/Setup/ThemeSetup.php:47
 msgid "Header menu"
 msgstr ""
@@ -252,7 +259,7 @@ msgstr[1] ""
 #. translators: %s: number of posts.
 #: app/View/Author.php:67
 #: resources/templates/author.php:44
-#: resources/templates/front/topics.php:34
+#: resources/templates/front/topics.php:35
 #: resources/templates/index.php:44
 #: resources/templates/index.php:51
 #: resources/templates/index.php:61
@@ -285,8 +292,8 @@ msgstr ""
 
 #. translators: %s: number of episodes.
 #: resources/templates/archive-ars_podcast.php:32
-#: resources/templates/front/topics.php:34
-#: resources/templates/single-ars_podcast.php:32
+#: resources/templates/front/topics.php:35
+#: resources/templates/single-ars_podcast.php:35
 #, php-format
 msgid "%s episode"
 msgid_plural "%s episodes"
@@ -306,7 +313,7 @@ msgid "Episodes: %s"
 msgstr ""
 
 #: resources/templates/archive-ars_podcast.php:53
-#: resources/templates/single-ars_podcast.php:57
+#: resources/templates/single-ars_podcast.php:61
 msgid "Topics"
 msgstr ""
 
@@ -342,13 +349,13 @@ msgid "Author"
 msgstr ""
 
 #: resources/templates/author.php:57
-#: resources/templates/page-about.php:87
-#: resources/templates/single-ars_podcast.php:98
+#: resources/templates/page-about.php:89
+#: resources/templates/single-ars_podcast.php:102
 msgid "Hosts"
 msgstr ""
 
 #: resources/templates/author.php:57
-#: resources/templates/page-about.php:87
+#: resources/templates/page-about.php:89
 msgid "Authors"
 msgstr ""
 
@@ -358,7 +365,7 @@ msgid "Nothing has been published here yet."
 msgstr ""
 
 #: resources/templates/cards/episode-row.php:54
-#: resources/templates/single-ars_podcast.php:85
+#: resources/templates/single-ars_podcast.php:89
 msgid "Favorite"
 msgstr ""
 
@@ -504,28 +511,28 @@ msgstr ""
 msgid "Scroll right"
 msgstr ""
 
-#: resources/templates/front/numbers.php:24
-#: resources/templates/page-about.php:29
+#: resources/templates/front/numbers.php:25
+#: resources/templates/page-about.php:31
 msgid "episode"
 msgid_plural "episodes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: resources/templates/front/numbers.php:25
+#: resources/templates/front/numbers.php:26
 msgid "Average length"
 msgstr ""
 
-#: resources/templates/front/numbers.php:26
+#: resources/templates/front/numbers.php:27
 msgid "category"
 msgid_plural "categories"
 msgstr[0] ""
 msgstr[1] ""
 
-#: resources/templates/front/numbers.php:27
+#: resources/templates/front/numbers.php:28
 msgid "Total plays"
 msgstr ""
 
-#: resources/templates/front/numbers.php:31
+#: resources/templates/front/numbers.php:32
 msgid "Podcast in numbers"
 msgstr ""
 
@@ -631,9 +638,10 @@ msgstr ""
 #: resources/templates/index.php:72
 #: resources/templates/layouts/header.php:69
 #: resources/templates/layouts/header.php:72
-#: resources/templates/layouts/header.php:103
-#: resources/templates/parts/searchform.php:17
-#: resources/templates/parts/searchform.php:22
+#: searchform.php:21
+#: searchform.php:26
+#: searchform.php:36
+#: searchform.php:41
 msgid "Search"
 msgstr ""
 
@@ -715,61 +723,53 @@ msgstr ""
 msgid "Open menu"
 msgstr ""
 
-#: resources/templates/layouts/header.php:104
-msgid "Search episodes and posts…"
-msgstr ""
-
-#: resources/templates/layouts/header.php:104
-msgid "Search posts…"
-msgstr ""
-
-#: resources/templates/layouts/header.php:114
+#: resources/templates/layouts/header.php:109
 msgid "See all results"
 msgstr ""
 
-#: resources/templates/layouts/header.php:116
+#: resources/templates/layouts/header.php:111
 msgid "Nothing found. Press Enter for a full search."
 msgstr ""
 
-#: resources/templates/layouts/header.php:117
+#: resources/templates/layouts/header.php:112
 msgid "Type to search"
 msgstr ""
 
-#: resources/templates/layouts/header.php:120
+#: resources/templates/layouts/header.php:115
 msgid "Close"
 msgstr ""
 
-#: resources/templates/page-about.php:30
+#: resources/templates/page-about.php:32
 msgid "topic"
 msgid_plural "topics"
 msgstr[0] ""
 msgstr[1] ""
 
-#: resources/templates/page-about.php:31
+#: resources/templates/page-about.php:33
 msgid "per episode"
 msgstr ""
 
-#: resources/templates/page-about.php:32
+#: resources/templates/page-about.php:34
 msgid "play"
 msgid_plural "plays"
 msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: site name.
-#: resources/templates/page-about.php:45
+#: resources/templates/page-about.php:47
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: resources/templates/page-about.php:53
+#: resources/templates/page-about.php:55
 msgid "Start with the latest"
 msgstr ""
 
-#: resources/templates/page-about.php:55
+#: resources/templates/page-about.php:57
 msgid "Browse all episodes"
 msgstr ""
 
-#: resources/templates/page-about.php:69
+#: resources/templates/page-about.php:71
 msgid "The show in numbers"
 msgstr ""
 
@@ -832,14 +832,6 @@ msgstr ""
 msgid "Resume"
 msgstr ""
 
-#: resources/templates/parts/searchform.php:18
-msgid "Search episodes and posts"
-msgstr ""
-
-#: resources/templates/parts/searchform.php:18
-msgid "Search posts"
-msgstr ""
-
 #: resources/templates/parts/share.php:16
 msgid "Share"
 msgstr ""
@@ -878,31 +870,31 @@ msgstr ""
 msgid "Grid view"
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:39
+#: resources/templates/single-ars_podcast.php:43
 msgid "Summary"
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:40
+#: resources/templates/single-ars_podcast.php:44
 msgid "Chapters"
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:41
+#: resources/templates/single-ars_podcast.php:45
 msgid "Transcript"
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:48
-#: resources/templates/single-ars_podcast.php:49
+#: resources/templates/single-ars_podcast.php:52
+#: resources/templates/single-ars_podcast.php:53
 msgid "More episodes"
 msgstr ""
 
 #. translators: %s: episode number.
-#: resources/templates/single-ars_podcast.php:63
+#: resources/templates/single-ars_podcast.php:67
 #, php-format
 msgid "EP.%s cover"
 msgstr ""
 
 #. translators: %s: play count.
-#: resources/templates/single-ars_podcast.php:73
+#: resources/templates/single-ars_podcast.php:77
 #, php-format
 msgid "%s play"
 msgid_plural "%s plays"
@@ -910,28 +902,28 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %s: play count.
-#: resources/templates/single-ars_podcast.php:73
+#: resources/templates/single-ars_podcast.php:77
 #, php-format
 msgid "%s plays"
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:88
+#: resources/templates/single-ars_podcast.php:92
 msgid "Download audio"
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:99
+#: resources/templates/single-ars_podcast.php:103
 msgid "Guests"
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:114
+#: resources/templates/single-ars_podcast.php:118
 msgid "This episode has no summary yet."
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:122
+#: resources/templates/single-ars_podcast.php:126
 msgid "This is the newest episode"
 msgstr ""
 
-#: resources/templates/single-ars_podcast.php:122
+#: resources/templates/single-ars_podcast.php:126
 msgid "This is the first episode"
 msgstr ""
 
@@ -941,6 +933,22 @@ msgstr ""
 
 #: resources/templates/single.php:101
 msgid "This is the first post"
+msgstr ""
+
+#: searchform.php:27
+msgid "Search episodes and posts…"
+msgstr ""
+
+#: searchform.php:27
+msgid "Search posts…"
+msgstr ""
+
+#: searchform.php:37
+msgid "Search episodes and posts"
+msgstr ""
+
+#: searchform.php:37
+msgid "Search posts"
 msgstr ""
 
 #: theme.json

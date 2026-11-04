@@ -7,6 +7,7 @@
     "build:icons": "node bin/copy-icons.mjs",
     "build:css": "tailwindcss -i resources/assets/css/theme.css -o public/dist/theme.css --minify && tailwindcss -i resources/assets/css/editor.css -o public/dist/editor.css --minify",
     "build:js": "esbuild resources/assets/js/app.js --bundle --minify --format=iife --target=es2020 --outfile=public/dist/app.js",
+    "i18n": "wp i18n make-pot . resources/lang/ars-petal.pot --domain=ars-petal --exclude=node_modules,public && wp i18n update-po resources/lang/ars-petal.pot resources/lang && wp i18n make-mo resources/lang && wp i18n make-php resources/lang && node bin/escape-l10n.mjs",
     "watch:css": "tailwindcss -i resources/assets/css/theme.css -o public/dist/theme.css --watch",
     "watch:js": "esbuild resources/assets/js/app.js --bundle --format=iife --target=es2020 --outfile=public/dist/app.js --watch"
   },

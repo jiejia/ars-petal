@@ -20,8 +20,9 @@ if ($stats['episodes'] === 0) {
 
 $statement = Options::get('statement') ?: trim((string) get_bloginfo('description'));
 $categories = count(Podcast::categories());
+$episodes = (int) $stats['episodes'];
 $numbers = array_filter([
-    [$stats['episodes'], number_format_i18n($stats['episodes']), _n('episode', 'episodes', $stats['episodes'], 'ars-petal')],
+    [$episodes, number_format_i18n($episodes), _n('episode', 'episodes', $episodes, 'ars-petal')],
     [$stats['duration'], max(1, (int) round($stats['duration'] / 60)) . '′', __('Average length', 'ars-petal')],
     [$categories, number_format_i18n($categories), _n('category', 'categories', $categories, 'ars-petal')],
     [$stats['plays'], Format::compact($stats['plays']), __('Total plays', 'ars-petal')],

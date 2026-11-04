@@ -1,20 +1,19 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Petal 1.0.0\n"
+"Project-Id-Version: ARS Petal 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
-"POT-Creation-Date: 2026-11-04T08:11:42+00:00\n"
-"PO-Revision-Date: 2026-11-04 12:00+0800\n"
 "Last-Translator: jiejia\n"
 "Language-Team: Chinese (China)\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-04T23:44:44+00:00\n"
+"PO-Revision-Date: 2026-11-05 12:00+0800\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Domain: ars-petal\n"
 
-#. Theme Name of the theme
-#: style.css app/Customizer/Customizer.php:33
+#: app/Customizer/Customizer.php:33
 msgid "Petal"
 msgstr "花瓣"
 
@@ -25,16 +24,8 @@ msgstr "https://github.com/jiejia/ars-petal"
 
 #. Description of the theme
 #: style.css
-msgid ""
-"A bright, component-library style podcast theme: white space, bold / light "
-"mixed headlines, indigo, magenta, teal and yellow color blocks and soft "
-"glows, with a blue-gray night mode. With the A Ripple Song plugin it becomes "
-"a podcast site (featured episodes, episode archive, chapters, transcript, a "
-"site-wide player); without it, it is a plain blog theme."
-msgstr ""
-"明亮的组件库官网风播客主题：大留白、粗 / 细两段混排的大标题、靛蓝 / 品红 / 青"
-"绿 / 明黄色块和柔和光晕，夜间是蓝灰深色。启用 A Ripple Song 插件后是播客站"
-"（精选节目、节目归档、章节、文字稿、全站播放器）；不启用时是普通博客主题。"
+msgid "A bright, component-library style podcast theme: white space, bold / light mixed headlines, indigo, magenta, teal and yellow color blocks and soft glows, with a blue-gray night mode. With the A Ripple Song plugin it becomes a podcast site (featured episodes, episode archive, chapters, transcript, a site-wide player); without it, it is a plain blog theme."
+msgstr "明亮的组件库官网风播客主题：大留白、粗 / 细两段混排的大标题、靛蓝 / 品红 / 青绿 / 明黄色块和柔和光晕，夜间是蓝灰深色。启用 A Ripple Song 插件后是播客站（精选节目、节目归档、章节、文字稿、全站播放器）；不启用时是普通博客主题。"
 
 #. Author of the theme
 #: style.css
@@ -46,7 +37,8 @@ msgstr "jiejia"
 msgid "https://github.com/jiejia/"
 msgstr "https://github.com/jiejia/"
 
-#: app/Blog/Blog.php:85 resources/templates/cards/post-row.php:51
+#: app/Blog/Blog.php:85
+#: resources/templates/cards/post-row.php:51
 #: resources/templates/index.php:35
 msgid "Blog"
 msgstr "博客"
@@ -71,7 +63,8 @@ msgstr "昵称"
 msgid "E-mail"
 msgstr "邮箱"
 
-#: app/Comments/CommentForm.php:66 resources/templates/author.php:73
+#: app/Comments/CommentForm.php:66
+#: resources/templates/author.php:73
 msgid "Website"
 msgstr "网站"
 
@@ -100,8 +93,7 @@ msgid "Home headline, bold part"
 msgstr "首页大标题：粗体部分"
 
 #: app/Customizer/Customizer.php:46
-msgid ""
-"The big two-weight headline on the home page. Leave empty for the site name."
+msgid "The big two-weight headline on the home page. Leave empty for the site name."
 msgstr "首页粗 / 细两段混排的大标题。留空则用站点名称。"
 
 #: app/Customizer/Customizer.php:48
@@ -117,9 +109,7 @@ msgid "Home statement"
 msgstr "首页标语"
 
 #: app/Customizer/Customizer.php:52
-msgid ""
-"One sentence above the big numbers on the home page; a new line breaks it on "
-"wide screens. Leave empty to use the site tagline."
+msgid "One sentence above the big numbers on the home page; a new line breaks it on wide screens. Leave empty to use the site tagline."
 msgstr "首页大数字上方的一句话，换行处在宽屏上会断行。留空则使用站点副标题。"
 
 #: app/Customizer/Customizer.php:54
@@ -127,9 +117,7 @@ msgid "Newsletter form action URL"
 msgstr "邮件订阅表单提交地址"
 
 #: app/Customizer/Customizer.php:55
-msgid ""
-"Where the e-mail sign-up form posts to (your newsletter service). Leave "
-"empty to hide the sign-up section."
+msgid "Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section."
 msgstr "邮件订阅表单提交到的地址（你的邮件服务）。留空则不显示订阅区块。"
 
 #: app/Customizer/Customizer.php:57
@@ -152,24 +140,29 @@ msgstr "页脚版权文字"
 msgid "Leave empty for “© year site name”."
 msgstr "留空则显示“© 年份 站点名称”。"
 
-#: app/Navigation/Menu.php:98 app/View/Archive.php:87
+#: app/Navigation/Menu.php:98
+#: app/View/Archive.php:87
 msgid "Home"
 msgstr "首页"
 
-#: app/Navigation/Menu.php:102 resources/templates/cards/episode-row.php:47
+#: app/Navigation/Menu.php:102
+#: resources/templates/cards/episode-row.php:47
 #: resources/templates/index.php:32
 msgid "Podcast"
 msgstr "播客"
 
 #. translators: %s: search terms.
-#: app/Navigation/Menu.php:110 app/View/Archive.php:24 app/View/Archive.php:90
+#: app/Navigation/Menu.php:110
+#: app/View/Archive.php:24
+#: app/View/Archive.php:90
 #: resources/templates/404.php:24
 #: resources/templates/archive-ars_podcast.php:47
 #: resources/templates/front/latest.php:31
 msgid "All episodes"
 msgstr "全部节目"
 
-#: app/Podcast/Podcast.php:141 resources/templates/front/subscribe.php:44
+#: app/Podcast/Podcast.php:141
+#: resources/templates/front/subscribe.php:44
 msgid "RSS feed"
 msgstr "RSS 订阅源"
 
@@ -181,15 +174,18 @@ msgstr "节目"
 msgid "Post"
 msgstr "文章"
 
-#: app/Setup/Assets.php:106 resources/templates/cards/post-row.php:51
+#: app/Setup/Assets.php:106
+#: resources/templates/cards/post-row.php:51
 msgid "Page"
 msgstr "页面"
 
-#: app/Setup/Assets.php:107 resources/templates/parts/share.php:22
+#: app/Setup/Assets.php:107
+#: resources/templates/parts/share.php:22
 msgid "Link copied"
 msgstr "链接已复制"
 
-#: app/Setup/Assets.php:108 resources/templates/cards/episode.php:36
+#: app/Setup/Assets.php:108
+#: resources/templates/cards/episode.php:36
 #: resources/templates/front/hero.php:52
 msgid "Now playing"
 msgstr "正在播放"
@@ -208,7 +204,8 @@ msgstr "页脚菜单"
 msgid "Search: %s"
 msgstr "搜索：%s"
 
-#: app/View/Archive.php:26 resources/templates/single.php:44
+#: app/View/Archive.php:26
+#: resources/templates/single.php:44
 #: resources/templates/single.php:45
 msgid "Latest posts"
 msgstr "最新文章"
@@ -240,7 +237,8 @@ msgid "Next page"
 msgstr "下一页"
 
 #. translators: %s: number of episodes.
-#: app/View/Author.php:65 resources/templates/author.php:42
+#: app/View/Author.php:65
+#: resources/templates/author.php:42
 #, php-format
 msgctxt "author page summary"
 msgid "%s episode"
@@ -248,9 +246,12 @@ msgid_plural "%s episodes"
 msgstr[0] "%s 期节目"
 
 #. translators: %s: number of posts.
-#: app/View/Author.php:67 resources/templates/author.php:44
-#: resources/templates/front/topics.php:34 resources/templates/index.php:44
-#: resources/templates/index.php:51 resources/templates/index.php:61
+#: app/View/Author.php:67
+#: resources/templates/author.php:44
+#: resources/templates/front/topics.php:35
+#: resources/templates/index.php:44
+#: resources/templates/index.php:51
+#: resources/templates/index.php:61
 #: resources/templates/single.php:31
 #, php-format
 msgid "%s post"
@@ -269,9 +270,7 @@ msgid "Page not found"
 msgstr "页面不见了"
 
 #: resources/templates/404.php:19
-msgid ""
-"This page does not exist or has moved. Try a search, or start from the home "
-"page."
+msgid "This page does not exist or has moved. Try a search, or start from the home page."
 msgstr "这个页面不存在或已经移走。试试搜索，或者从首页开始。"
 
 #: resources/templates/404.php:22
@@ -280,15 +279,16 @@ msgstr "回到首页"
 
 #. translators: %s: number of episodes.
 #: resources/templates/archive-ars_podcast.php:32
-#: resources/templates/front/topics.php:34
-#: resources/templates/single-ars_podcast.php:32
+#: resources/templates/front/topics.php:35
+#: resources/templates/single-ars_podcast.php:35
 #, php-format
 msgid "%s episode"
 msgid_plural "%s episodes"
 msgstr[0] "共 %s 期"
 
 #: resources/templates/archive-ars_podcast.php:35
-#: resources/templates/index.php:29 resources/templates/index.php:44
+#: resources/templates/index.php:29
+#: resources/templates/index.php:44
 msgid "All"
 msgstr "全部"
 
@@ -299,7 +299,7 @@ msgid "Episodes: %s"
 msgstr "节目归档：%s"
 
 #: resources/templates/archive-ars_podcast.php:53
-#: resources/templates/single-ars_podcast.php:57
+#: resources/templates/single-ars_podcast.php:61
 msgid "Topics"
 msgstr "栏目"
 
@@ -334,21 +334,24 @@ msgstr "嘉宾"
 msgid "Author"
 msgstr "作者"
 
-#: resources/templates/author.php:57 resources/templates/page-about.php:87
-#: resources/templates/single-ars_podcast.php:98
+#: resources/templates/author.php:57
+#: resources/templates/page-about.php:89
+#: resources/templates/single-ars_podcast.php:102
 msgid "Hosts"
 msgstr "主播"
 
-#: resources/templates/author.php:57 resources/templates/page-about.php:87
+#: resources/templates/author.php:57
+#: resources/templates/page-about.php:89
 msgid "Authors"
 msgstr "作者"
 
-#: resources/templates/author.php:104 resources/templates/index.php:92
+#: resources/templates/author.php:104
+#: resources/templates/index.php:92
 msgid "Nothing has been published here yet."
 msgstr "这里还没有发布内容。"
 
 #: resources/templates/cards/episode-row.php:54
-#: resources/templates/single-ars_podcast.php:85
+#: resources/templates/single-ars_podcast.php:89
 msgid "Favorite"
 msgstr "收藏"
 
@@ -366,14 +369,16 @@ msgstr "（无标题）"
 
 #. translators: %d: minutes.
 #: resources/templates/cards/post-row.php:31
-#: resources/templates/cards/post.php:32 resources/templates/single.php:68
+#: resources/templates/cards/post.php:32
+#: resources/templates/single.php:68
 #, php-format
 msgid "%d min read"
 msgid_plural "%d min read"
 msgstr[0] "阅读 %d 分钟"
 
 #: resources/templates/cards/post-row.php:54
-#: resources/templates/cards/post.php:27 resources/templates/front/hero.php:34
+#: resources/templates/cards/post.php:27
+#: resources/templates/front/hero.php:34
 msgid "Featured"
 msgstr "置顶"
 
@@ -447,7 +452,8 @@ msgstr "播放 · %s"
 msgid "Play episode"
 msgstr "播放本期"
 
-#: resources/templates/front/hero.php:68 resources/templates/front/hero.php:70
+#: resources/templates/front/hero.php:68
+#: resources/templates/front/hero.php:70
 msgid "Show notes"
 msgstr "节目笔记"
 
@@ -490,26 +496,26 @@ msgstr "向左滚动"
 msgid "Scroll right"
 msgstr "向右滚动"
 
-#: resources/templates/front/numbers.php:24
-#: resources/templates/page-about.php:29
+#: resources/templates/front/numbers.php:25
+#: resources/templates/page-about.php:31
 msgid "episode"
 msgid_plural "episodes"
 msgstr[0] "期节目"
 
-#: resources/templates/front/numbers.php:25
+#: resources/templates/front/numbers.php:26
 msgid "Average length"
 msgstr "平均每期时长"
 
-#: resources/templates/front/numbers.php:26
+#: resources/templates/front/numbers.php:27
 msgid "category"
 msgid_plural "categories"
 msgstr[0] "个分类"
 
-#: resources/templates/front/numbers.php:27
+#: resources/templates/front/numbers.php:28
 msgid "Total plays"
 msgstr "累计收听"
 
-#: resources/templates/front/numbers.php:31
+#: resources/templates/front/numbers.php:32
 msgid "Podcast in numbers"
 msgstr "播客数据"
 
@@ -557,13 +563,11 @@ msgid "All posts"
 msgstr "全部文章"
 
 #: resources/templates/front/subscribe.php:20
-msgid ""
-"New episodes and full notes in your inbox. No ads, unsubscribe any time."
+msgid "New episodes and full notes in your inbox. No ads, unsubscribe any time."
 msgstr "新一期节目和完整笔记寄到你的邮箱，不发广告，随时退订。"
 
 #: resources/templates/front/subscribe.php:21
-msgid ""
-"Add the feed to your podcast app and every new episode arrives by itself."
+msgid "Add the feed to your podcast app and every new episode arrives by itself."
 msgstr "把订阅地址加到你的播客 App，新一期会自动送到。"
 
 #. translators: %s: release schedule, e.g. "Every Thu 21:00".
@@ -612,12 +616,15 @@ msgctxt "home heading, light part"
 msgid "categories"
 msgstr "分类"
 
-#: resources/templates/index.php:36 resources/templates/index.php:71
-#: resources/templates/index.php:72 resources/templates/layouts/header.php:69
+#: resources/templates/index.php:36
+#: resources/templates/index.php:71
+#: resources/templates/index.php:72
+#: resources/templates/layouts/header.php:69
 #: resources/templates/layouts/header.php:72
-#: resources/templates/layouts/header.php:103
-#: resources/templates/parts/searchform.php:17
-#: resources/templates/parts/searchform.php:22
+#: searchform.php:21
+#: searchform.php:26
+#: searchform.php:36
+#: searchform.php:41
 msgid "Search"
 msgstr "搜索"
 
@@ -632,7 +639,8 @@ msgstr[0] "共 %s 条结果"
 msgid "Type"
 msgstr "类型"
 
-#: resources/templates/index.php:77 resources/templates/single.php:53
+#: resources/templates/index.php:77
+#: resources/templates/single.php:53
 msgid "Categories"
 msgstr "分类"
 
@@ -697,59 +705,59 @@ msgstr "在播客应用中收听"
 msgid "Open menu"
 msgstr "打开菜单"
 
-#: resources/templates/layouts/header.php:104
+#: searchform.php:27
 msgid "Search episodes and posts…"
 msgstr "搜索节目和文章…"
 
-#: resources/templates/layouts/header.php:104
+#: searchform.php:27
 msgid "Search posts…"
 msgstr "搜索文章…"
 
-#: resources/templates/layouts/header.php:114
+#: resources/templates/layouts/header.php:109
 msgid "See all results"
 msgstr "查看全部结果"
 
-#: resources/templates/layouts/header.php:116
+#: resources/templates/layouts/header.php:111
 msgid "Nothing found. Press Enter for a full search."
 msgstr "没有找到，按回车查看完整搜索结果。"
 
-#: resources/templates/layouts/header.php:117
+#: resources/templates/layouts/header.php:112
 msgid "Type to search"
 msgstr "输入关键词开始搜索"
 
-#: resources/templates/layouts/header.php:120
+#: resources/templates/layouts/header.php:115
 msgid "Close"
 msgstr "关闭"
 
-#: resources/templates/page-about.php:30
+#: resources/templates/page-about.php:32
 msgid "topic"
 msgid_plural "topics"
 msgstr[0] "个栏目"
 
-#: resources/templates/page-about.php:31
+#: resources/templates/page-about.php:33
 msgid "per episode"
 msgstr "每期时长"
 
-#: resources/templates/page-about.php:32
+#: resources/templates/page-about.php:34
 msgid "play"
 msgid_plural "plays"
 msgstr[0] "次收听"
 
 #. translators: %s: site name.
-#: resources/templates/page-about.php:45
+#: resources/templates/page-about.php:47
 #, php-format
 msgid "About %s"
 msgstr "关于%s"
 
-#: resources/templates/page-about.php:53
+#: resources/templates/page-about.php:55
 msgid "Start with the latest"
 msgstr "从最新一期听起"
 
-#: resources/templates/page-about.php:55
+#: resources/templates/page-about.php:57
 msgid "Browse all episodes"
 msgstr "浏览全部节目"
 
-#: resources/templates/page-about.php:69
+#: resources/templates/page-about.php:71
 msgid "The show in numbers"
 msgstr "节目数据"
 
@@ -812,11 +820,11 @@ msgstr "暂停"
 msgid "Resume"
 msgstr "继续收听"
 
-#: resources/templates/parts/searchform.php:18
+#: searchform.php:37
 msgid "Search episodes and posts"
 msgstr "搜索播客和博客"
 
-#: resources/templates/parts/searchform.php:18
+#: searchform.php:37
 msgid "Search posts"
 msgstr "搜索文章"
 
@@ -836,7 +844,8 @@ msgstr "分享到微博"
 msgid "Share on X"
 msgstr "分享到 X"
 
-#: resources/templates/parts/tags.php:25 resources/templates/parts/tags.php:31
+#: resources/templates/parts/tags.php:25
+#: resources/templates/parts/tags.php:31
 #: resources/templates/parts/tags.php:32
 msgid "Tags"
 msgstr "标签"
@@ -857,59 +866,59 @@ msgstr "列表视图"
 msgid "Grid view"
 msgstr "网格视图"
 
-#: resources/templates/single-ars_podcast.php:39
+#: resources/templates/single-ars_podcast.php:43
 msgid "Summary"
 msgstr "简介"
 
-#: resources/templates/single-ars_podcast.php:40
+#: resources/templates/single-ars_podcast.php:44
 msgid "Chapters"
 msgstr "章节"
 
-#: resources/templates/single-ars_podcast.php:41
+#: resources/templates/single-ars_podcast.php:45
 msgid "Transcript"
 msgstr "文字稿"
 
-#: resources/templates/single-ars_podcast.php:48
-#: resources/templates/single-ars_podcast.php:49
+#: resources/templates/single-ars_podcast.php:52
+#: resources/templates/single-ars_podcast.php:53
 msgid "More episodes"
 msgstr "更多节目"
 
 #. translators: %s: episode number.
-#: resources/templates/single-ars_podcast.php:63
+#: resources/templates/single-ars_podcast.php:67
 #, php-format
 msgid "EP.%s cover"
 msgstr "EP.%s 封面"
 
 #. translators: %s: play count.
-#: resources/templates/single-ars_podcast.php:73
+#: resources/templates/single-ars_podcast.php:77
 #, php-format
 msgid "%s play"
 msgid_plural "%s plays"
 msgstr[0] "%s 次播放"
 
 #. translators: %s: play count.
-#: resources/templates/single-ars_podcast.php:73
+#: resources/templates/single-ars_podcast.php:77
 #, php-format
 msgid "%s plays"
 msgstr "%s 次播放"
 
-#: resources/templates/single-ars_podcast.php:88
+#: resources/templates/single-ars_podcast.php:92
 msgid "Download audio"
 msgstr "下载音频"
 
-#: resources/templates/single-ars_podcast.php:99
+#: resources/templates/single-ars_podcast.php:103
 msgid "Guests"
 msgstr "嘉宾"
 
-#: resources/templates/single-ars_podcast.php:114
+#: resources/templates/single-ars_podcast.php:118
 msgid "This episode has no summary yet."
 msgstr "本期暂无简介。"
 
-#: resources/templates/single-ars_podcast.php:122
+#: resources/templates/single-ars_podcast.php:126
 msgid "This is the newest episode"
 msgstr "这是最新一期"
 
-#: resources/templates/single-ars_podcast.php:122
+#: resources/templates/single-ars_podcast.php:126
 msgid "This is the first episode"
 msgstr "这是第一期"
 
@@ -990,3 +999,12 @@ msgstr "大"
 msgctxt "Font size name"
 msgid "Extra large"
 msgstr "特大"
+
+#. Theme Name of the theme
+#: style.css
+msgid "ARS Petal"
+msgstr "花瓣"
+
+#: app/Setup/TemplateLoader.php:72
+msgid "About the show"
+msgstr "关于节目"

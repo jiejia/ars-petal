@@ -1,5 +1,5 @@
 /*
-Theme Name:        Petal
+Theme Name:        ARS Petal
 Theme URI:         https://github.com/jiejia/ars-petal
 Author:            jiejia
 Author URI:        https://github.com/jiejia/
@@ -12,7 +12,10 @@ License:           GPL-3.0
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain:       ars-petal
 Domain Path:       /resources/lang
-Tags:              blog, light, dark, two-columns, left-sidebar, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags:              blog, two-columns, left-sidebar, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+ARS Petal WordPress Theme, Copyright 2026 jiejia.
+ARS Petal is distributed under the terms of the GNU GPL v3.
 */
 
 /* Styles are built from resources/assets/css into public/dist by `npm run build`. */

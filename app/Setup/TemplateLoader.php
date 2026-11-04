@@ -4,7 +4,6 @@ namespace Jiejia\ArsPetal\Setup;
 
 defined('ABSPATH') || exit;
 
-use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Theme;
 
 /**
@@ -26,13 +25,6 @@ final class TemplateLoader
     ];
 
     /**
-     * Page templates selectable in the editor, path => name.
-     */
-    public const PAGE_TEMPLATES = [
-        self::DIRECTORY . 'page-about.php' => 'About the show',
-    ];
-
-    /**
      * Register template hooks.
      *
      * @return void
@@ -45,7 +37,6 @@ final class TemplateLoader
 
         add_filter('theme_page_templates', [$this, 'pageTemplates']);
         add_filter('comments_template', [$this, 'commentsTemplate']);
-        add_filter('get_search_form', [$this, 'searchForm']);
     }
 
     /**
@@ -78,10 +69,7 @@ final class TemplateLoader
      */
     public function pageTemplates(array $templates): array
     {
-        foreach (self::PAGE_TEMPLATES as $path => $name) {
-            // phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText -- Names are listed in the constant above.
-            $templates[$path] = __($name, 'ars-petal');
-        }
+        $templates[self::DIRECTORY . 'page-about.php'] = __('About the show', 'ars-petal');
 
         return $templates;
     }
@@ -97,16 +85,6 @@ final class TemplateLoader
         $theme = locate_template(self::DIRECTORY . 'comments.php');
 
         return $theme !== '' ? $theme : $file;
-    }
-
-    /**
-     * Use resources/templates/parts/searchform.php for get_search_form().
-     *
-     * @return string
-     */
-    public function searchForm(): string
-    {
-        return Template::capture('parts/searchform');
     }
 
     /**
