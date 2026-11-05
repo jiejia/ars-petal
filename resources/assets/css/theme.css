@@ -202,8 +202,11 @@ textarea.field { height: auto; padding: 0.75rem 1rem; }
 .group:hover .zoom img, .zoom:hover img { transform: scale(1.04); }
 
 /* ---------- swup transition: fade in and lift ---------- */
-.transition-lift { transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); }
-html.is-animating .transition-lift { opacity: 0; transform: translateY(10px); }
+/* The old page only dims and drops a little while the next one loads (never to blank, which flashed the page
+   background); the new page then rises from that state. The min-height keeps the footer from jumping. */
+.transition-lift { min-height: 70vh; transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
+html.is-animating .transition-lift { opacity: 0.45; transform: translateY(8px); }
+html.is-leaving .transition-lift { transition-duration: 0.18s, 0.2s; transition-timing-function: ease-out; }
 .swup-progress { position: fixed; inset: 0 auto auto 0; z-index: 99999; height: 3px; width: 0; opacity: 0; background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent)); transition: width 0.4s ease, opacity 0.2s; }
 html.is-changing .swup-progress { width: 80%; opacity: 1; }
 

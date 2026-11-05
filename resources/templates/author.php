@@ -84,9 +84,9 @@ $people = array_map(static fn (\WP_User $person): array => [
       <div class="panel mt-4 p-4 sm:p-8">
         <?php if ($user && $counts[Author::EPISODES] > 0 && $counts[Author::POSTS] > 0) : ?>
           <?php // Links rather than in-page tabs: each list has its own pages. ?>
-          <nav role="tablist" class="mx-auto mb-6 flex w-fit rounded-full bg-base-200 p-1 sm:mx-0" aria-label="<?php echo esc_attr($user->display_name); ?>">
+          <nav role="tablist" class="mx-auto mb-6 flex w-fit max-w-full rounded-full bg-base-200 p-0.5 sm:mx-0 sm:p-1" aria-label="<?php echo esc_attr($user->display_name); ?>">
             <?php foreach ($labels as $key => $label) : ?>
-              <a href="<?php echo esc_url(Author::tabUrl($user, $key)); ?>" role="tab" class="rounded-full px-5 py-2.5 text-sm font-medium transition <?php echo $tab === $key ? 'bg-primary text-primary-content' : 'hover:bg-base-300'; ?>" aria-selected="<?php echo $tab === $key ? 'true' : 'false'; ?>"><?php echo esc_html($label); ?> <span class="opacity-60"><?php echo esc_html(number_format_i18n($counts[$key])); ?></span></a>
+              <a href="<?php echo esc_url(Author::tabUrl($user, $key)); ?>" role="tab" class="rounded-full px-3 py-1.5 text-[0.8125rem] font-medium transition min-[360px]:px-3.5 min-[360px]:text-sm sm:px-5 sm:py-2.5 <?php echo $tab === $key ? 'bg-primary text-primary-content' : 'hover:bg-base-300'; ?>" aria-selected="<?php echo $tab === $key ? 'true' : 'false'; ?>"><?php echo esc_html($label); ?> <span class="opacity-60"><?php echo esc_html(number_format_i18n($counts[$key])); ?></span></a>
             <?php endforeach; ?>
           </nav>
         <?php elseif ($counts[$tab] > 0) : ?>

@@ -109,9 +109,9 @@ while (have_posts()) :
       <?php endif; ?>
 
       <div class="panel mt-4 p-4 sm:p-8">
-        <div role="tablist" class="mx-auto mb-6 flex w-fit max-w-full overflow-x-auto rounded-full bg-base-200 p-1 sm:mx-0">
+        <div role="tablist" class="mx-auto mb-6 flex w-fit max-w-full overflow-x-auto rounded-full bg-base-200 p-0.5 sm:mx-0 sm:p-1">
           <?php foreach ($tabs as $key => $label) : ?>
-            <button type="button" role="tab" class="shrink-0 rounded-full px-5 py-2.5 text-sm font-medium transition" :class="tab === '<?php echo esc_js($key); ?>' ? 'bg-primary text-primary-content' : 'hover:bg-base-300'" :aria-selected="tab === '<?php echo esc_js($key); ?>'" @click="tab = '<?php echo esc_js($key); ?>'"><?php echo esc_html($label); ?></button>
+            <button type="button" role="tab" class="shrink-0 rounded-full px-3 py-1.5 text-[0.8125rem] font-medium transition min-[360px]:px-3.5 min-[360px]:text-sm sm:px-5 sm:py-2.5" :class="tab === '<?php echo esc_js($key); ?>' ? 'bg-primary text-primary-content' : 'hover:bg-base-300'" :aria-selected="tab === '<?php echo esc_js($key); ?>'" @click="tab = '<?php echo esc_js($key); ?>'"><?php echo esc_html($label); ?></button>
           <?php endforeach; ?>
         </div>
         <div x-show="tab === 'notes'" role="tabpanel" class="entry-content">
