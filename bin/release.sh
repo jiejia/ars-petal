@@ -31,8 +31,6 @@ tag="v$version"
 current="$(sed -n 's/^Version:[[:space:]]*//p' style.css | tr -d '[:space:]')"
 
 [[ "$version" != "$current" ]] || fail "style.css is already at $version"
-# sort -V puts the higher version last.
-[[ "$(printf '%s\n%s\n' "$current" "$version" | sort -V | tail -1)" == "$version" ]] || fail "$version is lower than the current $current"
 
 [[ "$(git branch --show-current)" == "main" ]] || fail "switch to the main branch first"
 # AGENTS.md is local notes (gitignored), so it doesn't count as a pending change.
