@@ -236,6 +236,10 @@ body.has-ars-player .site-footer { padding-bottom: calc(var(--ars-player-height,
 .petal-item:has([data-ars-state="playing"]) .petal-when-idle { display: none; }
 .petal-item .eq { display: none; }
 .petal-item:has([data-ars-state="playing"]) .eq { display: inline-flex; }
+/* Playing indicator over an episode row's cover: bars in white / pink / teal on a dark veil. */
+.petal-eq-cover { display: none; }
+.petal-item:has([data-ars-state="playing"]) .petal-eq-cover { display: grid; }
+.petal-eq-cover .eq i:first-child { background: currentColor; }
 .petal-row:has([data-ars-state="playing"], [data-ars-state="paused"]) { background: var(--color-base-200); }
 
 /* Favorite button: the plugin toggles aria-pressed. */
