@@ -16,7 +16,6 @@ final class Options
         'color_scheme' => 'light',
         'headline_strong' => '',
         'headline_light' => '',
-        'statement' => '',
         'newsletter_action' => '',
         'newsletter_field' => 'email',
         'newsletter_title' => '',
