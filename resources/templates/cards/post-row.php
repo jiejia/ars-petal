@@ -53,9 +53,13 @@ $separator = '<span class="mx-1 opacity-40">/</span>';
       <?php if (is_sticky($post->ID)) : ?>
         <span class="badge badge-xs badge-primary mr-2 shrink-0"><?php esc_html_e('Featured', 'ars-petal'); ?></span>
       <?php endif; ?>
-      <span class="truncate"><?php echo wp_kses(implode($separator, array_map('esc_html', $meta)), ['span' => ['class' => true]]); ?></span>
+      <?php // Each part stays whole and the "/" ends its line, so on phones the line wraps between parts. ?>
+      <span class="sm:truncate"><?php
+        $last = count($meta) - 1;
+        echo wp_kses(implode(' ', array_map(static fn (string $part, int $i): string => '<span class="whitespace-nowrap">' . esc_html($part) . ($i < $last ? $separator : '') . '</span>', array_values($meta), array_keys(array_values($meta)))), ['span' => ['class' => true]]);
+        ?></span>
     </p>
-    <<?php echo tag_escape($heading); ?> class="mt-0.5 line-clamp-2 font-semibold leading-snug"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html($title); ?></a></<?php echo tag_escape($heading); ?>>
+    <<?php echo tag_escape($heading); ?> class="mt-0.5 font-semibold leading-snug sm:line-clamp-2"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html($title); ?></a></<?php echo tag_escape($heading); ?>>
     <p class="mute mt-1 line-clamp-2 hidden text-sm leading-relaxed sm:block"><?php echo esc_html(get_the_excerpt($post)); ?></p>
   </div>
 </li>

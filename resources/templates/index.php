@@ -57,8 +57,6 @@ if (is_search()) {
     }
 
     $title = Archive::title();
-    /* translators: %s: number of posts. */
-    $count = sprintf(_n('%s post', '%s posts', $found, 'ars-petal'), number_format_i18n($found));
 }
 
 $tags = is_search() ? [] : get_tags(['orderby' => 'count', 'order' => 'DESC', 'number' => 12]);
@@ -80,7 +78,7 @@ $description = Archive::description();
     <?php Template::render('parts/sidebar-end'); ?>
 
     <div class="drawer-content">
-      <?php Template::render('parts/title-bar', ['title' => $title, 'count' => $count]); ?>
+      <?php Template::render('parts/title-bar', ['title' => $title, 'count' => $count ?? '']); ?>
       <?php if ($description !== '') : ?>
         <p class="mute mt-4 px-3"><?php echo esc_html($description); ?></p>
       <?php endif; ?>

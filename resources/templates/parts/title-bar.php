@@ -19,8 +19,8 @@ $sorts ??= [];
 $views ??= true;
 $active = array_values(array_filter($sorts, static fn (array $sort): bool => $sort['current']))[0] ?? null;
 ?>
-<div class="panel-sm flex min-h-[4.5rem] flex-wrap items-center gap-3 p-3">
-  <h1 class="display min-w-0 flex-1 basis-56 truncate px-3 text-lg sm:text-xl"><?php echo esc_html($title); ?></h1>
+<div class="panel-sm flex min-h-[4.5rem] items-center gap-2 p-3 sm:flex-wrap sm:gap-3">
+  <h1 class="display min-w-0 flex-1 truncate px-1 text-lg sm:basis-56 sm:px-3 sm:text-xl"><?php echo esc_html($title); ?></h1>
   <?php if ($count !== '') : ?>
     <span class="mute px-1 text-sm"><?php echo esc_html($count); ?></span>
   <?php endif; ?>

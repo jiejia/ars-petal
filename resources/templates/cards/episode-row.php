@@ -41,12 +41,16 @@ $separator = '<span class="mx-1 opacity-40">/</span>';
 <li class="petal-item petal-row flex items-center gap-3 rounded-2xl p-2 transition-colors hover:bg-base-200 sm:gap-4 sm:p-2.5">
   <a href="<?php echo esc_url($url); ?>" tabindex="-1" aria-hidden="true" class="shrink-0"><?php Template::render('parts/cover', ['url' => $episode->cover('medium'), 'alt' => '', 'class' => 'size-14 rounded-xl object-cover sm:size-[4.5rem] sm:rounded-2xl']); ?></a>
   <div class="min-w-0 flex-1">
-    <<?php echo tag_escape($heading); ?> class="line-clamp-2 text-[0.95rem] font-semibold leading-snug sm:line-clamp-1 sm:text-base sm:leading-normal"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($episode->post)); ?></a></<?php echo tag_escape($heading); ?>>
+    <<?php echo tag_escape($heading); ?> class="text-[0.95rem] font-semibold leading-snug sm:line-clamp-1 sm:text-base sm:leading-normal"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($episode->post)); ?></a></<?php echo tag_escape($heading); ?>>
     <p class="mute mt-1 flex min-w-0 items-center text-xs sm:mt-0.5 sm:text-sm">
       <?php if ($badge) : ?>
         <span class="mr-2 shrink-0 rounded-full bg-base-200 px-2 py-0.5 text-[0.7rem] font-semibold text-base-content"><?php esc_html_e('Podcast', 'ars-petal'); ?></span>
       <?php endif; ?>
-      <span class="truncate"><?php echo wp_kses(implode($separator, array_map('esc_html', $meta)), ['span' => ['class' => true]]); ?></span>
+      <?php // Each part stays whole and the "/" ends its line, so on phones the line wraps between parts. ?>
+      <span class="sm:truncate"><?php
+        $last = count($meta) - 1;
+        echo wp_kses(implode(' ', array_map(static fn (string $part, int $i): string => '<span class="whitespace-nowrap">' . esc_html($part) . ($i < $last ? $separator : '') . '</span>', array_values($meta), array_keys(array_values($meta)))), ['span' => ['class' => true]]);
+        ?></span>
     </p>
   </div>
   <span class="eq hidden sm:inline-flex" aria-hidden="true"><i></i><i></i><i></i></span>
