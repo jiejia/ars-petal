@@ -149,7 +149,7 @@ msgstr "播客"
 #: app/View/Archive.php:90
 #: resources/templates/404.php:24
 #: resources/templates/archive-ars_podcast.php:47
-#: resources/templates/front/latest.php:31
+#: resources/templates/front/latest.php:25
 msgid "All episodes"
 msgstr "全部节目"
 
@@ -178,7 +178,6 @@ msgstr "链接已复制"
 
 #: app/Setup/Assets.php:108
 #: resources/templates/cards/episode.php:36
-#: resources/templates/front/hero.php:52
 msgid "Now playing"
 msgstr "正在播放"
 
@@ -272,7 +271,7 @@ msgstr "回到首页"
 #. translators: %s: number of episodes.
 #: resources/templates/archive-ars_podcast.php:32
 #: resources/templates/front/topics.php:35
-#: resources/templates/single-ars_podcast.php:35
+#: resources/templates/single-ars_podcast.php:37
 #, php-format
 msgid "%s episode"
 msgid_plural "%s episodes"
@@ -291,7 +290,7 @@ msgid "Episodes: %s"
 msgstr "节目归档：%s"
 
 #: resources/templates/archive-ars_podcast.php:53
-#: resources/templates/single-ars_podcast.php:63
+#: resources/templates/single-ars_podcast.php:65
 msgid "Topics"
 msgstr "栏目"
 
@@ -328,7 +327,7 @@ msgstr "作者"
 
 #: resources/templates/author.php:57
 #: resources/templates/page-about.php:89
-#: resources/templates/single-ars_podcast.php:104
+#: resources/templates/single-ars_podcast.php:106
 msgid "Hosts"
 msgstr "主播"
 
@@ -343,7 +342,7 @@ msgid "Nothing has been published here yet."
 msgstr "这里还没有发布内容。"
 
 #: resources/templates/cards/episode-row.php:54
-#: resources/templates/single-ars_podcast.php:91
+#: resources/templates/single-ars_podcast.php:93
 msgid "Favorite"
 msgstr "收藏"
 
@@ -432,14 +431,6 @@ msgstr "最新"
 msgid "Slide %1$d of %2$d"
 msgstr "第 %1$d 张，共 %2$d 张"
 
-#. translators: %s: episode duration.
-#: resources/templates/front/hero.php:65
-#, php-format
-msgid "Play · %s"
-msgstr "播放 · %s"
-
-#. translators: %s: episode duration.
-#: resources/templates/front/hero.php:65
 #: resources/templates/parts/play-button.php:36
 msgid "Play episode"
 msgstr "播放本期"
@@ -463,28 +454,22 @@ msgstr "切换精选"
 msgid "Slide %d"
 msgstr "第 %d 张"
 
-#: resources/templates/front/latest.php:24
+#: resources/templates/front/latest.php:22
 msgctxt "home heading, bold part"
 msgid "Latest"
 msgstr "最新"
 
-#: resources/templates/front/latest.php:24
+#: resources/templates/front/latest.php:22
 #: resources/templates/front/popular.php:19
 msgctxt "home heading, light part"
 msgid "episodes"
 msgstr "节目"
 
-#. translators: %s: release schedule, e.g. "Every Thu 21:00".
 #: resources/templates/front/latest.php:27
-#, php-format
-msgid "New episodes: %s"
-msgstr "%s 更新"
-
-#: resources/templates/front/latest.php:33
 msgid "Scroll left"
 msgstr "向左滚动"
 
-#: resources/templates/front/latest.php:34
+#: resources/templates/front/latest.php:28
 msgid "Scroll right"
 msgstr "向右滚动"
 
@@ -540,17 +525,17 @@ msgctxt "home heading, bold part"
 msgid "Popular"
 msgstr "热门"
 
-#: resources/templates/front/posts.php:21
+#: resources/templates/front/posts.php:20
 msgctxt "home heading, bold part"
 msgid "Recent"
 msgstr "近期"
 
-#: resources/templates/front/posts.php:21
+#: resources/templates/front/posts.php:20
 msgctxt "home heading, light part"
 msgid "posts"
 msgstr "博客"
 
-#: resources/templates/front/posts.php:23
+#: resources/templates/front/posts.php:22
 msgid "All posts"
 msgstr "全部文章"
 
@@ -854,59 +839,59 @@ msgstr "列表视图"
 msgid "Grid view"
 msgstr "网格视图"
 
-#: resources/templates/single-ars_podcast.php:43
+#: resources/templates/single-ars_podcast.php:45
 msgid "Summary"
 msgstr "简介"
 
-#: resources/templates/single-ars_podcast.php:44
+#: resources/templates/single-ars_podcast.php:46
 msgid "Chapters"
 msgstr "章节"
 
-#: resources/templates/single-ars_podcast.php:45
+#: resources/templates/single-ars_podcast.php:47
 msgid "Transcript"
 msgstr "文字稿"
 
-#: resources/templates/single-ars_podcast.php:51
-#: resources/templates/single-ars_podcast.php:52
+#: resources/templates/single-ars_podcast.php:53
+#: resources/templates/single-ars_podcast.php:54
 msgid "More episodes"
 msgstr "更多节目"
 
 #. translators: %s: episode number.
-#: resources/templates/single-ars_podcast.php:69
+#: resources/templates/single-ars_podcast.php:71
 #, php-format
 msgid "EP.%s cover"
 msgstr "EP.%s 封面"
 
 #. translators: %s: play count.
-#: resources/templates/single-ars_podcast.php:79
+#: resources/templates/single-ars_podcast.php:81
 #, php-format
 msgid "%s play"
 msgid_plural "%s plays"
 msgstr[0] "%s 次播放"
 
 #. translators: %s: play count.
-#: resources/templates/single-ars_podcast.php:79
+#: resources/templates/single-ars_podcast.php:81
 #, php-format
 msgid "%s plays"
 msgstr "%s 次播放"
 
-#: resources/templates/single-ars_podcast.php:94
+#: resources/templates/single-ars_podcast.php:96
 msgid "Download audio"
 msgstr "下载音频"
 
-#: resources/templates/single-ars_podcast.php:105
+#: resources/templates/single-ars_podcast.php:107
 msgid "Guests"
 msgstr "嘉宾"
 
-#: resources/templates/single-ars_podcast.php:120
+#: resources/templates/single-ars_podcast.php:122
 msgid "This episode has no summary yet."
 msgstr "本期暂无简介。"
 
-#: resources/templates/single-ars_podcast.php:128
+#: resources/templates/single-ars_podcast.php:130
 msgid "This is the newest episode"
 msgstr "这是最新一期"
 
-#: resources/templates/single-ars_podcast.php:128
+#: resources/templates/single-ars_podcast.php:130
 msgid "This is the first episode"
 msgstr "这是第一期"
 
@@ -997,10 +982,19 @@ msgstr "花瓣"
 msgid "About the show"
 msgstr "关于节目"
 
-#: resources/templates/single-ars_podcast.php:60
+#: resources/templates/single-ars_podcast.php:62
 msgid "No other episodes yet."
 msgstr "还没有其他节目。"
 
-#: resources/templates/single-ars_podcast.php:63
+#: resources/templates/single-ars_podcast.php:65
 msgid "No topics yet."
 msgstr "还没有栏目。"
+
+#: resources/templates/front/latest.php:25
+#: resources/templates/front/posts.php:22
+msgid "See all"
+msgstr "查看全部"
+
+#: resources/templates/front/hero.php:65
+msgid "Play"
+msgstr "播放"

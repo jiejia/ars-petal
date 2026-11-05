@@ -17,7 +17,7 @@ if ($episodes === []) {
 ?>
 <section class="mt-16" aria-labelledby="popular-title">
   <?php Template::render('front/heading', ['id' => 'popular-title', 'strong' => _x('Popular', 'home heading, bold part', 'ars-petal'), 'light' => _x('episodes', 'home heading, light part', 'ars-petal')]); ?>
-  <ol class="panel mt-6 p-3 sm:p-4">
+  <ol class="panel mt-6 p-1.5 sm:p-4">
     <?php foreach ($episodes as $episode) : ?>
       <?php Template::render('cards/episode-row', ['episode' => $episode]); ?>
     <?php endforeach; ?>

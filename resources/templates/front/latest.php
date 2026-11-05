@@ -22,7 +22,7 @@ if ($episodes === []) {
       <?php Template::render('front/heading', ['id' => 'latest-title', 'strong' => _x('Latest', 'home heading, bold part', 'ars-petal'), 'light' => _x('episodes', 'home heading, light part', 'ars-petal')]); ?>
     </div>
     <div class="flex shrink-0 items-center gap-1.5 sm:gap-2">
-      <a href="<?php echo esc_url(Podcast::archiveUrl()); ?>" class="btn-white h-8 shrink-0 gap-1 whitespace-nowrap rounded-lg px-2.5 text-xs sm:h-10 sm:gap-2 sm:rounded-xl sm:px-4 sm:text-sm sm:mr-1" aria-label="<?php esc_attr_e('All episodes', 'ars-petal'); ?>"><?php esc_html_e('All', 'ars-petal'); ?></a>
+      <a href="<?php echo esc_url(Podcast::archiveUrl()); ?>" class="btn-white h-8 shrink-0 gap-1 whitespace-nowrap rounded-full px-3 text-xs sm:h-10 sm:gap-2 sm:px-4 sm:text-sm sm:mr-1" aria-label="<?php esc_attr_e('All episodes', 'ars-petal'); ?>"><?php esc_html_e('See all', 'ars-petal'); ?></a>
       <?php if (count($episodes) > 3) : ?>
         <button type="button" class="edge-arrow" @click="by(-1)" aria-label="<?php esc_attr_e('Scroll left', 'ars-petal'); ?>"><?php Icon::render('arrow-left', 'size-4'); ?></button>
         <button type="button" class="edge-arrow" @click="by(1)" aria-label="<?php esc_attr_e('Scroll right', 'ars-petal'); ?>"><?php Icon::render('arrow-right', 'size-4'); ?></button>

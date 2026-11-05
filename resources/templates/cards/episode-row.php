@@ -38,11 +38,11 @@ $separator = '<span class="mx-1 opacity-40">/</span>';
   <?php Template::render('parts/play-button', ['episode' => $episode, 'class' => 'btn-black size-9 shrink-0 rounded-full', 'icon' => 'size-3.5']); ?>
 </li>
 <?php else : ?>
-<li class="petal-item petal-row flex items-center gap-3 rounded-2xl p-2.5 transition-colors hover:bg-base-200 sm:gap-4">
-  <a href="<?php echo esc_url($url); ?>" tabindex="-1" aria-hidden="true" class="shrink-0"><?php Template::render('parts/cover', ['url' => $episode->cover('medium'), 'alt' => '', 'class' => 'size-16 rounded-2xl object-cover sm:size-[4.5rem]']); ?></a>
+<li class="petal-item petal-row flex items-center gap-3 rounded-2xl p-2 transition-colors hover:bg-base-200 sm:gap-4 sm:p-2.5">
+  <a href="<?php echo esc_url($url); ?>" tabindex="-1" aria-hidden="true" class="shrink-0"><?php Template::render('parts/cover', ['url' => $episode->cover('medium'), 'alt' => '', 'class' => 'size-14 rounded-xl object-cover sm:size-[4.5rem] sm:rounded-2xl']); ?></a>
   <div class="min-w-0 flex-1">
-    <<?php echo tag_escape($heading); ?> class="truncate font-semibold"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($episode->post)); ?></a></<?php echo tag_escape($heading); ?>>
-    <p class="mute mt-0.5 flex min-w-0 items-center text-sm">
+    <<?php echo tag_escape($heading); ?> class="line-clamp-2 text-[0.95rem] font-semibold leading-snug sm:line-clamp-1 sm:text-base sm:leading-normal"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($episode->post)); ?></a></<?php echo tag_escape($heading); ?>>
+    <p class="mute mt-1 flex min-w-0 items-center text-xs sm:mt-0.5 sm:text-sm">
       <?php if ($badge) : ?>
         <span class="mr-2 shrink-0 rounded-full bg-base-200 px-2 py-0.5 text-[0.7rem] font-semibold text-base-content"><?php esc_html_e('Podcast', 'ars-petal'); ?></span>
       <?php endif; ?>
@@ -51,7 +51,7 @@ $separator = '<span class="mx-1 opacity-40">/</span>';
   </div>
   <span class="eq hidden sm:inline-flex" aria-hidden="true"><i></i><i></i><i></i></span>
   <?php if ($episode->playable()) : ?>
-    <button type="button" class="mute grid size-10 shrink-0 place-items-center rounded-full hover:bg-base-300" data-ars-fav="<?php echo (int) $episode->id(); ?>" aria-pressed="false" aria-label="<?php esc_attr_e('Favorite', 'ars-petal'); ?>"><?php Icon::render('heart', 'size-5'); ?></button>
+    <button type="button" class="mute hidden size-10 shrink-0 place-items-center rounded-full hover:bg-base-300 sm:grid" data-ars-fav="<?php echo (int) $episode->id(); ?>" aria-pressed="false" aria-label="<?php esc_attr_e('Favorite', 'ars-petal'); ?>"><?php Icon::render('heart', 'size-5'); ?></button>
   <?php endif; ?>
   <?php Template::render('parts/play-button', ['episode' => $episode, 'class' => 'btn-black size-10 shrink-0 rounded-full', 'icon' => 'size-4']); ?>
 </li>

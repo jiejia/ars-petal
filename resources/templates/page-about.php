@@ -52,7 +52,7 @@ while (have_posts()) :
           <?php if ($latest) : ?>
             <div class="mt-7 flex max-w-md flex-col gap-3">
               <?php if ($latest->playable()) : ?>
-                <?php Template::render('parts/play-button', ['episode' => $latest, 'class' => 'btn-black h-14 rounded-2xl text-lg', 'icon' => 'size-5', 'label' => __('Start with the latest', 'ars-petal')]); ?>
+                <?php Template::render('parts/play-button', ['episode' => $latest, 'class' => 'btn-black h-14 rounded-full text-lg', 'icon' => 'size-5', 'label' => __('Start with the latest', 'ars-petal')]); ?>
               <?php endif; ?>
               <a href="<?php echo esc_url(Podcast::archiveUrl()); ?>" class="inline-flex items-center justify-center gap-1 py-2 text-center font-semibold hover:underline"><?php esc_html_e('Browse all episodes', 'ars-petal'); ?><?php Icon::render('arrow-right', 'size-4'); ?></a>
             </div>

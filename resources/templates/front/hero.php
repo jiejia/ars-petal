@@ -40,34 +40,34 @@ $count = count($items);
         $color = $colors[$index % count($colors)];
         $tag = $episode ? $episode->tag() : (get_the_category($post->ID)[0] ?? null);
         $meta = $episode
-            ? implode(' · ', array_filter(['EP.' . $episode->number(), $tag ? $tag->name : '']))
+            ? implode(' · ', array_filter(['EP.' . $episode->number(), $tag ? $tag->name : '', $episode->duration() > 0 ? Format::duration($episode->duration()) : '']))
             : implode(' · ', array_filter([Format::date($post), $tag ? $tag->name : '']));
         $cover = $episode ? $episode->cover('medium_large') : Covers::post($post);
         $heading = $index === 0 ? 'h1' : 'h2';
         ?>
       <article class="petal-item carousel-item w-full lg:h-full" :inert="active !== <?php echo (int) $index; ?>" aria-roledescription="slide" aria-label="<?php echo esc_attr(sprintf(/* translators: 1: slide number, 2: number of slides. */ __('Slide %1$d of %2$d', 'ars-petal'), $index + 1, $count)); ?>">
         <div class="flex w-full items-center justify-between gap-8 px-6 pb-12 pt-8 sm:px-10 lg:pb-8">
-          <div class="relative z-10 min-w-0 flex-1">
-            <p class="flex flex-wrap items-center gap-2 text-sm">
-              <span class="badge <?php echo esc_attr($color['badge']); ?> font-medium"><span class="petal-when-idle"><?php echo esc_html($badge); ?></span><span class="petal-when-playing"><?php esc_html_e('Now playing', 'ars-petal'); ?></span></span>
+          <div class="relative z-10 min-w-0 flex-1 text-center sm:text-left">
+            <p class="flex flex-wrap items-center justify-center gap-2 text-sm sm:justify-start">
+              <span class="badge <?php echo esc_attr($color['badge']); ?> font-medium"><?php echo esc_html($badge); ?></span>
               <span class="mono mute"><?php echo esc_html($meta); ?></span>
             </p>
             <<?php echo tag_escape($heading); ?> class="display mt-3 line-clamp-2 text-balance text-3xl sm:text-4xl"><a href="<?php echo esc_url($url); ?>" class="hover:underline hover:decoration-4 hover:underline-offset-8 <?php echo esc_attr($color['line']); ?>"><?php echo esc_html(get_the_title($post)); ?></a></<?php echo tag_escape($heading); ?>>
-            <p class="display-light mute mt-3 line-clamp-2 max-w-lg text-lg leading-snug"><?php echo esc_html(get_the_excerpt($post)); ?></p>
-            <div class="mt-6 flex flex-wrap items-center gap-3 lg:mt-5">
+            <p class="display-light mute mx-auto mt-3 line-clamp-2 max-w-lg text-lg leading-snug sm:mx-0"><?php echo esc_html(get_the_excerpt($post)); ?></p>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-3 sm:justify-start lg:mt-5">
               <?php if ($episode && $episode->playable()) : ?>
                 <?php
                 Template::render('parts/play-button', [
                     'episode' => $episode,
-                    'class' => 'btn-black h-12 rounded-2xl px-6 text-[0.95rem]',
+                    // Fixed width so swapping Play / Pause does not move the button next to it.
+                    'class' => 'btn-black h-12 w-32 justify-center rounded-full px-0 text-[0.95rem]',
                     'icon' => 'size-4',
-                    /* translators: %s: episode duration. */
-                    'label' => $episode->duration() > 0 ? sprintf(__('Play · %s', 'ars-petal'), Format::duration($episode->duration())) : __('Play episode', 'ars-petal'),
+                    'label' => __('Play', 'ars-petal'),
                 ]);
                 ?>
-                <a href="<?php echo esc_url($url); ?>" class="btn-white h-12 rounded-2xl px-6 text-[0.95rem]"><?php esc_html_e('Show notes', 'ars-petal'); ?><?php Icon::render('arrow-right', 'size-4'); ?></a>
+                <a href="<?php echo esc_url($url); ?>" class="btn-white h-12 rounded-full px-6 text-[0.95rem]"><?php esc_html_e('Show notes', 'ars-petal'); ?><?php Icon::render('arrow-right', 'size-4'); ?></a>
               <?php else : ?>
-                <a href="<?php echo esc_url($url); ?>" class="btn-black h-12 rounded-2xl px-6 text-[0.95rem]"><?php echo esc_html($episode ? __('Show notes', 'ars-petal') : __('Read more', 'ars-petal')); ?><?php Icon::render('arrow-right', 'size-4'); ?></a>
+                <a href="<?php echo esc_url($url); ?>" class="btn-black h-12 rounded-full px-6 text-[0.95rem]"><?php echo esc_html($episode ? __('Show notes', 'ars-petal') : __('Read more', 'ars-petal')); ?><?php Icon::render('arrow-right', 'size-4'); ?></a>
               <?php endif; ?>
             </div>
           </div>
