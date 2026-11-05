@@ -36,11 +36,13 @@ while (have_posts()) :
     $sidebar = Template::capture('parts/pages-sidebar');
     $images = Theme::URL . 'resources/assets/images/';
     ?>
-<article <?php post_class('mt-2 grid grid-cols-1 gap-6 lg:items-start lg:gap-8' . ($sidebar !== '' ? ' lg:grid-cols-[18rem_minmax(0,1fr)]' : '')); ?>>
+<article <?php post_class('mt-2 ' . ($sidebar !== '' ? 'drawer lg:drawer-open lg:items-start lg:gap-8' : 'grid grid-cols-1')); ?>>
   <?php if ($sidebar !== '') : ?>
-    <div class="min-w-0 lg:sticky lg:top-[5.5rem]"><?php echo $sidebar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the partial. ?></div>
+    <?php Template::render('parts/sidebar-start', ['class' => 'lg:top-[5.5rem]']); ?>
+      <?php echo $sidebar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the partial. ?>
+    <?php Template::render('parts/sidebar-end'); ?>
   <?php endif; ?>
-  <div class="min-w-0">
+  <div class="<?php echo $sidebar !== '' ? 'drawer-content' : 'min-w-0'; ?>">
     <section class="wash panel relative overflow-hidden px-6 pb-8 pt-10 sm:px-10 sm:pt-12">
       <div class="grid grid-cols-1 items-center gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <div class="relative z-10 min-w-0">

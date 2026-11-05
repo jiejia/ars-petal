@@ -132,23 +132,23 @@ msgstr "页脚版权文字"
 msgid "Leave empty for “© year site name”."
 msgstr "留空则显示“© 年份 站点名称”。"
 
-#: app/Navigation/Menu.php:98
+#: app/Navigation/Menu.php:112
 #: app/View/Archive.php:87
 msgid "Home"
 msgstr "首页"
 
-#: app/Navigation/Menu.php:102
+#: app/Navigation/Menu.php:116
 #: resources/templates/cards/episode-row.php:47
 #: resources/templates/index.php:32
 msgid "Podcast"
 msgstr "播客"
 
 #. translators: %s: search terms.
-#: app/Navigation/Menu.php:110
+#: app/Navigation/Menu.php:124
 #: app/View/Archive.php:24
 #: app/View/Archive.php:90
 #: resources/templates/404.php:24
-#: resources/templates/archive-ars_podcast.php:47
+#: resources/templates/archive-ars_podcast.php:45
 #: resources/templates/front/latest.php:25
 msgid "All episodes"
 msgstr "全部节目"
@@ -269,7 +269,7 @@ msgid "Home page"
 msgstr "回到首页"
 
 #. translators: %s: number of episodes.
-#: resources/templates/archive-ars_podcast.php:32
+#: resources/templates/archive-ars_podcast.php:30
 #: resources/templates/front/topics.php:35
 #: resources/templates/single-ars_podcast.php:37
 #, php-format
@@ -277,24 +277,24 @@ msgid "%s episode"
 msgid_plural "%s episodes"
 msgstr[0] "共 %s 期"
 
-#: resources/templates/archive-ars_podcast.php:35
+#: resources/templates/archive-ars_podcast.php:33
 #: resources/templates/index.php:29
 #: resources/templates/index.php:44
 msgid "All"
 msgstr "全部"
 
 #. translators: %s: "All episodes", a category or a topic.
-#: resources/templates/archive-ars_podcast.php:48
+#: resources/templates/archive-ars_podcast.php:46
 #, php-format
 msgid "Episodes: %s"
 msgstr "节目归档：%s"
 
-#: resources/templates/archive-ars_podcast.php:53
+#: resources/templates/archive-ars_podcast.php:51
 #: resources/templates/single-ars_podcast.php:65
 msgid "Topics"
 msgstr "栏目"
 
-#: resources/templates/archive-ars_podcast.php:70
+#: resources/templates/archive-ars_podcast.php:68
 msgid "No episodes match these filters."
 msgstr "没有符合条件的节目"
 
@@ -326,13 +326,13 @@ msgid "Author"
 msgstr "作者"
 
 #: resources/templates/author.php:57
-#: resources/templates/page-about.php:89
+#: resources/templates/page-about.php:91
 #: resources/templates/single-ars_podcast.php:106
 msgid "Hosts"
 msgstr "主播"
 
 #: resources/templates/author.php:57
-#: resources/templates/page-about.php:89
+#: resources/templates/page-about.php:91
 msgid "Authors"
 msgstr "作者"
 
@@ -349,7 +349,7 @@ msgstr "收藏"
 #: resources/templates/cards/episode.php:35
 #: resources/templates/layouts/footer.php:63
 #: resources/templates/layouts/footer.php:64
-#: resources/templates/layouts/header.php:87
+#: resources/templates/layouts/header.php:123
 msgid "Listen"
 msgstr "收听"
 
@@ -651,6 +651,8 @@ msgid "New post"
 msgstr "最新文章"
 
 #: resources/templates/layouts/header.php:60
+#: resources/templates/layouts/header.php:114
+#: resources/templates/layouts/header.php:117
 msgid "Main menu"
 msgstr "主导航"
 
@@ -674,7 +676,8 @@ msgstr "切换配色"
 msgid "Listen in a podcast app"
 msgstr "在播客应用中收听"
 
-#: resources/templates/layouts/header.php:83
+#: resources/templates/layouts/header.php:84
+#: resources/templates/layouts/header.php:111
 msgid "Open menu"
 msgstr "打开菜单"
 
@@ -686,19 +689,23 @@ msgstr "搜索节目和文章…"
 msgid "Search posts…"
 msgstr "搜索文章…"
 
-#: resources/templates/layouts/header.php:105
+#: resources/templates/layouts/header.php:99
 msgid "See all results"
 msgstr "查看全部结果"
 
-#: resources/templates/layouts/header.php:107
+#: resources/templates/layouts/header.php:101
 msgid "Nothing found. Press Enter for a full search."
 msgstr "没有找到，按回车查看完整搜索结果。"
 
-#: resources/templates/layouts/header.php:108
+#: resources/templates/layouts/header.php:102
 msgid "Type to search"
 msgstr "输入关键词开始搜索"
 
-#: resources/templates/layouts/header.php:111
+#: resources/templates/layouts/header.php:105
+#: resources/templates/layouts/header.php:113
+#: resources/templates/layouts/header.php:118
+#: resources/templates/parts/sidebar-start.php:21
+#: resources/templates/parts/sidebar-start.php:25
 msgid "Close"
 msgstr "关闭"
 
@@ -717,25 +724,25 @@ msgid_plural "plays"
 msgstr[0] "次收听"
 
 #. translators: %s: site name.
-#: resources/templates/page-about.php:47
+#: resources/templates/page-about.php:49
 #, php-format
 msgid "About %s"
 msgstr "关于%s"
 
-#: resources/templates/page-about.php:55
+#: resources/templates/page-about.php:57
 msgid "Start with the latest"
 msgstr "从最新一期听起"
 
-#: resources/templates/page-about.php:57
+#: resources/templates/page-about.php:59
 msgid "Browse all episodes"
 msgstr "浏览全部节目"
 
-#: resources/templates/page-about.php:71
+#: resources/templates/page-about.php:73
 msgid "The show in numbers"
 msgstr "节目数据"
 
 #. translators: %s: page title.
-#: resources/templates/page.php:26
+#: resources/templates/page.php:28
 #, php-format
 msgid "Page: %s"
 msgstr "页面：%s"
@@ -998,3 +1005,12 @@ msgstr "查看全部"
 #: resources/templates/front/hero.php:65
 msgid "Play"
 msgstr "播放"
+
+#: resources/templates/parts/sidebar-start.php:18
+#: resources/templates/parts/sidebar-start.php:19
+msgid "Open sidebar"
+msgstr "打开侧边栏"
+
+#: resources/templates/parts/sidebar-start.php:24
+msgid "Sidebar"
+msgstr "侧边栏"

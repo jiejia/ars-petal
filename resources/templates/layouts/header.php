@@ -79,15 +79,9 @@ $schedule = Podcast::schedule();
         </ul>
       </div>
 
-      <div class="dropdown dropdown-end lg:hidden">
-        <div tabindex="0" role="button" class="btn-plain size-10 rounded-xl" aria-label="<?php esc_attr_e('Open menu', 'ars-petal'); ?>"><?php Icon::render('menu', 'size-5'); ?></div>
-        <ul id="petal-nav-mobile" data-swup-sync tabindex="0" class="dropdown-content menu z-50 mt-2 max-h-[70vh] w-64 flex-nowrap overflow-y-auto rounded-box border border-base-300 bg-base-100 p-2 shadow-xl">
-          <?php Template::render('parts/nav-mobile', ['items' => $menu]); ?>
-          <?php if (Podcast::isActive()) : ?>
-            <li class="menu-title mt-2"><?php esc_html_e('Listen', 'ars-petal'); ?></li>
-            <?php Template::render('parts/listen-links', ['style' => 'menu']); ?>
-          <?php endif; ?>
-        </ul>
+      <?php // Opens the menu drawer below the header (a fixed drawer inside the blurred header would be clipped to it). ?>
+      <div class="lg:hidden">
+        <label for="petal-menu" class="btn-plain size-10 cursor-pointer rounded-xl" aria-label="<?php esc_attr_e('Open menu', 'ars-petal'); ?>"><?php Icon::render('menu', 'size-5'); ?></label>
       </div>
     </div>
   </div>
@@ -111,5 +105,27 @@ $schedule = Podcast::schedule();
     <form method="dialog" class="modal-backdrop"><button><?php esc_html_e('Close', 'ars-petal'); ?></button></form>
   </dialog>
 </header>
+
+<?php // Small screens: the main menu in a daisyUI drawer from the right (https://daisyui.com/components/drawer/), above the WordPress admin bar (z-index 99999). ?>
+<div class="drawer drawer-end lg:hidden">
+  <input id="petal-menu" type="checkbox" class="drawer-toggle" aria-label="<?php esc_attr_e('Open menu', 'ars-petal'); ?>" x-data @keydown.escape.window="$el.checked = false">
+  <div class="drawer-side z-[100001]" x-data @click="if ($event.target.closest('a')) document.getElementById('petal-menu').checked = false">
+    <label for="petal-menu" class="drawer-overlay" aria-label="<?php esc_attr_e('Close', 'ars-petal'); ?>"></label>
+    <nav class="flex min-h-full w-72 max-w-[85vw] flex-col bg-base-100 p-4" aria-label="<?php esc_attr_e('Main menu', 'ars-petal'); ?>">
+      <?php // The name of the menu assigned to the header location; "Main menu" for the fallback menu. ?>
+      <div class="mb-3 flex items-center justify-between gap-3 pl-2">
+        <h2 class="display truncate text-xl"><?php echo esc_html(Menu::name('primary') ?: __('Main menu', 'ars-petal')); ?></h2>
+        <label for="petal-menu" class="grid size-9 shrink-0 cursor-pointer place-items-center rounded-full hover:bg-base-200" aria-label="<?php esc_attr_e('Close', 'ars-petal'); ?>"><?php Icon::render('x', 'size-5'); ?></label>
+      </div>
+      <ul id="petal-nav-mobile" data-swup-sync class="menu w-full flex-nowrap p-0 text-base">
+        <?php Template::render('parts/nav-mobile', ['items' => $menu]); ?>
+        <?php if (Podcast::isActive()) : ?>
+          <li class="menu-title mt-3"><?php esc_html_e('Listen', 'ars-petal'); ?></li>
+          <?php Template::render('parts/listen-links', ['style' => 'menu']); ?>
+        <?php endif; ?>
+      </ul>
+    </nav>
+  </div>
+</div>
 
 <main id="swup" class="transition-lift mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:pt-8">

@@ -35,6 +35,20 @@ final class Menu
     }
 
     /**
+     * The name of the menu assigned to a location, or '' when none is assigned.
+     *
+     * @param string $location Menu location.
+     * @return string
+     */
+    public static function name(string $location): string
+    {
+        $locations = get_nav_menu_locations();
+        $menu = isset($locations[$location]) ? wp_get_nav_menu_object($locations[$location]) : false;
+
+        return $menu instanceof \WP_Term ? $menu->name : '';
+    }
+
+    /**
      * The items of a menu location as a tree, or the fallback menu.
      *
      * @param string $location Menu location.

@@ -34,8 +34,8 @@ if ($items === []) : ?>
 endif;
 ?>
 <aside class="panel-sm min-w-0 p-3 lg:p-4" aria-label="<?php echo esc_attr($title); ?>">
-  <h2 class="display text-xl <?php echo $wrap ? 'px-1 lg:px-0' : 'hidden lg:block'; ?>"><?php echo esc_html($title); ?></h2>
-  <ul class="<?php echo $wrap ? 'mt-3 flex flex-col gap-1.5' : 'flex flex-col gap-1.5 lg:mt-3'; ?>">
+  <h2 class="display text-xl <?php echo $wrap ? 'px-1 lg:px-0' : ''; ?>"><?php echo esc_html($title); ?></h2>
+  <ul class="mt-3 flex flex-col gap-1.5">
     <?php foreach ($items as $item) :
         $current = ! empty($item['current']);
         ?>

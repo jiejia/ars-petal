@@ -43,11 +43,12 @@ foreach (Archive::sorts() as $value => $label) {
 }
 
 $heading = $current !== '' ? (get_term_by('slug', $current, 'post_tag')->name ?? $current) : ($category ? $category->name : __('All episodes', 'ars-petal'));
-$title = sprintf(/* translators: %s: "All episodes", a category or a topic. */ __('Episodes: %s', 'ars-petal'), $heading);
+// The whole archive is just "All episodes"; a category or tag gets the "Episodes: …" prefix.
+$title = $current === '' && $category === null ? $heading : sprintf(/* translators: %s: a category or a tag. */ __('Episodes: %s', 'ars-petal'), $heading);
 ?>
 <section x-data="listView('episodes', 'list')" :data-view="view" data-view="list">
-  <div class="mt-2 grid grid-cols-1 gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-start lg:gap-8">
-    <div class="min-w-0 space-y-3 lg:sticky lg:top-[5.5rem] lg:max-h-[calc(100vh-12rem)] lg:overflow-y-auto lg:[scrollbar-width:none]">
+  <div class="mt-2 drawer lg:drawer-open lg:items-start lg:gap-8">
+    <?php Template::render('parts/sidebar-start', ['class' => 'lg:top-[5.5rem] lg:max-h-[calc(100vh-12rem)] lg:[scrollbar-width:none]']); ?>
       <?php Template::render('parts/side-list', ['title' => __('Topics', 'ars-petal'), 'items' => $topics]); ?>
       <?php
       Template::render('parts/tags', [
@@ -56,9 +57,9 @@ $title = sprintf(/* translators: %s: "All episodes", a category or a topic. */ _
           'current' => $current,
       ]);
       ?>
-    </div>
+    <?php Template::render('parts/sidebar-end'); ?>
 
-    <div class="min-w-0">
+    <div class="drawer-content">
       <?php Template::render('parts/title-bar', ['title' => $title, 'sorts' => $sorts]); ?>
 
       <?php if (have_posts()) : ?>

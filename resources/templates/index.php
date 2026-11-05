@@ -65,11 +65,11 @@ $tags = is_search() ? [] : get_tags(['orderby' => 'count', 'order' => 'DESC', 'n
 $description = Archive::description();
 ?>
 <section x-data="listView('posts', 'list')" :data-view="view" data-view="list">
-  <div class="mt-2 grid grid-cols-1 gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-start lg:gap-8">
-    <div class="min-w-0 space-y-3 lg:sticky lg:top-[5.5rem]">
+  <div class="mt-2 drawer lg:drawer-open lg:items-start lg:gap-8">
+    <?php Template::render('parts/sidebar-start', ['class' => 'lg:top-[5.5rem]']); ?>
       <?php if (is_search()) : ?>
         <aside class="panel-sm p-3 lg:p-4" aria-label="<?php esc_attr_e('Search', 'ars-petal'); ?>">
-          <h2 class="display hidden text-xl lg:block"><?php esc_html_e('Search', 'ars-petal'); ?></h2>
+          <h2 class="display mb-3 text-xl"><?php esc_html_e('Search', 'ars-petal'); ?></h2>
           <?php get_search_form(); ?>
         </aside>
         <?php Template::render('parts/side-list', ['title' => __('Type', 'ars-petal'), 'items' => $types]); ?>
@@ -77,9 +77,9 @@ $description = Archive::description();
         <?php Template::render('parts/side-list', ['title' => __('Categories', 'ars-petal'), 'items' => $items]); ?>
         <?php Template::render('parts/tags', ['terms' => is_array($tags) ? $tags : [], 'current' => is_tag() ? (string) get_query_var('tag') : '']); ?>
       <?php endif; ?>
-    </div>
+    <?php Template::render('parts/sidebar-end'); ?>
 
-    <div class="min-w-0">
+    <div class="drawer-content">
       <?php Template::render('parts/title-bar', ['title' => $title, 'count' => $count]); ?>
       <?php if ($description !== '') : ?>
         <p class="mute mt-4 px-3"><?php echo esc_html($description); ?></p>

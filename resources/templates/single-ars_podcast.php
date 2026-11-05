@@ -48,8 +48,8 @@ while (have_posts()) :
     ];
     ?>
 <article x-data="episodePage(<?php echo (int) $episode->id(); ?>)" <?php post_class(); ?>>
-  <div class="mt-2 grid grid-cols-1 items-start gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-8">
-    <div class="order-2 min-w-0 space-y-3 lg:sticky lg:top-24 lg:order-1">
+  <div class="mt-2 drawer lg:drawer-open lg:items-start lg:gap-8">
+    <?php Template::render('parts/sidebar-start', ['class' => 'lg:top-24']); ?>
       <aside class="panel-sm p-4 lg:p-5" aria-label="<?php esc_attr_e('More episodes', 'ars-petal'); ?>">
         <h2 class="display text-xl"><?php esc_html_e('More episodes', 'ars-petal'); ?></h2>
         <?php if ($more !== []) : ?>
@@ -63,13 +63,13 @@ while (have_posts()) :
         <?php endif; ?>
       </aside>
       <?php Template::render('parts/side-list', ['title' => __('Topics', 'ars-petal'), 'items' => $topics, 'wrap' => true, 'empty' => __('No topics yet.', 'ars-petal')]); ?>
-    </div>
+    <?php Template::render('parts/sidebar-end'); ?>
 
-    <div class="order-1 min-w-0 lg:order-2">
+    <div class="drawer-content">
       <header class="petal-item panel p-4 sm:p-5">
         <div class="flex flex-col gap-5 sm:flex-row sm:gap-6">
           <?php Template::render('parts/cover', ['url' => $episode->cover('large'), 'alt' => sprintf(/* translators: %s: episode number. */ __('EP.%s cover', 'ars-petal'), $episode->number()), 'class' => 'aspect-[4/3] w-full shrink-0 self-start rounded-2xl object-cover sm:w-56', 'lazy' => false]); ?>
-          <div class="flex min-w-0 flex-1 flex-col">
+          <div class="flex min-w-0 flex-1 flex-col text-center sm:text-left">
             <p class="mute text-sm">
               <?php if ($tag) : ?>
                 <a href="<?php echo esc_url(Podcast::tagUrl($tag)); ?>" class="hover:text-base-content"><?php echo esc_html($tag->name); ?></a><?php echo wp_kses_post($separator); ?>
@@ -85,8 +85,8 @@ while (have_posts()) :
               <?php // Only a hand-written excerpt: the automatic one repeats the summary tab below. ?>
               <p class="mute mt-2 line-clamp-2 leading-relaxed"><?php echo esc_html(get_the_excerpt()); ?></p>
             <?php endif; ?>
-            <div class="mt-auto flex flex-wrap items-center gap-3 pt-4">
-              <?php Template::render('parts/play-button', ['episode' => $episode, 'class' => 'btn-black h-12 rounded-full px-7 text-sm', 'icon' => 'size-4', 'label' => true]); ?>
+            <div class="mt-auto flex flex-wrap items-center justify-center gap-3 pt-4 sm:justify-start">
+              <?php Template::render('parts/play-button', ['episode' => $episode, 'class' => 'btn-black size-12 shrink-0 rounded-full px-0 text-sm sm:w-auto sm:px-7', 'icon' => 'size-4', 'label' => true, 'labelClass' => 'hidden sm:contents']); ?>
               <div class="flex items-center gap-1 rounded-full bg-base-200 p-1">
                 <?php Template::render('parts/share'); ?>
                 <?php if ($playable) : ?>
@@ -109,7 +109,7 @@ while (have_posts()) :
       <?php endif; ?>
 
       <div class="panel mt-4 p-4 sm:p-8">
-        <div role="tablist" class="mb-6 flex w-fit max-w-full overflow-x-auto rounded-full bg-base-200 p-1">
+        <div role="tablist" class="mx-auto mb-6 flex w-fit max-w-full overflow-x-auto rounded-full bg-base-200 p-1 sm:mx-0">
           <?php foreach ($tabs as $key => $label) : ?>
             <button type="button" role="tab" class="shrink-0 rounded-full px-5 py-2.5 text-sm font-medium transition" :class="tab === '<?php echo esc_js($key); ?>' ? 'bg-primary text-primary-content' : 'hover:bg-base-300'" :aria-selected="tab === '<?php echo esc_js($key); ?>'" @click="tab = '<?php echo esc_js($key); ?>'"><?php echo esc_html($label); ?></button>
           <?php endforeach; ?>

@@ -18,6 +18,6 @@ if ($hosts === [] && $guests === []) {
 }
 ?>
 <section class="mt-16 grid gap-5 sm:grid-cols-2" aria-label="<?php esc_attr_e('Hosts and guests', 'ars-petal'); ?>">
-  <?php Template::render('parts/people', ['title' => _x('Host', 'home heading, bold part', 'ars-petal'), 'light' => _x('lineup', 'home heading, light part', 'ars-petal'), 'users' => $hosts, 'class' => 'px-8 py-7', 'heading' => 'text-2xl sm:text-3xl', 'size' => 'size-12', 'letter' => 'text-lg', 'overlap' => '-ml-3']); ?>
-  <?php Template::render('parts/people', ['title' => _x('Guest', 'home heading, bold part', 'ars-petal'), 'light' => _x('appearances', 'home heading, light part', 'ars-petal'), 'users' => $guests, 'class' => 'px-8 py-7', 'heading' => 'text-2xl sm:text-3xl', 'size' => 'size-12', 'letter' => 'text-lg', 'overlap' => '-ml-3']); ?>
+  <?php Template::render('parts/people', ['title' => _x('Host', 'home heading, bold part', 'ars-petal'), 'light' => _x('lineup', 'home heading, light part', 'ars-petal'), 'users' => $hosts, 'class' => 'px-8 py-7', 'heading' => 'text-2xl sm:text-3xl', 'size' => 'size-12', 'letter' => 'text-lg', 'overlap' => '-ml-6', 'lightClass' => 'sm:max-lg:hidden']); ?>
+  <?php Template::render('parts/people', ['title' => _x('Guest', 'home heading, bold part', 'ars-petal'), 'light' => _x('appearances', 'home heading, light part', 'ars-petal'), 'users' => $guests, 'class' => 'px-8 py-7', 'heading' => 'text-2xl sm:text-3xl', 'size' => 'size-12', 'letter' => 'text-lg', 'overlap' => '-ml-6', 'lightClass' => 'sm:max-lg:hidden']); ?>
 </section>

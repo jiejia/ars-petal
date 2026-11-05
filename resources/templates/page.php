@@ -17,11 +17,13 @@ while (have_posts()) :
     the_post();
     $sidebar = Template::capture('parts/pages-sidebar');
     ?>
-<article <?php post_class('mt-2 grid grid-cols-1 gap-6 lg:items-start lg:gap-8' . ($sidebar !== '' ? ' lg:grid-cols-[18rem_minmax(0,1fr)]' : '')); ?>>
+<article <?php post_class('mt-2 ' . ($sidebar !== '' ? 'drawer lg:drawer-open lg:items-start lg:gap-8' : 'grid grid-cols-1')); ?>>
   <?php if ($sidebar !== '') : ?>
-    <div class="min-w-0 lg:sticky lg:top-[5.5rem]"><?php echo $sidebar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the partial. ?></div>
+    <?php Template::render('parts/sidebar-start', ['class' => 'lg:top-[5.5rem]']); ?>
+      <?php echo $sidebar; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in the partial. ?>
+    <?php Template::render('parts/sidebar-end'); ?>
   <?php endif; ?>
-  <div class="min-w-0">
+  <div class="<?php echo $sidebar !== '' ? 'drawer-content' : 'min-w-0'; ?>">
     <div class="panel-sm mb-4 flex min-h-[4.5rem] items-center px-6">
       <h1 class="display min-w-0 text-lg sm:text-xl"><?php echo esc_html(sprintf(/* translators: %s: page title. */ __('Page: %s', 'ars-petal'), wp_strip_all_tags(get_the_title()))); ?></h1>
     </div>

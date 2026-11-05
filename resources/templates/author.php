@@ -52,28 +52,28 @@ $people = array_map(static fn (\WP_User $person): array => [
 ], Podcast::hosts());
 ?>
 <article>
-  <div class="mt-2 grid grid-cols-1 items-start gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-8">
-    <div class="order-2 min-w-0 space-y-3 lg:sticky lg:top-24 lg:order-1">
+  <div class="mt-2 drawer lg:drawer-open lg:items-start lg:gap-8">
+    <?php Template::render('parts/sidebar-start', ['class' => 'lg:top-24']); ?>
       <?php Template::render('parts/side-list', ['title' => Podcast::isActive() ? __('Hosts', 'ars-petal') : __('Authors', 'ars-petal'), 'items' => $people]); ?>
-    </div>
+    <?php Template::render('parts/sidebar-end'); ?>
 
-    <div class="order-1 min-w-0 lg:order-2">
+    <div class="drawer-content">
       <?php if ($user) : ?>
         <header class="panel p-4 sm:p-5">
           <div class="flex flex-col gap-5 sm:flex-row sm:gap-6">
             <?php Template::render('parts/avatar', ['user' => $user, 'class' => 'petal-avatar-lg aspect-square w-40 self-center rounded-full sm:w-44 sm:self-start', 'text' => 'text-7xl']); ?>
-            <div class="flex min-w-0 flex-1 flex-col">
+            <div class="flex min-w-0 flex-1 flex-col text-center sm:text-left">
               <p class="mute text-sm"><?php echo esc_html($role); ?></p>
               <h1 class="display mt-1.5 text-2xl sm:text-3xl"><?php echo esc_html($user->display_name); ?></h1>
               <?php if ($user->description !== '') : ?>
                 <p class="mute mt-2 leading-relaxed"><?php echo esc_html($user->description); ?></p>
               <?php endif; ?>
-              <div class="mt-auto flex flex-wrap items-center gap-2 pt-4">
+              <div class="mt-auto flex flex-wrap items-center justify-center gap-2 pt-4 sm:justify-start">
                 <?php if ($user->user_url !== '') : ?>
                   <a href="<?php echo esc_url($user->user_url); ?>" data-no-swup target="_blank" rel="noopener" class="chip"><?php Icon::render('globe', 'size-4'); ?><?php esc_html_e('Website', 'ars-petal'); ?></a>
                 <?php endif; ?>
                 <?php if ($stats !== []) : ?>
-                  <span class="mute ml-auto text-sm"><?php echo implode(' · ', $stats); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped parts above. ?></span>
+                  <span class="mute text-sm sm:ml-auto"><?php echo implode(' · ', $stats); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Built from escaped parts above. ?></span>
                 <?php endif; ?>
               </div>
             </div>
@@ -84,7 +84,7 @@ $people = array_map(static fn (\WP_User $person): array => [
       <div class="panel mt-4 p-4 sm:p-8">
         <?php if ($user && $counts[Author::EPISODES] > 0 && $counts[Author::POSTS] > 0) : ?>
           <?php // Links rather than in-page tabs: each list has its own pages. ?>
-          <nav role="tablist" class="mb-6 flex w-fit rounded-full bg-base-200 p-1" aria-label="<?php echo esc_attr($user->display_name); ?>">
+          <nav role="tablist" class="mx-auto mb-6 flex w-fit rounded-full bg-base-200 p-1 sm:mx-0" aria-label="<?php echo esc_attr($user->display_name); ?>">
             <?php foreach ($labels as $key => $label) : ?>
               <a href="<?php echo esc_url(Author::tabUrl($user, $key)); ?>" role="tab" class="rounded-full px-5 py-2.5 text-sm font-medium transition <?php echo $tab === $key ? 'bg-primary text-primary-content' : 'hover:bg-base-300'; ?>" aria-selected="<?php echo $tab === $key ? 'true' : 'false'; ?>"><?php echo esc_html($label); ?> <span class="opacity-60"><?php echo esc_html(number_format_i18n($counts[$key])); ?></span></a>
             <?php endforeach; ?>

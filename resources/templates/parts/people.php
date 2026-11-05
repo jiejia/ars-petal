@@ -6,11 +6,12 @@
  * @var string $title Heading.
  * @var array<int,\WP_User> $users Users.
  * @var string $light Optional light second part of the title, as in the two-weight home headings.
+ * @var string $lightClass Classes for the light part, e.g. to hide it where the card is narrow.
  * @var string $class Card padding classes.
  * @var string $heading Heading size classes.
  * @var string $size Avatar size classes.
  * @var string $letter Letter size of avatars without a picture.
- * @var string $overlap Negative margin that overlaps neighbouring avatars.
+ * @var string $overlap Negative margin that overlaps neighbouring avatars (half an avatar).
  * @package ArsPetal
  */
 
@@ -23,15 +24,18 @@ if ($users === []) {
 }
 
 $light ??= '';
+$lightClass ??= '';
+// "Host lineup" needs a space between the parts, "主播阵容" does not (as in front/heading).
+$space = preg_match('/[\p{Han}\p{Hiragana}\p{Katakana}\p{Hangul}\p{P}\s]$/u', $title) ? '' : ' ';
 $class ??= 'px-5 py-4';
 $heading ??= 'text-base';
 $size ??= 'size-11';
 $letter ??= 'text-base';
-$overlap ??= '-ml-3';
+$overlap ??= '-ml-5.5';
 ?>
 <section class="panel-sm flex items-center justify-between gap-4 <?php echo esc_attr($class); ?>" aria-label="<?php echo esc_attr($title . $light); ?>">
   <?php if ($light !== '') : ?>
-    <h2 class="<?php echo esc_attr($heading); ?>"><span class="display !font-black"><?php echo esc_html($title); ?></span><span class="display-light"><?php echo esc_html($light); ?></span></h2>
+    <h2 class="<?php echo esc_attr($heading); ?>"><span class="display !font-black"><?php echo esc_html($title); ?></span><span class="display-light <?php echo esc_attr($lightClass); ?>"><?php echo esc_html($space . $light); ?></span></h2>
   <?php else : ?>
     <h2 class="display <?php echo esc_attr($heading); ?>"><?php echo esc_html($title); ?></h2>
   <?php endif; ?>

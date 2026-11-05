@@ -37,9 +37,9 @@ while (have_posts()) :
     $separator = '<span class="mx-1 opacity-40">/</span>';
     ?>
 <article <?php post_class(); ?>>
-  <div class="mt-2 grid grid-cols-1 items-start gap-6 <?php echo $isPost ? 'lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-8' : ''; ?>">
+  <div class="mt-2 <?php echo $isPost ? 'drawer lg:drawer-open lg:items-start lg:gap-8' : 'grid grid-cols-1'; ?>">
     <?php if ($isPost) : ?>
-      <div class="order-2 min-w-0 space-y-3 lg:sticky lg:top-24 lg:order-1">
+      <?php Template::render('parts/sidebar-start', ['class' => 'lg:top-24']); ?>
         <?php if ($latest !== []) : ?>
           <aside class="panel-sm p-4 lg:p-5" aria-label="<?php esc_attr_e('Latest posts', 'ars-petal'); ?>">
             <h2 class="display text-xl"><?php esc_html_e('Latest posts', 'ars-petal'); ?></h2>
@@ -51,16 +51,16 @@ while (have_posts()) :
           </aside>
         <?php endif; ?>
         <?php Template::render('parts/side-list', ['title' => __('Categories', 'ars-petal'), 'items' => $topics, 'wrap' => true]); ?>
-      </div>
+      <?php Template::render('parts/sidebar-end'); ?>
     <?php endif; ?>
 
-    <div class="order-1 min-w-0 lg:order-2">
+    <div class="<?php echo $isPost ? 'drawer-content' : 'min-w-0'; ?>">
       <header class="panel p-4 sm:p-5">
         <div class="flex flex-col gap-5 sm:flex-row sm:gap-6">
           <?php if ($image !== '') : ?>
             <?php Template::render('parts/cover', ['url' => $image, 'alt' => '', 'class' => 'aspect-[4/3] w-full shrink-0 self-start rounded-2xl object-cover sm:w-56', 'lazy' => false]); ?>
           <?php endif; ?>
-          <div class="flex min-w-0 flex-1 flex-col <?php echo $image !== '' ? '' : 'p-1 sm:p-3'; ?>">
+          <div class="flex min-w-0 flex-1 flex-col text-center sm:text-left <?php echo $image !== '' ? '' : 'p-1 sm:p-3'; ?>">
             <p class="mute text-sm">
               <?php if ($categories !== []) : ?>
                 <a href="<?php echo esc_url(get_category_link($categories[0])); ?>" class="hover:text-base-content"><?php echo esc_html($categories[0]->name); ?></a><?php echo wp_kses_post($separator); ?>
@@ -71,7 +71,7 @@ while (have_posts()) :
             <?php if (has_excerpt()) : ?>
               <p class="mute mt-2 line-clamp-2 leading-relaxed"><?php echo esc_html(get_the_excerpt()); ?></p>
             <?php endif; ?>
-            <div class="mt-auto flex flex-wrap items-center gap-3 pt-4">
+            <div class="mt-auto flex flex-wrap items-center justify-center gap-3 pt-4 sm:justify-start">
               <?php if ($author) : ?>
                 <a href="<?php echo esc_url(get_author_posts_url($author->ID)); ?>" class="group flex items-center gap-3">
                   <?php Template::render('parts/avatar', ['user' => $author, 'class' => 'size-10 rounded-full', 'text' => 'text-base']); ?>
@@ -83,7 +83,7 @@ while (have_posts()) :
                   </span>
                 </a>
               <?php endif; ?>
-              <div class="ml-auto rounded-full bg-base-200 p-1"><?php Template::render('parts/share'); ?></div>
+              <div class="rounded-full bg-base-200 p-1 sm:ml-auto"><?php Template::render('parts/share'); ?></div>
             </div>
           </div>
         </div>
