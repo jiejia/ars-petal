@@ -30,15 +30,26 @@ jobs:
       - name: Build assets
         run: npm run build
 
+      # The assignment on its own line makes a failing bin/package.sh fail the step,
+      # which `echo "zip=$(...)"` would hide.
       - name: Package the theme
         id: package
-        run: echo "zip=$(bash bin/package.sh "$GITHUB_REF_NAME")" >> "$GITHUB_OUTPUT"
+        run: |
+          zip="$(bash bin/package.sh "$GITHUB_REF_NAME")"
+          test -s "$zip"
+          unzip -l "$zip" | tail -1
+          echo "zip=$zip" >> "$GITHUB_OUTPUT"
 
-      - name: Keep the ZIP as a workflow artifact
+      # GitHub always zips an artifact. Uploading the build/ars-petal folder (not the ZIP) makes the
+      # download, ars-petal.zip, an installable theme with ars-petal/ at its root, not a ZIP inside a ZIP.
+      - name: Keep the theme as a workflow artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ars-petal-${{ github.ref_name }}
-          path: ${{ steps.package.outputs.zip }}
+          name: ars-petal
+          path: |
+            build/
+            !build/*.zip
+          if-no-files-found: error
 
       - name: Publish the GitHub release
         env:
@@ -50,3 +61,5 @@ jobs:
           else
             gh release create "$GITHUB_REF_NAME" "$ZIP" --title "ARS Petal $GITHUB_REF_NAME" --generate-notes --verify-tag
           fi
+          url="$(gh release view "$GITHUB_REF_NAME" --json url --jq .url)"
+          echo "Theme ZIP $(basename "$ZIP") is attached to $url" >> "$GITHUB_STEP_SUMMARY"
