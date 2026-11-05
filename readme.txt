@@ -27,7 +27,7 @@ With the A Ripple Song plugin it becomes a podcast site (featured episodes, epis
 
 = Where are the theme options? =
 
-Go to Appearance > Customize > Petal. There you can set the default color scheme, the home page headline and statement, the newsletter form and the footer text.
+Go to Appearance > Customize > Petal. There you can set the default color scheme, the home page headline, the newsletter form and the footer text.
 
 = How do I build the assets? =
 
