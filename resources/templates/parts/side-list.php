@@ -7,6 +7,7 @@
  * @var string $title Card heading.
  * @var array<int,array{label:string,meta?:string,url:string,current?:bool,image?:string,icon?:string,tile?:string,user?:\WP_User}> $items Entries.
  * @var bool $wrap Whether the entries stay in a column on small screens too (e.g. under the main content).
+ * @var string $empty Note shown in the card when there are no entries; without it the card is left out.
  * @package ArsPetal
  */
 
@@ -15,11 +16,22 @@ defined('ABSPATH') || exit;
 use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 
-if ($items === []) {
+$empty ??= '';
+
+if ($items === [] && $empty === '') {
     return;
 }
 
 $wrap ??= false;
+
+if ($items === []) : ?>
+<aside class="panel-sm min-w-0 p-3 lg:p-4" aria-label="<?php echo esc_attr($title); ?>">
+  <h2 class="display px-1 text-xl lg:px-0"><?php echo esc_html($title); ?></h2>
+  <p class="mute mt-3 rounded-2xl border-2 border-dashed border-base-content/15 px-4 py-6 text-center text-sm"><?php echo esc_html($empty); ?></p>
+</aside>
+<?php
+    return;
+endif;
 ?>
 <aside class="panel-sm min-w-0 p-3 lg:p-4" aria-label="<?php echo esc_attr($title); ?>">
   <h2 class="display text-xl <?php echo $wrap ? 'px-1 lg:px-0' : 'hidden lg:block'; ?>"><?php echo esc_html($title); ?></h2>

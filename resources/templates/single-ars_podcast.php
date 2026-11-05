@@ -1,6 +1,6 @@
 <?php
 /**
- * Episode page (A Ripple Song). Left sidebar: more episodes and the topics. Main column: the episode card
+ * Episode page (A Ripple Song). Left sidebar: more episodes and the episode categories. Main column: the episode card
  * (cover, meta line, title, excerpt, play and an action pill with share / favorite / download), the hosts
  * and guests, a card with the summary / chapters / transcript tabs and the tags, the previous / next
  * episode and the comments.
@@ -26,18 +26,20 @@ while (have_posts()) :
     $tag = $episode->tag();
     $playable = $episode->playable();
     $more = array_map(static fn (\WP_Post $post): Episode => new Episode($post), get_posts(['post_type' => Podcast::POST_TYPE, 'numberposts' => 4, 'post__not_in' => [$episode->id()]]));
-    $topics = array_map(static function (array $item) use ($tag): array {
+    $inCategories = wp_get_post_terms($episode->id(), Podcast::CATEGORY, ['fields' => 'ids']);
+    $inCategories = is_array($inCategories) ? array_map('intval', $inCategories) : [];
+    $topics = array_map(static function (array $item) use ($inCategories): array {
         $count = (int) $item['count'];
 
         return [
             'label' => $item['term']->name,
             /* translators: %s: number of episodes. */
             'meta' => sprintf(_n('%s episode', '%s episodes', $count, 'ars-petal'), number_format_i18n($count)),
-            'url' => Podcast::tagUrl($item['term']),
-            'current' => $tag && $tag->term_id === $item['term']->term_id,
-            'image' => Topics::image($item['term']),
+            'url' => Podcast::categoryUrl($item['term']),
+            'current' => in_array($item['term']->term_id, $inCategories, true),
+            'image' => Podcast::categoryImage($item['term']) ?: Topics::image($item['term']),
         ];
-    }, array_slice(Podcast::tags(), 0, 6));
+    }, array_slice(Podcast::categories(), 0, 8));
     $separator = '<span class="mx-1 opacity-40">/</span>';
     $tabs = [
         'notes' => __('Summary', 'ars-petal'),
@@ -48,17 +50,19 @@ while (have_posts()) :
 <article x-data="episodePage(<?php echo (int) $episode->id(); ?>)" <?php post_class(); ?>>
   <div class="mt-2 grid grid-cols-1 items-start gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-8">
     <div class="order-2 min-w-0 space-y-3 lg:sticky lg:top-24 lg:order-1">
-      <?php if ($more !== []) : ?>
-        <aside class="panel-sm p-4 lg:p-5" aria-label="<?php esc_attr_e('More episodes', 'ars-petal'); ?>">
-          <h2 class="display text-xl"><?php esc_html_e('More episodes', 'ars-petal'); ?></h2>
+      <aside class="panel-sm p-4 lg:p-5" aria-label="<?php esc_attr_e('More episodes', 'ars-petal'); ?>">
+        <h2 class="display text-xl"><?php esc_html_e('More episodes', 'ars-petal'); ?></h2>
+        <?php if ($more !== []) : ?>
           <ol class="mt-4 space-y-2">
             <?php foreach ($more as $item) : ?>
               <?php Template::render('cards/episode-row', ['episode' => $item, 'compact' => true]); ?>
             <?php endforeach; ?>
           </ol>
-        </aside>
-      <?php endif; ?>
-      <?php Template::render('parts/side-list', ['title' => __('Topics', 'ars-petal'), 'items' => $topics, 'wrap' => true]); ?>
+        <?php else : ?>
+          <p class="mute mt-4 rounded-2xl border-2 border-dashed border-base-content/15 px-4 py-6 text-center text-sm"><?php esc_html_e('No other episodes yet.', 'ars-petal'); ?></p>
+        <?php endif; ?>
+      </aside>
+      <?php Template::render('parts/side-list', ['title' => __('Topics', 'ars-petal'), 'items' => $topics, 'wrap' => true, 'empty' => __('No topics yet.', 'ars-petal')]); ?>
     </div>
 
     <div class="order-1 min-w-0 lg:order-2">

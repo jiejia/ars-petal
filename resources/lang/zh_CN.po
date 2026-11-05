@@ -291,7 +291,7 @@ msgid "Episodes: %s"
 msgstr "节目归档：%s"
 
 #: resources/templates/archive-ars_podcast.php:53
-#: resources/templates/single-ars_podcast.php:61
+#: resources/templates/single-ars_podcast.php:63
 msgid "Topics"
 msgstr "栏目"
 
@@ -328,7 +328,7 @@ msgstr "作者"
 
 #: resources/templates/author.php:57
 #: resources/templates/page-about.php:89
-#: resources/templates/single-ars_podcast.php:102
+#: resources/templates/single-ars_podcast.php:104
 msgid "Hosts"
 msgstr "主播"
 
@@ -343,14 +343,14 @@ msgid "Nothing has been published here yet."
 msgstr "这里还没有发布内容。"
 
 #: resources/templates/cards/episode-row.php:54
-#: resources/templates/single-ars_podcast.php:89
+#: resources/templates/single-ars_podcast.php:91
 msgid "Favorite"
 msgstr "收藏"
 
 #: resources/templates/cards/episode.php:35
 #: resources/templates/layouts/footer.php:63
 #: resources/templates/layouts/footer.php:64
-#: resources/templates/layouts/header.php:91
+#: resources/templates/layouts/header.php:87
 msgid "Listen"
 msgstr "收听"
 
@@ -581,7 +581,7 @@ msgid "E-mail address"
 msgstr "邮箱地址"
 
 #: resources/templates/front/subscribe.php:40
-#: resources/templates/layouts/header.php:79
+#: resources/templates/layouts/header.php:75
 msgid "Subscribe"
 msgstr "订阅"
 
@@ -611,8 +611,8 @@ msgstr "分类"
 #: resources/templates/index.php:36
 #: resources/templates/index.php:71
 #: resources/templates/index.php:72
-#: resources/templates/layouts/header.php:69
-#: resources/templates/layouts/header.php:72
+#: resources/templates/layouts/header.php:65
+#: resources/templates/layouts/header.php:68
 #: searchform.php:21
 #: searchform.php:26
 #: searchform.php:36
@@ -645,7 +645,7 @@ msgid "Browse"
 msgstr "浏览"
 
 #: resources/templates/layouts/footer.php:64
-#: resources/templates/layouts/header.php:81
+#: resources/templates/layouts/header.php:77
 msgid "Follow"
 msgstr "关注"
 
@@ -665,35 +665,31 @@ msgstr "本周新一期"
 msgid "New post"
 msgstr "最新文章"
 
-#: resources/templates/layouts/header.php:61
-msgid "Latest episode"
-msgstr "最新一期"
-
-#: resources/templates/layouts/header.php:64
+#: resources/templates/layouts/header.php:60
 msgid "Main menu"
 msgstr "主导航"
 
-#: resources/templates/layouts/header.php:70
+#: resources/templates/layouts/header.php:66
 msgid "Search…"
 msgstr "搜索…"
 
-#: resources/templates/layouts/header.php:73
+#: resources/templates/layouts/header.php:69
 msgid "Switch to day mode"
 msgstr "切换到日间模式"
 
-#: resources/templates/layouts/header.php:73
+#: resources/templates/layouts/header.php:69
 msgid "Switch to night mode"
 msgstr "切换到夜间模式"
 
-#: resources/templates/layouts/header.php:73
+#: resources/templates/layouts/header.php:69
 msgid "Switch color scheme"
 msgstr "切换配色"
 
-#: resources/templates/layouts/header.php:81
+#: resources/templates/layouts/header.php:77
 msgid "Listen in a podcast app"
 msgstr "在播客应用中收听"
 
-#: resources/templates/layouts/header.php:87
+#: resources/templates/layouts/header.php:83
 msgid "Open menu"
 msgstr "打开菜单"
 
@@ -705,19 +701,19 @@ msgstr "搜索节目和文章…"
 msgid "Search posts…"
 msgstr "搜索文章…"
 
-#: resources/templates/layouts/header.php:109
+#: resources/templates/layouts/header.php:105
 msgid "See all results"
 msgstr "查看全部结果"
 
-#: resources/templates/layouts/header.php:111
+#: resources/templates/layouts/header.php:107
 msgid "Nothing found. Press Enter for a full search."
 msgstr "没有找到，按回车查看完整搜索结果。"
 
-#: resources/templates/layouts/header.php:112
+#: resources/templates/layouts/header.php:108
 msgid "Type to search"
 msgstr "输入关键词开始搜索"
 
-#: resources/templates/layouts/header.php:115
+#: resources/templates/layouts/header.php:111
 msgid "Close"
 msgstr "关闭"
 
@@ -870,47 +866,47 @@ msgstr "章节"
 msgid "Transcript"
 msgstr "文字稿"
 
+#: resources/templates/single-ars_podcast.php:51
 #: resources/templates/single-ars_podcast.php:52
-#: resources/templates/single-ars_podcast.php:53
 msgid "More episodes"
 msgstr "更多节目"
 
 #. translators: %s: episode number.
-#: resources/templates/single-ars_podcast.php:67
+#: resources/templates/single-ars_podcast.php:69
 #, php-format
 msgid "EP.%s cover"
 msgstr "EP.%s 封面"
 
 #. translators: %s: play count.
-#: resources/templates/single-ars_podcast.php:77
+#: resources/templates/single-ars_podcast.php:79
 #, php-format
 msgid "%s play"
 msgid_plural "%s plays"
 msgstr[0] "%s 次播放"
 
 #. translators: %s: play count.
-#: resources/templates/single-ars_podcast.php:77
+#: resources/templates/single-ars_podcast.php:79
 #, php-format
 msgid "%s plays"
 msgstr "%s 次播放"
 
-#: resources/templates/single-ars_podcast.php:92
+#: resources/templates/single-ars_podcast.php:94
 msgid "Download audio"
 msgstr "下载音频"
 
-#: resources/templates/single-ars_podcast.php:103
+#: resources/templates/single-ars_podcast.php:105
 msgid "Guests"
 msgstr "嘉宾"
 
-#: resources/templates/single-ars_podcast.php:118
+#: resources/templates/single-ars_podcast.php:120
 msgid "This episode has no summary yet."
 msgstr "本期暂无简介。"
 
-#: resources/templates/single-ars_podcast.php:126
+#: resources/templates/single-ars_podcast.php:128
 msgid "This is the newest episode"
 msgstr "这是最新一期"
 
-#: resources/templates/single-ars_podcast.php:126
+#: resources/templates/single-ars_podcast.php:128
 msgid "This is the first episode"
 msgstr "这是第一期"
 
@@ -1000,3 +996,11 @@ msgstr "花瓣"
 #: app/Setup/TemplateLoader.php:72
 msgid "About the show"
 msgstr "关于节目"
+
+#: resources/templates/single-ars_podcast.php:60
+msgid "No other episodes yet."
+msgstr "还没有其他节目。"
+
+#: resources/templates/single-ars_podcast.php:63
+msgid "No topics yet."
+msgstr "还没有栏目。"

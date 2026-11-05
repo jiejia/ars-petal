@@ -57,10 +57,6 @@ $schedule = Podcast::schedule();
         <span class="display truncate text-[1.35rem] !font-bold tracking-tight"><?php bloginfo('name'); ?></span>
       </a>
     <?php endif; ?>
-    <?php if ($latest) : ?>
-      <a href="<?php echo esc_url(get_permalink($latest->post)); ?>" class="mono mute ml-2 hidden items-center gap-1 rounded-lg px-2 py-1 text-xs hover:bg-base-200 sm:inline-flex" title="<?php esc_attr_e('Latest episode', 'ars-petal'); ?>">EP.<?php echo (int) $latest->number(); ?></a>
-    <?php endif; ?>
-
     <nav id="petal-nav" data-swup-sync class="topnav mx-auto hidden items-center gap-1 lg:flex" aria-label="<?php esc_attr_e('Main menu', 'ars-petal'); ?>">
       <?php Template::render('parts/nav-desktop', ['items' => $menu]); ?>
     </nav>
