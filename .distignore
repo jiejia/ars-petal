@@ -1,0 +1,16 @@
+# Files left out of the installable theme ZIP (bin/package.sh, rsync --exclude-from syntax).
+/.git
+/.github
+/.gitignore
+/.distignore
+/.DS_Store
+.DS_Store
+/node_modules
+/build
+/bin
+/package.json
+/package-lock.json
+/AGENTS.md
+/CLAUDE.md
+/resources/assets/css
+/resources/assets/js

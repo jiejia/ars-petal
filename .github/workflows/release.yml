@@ -1,0 +1,52 @@
+# Pushing a version tag (v1.0.1 or 1.0.1) builds the assets and packages an installable theme ZIP.
+# The ZIP is attached to a GitHub release for the tag. The tag must match "Version:" in style.css.
+name: Release theme ZIP
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - '[0-9]*'
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build assets
+        run: npm run build
+
+      - name: Package the theme
+        id: package
+        run: echo "zip=$(bash bin/package.sh "$GITHUB_REF_NAME")" >> "$GITHUB_OUTPUT"
+
+      - name: Keep the ZIP as a workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ars-petal-${{ github.ref_name }}
+          path: ${{ steps.package.outputs.zip }}
+
+      - name: Publish the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ZIP: ${{ steps.package.outputs.zip }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" "$ZIP" --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" "$ZIP" --title "ARS Petal $GITHUB_REF_NAME" --generate-notes --verify-tag
+          fi
