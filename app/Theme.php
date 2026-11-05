@@ -23,7 +23,7 @@ class Theme
 
     public const NAME = 'Petal';
 
-    public const VERSION = '1.0.0';
+    public const VERSION = '0.5.0';
 
     public const DIR = ARS_PETAL_DIR;
 

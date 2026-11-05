@@ -4,7 +4,7 @@ Tags: blog, two-columns, left-sidebar, custom-logo, custom-menu, featured-images
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 1.0.0
+Stable tag: 0.5.0
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -35,7 +35,7 @@ The styles and scripts in public/dist are built from resources/assets with `npm 
 
 == Changelog ==
 
-= 1.0.0 =
+= 0.5.0 =
 * Initial release.
 
 == Copyright ==

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARS Petal 1.0.0\n"
+"Project-Id-Version: ARS Petal 0.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
 "Last-Translator: jiejia\n"
 "Language-Team: Chinese (China)\n"
@@ -14,6 +14,7 @@ msgstr ""
 "X-Domain: ars-petal\n"
 
 #: app/Customizer/Customizer.php:33
+#: build/ars-petal/app/Customizer/Customizer.php:33
 msgid "Petal"
 msgstr "花瓣"
 
@@ -38,106 +39,137 @@ msgid "https://github.com/jiejia/"
 msgstr "https://github.com/jiejia/"
 
 #: app/Blog/Blog.php:85
+#: build/ars-petal/app/Blog/Blog.php:85
+#: build/ars-petal/resources/templates/cards/post-row.php:51
+#: build/ars-petal/resources/templates/index.php:35
 #: resources/templates/cards/post-row.php:51
 #: resources/templates/index.php:35
 msgid "Blog"
 msgstr "博客"
 
 #: app/Comments/CommentForm.php:35
+#: build/ars-petal/app/Comments/CommentForm.php:35
 msgid "Leave a comment"
 msgstr "发表留言"
 
 #: app/Comments/CommentForm.php:39
+#: build/ars-petal/app/Comments/CommentForm.php:39
 msgid "Your e-mail address will not be published. Required fields are marked *"
 msgstr "邮箱不会公开。必填项已用 * 标注。"
 
 #: app/Comments/CommentForm.php:40
+#: build/ars-petal/app/Comments/CommentForm.php:40
 msgid "Comment"
 msgstr "留言"
 
 #: app/Comments/CommentForm.php:64
+#: build/ars-petal/app/Comments/CommentForm.php:64
 msgid "Name"
 msgstr "昵称"
 
 #: app/Comments/CommentForm.php:65
+#: build/ars-petal/app/Comments/CommentForm.php:65
 msgid "E-mail"
 msgstr "邮箱"
 
 #: app/Comments/CommentForm.php:66
+#: build/ars-petal/app/Comments/CommentForm.php:66
+#: build/ars-petal/resources/templates/author.php:73
 #: resources/templates/author.php:73
 msgid "Website"
 msgstr "网站"
 
 #: app/Customizer/Customizer.php:37
+#: build/ars-petal/app/Customizer/Customizer.php:37
 msgid "Default color scheme"
 msgstr "默认配色"
 
 #: app/Customizer/Customizer.php:39
+#: build/ars-petal/app/Customizer/Customizer.php:39
 msgid "Light (day)"
 msgstr "日间（浅色）"
 
 #: app/Customizer/Customizer.php:40
+#: build/ars-petal/app/Customizer/Customizer.php:40
 msgid "Dark (night)"
 msgstr "夜间（深色）"
 
 #: app/Customizer/Customizer.php:41
+#: build/ars-petal/app/Customizer/Customizer.php:41
 msgid "Follow the visitor’s system"
 msgstr "跟随访客系统设置"
 
 #: app/Customizer/Customizer.php:43
+#: build/ars-petal/app/Customizer/Customizer.php:43
 msgid "Visitors can still switch with the sun / moon button."
 msgstr "访客仍可通过太阳 / 月亮按钮切换。"
 
 #: app/Customizer/Customizer.php:45
+#: build/ars-petal/app/Customizer/Customizer.php:45
 msgid "Home headline, bold part"
 msgstr "首页大标题：粗体部分"
 
 #: app/Customizer/Customizer.php:46
+#: build/ars-petal/app/Customizer/Customizer.php:46
 msgid "The big two-weight headline on the home page. Leave empty for the site name."
 msgstr "首页粗 / 细两段混排的大标题。留空则用站点名称。"
 
 #: app/Customizer/Customizer.php:48
+#: build/ars-petal/app/Customizer/Customizer.php:48
 msgid "Home headline, light part"
 msgstr "首页大标题：细体部分"
 
 #: app/Customizer/Customizer.php:49
+#: build/ars-petal/app/Customizer/Customizer.php:49
 msgid "Leave empty for the tagline."
 msgstr "留空则用副标题。"
 
 #: app/Customizer/Customizer.php:51
+#: build/ars-petal/app/Customizer/Customizer.php:51
 msgid "Newsletter form action URL"
 msgstr "邮件订阅表单提交地址"
 
 #: app/Customizer/Customizer.php:52
+#: build/ars-petal/app/Customizer/Customizer.php:52
 msgid "Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section."
 msgstr "邮件订阅表单提交到的地址（你的邮件服务）。留空则不显示订阅区块。"
 
 #: app/Customizer/Customizer.php:54
+#: build/ars-petal/app/Customizer/Customizer.php:54
 msgid "Newsletter e-mail field name"
 msgstr "邮件订阅的邮箱字段名"
 
 #: app/Customizer/Customizer.php:55
+#: build/ars-petal/app/Customizer/Customizer.php:55
 msgid "Newsletter title"
 msgstr "邮件订阅标题"
 
 #: app/Customizer/Customizer.php:56
+#: build/ars-petal/app/Customizer/Customizer.php:56
 msgid "Newsletter text"
 msgstr "邮件订阅说明"
 
 #: app/Customizer/Customizer.php:57
+#: build/ars-petal/app/Customizer/Customizer.php:57
 msgid "Footer copyright text"
 msgstr "页脚版权文字"
 
 #: app/Customizer/Customizer.php:58
+#: build/ars-petal/app/Customizer/Customizer.php:58
 msgid "Leave empty for “© year site name”."
 msgstr "留空则显示“© 年份 站点名称”。"
 
 #: app/Navigation/Menu.php:98
 #: app/View/Archive.php:87
+#: build/ars-petal/app/Navigation/Menu.php:98
+#: build/ars-petal/app/View/Archive.php:87
 msgid "Home"
 msgstr "首页"
 
 #: app/Navigation/Menu.php:102
+#: build/ars-petal/app/Navigation/Menu.php:102
+#: build/ars-petal/resources/templates/cards/episode-row.php:47
+#: build/ars-petal/resources/templates/index.php:32
 #: resources/templates/cards/episode-row.php:47
 #: resources/templates/index.php:32
 msgid "Podcast"
@@ -147,6 +179,12 @@ msgstr "播客"
 #: app/Navigation/Menu.php:110
 #: app/View/Archive.php:24
 #: app/View/Archive.php:90
+#: build/ars-petal/app/Navigation/Menu.php:110
+#: build/ars-petal/app/View/Archive.php:24
+#: build/ars-petal/app/View/Archive.php:90
+#: build/ars-petal/resources/templates/404.php:24
+#: build/ars-petal/resources/templates/archive-ars_podcast.php:47
+#: build/ars-petal/resources/templates/front/latest.php:31
 #: resources/templates/404.php:24
 #: resources/templates/archive-ars_podcast.php:47
 #: resources/templates/front/latest.php:31
@@ -154,49 +192,66 @@ msgid "All episodes"
 msgstr "全部节目"
 
 #: app/Podcast/Podcast.php:141
+#: build/ars-petal/app/Podcast/Podcast.php:141
+#: build/ars-petal/resources/templates/front/subscribe.php:44
 #: resources/templates/front/subscribe.php:44
 msgid "RSS feed"
 msgstr "RSS 订阅源"
 
 #: app/Setup/Assets.php:104
+#: build/ars-petal/app/Setup/Assets.php:104
 msgid "Episode"
 msgstr "节目"
 
 #: app/Setup/Assets.php:105
+#: build/ars-petal/app/Setup/Assets.php:105
 msgid "Post"
 msgstr "文章"
 
 #: app/Setup/Assets.php:106
+#: build/ars-petal/app/Setup/Assets.php:106
+#: build/ars-petal/resources/templates/cards/post-row.php:51
 #: resources/templates/cards/post-row.php:51
 msgid "Page"
 msgstr "页面"
 
 #: app/Setup/Assets.php:107
+#: build/ars-petal/app/Setup/Assets.php:107
+#: build/ars-petal/resources/templates/parts/share.php:22
 #: resources/templates/parts/share.php:22
 msgid "Link copied"
 msgstr "链接已复制"
 
 #: app/Setup/Assets.php:108
+#: build/ars-petal/app/Setup/Assets.php:108
+#: build/ars-petal/resources/templates/cards/episode.php:36
+#: build/ars-petal/resources/templates/front/hero.php:52
 #: resources/templates/cards/episode.php:36
 #: resources/templates/front/hero.php:52
 msgid "Now playing"
 msgstr "正在播放"
 
 #: app/Setup/ThemeSetup.php:47
+#: build/ars-petal/app/Setup/ThemeSetup.php:47
 msgid "Header menu"
 msgstr "页头菜单"
 
 #: app/Setup/ThemeSetup.php:48
+#: build/ars-petal/app/Setup/ThemeSetup.php:48
 msgid "Footer menu"
 msgstr "页脚菜单"
 
 #. translators: %s: search terms.
 #: app/View/Archive.php:23
+#: build/ars-petal/app/View/Archive.php:23
 #, php-format
 msgid "Search: %s"
 msgstr "搜索：%s"
 
 #: app/View/Archive.php:26
+#: build/ars-petal/app/View/Archive.php:26
+#: build/ars-petal/resources/templates/single.php:44
+#: build/ars-petal/resources/templates/single.php:45
 #: resources/templates/single.php:44
 #: resources/templates/single.php:45
 msgid "Latest posts"
@@ -204,32 +259,40 @@ msgstr "最新文章"
 
 #. translators: Month heading of archive lists, a PHP date format.
 #: app/View/Archive.php:59
+#: build/ars-petal/app/View/Archive.php:59
 msgctxt "archive month heading"
 msgid "F Y"
 msgstr "Y 年 n 月"
 
 #: app/View/Archive.php:74
+#: build/ars-petal/app/View/Archive.php:74
 msgid "Newest"
 msgstr "最新"
 
 #: app/View/Archive.php:75
+#: build/ars-petal/app/View/Archive.php:75
 msgid "Oldest"
 msgstr "最早"
 
 #: app/View/Archive.php:76
+#: build/ars-petal/app/View/Archive.php:76
 msgid "Shortest"
 msgstr "最短"
 
 #: app/View/Archive.php:127
+#: build/ars-petal/app/View/Archive.php:127
 msgid "Previous page"
 msgstr "上一页"
 
 #: app/View/Archive.php:139
+#: build/ars-petal/app/View/Archive.php:139
 msgid "Next page"
 msgstr "下一页"
 
 #. translators: %s: number of episodes.
 #: app/View/Author.php:65
+#: build/ars-petal/app/View/Author.php:65
+#: build/ars-petal/resources/templates/author.php:42
 #: resources/templates/author.php:42
 #, php-format
 msgctxt "author page summary"
@@ -239,6 +302,13 @@ msgstr[0] "%s 期节目"
 
 #. translators: %s: number of posts.
 #: app/View/Author.php:67
+#: build/ars-petal/app/View/Author.php:67
+#: build/ars-petal/resources/templates/author.php:44
+#: build/ars-petal/resources/templates/front/topics.php:35
+#: build/ars-petal/resources/templates/index.php:44
+#: build/ars-petal/resources/templates/index.php:51
+#: build/ars-petal/resources/templates/index.php:61
+#: build/ars-petal/resources/templates/single.php:31
 #: resources/templates/author.php:44
 #: resources/templates/front/topics.php:35
 #: resources/templates/index.php:44
@@ -252,24 +322,31 @@ msgstr[0] "%s 篇文章"
 
 #. translators: %d: minutes.
 #: app/View/Format.php:64
+#: build/ars-petal/app/View/Format.php:64
 #, php-format
 msgid "%d min"
 msgid_plural "%d min"
 msgstr[0] "%d 分钟"
 
+#: build/ars-petal/resources/templates/404.php:18
 #: resources/templates/404.php:18
 msgid "Page not found"
 msgstr "页面不见了"
 
+#: build/ars-petal/resources/templates/404.php:19
 #: resources/templates/404.php:19
 msgid "This page does not exist or has moved. Try a search, or start from the home page."
 msgstr "这个页面不存在或已经移走。试试搜索，或者从首页开始。"
 
+#: build/ars-petal/resources/templates/404.php:22
 #: resources/templates/404.php:22
 msgid "Home page"
 msgstr "回到首页"
 
 #. translators: %s: number of episodes.
+#: build/ars-petal/resources/templates/archive-ars_podcast.php:32
+#: build/ars-petal/resources/templates/front/topics.php:35
+#: build/ars-petal/resources/templates/single-ars_podcast.php:35
 #: resources/templates/archive-ars_podcast.php:32
 #: resources/templates/front/topics.php:35
 #: resources/templates/single-ars_podcast.php:35
@@ -278,6 +355,9 @@ msgid "%s episode"
 msgid_plural "%s episodes"
 msgstr[0] "共 %s 期"
 
+#: build/ars-petal/resources/templates/archive-ars_podcast.php:35
+#: build/ars-petal/resources/templates/index.php:29
+#: build/ars-petal/resources/templates/index.php:44
 #: resources/templates/archive-ars_podcast.php:35
 #: resources/templates/index.php:29
 #: resources/templates/index.php:44
@@ -285,68 +365,92 @@ msgid "All"
 msgstr "全部"
 
 #. translators: %s: "All episodes", a category or a topic.
+#: build/ars-petal/resources/templates/archive-ars_podcast.php:48
 #: resources/templates/archive-ars_podcast.php:48
 #, php-format
 msgid "Episodes: %s"
 msgstr "节目归档：%s"
 
+#: build/ars-petal/resources/templates/archive-ars_podcast.php:53
+#: build/ars-petal/resources/templates/single-ars_podcast.php:61
 #: resources/templates/archive-ars_podcast.php:53
 #: resources/templates/single-ars_podcast.php:61
 msgid "Topics"
 msgstr "栏目"
 
+#: build/ars-petal/resources/templates/archive-ars_podcast.php:70
 #: resources/templates/archive-ars_podcast.php:70
 msgid "No episodes match these filters."
 msgstr "没有符合条件的节目"
 
+#: build/ars-petal/resources/templates/author.php:24
 #: resources/templates/author.php:24
 msgctxt "author page section"
 msgid "Episodes"
 msgstr "参与的节目"
 
+#: build/ars-petal/resources/templates/author.php:25
 #: resources/templates/author.php:25
 msgctxt "author page section"
 msgid "Posts"
 msgstr "文章"
 
+#: build/ars-petal/resources/templates/author.php:33
 #: resources/templates/author.php:33
 msgid "Host / guest"
 msgstr "主播 / 嘉宾"
 
+#: build/ars-petal/resources/templates/author.php:34
+#: build/ars-petal/resources/templates/comments/comment.php:28
 #: resources/templates/author.php:34
 #: resources/templates/comments/comment.php:28
 msgid "Host"
 msgstr "主播"
 
+#: build/ars-petal/resources/templates/author.php:35
 #: resources/templates/author.php:35
 msgid "Guest"
 msgstr "嘉宾"
 
+#: build/ars-petal/resources/templates/author.php:36
 #: resources/templates/author.php:36
 msgid "Author"
 msgstr "作者"
 
+#: build/ars-petal/resources/templates/author.php:57
+#: build/ars-petal/resources/templates/page-about.php:89
+#: build/ars-petal/resources/templates/single-ars_podcast.php:102
 #: resources/templates/author.php:57
 #: resources/templates/page-about.php:89
 #: resources/templates/single-ars_podcast.php:102
 msgid "Hosts"
 msgstr "主播"
 
+#: build/ars-petal/resources/templates/author.php:57
+#: build/ars-petal/resources/templates/page-about.php:89
 #: resources/templates/author.php:57
 #: resources/templates/page-about.php:89
 msgid "Authors"
 msgstr "作者"
 
+#: build/ars-petal/resources/templates/author.php:104
+#: build/ars-petal/resources/templates/index.php:92
 #: resources/templates/author.php:104
 #: resources/templates/index.php:92
 msgid "Nothing has been published here yet."
 msgstr "这里还没有发布内容。"
 
+#: build/ars-petal/resources/templates/cards/episode-row.php:54
+#: build/ars-petal/resources/templates/single-ars_podcast.php:89
 #: resources/templates/cards/episode-row.php:54
 #: resources/templates/single-ars_podcast.php:89
 msgid "Favorite"
 msgstr "收藏"
 
+#: build/ars-petal/resources/templates/cards/episode.php:35
+#: build/ars-petal/resources/templates/layouts/footer.php:63
+#: build/ars-petal/resources/templates/layouts/footer.php:64
+#: build/ars-petal/resources/templates/layouts/header.php:91
 #: resources/templates/cards/episode.php:35
 #: resources/templates/layouts/footer.php:63
 #: resources/templates/layouts/footer.php:64
@@ -354,12 +458,17 @@ msgstr "收藏"
 msgid "Listen"
 msgstr "收听"
 
+#: build/ars-petal/resources/templates/cards/post-row.php:26
+#: build/ars-petal/resources/templates/cards/post.php:34
 #: resources/templates/cards/post-row.php:26
 #: resources/templates/cards/post.php:34
 msgid "(no title)"
 msgstr "（无标题）"
 
 #. translators: %d: minutes.
+#: build/ars-petal/resources/templates/cards/post-row.php:31
+#: build/ars-petal/resources/templates/cards/post.php:32
+#: build/ars-petal/resources/templates/single.php:68
 #: resources/templates/cards/post-row.php:31
 #: resources/templates/cards/post.php:32
 #: resources/templates/single.php:68
@@ -368,106 +477,133 @@ msgid "%d min read"
 msgid_plural "%d min read"
 msgstr[0] "阅读 %d 分钟"
 
+#: build/ars-petal/resources/templates/cards/post-row.php:54
+#: build/ars-petal/resources/templates/cards/post.php:27
+#: build/ars-petal/resources/templates/front/hero.php:34
 #: resources/templates/cards/post-row.php:54
 #: resources/templates/cards/post.php:27
 #: resources/templates/front/hero.php:34
 msgid "Featured"
 msgstr "置顶"
 
+#: build/ars-petal/resources/templates/comments.php:22
 #: resources/templates/comments.php:22
 msgid "Listener comments"
 msgstr "听众留言"
 
+#: build/ars-petal/resources/templates/comments.php:22
 #: resources/templates/comments.php:22
 msgid "Reader comments"
 msgstr "读者留言"
 
+#: build/ars-petal/resources/templates/comments.php:34
 #: resources/templates/comments.php:34
 msgid "Comments are closed."
 msgstr "留言已关闭。"
 
+#: build/ars-petal/resources/templates/comments/comment.php:33
 #: resources/templates/comments/comment.php:33
 msgid "Your comment is awaiting moderation."
 msgstr "你的留言正在等待审核。"
 
+#: build/ars-petal/resources/templates/episode/chapters.php:18
 #: resources/templates/episode/chapters.php:18
 msgid "This episode has no chapters."
 msgstr "本期暂无时间轴。"
 
+#: build/ars-petal/resources/templates/episode/chapters.php:33
 #: resources/templates/episode/chapters.php:33
 msgid "Current chapter"
 msgstr "当前章节"
 
+#: build/ars-petal/resources/templates/episode/transcript.php:20
 #: resources/templates/episode/transcript.php:20
 msgid "This episode has no transcript."
 msgstr "本期暂无文字稿。"
 
 #. translators: %s: timestamp.
+#: build/ars-petal/resources/templates/episode/transcript.php:44
 #: resources/templates/episode/transcript.php:44
 #, php-format
 msgid "Play from %s"
 msgstr "从 %s 开始播放"
 
+#: build/ars-petal/resources/templates/episode/transcript.php:56
 #: resources/templates/episode/transcript.php:56
 msgid "The transcript is available as a file."
 msgstr "文字稿以文件形式提供。"
 
+#: build/ars-petal/resources/templates/episode/transcript.php:58
 #: resources/templates/episode/transcript.php:58
 msgid "Open the transcript file"
 msgstr "打开文字稿文件"
 
+#: build/ars-petal/resources/templates/front/hero.php:24
 #: resources/templates/front/hero.php:24
 msgctxt "home carousel badge"
 msgid "Featured"
 msgstr "精选"
 
+#: build/ars-petal/resources/templates/front/hero.php:24
 #: resources/templates/front/hero.php:24
 msgctxt "home carousel badge"
 msgid "Latest"
 msgstr "最新"
 
 #. translators: 1: slide number, 2: number of slides.
+#: build/ars-petal/resources/templates/front/hero.php:48
 #: resources/templates/front/hero.php:48
 #, php-format
 msgid "Slide %1$d of %2$d"
 msgstr "第 %1$d 张，共 %2$d 张"
 
 #. translators: %s: episode duration.
+#: build/ars-petal/resources/templates/front/hero.php:65
 #: resources/templates/front/hero.php:65
 #, php-format
 msgid "Play · %s"
 msgstr "播放 · %s"
 
 #. translators: %s: episode duration.
+#: build/ars-petal/resources/templates/front/hero.php:65
+#: build/ars-petal/resources/templates/parts/play-button.php:36
 #: resources/templates/front/hero.php:65
 #: resources/templates/parts/play-button.php:36
 msgid "Play episode"
 msgstr "播放本期"
 
+#: build/ars-petal/resources/templates/front/hero.php:68
+#: build/ars-petal/resources/templates/front/hero.php:70
 #: resources/templates/front/hero.php:68
 #: resources/templates/front/hero.php:70
 msgid "Show notes"
 msgstr "节目笔记"
 
+#: build/ars-petal/resources/templates/front/hero.php:70
 #: resources/templates/front/hero.php:70
 msgid "Read more"
 msgstr "阅读全文"
 
+#: build/ars-petal/resources/templates/front/hero.php:82
 #: resources/templates/front/hero.php:82
 msgid "Choose a slide"
 msgstr "切换精选"
 
 #. translators: %d: slide number.
+#: build/ars-petal/resources/templates/front/hero.php:84
 #: resources/templates/front/hero.php:84
 #, php-format
 msgid "Slide %d"
 msgstr "第 %d 张"
 
+#: build/ars-petal/resources/templates/front/latest.php:24
 #: resources/templates/front/latest.php:24
 msgctxt "home heading, bold part"
 msgid "Latest"
 msgstr "最新"
 
+#: build/ars-petal/resources/templates/front/latest.php:24
+#: build/ars-petal/resources/templates/front/popular.php:19
 #: resources/templates/front/latest.php:24
 #: resources/templates/front/popular.php:19
 msgctxt "home heading, light part"
@@ -475,139 +611,179 @@ msgid "episodes"
 msgstr "节目"
 
 #. translators: %s: release schedule, e.g. "Every Thu 21:00".
+#: build/ars-petal/resources/templates/front/latest.php:27
 #: resources/templates/front/latest.php:27
 #, php-format
 msgid "New episodes: %s"
 msgstr "%s 更新"
 
+#: build/ars-petal/resources/templates/front/latest.php:33
 #: resources/templates/front/latest.php:33
 msgid "Scroll left"
 msgstr "向左滚动"
 
+#: build/ars-petal/resources/templates/front/latest.php:34
 #: resources/templates/front/latest.php:34
 msgid "Scroll right"
 msgstr "向右滚动"
 
+#: build/ars-petal/resources/templates/front/numbers.php:25
+#: build/ars-petal/resources/templates/page-about.php:31
 #: resources/templates/front/numbers.php:25
 #: resources/templates/page-about.php:31
 msgid "episode"
 msgid_plural "episodes"
 msgstr[0] "期节目"
 
+#: build/ars-petal/resources/templates/front/numbers.php:26
 #: resources/templates/front/numbers.php:26
 msgid "Average length"
 msgstr "平均每期时长"
 
+#: build/ars-petal/resources/templates/front/numbers.php:27
 #: resources/templates/front/numbers.php:27
 msgid "category"
 msgid_plural "categories"
 msgstr[0] "个分类"
 
+#: build/ars-petal/resources/templates/front/numbers.php:28
 #: resources/templates/front/numbers.php:28
 msgid "Total plays"
 msgstr "累计收听"
 
+#: build/ars-petal/resources/templates/front/numbers.php:37
 #: resources/templates/front/numbers.php:37
 msgid "Podcast in numbers"
 msgstr "播客数据"
 
+#: build/ars-petal/resources/templates/front/people.php:20
 #: resources/templates/front/people.php:20
 msgid "Hosts and guests"
 msgstr "主播与嘉宾"
 
+#: build/ars-petal/resources/templates/front/people.php:21
 #: resources/templates/front/people.php:21
 msgctxt "home heading, bold part"
 msgid "Host"
 msgstr "主播"
 
+#: build/ars-petal/resources/templates/front/people.php:21
 #: resources/templates/front/people.php:21
 msgctxt "home heading, light part"
 msgid "lineup"
 msgstr "阵容"
 
+#: build/ars-petal/resources/templates/front/people.php:22
 #: resources/templates/front/people.php:22
 msgctxt "home heading, bold part"
 msgid "Guest"
 msgstr "做客"
 
+#: build/ars-petal/resources/templates/front/people.php:22
 #: resources/templates/front/people.php:22
 msgctxt "home heading, light part"
 msgid "appearances"
 msgstr "嘉宾"
 
+#: build/ars-petal/resources/templates/front/popular.php:19
 #: resources/templates/front/popular.php:19
 msgctxt "home heading, bold part"
 msgid "Popular"
 msgstr "热门"
 
+#: build/ars-petal/resources/templates/front/posts.php:21
 #: resources/templates/front/posts.php:21
 msgctxt "home heading, bold part"
 msgid "Recent"
 msgstr "近期"
 
+#: build/ars-petal/resources/templates/front/posts.php:21
 #: resources/templates/front/posts.php:21
 msgctxt "home heading, light part"
 msgid "posts"
 msgstr "博客"
 
+#: build/ars-petal/resources/templates/front/posts.php:23
 #: resources/templates/front/posts.php:23
 msgid "All posts"
 msgstr "全部文章"
 
+#: build/ars-petal/resources/templates/front/subscribe.php:20
 #: resources/templates/front/subscribe.php:20
 msgid "New episodes and full notes in your inbox. No ads, unsubscribe any time."
 msgstr "新一期节目和完整笔记寄到你的邮箱，不发广告，随时退订。"
 
+#: build/ars-petal/resources/templates/front/subscribe.php:21
 #: resources/templates/front/subscribe.php:21
 msgid "Add the feed to your podcast app and every new episode arrives by itself."
 msgstr "把订阅地址加到你的播客 App，新一期会自动送到。"
 
 #. translators: %s: release schedule, e.g. "Every Thu 21:00".
+#: build/ars-petal/resources/templates/front/subscribe.php:28
 #: resources/templates/front/subscribe.php:28
 #, php-format
 msgid "%s, right on time"
 msgstr "%s，准时更新"
 
+#: build/ars-petal/resources/templates/front/subscribe.php:33
 #: resources/templates/front/subscribe.php:33
 msgid "Don’t want to miss one?"
 msgstr "不想错过？"
 
+#: build/ars-petal/resources/templates/front/subscribe.php:33
 #: resources/templates/front/subscribe.php:33
 msgid "Subscribe to the feed"
 msgstr "订阅节目"
 
+#: build/ars-petal/resources/templates/front/subscribe.php:38
 #: resources/templates/front/subscribe.php:38
 msgid "E-mail address"
 msgstr "邮箱地址"
 
+#: build/ars-petal/resources/templates/front/subscribe.php:40
+#: build/ars-petal/resources/templates/layouts/header.php:79
 #: resources/templates/front/subscribe.php:40
 #: resources/templates/layouts/header.php:79
 msgid "Subscribe"
 msgstr "订阅"
 
+#: build/ars-petal/resources/templates/front/subscribe.php:48
 #: resources/templates/front/subscribe.php:48
 msgid "Copied"
 msgstr "已复制"
 
+#: build/ars-petal/resources/templates/front/subscribe.php:48
 #: resources/templates/front/subscribe.php:48
 msgid "Copy"
 msgstr "复制"
 
+#: build/ars-petal/resources/templates/front/topics.php:24
 #: resources/templates/front/topics.php:24
 msgctxt "home heading, bold part"
 msgid "Podcast"
 msgstr "播客"
 
+#: build/ars-petal/resources/templates/front/topics.php:24
 #: resources/templates/front/topics.php:24
 msgctxt "home heading, bold part"
 msgid "Blog"
 msgstr "博客"
 
+#: build/ars-petal/resources/templates/front/topics.php:25
 #: resources/templates/front/topics.php:25
 msgctxt "home heading, light part"
 msgid "categories"
 msgstr "分类"
 
+#: build/ars-petal/resources/templates/index.php:36
+#: build/ars-petal/resources/templates/index.php:71
+#: build/ars-petal/resources/templates/index.php:72
+#: build/ars-petal/resources/templates/layouts/header.php:69
+#: build/ars-petal/resources/templates/layouts/header.php:72
+#: build/ars-petal/searchform.php:21
+#: build/ars-petal/searchform.php:26
+#: build/ars-petal/searchform.php:36
+#: build/ars-petal/searchform.php:41
 #: resources/templates/index.php:36
 #: resources/templates/index.php:71
 #: resources/templates/index.php:72
@@ -621,267 +797,334 @@ msgid "Search"
 msgstr "搜索"
 
 #. translators: %s: number of results.
+#: build/ars-petal/resources/templates/index.php:38
 #: resources/templates/index.php:38
 #, php-format
 msgid "%s result"
 msgid_plural "%s results"
 msgstr[0] "共 %s 条结果"
 
+#: build/ars-petal/resources/templates/index.php:75
 #: resources/templates/index.php:75
 msgid "Type"
 msgstr "类型"
 
+#: build/ars-petal/resources/templates/index.php:77
+#: build/ars-petal/resources/templates/single.php:53
 #: resources/templates/index.php:77
 #: resources/templates/single.php:53
 msgid "Categories"
 msgstr "分类"
 
+#: build/ars-petal/resources/templates/index.php:92
 #: resources/templates/index.php:92
 msgid "Nothing matched your search. Try other words."
 msgstr "没有找到相关内容，换个关键词试试。"
 
+#: build/ars-petal/resources/templates/layouts/footer.php:23
 #: resources/templates/layouts/footer.php:23
 msgid "Browse"
 msgstr "浏览"
 
+#: build/ars-petal/resources/templates/layouts/footer.php:64
+#: build/ars-petal/resources/templates/layouts/header.php:81
 #: resources/templates/layouts/footer.php:64
 #: resources/templates/layouts/header.php:81
 msgid "Follow"
 msgstr "关注"
 
+#: build/ars-petal/resources/templates/layouts/footer.php:76
 #: resources/templates/layouts/footer.php:76
 msgid "Night mode"
 msgstr "夜间模式"
 
+#: build/ars-petal/resources/templates/layouts/header.php:33
 #: resources/templates/layouts/header.php:33
 msgid "Skip to content"
 msgstr "跳到正文"
 
+#: build/ars-petal/resources/templates/layouts/header.php:41
 #: resources/templates/layouts/header.php:41
 msgid "New episode"
 msgstr "本周新一期"
 
+#: build/ars-petal/resources/templates/layouts/header.php:44
 #: resources/templates/layouts/header.php:44
 msgid "New post"
 msgstr "最新文章"
 
+#: build/ars-petal/resources/templates/layouts/header.php:61
 #: resources/templates/layouts/header.php:61
 msgid "Latest episode"
 msgstr "最新一期"
 
+#: build/ars-petal/resources/templates/layouts/header.php:64
 #: resources/templates/layouts/header.php:64
 msgid "Main menu"
 msgstr "主导航"
 
+#: build/ars-petal/resources/templates/layouts/header.php:70
 #: resources/templates/layouts/header.php:70
 msgid "Search…"
 msgstr "搜索…"
 
+#: build/ars-petal/resources/templates/layouts/header.php:73
 #: resources/templates/layouts/header.php:73
 msgid "Switch to day mode"
 msgstr "切换到日间模式"
 
+#: build/ars-petal/resources/templates/layouts/header.php:73
 #: resources/templates/layouts/header.php:73
 msgid "Switch to night mode"
 msgstr "切换到夜间模式"
 
+#: build/ars-petal/resources/templates/layouts/header.php:73
 #: resources/templates/layouts/header.php:73
 msgid "Switch color scheme"
 msgstr "切换配色"
 
+#: build/ars-petal/resources/templates/layouts/header.php:81
 #: resources/templates/layouts/header.php:81
 msgid "Listen in a podcast app"
 msgstr "在播客应用中收听"
 
+#: build/ars-petal/resources/templates/layouts/header.php:87
 #: resources/templates/layouts/header.php:87
 msgid "Open menu"
 msgstr "打开菜单"
 
+#: build/ars-petal/searchform.php:27
 #: searchform.php:27
 msgid "Search episodes and posts…"
 msgstr "搜索节目和文章…"
 
+#: build/ars-petal/searchform.php:27
 #: searchform.php:27
 msgid "Search posts…"
 msgstr "搜索文章…"
 
+#: build/ars-petal/resources/templates/layouts/header.php:109
 #: resources/templates/layouts/header.php:109
 msgid "See all results"
 msgstr "查看全部结果"
 
+#: build/ars-petal/resources/templates/layouts/header.php:111
 #: resources/templates/layouts/header.php:111
 msgid "Nothing found. Press Enter for a full search."
 msgstr "没有找到，按回车查看完整搜索结果。"
 
+#: build/ars-petal/resources/templates/layouts/header.php:112
 #: resources/templates/layouts/header.php:112
 msgid "Type to search"
 msgstr "输入关键词开始搜索"
 
+#: build/ars-petal/resources/templates/layouts/header.php:115
 #: resources/templates/layouts/header.php:115
 msgid "Close"
 msgstr "关闭"
 
+#: build/ars-petal/resources/templates/page-about.php:32
 #: resources/templates/page-about.php:32
 msgid "topic"
 msgid_plural "topics"
 msgstr[0] "个栏目"
 
+#: build/ars-petal/resources/templates/page-about.php:33
 #: resources/templates/page-about.php:33
 msgid "per episode"
 msgstr "每期时长"
 
+#: build/ars-petal/resources/templates/page-about.php:34
 #: resources/templates/page-about.php:34
 msgid "play"
 msgid_plural "plays"
 msgstr[0] "次收听"
 
 #. translators: %s: site name.
+#: build/ars-petal/resources/templates/page-about.php:47
 #: resources/templates/page-about.php:47
 #, php-format
 msgid "About %s"
 msgstr "关于%s"
 
+#: build/ars-petal/resources/templates/page-about.php:55
 #: resources/templates/page-about.php:55
 msgid "Start with the latest"
 msgstr "从最新一期听起"
 
+#: build/ars-petal/resources/templates/page-about.php:57
 #: resources/templates/page-about.php:57
 msgid "Browse all episodes"
 msgstr "浏览全部节目"
 
+#: build/ars-petal/resources/templates/page-about.php:71
 #: resources/templates/page-about.php:71
 msgid "The show in numbers"
 msgstr "节目数据"
 
 #. translators: %s: page title.
+#: build/ars-petal/resources/templates/page.php:26
 #: resources/templates/page.php:26
 #, php-format
 msgid "Page: %s"
 msgstr "页面：%s"
 
+#: build/ars-petal/resources/templates/parts/adjacent.php:22
 #: resources/templates/parts/adjacent.php:22
 msgid "Previous episode"
 msgstr "上一期"
 
+#: build/ars-petal/resources/templates/parts/adjacent.php:22
 #: resources/templates/parts/adjacent.php:22
 msgid "Previous post"
 msgstr "上一篇"
 
+#: build/ars-petal/resources/templates/parts/adjacent.php:23
 #: resources/templates/parts/adjacent.php:23
 msgid "Next episode"
 msgstr "下一期"
 
+#: build/ars-petal/resources/templates/parts/adjacent.php:23
 #: resources/templates/parts/adjacent.php:23
 msgid "Next post"
 msgstr "下一篇"
 
+#: build/ars-petal/resources/templates/parts/adjacent.php:26
 #: resources/templates/parts/adjacent.php:26
 msgid "More"
 msgstr "更多"
 
+#: build/ars-petal/resources/templates/parts/empty.php:17
 #: resources/templates/parts/empty.php:17
 msgid "Clear filters"
 msgstr "清除筛选"
 
 #. translators: %s: menu item, e.g. "Podcast".
+#: build/ars-petal/resources/templates/parts/nav-mobile.php:23
 #: resources/templates/parts/nav-mobile.php:23
 #, php-format
 msgid "All: %s"
 msgstr "全部%s"
 
+#: build/ars-petal/resources/templates/parts/pages-sidebar.php:33
 #: resources/templates/parts/pages-sidebar.php:33
 msgid "Pages"
 msgstr "页面"
 
+#: build/ars-petal/resources/templates/parts/pagination.php:19
 #: resources/templates/parts/pagination.php:19
 msgid "Pagination"
 msgstr "分页"
 
 #. translators: 1: episode number, 2: episode title.
+#: build/ars-petal/resources/templates/parts/play-button.php:26
 #: resources/templates/parts/play-button.php:26
 #, php-format
 msgid "Play EP.%1$s %2$s"
 msgstr "播放 EP.%1$s %2$s"
 
+#: build/ars-petal/resources/templates/parts/play-button.php:33
+#: build/ars-petal/resources/templates/parts/play-button.php:37
 #: resources/templates/parts/play-button.php:33
 #: resources/templates/parts/play-button.php:37
 msgid "Pause"
 msgstr "暂停"
 
+#: build/ars-petal/resources/templates/parts/play-button.php:36
 #: resources/templates/parts/play-button.php:36
 msgid "Resume"
 msgstr "继续收听"
 
+#: build/ars-petal/searchform.php:37
 #: searchform.php:37
 msgid "Search episodes and posts"
 msgstr "搜索播客和博客"
 
+#: build/ars-petal/searchform.php:37
 #: searchform.php:37
 msgid "Search posts"
 msgstr "搜索文章"
 
+#: build/ars-petal/resources/templates/parts/share.php:16
 #: resources/templates/parts/share.php:16
 msgid "Share"
 msgstr "分享"
 
+#: build/ars-petal/resources/templates/parts/share.php:22
 #: resources/templates/parts/share.php:22
 msgid "Copy link"
 msgstr "复制链接"
 
+#: build/ars-petal/resources/templates/parts/share.php:25
 #: resources/templates/parts/share.php:25
 msgid "Share on Weibo"
 msgstr "分享到微博"
 
+#: build/ars-petal/resources/templates/parts/share.php:26
 #: resources/templates/parts/share.php:26
 msgid "Share on X"
 msgstr "分享到 X"
 
+#: build/ars-petal/resources/templates/parts/tags.php:25
+#: build/ars-petal/resources/templates/parts/tags.php:31
+#: build/ars-petal/resources/templates/parts/tags.php:32
 #: resources/templates/parts/tags.php:25
 #: resources/templates/parts/tags.php:31
 #: resources/templates/parts/tags.php:32
 msgid "Tags"
 msgstr "标签"
 
+#: build/ars-petal/resources/templates/parts/title-bar.php:29
 #: resources/templates/parts/title-bar.php:29
 msgid "Sort"
 msgstr "排序"
 
+#: build/ars-petal/resources/templates/parts/title-bar.php:38
 #: resources/templates/parts/title-bar.php:38
 msgid "View"
 msgstr "视图"
 
+#: build/ars-petal/resources/templates/parts/title-bar.php:39
 #: resources/templates/parts/title-bar.php:39
 msgid "List view"
 msgstr "列表视图"
 
+#: build/ars-petal/resources/templates/parts/title-bar.php:40
 #: resources/templates/parts/title-bar.php:40
 msgid "Grid view"
 msgstr "网格视图"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:43
 #: resources/templates/single-ars_podcast.php:43
 msgid "Summary"
 msgstr "简介"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:44
 #: resources/templates/single-ars_podcast.php:44
 msgid "Chapters"
 msgstr "章节"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:45
 #: resources/templates/single-ars_podcast.php:45
 msgid "Transcript"
 msgstr "文字稿"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:52
+#: build/ars-petal/resources/templates/single-ars_podcast.php:53
 #: resources/templates/single-ars_podcast.php:52
 #: resources/templates/single-ars_podcast.php:53
 msgid "More episodes"
 msgstr "更多节目"
 
 #. translators: %s: episode number.
+#: build/ars-petal/resources/templates/single-ars_podcast.php:67
 #: resources/templates/single-ars_podcast.php:67
 #, php-format
 msgid "EP.%s cover"
 msgstr "EP.%s 封面"
 
 #. translators: %s: play count.
+#: build/ars-petal/resources/templates/single-ars_podcast.php:77
 #: resources/templates/single-ars_podcast.php:77
 #, php-format
 msgid "%s play"
@@ -889,104 +1132,126 @@ msgid_plural "%s plays"
 msgstr[0] "%s 次播放"
 
 #. translators: %s: play count.
+#: build/ars-petal/resources/templates/single-ars_podcast.php:77
 #: resources/templates/single-ars_podcast.php:77
 #, php-format
 msgid "%s plays"
 msgstr "%s 次播放"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:92
 #: resources/templates/single-ars_podcast.php:92
 msgid "Download audio"
 msgstr "下载音频"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:103
 #: resources/templates/single-ars_podcast.php:103
 msgid "Guests"
 msgstr "嘉宾"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:118
 #: resources/templates/single-ars_podcast.php:118
 msgid "This episode has no summary yet."
 msgstr "本期暂无简介。"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:126
 #: resources/templates/single-ars_podcast.php:126
 msgid "This is the newest episode"
 msgstr "这是最新一期"
 
+#: build/ars-petal/resources/templates/single-ars_podcast.php:126
 #: resources/templates/single-ars_podcast.php:126
 msgid "This is the first episode"
 msgstr "这是第一期"
 
+#: build/ars-petal/resources/templates/single.php:101
 #: resources/templates/single.php:101
 msgid "This is the newest post"
 msgstr "这是最新一篇"
 
+#: build/ars-petal/resources/templates/single.php:101
 #: resources/templates/single.php:101
 msgid "This is the first post"
 msgstr "这是第一篇"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Background"
 msgstr "背景"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Surface"
 msgstr "表面"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Border"
 msgstr "边框"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Text"
 msgstr "文字"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Signal green"
 msgstr "信号绿"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Lilac"
 msgstr "淡紫"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Color name"
 msgid "Orange"
 msgstr "橙色"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Font family name"
 msgid "Noto Sans SC"
 msgstr "Noto Sans SC"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Font family name"
 msgid "Space Grotesk"
 msgstr "Space Grotesk"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Font family name"
 msgid "JetBrains Mono"
 msgstr "JetBrains Mono"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "Small"
 msgstr "小"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "Medium"
 msgstr "中"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "Large"
 msgstr "大"
 
+#: build/ars-petal/theme.json
 #: theme.json
 msgctxt "Font size name"
 msgid "Extra large"
@@ -998,5 +1263,6 @@ msgid "ARS Petal"
 msgstr "花瓣"
 
 #: app/Setup/TemplateLoader.php:72
+#: build/ars-petal/app/Setup/TemplateLoader.php:72
 msgid "About the show"
 msgstr "关于节目"
