@@ -4,7 +4,7 @@ Tags: blog, two-columns, left-sidebar, custom-logo, custom-menu, featured-images
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -34,6 +34,10 @@ Go to Appearance > Customize > Petal. There you can set the default color scheme
 The styles and scripts in public/dist are built from resources/assets with `npm install` and `npm run build`.
 
 == Changelog ==
+
+= 0.5.1 =
+* Keep build/ out of the translation template
+* Add npm run release to bump the version, tag and push
 
 = 0.5.0 =
 * Initial release.

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARS Petal 0.5.0\n"
+"Project-Id-Version: ARS Petal 0.5.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
 "Last-Translator: jiejia\n"
 "Language-Team: Chinese (China)\n"
