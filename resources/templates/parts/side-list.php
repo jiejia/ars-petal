@@ -2,7 +2,7 @@
 /**
  * A sidebar card of filter / navigation entries (topics, categories, types, pages, people): each entry has a
  * tile (image, colored icon or letter avatar), a name and a small line; the current one is black.
- * On small screens the entries scroll sideways in one row.
+ * One entry per row at every width.
  *
  * @var string $title Card heading.
  * @var array<int,array{label:string,meta?:string,url:string,current?:bool,image?:string,icon?:string,tile?:string,user?:\WP_User}> $items Entries.
@@ -35,7 +35,7 @@ endif;
 ?>
 <aside class="panel-sm min-w-0 p-3 lg:p-4" aria-label="<?php echo esc_attr($title); ?>">
   <h2 class="display text-xl <?php echo $wrap ? 'px-1 lg:px-0' : 'hidden lg:block'; ?>"><?php echo esc_html($title); ?></h2>
-  <ul class="<?php echo $wrap ? 'mt-3 flex flex-col gap-1.5' : 'flex gap-2 overflow-x-auto lg:mt-3 lg:flex-col lg:gap-1.5 lg:overflow-visible'; ?>">
+  <ul class="<?php echo $wrap ? 'mt-3 flex flex-col gap-1.5' : 'flex flex-col gap-1.5 lg:mt-3'; ?>">
     <?php foreach ($items as $item) :
         $current = ! empty($item['current']);
         ?>

@@ -30,7 +30,7 @@ $counts ??= false;
 <?php else : ?>
   <section class="panel-sm p-3 lg:p-4" aria-label="<?php esc_attr_e('Tags', 'ars-petal'); ?>">
     <h2 class="display hidden text-xl lg:block"><?php esc_html_e('Tags', 'ars-petal'); ?></h2>
-    <div class="flex gap-2 overflow-x-auto lg:mt-3 lg:flex-wrap lg:gap-1.5 lg:overflow-visible">
+    <div class="flex flex-wrap gap-2 lg:mt-3 lg:gap-1.5">
       <?php foreach ($terms as $term) :
           $active = $current === $term->slug;
           ?>

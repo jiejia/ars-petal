@@ -26,7 +26,7 @@ $active = array_values(array_filter($sorts, static fn (array $sort): bool => $so
   <?php endif; ?>
   <?php if ($sorts !== []) : ?>
     <div class="dropdown dropdown-end">
-      <div tabindex="0" role="button" class="flex h-12 cursor-pointer items-center gap-2 rounded-2xl bg-base-200 px-4 text-sm font-medium transition-colors hover:bg-base-300" aria-haspopup="menu" aria-label="<?php esc_attr_e('Sort', 'ars-petal'); ?>"><?php echo esc_html($active['label'] ?? $sorts[0]['label']); ?><?php Icon::render('chevron-down', 'size-4'); ?></div>
+      <div tabindex="0" role="button" class="flex h-9 cursor-pointer items-center gap-1.5 rounded-full bg-base-200 px-3.5 text-sm font-medium transition-colors hover:bg-base-300" aria-haspopup="menu" aria-label="<?php esc_attr_e('Sort', 'ars-petal'); ?>"><?php echo esc_html($active['label'] ?? $sorts[0]['label']); ?><?php Icon::render('chevron-down', 'size-3.5'); ?></div>
       <ul tabindex="0" class="dropdown-content menu z-30 mt-2 w-36 rounded-2xl border border-base-300 bg-base-100 p-2 shadow-lg">
         <?php foreach ($sorts as $sort) : ?>
           <li><a href="<?php echo esc_url($sort['url']); ?>"<?php echo $sort['current'] ? ' class="menu-active" aria-current="true"' : ''; ?>><?php echo esc_html($sort['label']); ?></a></li>
@@ -35,9 +35,9 @@ $active = array_values(array_filter($sorts, static fn (array $sort): bool => $so
     </div>
   <?php endif; ?>
   <?php if ($views) : ?>
-    <div class="flex rounded-full bg-base-200 p-1" role="group" aria-label="<?php esc_attr_e('View', 'ars-petal'); ?>">
-      <button type="button" class="grid size-10 place-items-center rounded-full" :class="view === 'list' && 'bg-primary text-primary-content'" @click="setView('list')" :aria-pressed="view === 'list'" aria-label="<?php esc_attr_e('List view', 'ars-petal'); ?>"><?php Icon::render('list', 'size-[1.1rem]'); ?></button>
-      <button type="button" class="grid size-10 place-items-center rounded-full" :class="view === 'grid' && 'bg-primary text-primary-content'" @click="setView('grid')" :aria-pressed="view === 'grid'" aria-label="<?php esc_attr_e('Grid view', 'ars-petal'); ?>"><?php Icon::render('layout-grid', 'size-[1.1rem]'); ?></button>
+    <div class="flex rounded-full bg-base-200 p-0.5" role="group" aria-label="<?php esc_attr_e('View', 'ars-petal'); ?>">
+      <button type="button" class="grid size-8 place-items-center rounded-full" :class="view === 'list' && 'bg-primary text-primary-content'" @click="setView('list')" :aria-pressed="view === 'list'" aria-label="<?php esc_attr_e('List view', 'ars-petal'); ?>"><?php Icon::render('list', 'size-4'); ?></button>
+      <button type="button" class="grid size-8 place-items-center rounded-full" :class="view === 'grid' && 'bg-primary text-primary-content'" @click="setView('grid')" :aria-pressed="view === 'grid'" aria-label="<?php esc_attr_e('Grid view', 'ars-petal'); ?>"><?php Icon::render('layout-grid', 'size-4'); ?></button>
     </div>
   <?php endif; ?>
 </div>

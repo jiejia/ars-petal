@@ -23,8 +23,6 @@ $category = $category instanceof \WP_Term ? $category : null;
 $archive = $category ? Podcast::categoryUrl($category) : Podcast::archiveUrl();
 $current = sanitize_title((string) get_query_var('tag'));
 $sort = Integration::sort();
-$found = (int) $GLOBALS['wp_query']->found_posts;
-$schedule = Podcast::schedule();
 $url = static fn (array $args): string => (string) add_query_arg(array_filter($args + ['tag' => $current, 'sort' => $sort === 'new' ? '' : $sort]), $archive);
 $tags = Podcast::tags();
 $stats = Podcast::stats();
@@ -61,7 +59,7 @@ $title = sprintf(/* translators: %s: "All episodes", a category or a topic. */ _
     </div>
 
     <div class="min-w-0">
-      <?php Template::render('parts/title-bar', ['title' => $title, 'count' => implode(' · ', array_filter([$episodes($found), $schedule])), 'sorts' => $sorts]); ?>
+      <?php Template::render('parts/title-bar', ['title' => $title, 'sorts' => $sorts]); ?>
 
       <?php if (have_posts()) : ?>
         <?php Template::render('parts/listing', ['months' => $sort !== 'short']); ?>
