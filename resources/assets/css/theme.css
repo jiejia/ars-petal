@@ -172,6 +172,7 @@ a:hover > .mark { transform: rotate(90deg); }
 .edge-arrow { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 9999px; background: var(--color-base-100); color: var(--color-base-content); border: 1px solid var(--line); box-shadow: 0 10px 24px -12px oklch(20% 0.02 280 / 0.45); transition: transform 0.15s, background-color 0.15s; }
 .edge-arrow:hover { background: var(--color-base-200); }
 .edge-arrow:active { transform: scale(0.94); }
+@media (max-width: 639px) { .edge-arrow { width: 2rem; height: 2rem; } }
 
 /* Huge numbers */
 .big-num { font-family: "Outfit", "Noto Sans SC", sans-serif; font-weight: 700; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
