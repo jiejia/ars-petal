@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds an installable theme ZIP: build/ars-petal-{version}.zip with a single ars-petal/ folder inside.
+# Builds an installable theme ZIP: build/ars-petal.zip with a single ars-petal/ folder inside.
 # public/dist is built from source and is not committed, so `npm run build` must run first (npm run package does that).
 # Usage: bin/package.sh [version]   (the version defaults to the "Version:" header in style.css)
 set -euo pipefail
@@ -27,5 +27,5 @@ rm -rf build
 mkdir -p "build/$slug"
 rsync -a --exclude-from=.distignore ./ "build/$slug/"
 
-(cd build && zip -qrX "$slug-$version.zip" "$slug")
-echo "build/$slug-$version.zip"
+(cd build && zip -qrX "$slug.zip" "$slug")
+echo "build/$slug.zip"
