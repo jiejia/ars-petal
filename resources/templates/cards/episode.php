@@ -36,13 +36,14 @@ $duration = $episode->duration() > 0 ? Format::duration($episode->duration()) : 
         <span class="petal-when-playing"><?php esc_html_e('Now playing', 'ars-petal'); ?></span>
       </span>
     <?php endif; ?>
+    <?php // Playing indicator, bottom right of the cover (see .petal-eq-cover in theme.css). ?>
+    <span class="petal-eq-cover absolute bottom-3 right-3 place-items-center drop-shadow-md" aria-hidden="true"><span class="eq"><i></i><i></i><i></i></span></span>
   </div>
   <p class="mt-4 flex items-center gap-2 text-xs">
     <?php if ($tag) : ?>
       <a href="<?php echo esc_url(Podcast::tagUrl($tag)); ?>" class="badge badge-soft badge-sm <?php echo esc_attr(Topics::badge($tag)); ?>"><?php echo esc_html($tag->name); ?></a>
     <?php endif; ?>
     <span class="mono mute"><?php echo esc_html(sprintf('EP.%s · %s', $episode->number(), Format::date($episode->post))); ?></span>
-    <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
   </p>
   <<?php echo tag_escape($heading); ?> class="display mt-2 line-clamp-2 text-lg !font-bold leading-snug"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($episode->post)); ?></a></<?php echo tag_escape($heading); ?>>
   <?php if ($excerpt) : ?>
