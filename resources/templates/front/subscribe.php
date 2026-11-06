@@ -30,7 +30,7 @@ if ($title === '' && $schedule !== '') {
 ?>
 <section class="wash relative mt-16 flex flex-col gap-8 overflow-hidden rounded-[2.5rem] px-6 py-14 sm:px-12 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-16 lg:py-24">
   <div class="min-w-0 lg:flex-1">
-    <h2 class="display text-3xl !font-black leading-tight sm:text-4xl"><?php echo esc_html($title !== '' ? $title : ($action !== '' ? __('Don’t want to miss one?', 'ars-petal') : __('Subscribe to the feed', 'ars-petal'))); ?></h2>
+    <h2 class="display text-2xl min-[420px]:text-3xl !font-black leading-tight sm:text-4xl"><?php echo esc_html($title !== '' ? $title : ($action !== '' ? __('Don’t want to miss one?', 'ars-petal') : __('Subscribe to the feed', 'ars-petal'))); ?></h2>
     <p class="mute mt-4 max-w-xl text-lg"><?php echo esc_html($text); ?></p>
   </div>
   <?php if ($action !== '') : ?>

@@ -37,7 +37,7 @@ $columns = [1 => 'md:grid-cols-1', 2 => 'md:grid-cols-2', 3 => 'md:grid-cols-3',
 <section class="relative isolate mt-16 py-10 text-center" aria-label="<?php esc_attr_e('Podcast in numbers', 'ars-petal'); ?>">
   <div class="glow left-1/2 top-0 h-72 w-[36rem] max-w-full -translate-x-1/2 bg-[var(--glow-a)]" aria-hidden="true"></div>
   <?php if ($statement !== '') : ?>
-    <h2 class="display mx-auto max-w-4xl text-balance text-4xl !font-black leading-[1.15] sm:text-6xl"><?php echo implode('<br class="hidden sm:block">', array_map('esc_html', preg_split('/\R+/', $statement))); ?></h2>
+    <h2 class="display mx-auto max-w-4xl text-balance text-2xl min-[420px]:text-3xl !font-black leading-[1.15] sm:text-6xl"><?php echo implode('<br class="hidden sm:block">', array_map('esc_html', preg_split('/\R+/', $statement))); ?></h2>
   <?php endif; ?>
   <?php if ($numbers !== []) : ?>
     <div class="<?php echo $statement !== '' ? 'mt-16' : ''; ?> grid grid-cols-2 gap-y-12 <?php echo esc_attr($columns); ?>">
