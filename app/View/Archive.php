@@ -21,10 +21,11 @@ final class Archive
     {
         return match (true) {
             is_search() => sprintf(/* translators: %s: search terms. */ __('Search: %s', 'ars-petal'), get_search_query()),
-            is_post_type_archive(Podcast::POST_TYPE) => get_query_var('tag') !== '' ? single_term_title('', false) : __('All episodes', 'ars-petal'),
+            is_post_type_archive(Podcast::POST_TYPE) => get_query_var('tag') !== '' ? '#' . single_term_title('', false) : __('All episodes', 'ars-petal'),
             Blog::isRequest(), is_home() && ! is_front_page() => Blog::label(),
             is_home() => __('Latest posts', 'ars-petal'),
-            is_category(), is_tag(), is_tax() => single_term_title('', false),
+            is_tag() => '#' . single_term_title('', false),
+            is_category(), is_tax() => single_term_title('', false),
             is_author() => get_the_author_meta('display_name', (int) get_query_var('author')),
             is_year() => get_the_date('Y'),
             is_month() => get_the_date('Y.m'),
@@ -64,17 +65,19 @@ final class Archive
     }
 
     /**
-     * Sort orders of the episode archive, ?sort= value => label.
+     * Sort orders, ?sort= value => label. Posts have no duration, so only episodes get "Shortest".
      *
+     * @param bool $episodes Whether the list is of episodes.
      * @return array<string,string>
      */
-    public static function sorts(): array
+    public static function sorts(bool $episodes = true): array
     {
-        return [
+        $sorts = [
             'new' => __('Newest', 'ars-petal'),
             'old' => __('Oldest', 'ars-petal'),
-            'short' => __('Shortest', 'ars-petal'),
         ];
+
+        return $episodes ? $sorts + ['short' => __('Shortest', 'ars-petal')] : $sorts;
     }
 
     /**

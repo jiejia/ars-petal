@@ -19,9 +19,6 @@ foreach ($items as $item) : ?>
       <details<?php echo $item['current'] ? ' open' : ''; ?>>
         <summary><?php echo esc_html($item['label']); ?></summary>
         <ul>
-          <?php if ($item['url'] !== '' && $item['url'] !== '#') : ?>
-            <li><a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html(sprintf(/* translators: %s: menu item, e.g. "Podcast". */ __('All: %s', 'ars-petal'), $item['label'])); ?></a></li>
-          <?php endif; ?>
           <?php Template::render('parts/nav-mobile', ['items' => $item['children']]); ?>
         </ul>
       </details>

@@ -59,6 +59,18 @@ if (is_search()) {
     $title = Archive::title();
 }
 
+// Sort links of the blog list and its category / tag archives (not search results); they stay on the current page.
+$sorts = [];
+
+if (! is_search()) {
+    $sort = Blog::sort();
+    $base = remove_query_arg(['sort', 'paged'], get_pagenum_link(1));
+
+    foreach (Archive::sorts(false) as $value => $label) {
+        $sorts[] = ['label' => $label, 'url' => $value === 'new' ? $base : add_query_arg('sort', $value, $base), 'current' => $sort === $value];
+    }
+}
+
 $tags = is_search() ? [] : get_tags(['orderby' => 'count', 'order' => 'DESC', 'number' => 12]);
 $description = Archive::description();
 ?>
@@ -78,7 +90,7 @@ $description = Archive::description();
     <?php Template::render('parts/sidebar-end'); ?>
 
     <div class="drawer-content">
-      <?php Template::render('parts/title-bar', ['title' => $title, 'count' => $count ?? '']); ?>
+      <?php Template::render('parts/title-bar', ['title' => $title, 'count' => $count ?? '', 'sorts' => $sorts]); ?>
       <?php if ($description !== '') : ?>
         <p class="mute mt-4 px-3"><?php echo esc_html($description); ?></p>
       <?php endif; ?>

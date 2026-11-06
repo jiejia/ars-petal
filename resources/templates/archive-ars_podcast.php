@@ -42,7 +42,7 @@ foreach (Archive::sorts() as $value => $label) {
     $sorts[] = ['label' => $label, 'url' => $url(['sort' => $value === 'new' ? '' : $value]), 'current' => $sort === $value];
 }
 
-$heading = $current !== '' ? (get_term_by('slug', $current, 'post_tag')->name ?? $current) : ($category ? $category->name : __('All episodes', 'ars-petal'));
+$heading = $current !== '' ? '#' . (get_term_by('slug', $current, 'post_tag')->name ?? $current) : ($category ? $category->name : __('All episodes', 'ars-petal'));
 // The whole archive is just "All episodes"; a category or tag gets the "Episodes: …" prefix.
 $title = $current === '' && $category === null ? $heading : sprintf(/* translators: %s: a category or a tag. */ __('Episodes: %s', 'ars-petal'), $heading);
 ?>

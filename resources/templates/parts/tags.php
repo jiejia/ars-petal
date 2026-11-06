@@ -35,7 +35,7 @@ $counts ??= false;
           $active = $current === $term->slug;
           ?>
         <a href="<?php echo esc_url($url($term)); ?>" class="chip !h-8 !px-3 !text-[0.8rem] <?php echo $active ? '!bg-neutral !text-neutral-content' : ''; ?>"<?php echo $active ? ' aria-current="page"' : ''; ?>>
-          <?php echo esc_html($term->name); ?>
+          #<?php echo esc_html($term->name); ?>
           <?php if ($counts) : ?>
             <span class="text-xs opacity-60"><?php echo (int) $term->count; ?></span>
           <?php endif; ?>

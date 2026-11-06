@@ -182,6 +182,17 @@ a:hover > .mark { transform: rotate(90deg); }
 textarea.field { height: auto; padding: 0.75rem 1rem; }
 .field:focus { border-color: var(--color-primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-primary) 18%, transparent); }
 
+/* List title bar: on small screens a title card with the sort / view tools below it, outside the card; from sm up one card. */
+.petal-title-bar-head { display: flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 4.5rem; padding: 0.75rem; background: var(--color-base-100); border: 1px solid var(--line); border-radius: 1.25rem; }
+.petal-title-bar-head h1 { min-width: 0; }
+.petal-title-bar-tools { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-top: 0.75rem; }
+@media (min-width: 640px) {
+  .petal-title-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; min-height: 4.5rem; padding: 0.75rem; background: var(--color-base-100); border: 1px solid var(--line); border-radius: 1.25rem; }
+  .petal-title-bar-head { display: contents; }
+  .petal-title-bar-head h1 { flex: 1 1 14rem; }
+  .petal-title-bar-tools { display: contents; }
+}
+
 /* "Now playing" equalizer bars */
 .eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 1.1rem; color: var(--color-primary); }
 .eq i { width: 3px; border-radius: 2px; background: currentColor; animation: eq 0.9s ease-in-out infinite; transform-origin: bottom; }
@@ -220,7 +231,8 @@ html.is-changing .swup-progress { width: 80%; opacity: 1; }
 /* ---------- WordPress ---------- */
 body.admin-bar .topbar { top: var(--wp-admin--admin-bar--height, 32px); }
 @media (max-width: 600px) { body.admin-bar .topbar { top: 0; } }
-/* Leave room for the plugin's player bar below the footer. */
+/* Leave room for the plugin's player bar inside the footer (not as body padding, which would show the page background below it). */
+body.has-ars-player { padding-bottom: 0 !important; }
 body.has-ars-player .site-footer { padding-bottom: calc(var(--ars-player-height, 0px) + 2rem); }
 
 /*

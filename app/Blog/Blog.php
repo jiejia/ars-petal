@@ -26,6 +26,7 @@ final class Blog
     {
         add_filter('query_vars', [$this, 'queryVars']);
         add_filter('request', [$this, 'request']);
+        add_action('pre_get_posts', [$this, 'sortQuery']);
         add_action('template_redirect', [$this, 'redirectPagedHome']);
         add_filter('redirect_canonical', [$this, 'canonical']);
         add_filter('document_title_parts', [$this, 'documentTitle']);
@@ -105,7 +106,38 @@ final class Blog
     {
         $vars[] = self::QUERY_VAR;
 
+        if (! in_array('sort', $vars, true)) {
+            $vars[] = 'sort';
+        }
+
         return $vars;
+    }
+
+    /**
+     * The requested sort order of the post list: 'new' or 'old'.
+     *
+     * @return string
+     */
+    public static function sort(): string
+    {
+        return get_query_var('sort') === 'old' ? 'old' : 'new';
+    }
+
+    /**
+     * ?sort=old on the post list and on category / tag archives.
+     *
+     * @param \WP_Query $query Query.
+     * @return void
+     */
+    public function sortQuery(\WP_Query $query): void
+    {
+        if (is_admin() || ! $query->is_main_query() || $query->is_search() || ! ($query->is_home() || $query->is_category() || $query->is_tag())) {
+            return;
+        }
+
+        if (self::sort() === 'old') {
+            $query->set('order', 'ASC');
+        }
     }
 
     /**
