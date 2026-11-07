@@ -305,10 +305,14 @@ function followPlayer() {
 
 const SKIP = /\/wp-(admin|login)|\/feed\/?($|\?)|[?&](replytocom|preview)=|\.(mp3|m4a|ogg|wav|pdf|zip|xml|vtt|srt|json|txt)($|\?)/i;
 
-const swup = new Swup({
-  containers: ['#swup'],
-  ignoreVisit: (url, { el } = {}) => !!(el && (el.closest('[data-no-swup]') || el.target === '_blank' || el.hasAttribute('download'))) || SKIP.test(url),
-});
+// The widget editor previews a widget in a srcdoc iframe (about:srcdoc), where swup cannot touch the history; there the page
+// just runs Alpine and links navigate normally.
+const swup = location.protocol === 'about:'
+  ? { hooks: { before() {}, on() {} }, navigate: (url) => location.assign(url) }
+  : new Swup({
+      containers: ['#swup'],
+      ignoreVisit: (url, { el } = {}) => !!(el && (el.closest('[data-no-swup]') || el.target === '_blank' || el.hasAttribute('download'))) || SKIP.test(url),
+    });
 
 /** Copy stylesheets and inline styles of the new page that this one lacks; per-page inline styles are replaced. */
 function syncStyles(doc) {
