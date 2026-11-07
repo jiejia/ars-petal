@@ -11,6 +11,7 @@
 @source "../../templates";
 @source "../../../app";
 @source "../js";
+@source "../../../searchform.php";
 
 /* The two themes are plain CSS variables in themes.css, as in the prototype. */
 @plugin "daisyui" {
