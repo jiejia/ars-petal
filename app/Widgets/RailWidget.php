@@ -15,7 +15,7 @@ final class RailWidget extends EpisodeWidget
 
     public function __construct()
     {
-        parent::__construct(self::ID, __('Petal: Episode Rail', 'ars-petal'), [
+        parent::__construct(self::ID, __('ARS Petal: Episode Rail', 'ars-petal'), [
             'classname' => 'ars-petal-rail',
             'description' => __('Episode cards in a row that scrolls sideways.', 'ars-petal'),
         ]);

@@ -29,7 +29,7 @@ final class HeroWidget extends Widget
 
     public function __construct()
     {
-        parent::__construct(self::ID, __('Petal: Banners', 'ars-petal'), [
+        parent::__construct(self::ID, __('ARS Petal: Banners', 'ars-petal'), [
             'classname' => 'ars-petal-hero',
             'description' => __('A carousel of featured episodes, the latest episodes, or your own images.', 'ars-petal'),
         ]);

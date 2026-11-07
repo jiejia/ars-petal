@@ -16,7 +16,7 @@ final class PeopleWidget extends Widget
 
     public function __construct()
     {
-        parent::__construct(self::ID, __('Petal: Hosts & Guests', 'ars-petal'), [
+        parent::__construct(self::ID, __('ARS Petal: Hosts & Guests', 'ars-petal'), [
             'classname' => 'ars-petal-people',
             'description' => __('Two cards with the avatars of the hosts and of the guests.', 'ars-petal'),
         ]);

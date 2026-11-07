@@ -15,7 +15,7 @@ final class ListWidget extends EpisodeWidget
 
     public function __construct()
     {
-        parent::__construct(self::ID, __('Petal: Episode List', 'ars-petal'), [
+        parent::__construct(self::ID, __('ARS Petal: Episode List', 'ars-petal'), [
             'classname' => 'ars-petal-list',
             'description' => __('Episodes one per row, with cover, title and a play button.', 'ars-petal'),
         ]);

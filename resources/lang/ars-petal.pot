@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-07T01:44:45+00:00\n"
+"POT-Creation-Date: 2026-11-07T01:57:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ars-petal\n"
@@ -328,7 +328,7 @@ msgid "(no title)"
 msgstr ""
 
 #: app/Widgets/HeroWidget.php:32
-msgid "Petal: Banners"
+msgid "ARS Petal: Banners"
 msgstr ""
 
 #: app/Widgets/HeroWidget.php:34
@@ -398,7 +398,7 @@ msgid "Use this image"
 msgstr ""
 
 #: app/Widgets/ListWidget.php:18
-msgid "Petal: Episode List"
+msgid "ARS Petal: Episode List"
 msgstr ""
 
 #: app/Widgets/ListWidget.php:20
@@ -406,7 +406,7 @@ msgid "Episodes one per row, with cover, title and a play button."
 msgstr ""
 
 #: app/Widgets/PeopleWidget.php:19
-msgid "Petal: Hosts & Guests"
+msgid "ARS Petal: Hosts & Guests"
 msgstr ""
 
 #: app/Widgets/PeopleWidget.php:21
@@ -450,7 +450,7 @@ msgid "Guest appearances"
 msgstr ""
 
 #: app/Widgets/RailWidget.php:18
-msgid "Petal: Episode Rail"
+msgid "ARS Petal: Episode Rail"
 msgstr ""
 
 #: app/Widgets/RailWidget.php:20

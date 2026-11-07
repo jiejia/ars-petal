@@ -1041,8 +1041,8 @@ msgid "Used when \"Episodes\" is set to \"Specific episodes\". They show in the 
 msgstr "当“节目”设为“指定节目”时使用。按下方列表的顺序显示，上面的数量将被忽略。"
 
 #: app/Widgets/HeroWidget.php:32
-msgid "Petal: Banners"
-msgstr "Petal：横幅"
+msgid "ARS Petal: Banners"
+msgstr "ARS Petal：横幅"
 
 #: app/Widgets/HeroWidget.php:34
 msgid "A carousel of featured episodes, the latest episodes, or your own images."
@@ -1111,16 +1111,16 @@ msgid "Use this image"
 msgstr "使用此图片"
 
 #: app/Widgets/ListWidget.php:18
-msgid "Petal: Episode List"
-msgstr "Petal：节目列表"
+msgid "ARS Petal: Episode List"
+msgstr "ARS Petal：节目列表"
 
 #: app/Widgets/ListWidget.php:20
 msgid "Episodes one per row, with cover, title and a play button."
 msgstr "每行一期节目，带封面、标题和播放按钮。"
 
 #: app/Widgets/PeopleWidget.php:19
-msgid "Petal: Hosts & Guests"
-msgstr "Petal：主播和嘉宾"
+msgid "ARS Petal: Hosts & Guests"
+msgstr "ARS Petal：主播和嘉宾"
 
 #: app/Widgets/PeopleWidget.php:21
 msgid "Two cards with the avatars of the hosts and of the guests."
@@ -1143,8 +1143,8 @@ msgid "Guest appearances"
 msgstr "嘉宾出场"
 
 #: app/Widgets/RailWidget.php:18
-msgid "Petal: Episode Rail"
-msgstr "Petal：横向节目滑动"
+msgid "ARS Petal: Episode Rail"
+msgstr "ARS Petal：横向节目滑动"
 
 #: app/Widgets/RailWidget.php:20
 msgid "Episode cards in a row that scrolls sideways."
