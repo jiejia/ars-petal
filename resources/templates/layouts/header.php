@@ -88,8 +88,8 @@ $schedule = Podcast::schedule();
     </div>
   </div>
 
-  <dialog x-ref="dialog" class="modal modal-top sm:modal-middle" @close="q = ''; results = []">
-    <div class="modal-box max-w-2xl rounded-3xl border border-base-300 bg-base-100 p-3 shadow-2xl">
+  <dialog x-ref="dialog" class="modal modal-top" @close="q = ''; results = []">
+    <div class="modal-box mt-[10vh] max-w-2xl rounded-3xl border border-base-300 bg-base-100 p-3 shadow-2xl">
       <?php get_search_form(['petal_variant' => 'modal']); ?>
       <div class="mt-2 max-h-96 overflow-y-auto">
         <template x-for="result in results" :key="result.subtype + result.id">
