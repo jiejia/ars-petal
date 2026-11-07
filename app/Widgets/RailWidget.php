@@ -23,7 +23,7 @@ final class RailWidget extends EpisodeWidget
 
     public static function defaults(): array
     {
-        return ['title' => '', 'source' => self::LATEST, 'count' => 8, 'episodes' => [], 'loop' => false];
+        return ['title' => '', 'source' => self::LATEST, 'count' => 8, 'episodes' => [], 'loop' => true];
     }
 
     protected function render(array $instance): void

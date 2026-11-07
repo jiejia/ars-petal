@@ -21,7 +21,7 @@ if ($episodes === []) {
     return;
 }
 
-$loop ??= false;
+$loop ??= true;
 ?>
 <section x-data="rail(<?php echo $loop ? 'true' : 'false'; ?>)" aria-labelledby="<?php echo esc_attr($id); ?>">
   <div class="flex items-end justify-between gap-3">

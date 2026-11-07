@@ -214,7 +214,7 @@ Alpine.data('heroCarousel', () => ({
 
 // A horizontally scrolling card rail with ‹ › buttons. With `loop`, the buttons wrap around at either end; without it they
 // are disabled there.
-Alpine.data('rail', (loop = false) => ({
+Alpine.data('rail', (loop = true) => ({
   loop,
   atStart: true,
   atEnd: false,
