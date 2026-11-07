@@ -36,7 +36,7 @@ $loop ??= true;
       <?php endif; ?>
     </div>
   </div>
-  <div x-ref="rail" class="rail mt-6" @scroll.passive="update()">
+  <div x-ref="rail" class="rail mt-6" @scroll.passive="update()" @touchstart.passive="loop && swipe.start($event)" @touchend.passive="loop && swipe.end($event)">
     <?php foreach ($episodes as $episode) : ?>
       <?php Template::render('cards/episode', ['episode' => $episode, 'class' => 'w-[80%] shrink-0 sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]']); ?>
     <?php endforeach; ?>

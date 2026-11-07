@@ -33,7 +33,7 @@ $colors = [
 $count = count($items);
 ?>
 <section class="wash relative overflow-hidden rounded-[2rem] lg:aspect-[3.7/1]" x-data="heroCarousel" aria-roledescription="carousel" aria-label="<?php esc_attr_e('Featured', 'ars-petal'); ?>" @mouseenter="pause()" @mouseleave="play()" @focusin="pause()" @focusout="play()">
-  <div x-ref="track" class="carousel h-full w-full" @scroll.passive="sync()" @touchstart.passive="pause()" @touchend.passive="play()">
+  <div x-ref="track" class="carousel h-full w-full" @scroll.passive="sync()" @touchstart.passive="pause(); count > 1 && swipe.start($event)" @touchend.passive="count > 1 && swipe.end($event); play()">
     <?php foreach ($items as $index => $item) :
         if (is_array($item)) : ?>
       <article class="petal-item carousel-item w-full lg:h-full" :inert="active !== <?php echo (int) $index; ?>" aria-roledescription="slide" aria-label="<?php echo esc_attr(sprintf(/* translators: 1: slide number, 2: number of slides. */ __('Slide %1$d of %2$d', 'ars-petal'), $index + 1, $count)); ?>">

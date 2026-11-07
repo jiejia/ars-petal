@@ -175,6 +175,27 @@ Alpine.data('listView', (kind = 'posts', fallback = 'list') => ({
   },
 }));
 
+// Touch swipes cannot go past the first / last item of a scroll-snap track, so a swipe that starts at an end and pushes
+// further wraps around to the other end. Returns the touchstart / touchend handlers for the track.
+function swipeWrap(track) {
+  let startX = 0;
+  let edge = 0; // -1: started at the start, 1: started at the end, 0: in between
+  return {
+    start(event) {
+      startX = event.touches[0].clientX;
+      const atStart = track.scrollLeft <= 4;
+      const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+      edge = atStart ? -1 : atEnd ? 1 : 0;
+    },
+    end(event) {
+      const dx = event.changedTouches[0].clientX - startX;
+      if (edge === 1 && dx < -40) track.scrollTo({ left: 0, behavior: 'smooth' });
+      else if (edge === -1 && dx > 40) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      edge = 0;
+    },
+  };
+}
+
 // Home: the featured carousel (a daisyUI carousel that slides every 5 s, paused on hover / focus).
 Alpine.data('heroCarousel', () => ({
   active: 0,
@@ -182,6 +203,7 @@ Alpine.data('heroCarousel', () => ({
   timer: null,
   init() {
     this.count = this.$refs.track.children.length;
+    this.swipe = swipeWrap(this.$refs.track);
     this.onVisibility = () => (document.hidden ? this.pause() : this.play());
     document.addEventListener('visibilitychange', this.onVisibility);
     this.play();
@@ -219,6 +241,7 @@ Alpine.data('rail', (loop = true) => ({
   atStart: true,
   atEnd: false,
   init() {
+    this.swipe = swipeWrap(this.$refs.rail);
     this.$nextTick(() => this.update());
   },
   update() {
