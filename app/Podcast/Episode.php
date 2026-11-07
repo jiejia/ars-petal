@@ -192,6 +192,7 @@ final class Episode
         return [
             'id' => $this->post->ID,
             'number' => $this->number(),
+            'date' => $text(get_the_date('', $this->post)),
             'title' => $text(get_the_title($this->post)),
             'url' => (string) get_permalink($this->post),
             'audio' => $this->audio(),
