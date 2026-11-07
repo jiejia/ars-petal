@@ -72,7 +72,8 @@ final class Assets
     public function printSchemeScript(): void
     {
         $script = "(function(){var r=document.documentElement,t=null;try{t=localStorage.getItem('petal:theme')}catch(e){}"
-            . "if(!t&&r.dataset.schemeDefault==='system'){t=matchMedia('(prefers-color-scheme: dark)').matches?'petal-dark':'petal'}"
+            . "if(!t&&r.dataset.schemeDefault==='system'){t='system'}"
+            . "if(t==='system'){t=matchMedia('(prefers-color-scheme: dark)').matches?'petal-dark':'petal'}"
             . "if(t==='petal'||t==='petal-dark'){r.dataset.theme=t}})();";
 
         wp_print_inline_script_tag($script);

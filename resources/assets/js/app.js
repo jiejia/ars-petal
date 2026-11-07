@@ -51,15 +51,33 @@ function formatTime(seconds) {
 
 /* ---------------- Alpine ---------------- */
 
+// Color mode: light, dark, or follow the visitor's system. The choice is saved as 'petal' / 'petal-dark' / 'system'.
+const MODES = { light: LIGHT, dark: DARK, system: 'system' };
+const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+const savedMode = () => {
+  const saved = storage.get(THEME_KEY);
+
+  return Object.keys(MODES).find((mode) => MODES[mode] === saved) || (root.dataset.schemeDefault === 'system' ? 'system' : null);
+};
+
 Alpine.store('ui', {
   theme: root.dataset.theme,
+  mode: savedMode() || (root.dataset.theme === DARK ? 'dark' : 'light'),
   get dark() {
     return this.theme === DARK;
   },
-  toggleTheme() {
-    this.theme = this.dark ? LIGHT : DARK;
+  apply() {
+    this.theme = this.mode === 'system' ? (systemDark.matches ? DARK : LIGHT) : MODES[this.mode];
     root.dataset.theme = this.theme;
-    storage.set(THEME_KEY, this.theme);
+  },
+  // light -> dark -> system -> light
+  toggleTheme() {
+    this.mode = { light: 'dark', dark: 'system', system: 'light' }[this.mode];
+    this.apply();
+    storage.set(THEME_KEY, MODES[this.mode]);
+  },
+  init() {
+    systemDark.addEventListener('change', () => this.mode === 'system' && this.apply());
   },
 });
 

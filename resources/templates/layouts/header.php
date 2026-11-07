@@ -66,9 +66,11 @@ $schedule = Podcast::schedule();
         <?php Icon::render('search', 'mute size-4'); ?><span><?php esc_html_e('Search…', 'ars-petal'); ?></span><kbd class="kbd kbd-sm">/</kbd>
       </button>
       <button type="button" class="btn-plain size-10 rounded-xl xl:hidden" @click="open()" aria-label="<?php esc_attr_e('Search', 'ars-petal'); ?>"><?php Icon::render('search', 'size-[1.15rem]'); ?></button>
-      <button type="button" class="btn-plain size-10 rounded-xl" @click="$store.ui.toggleTheme()" :aria-label="$store.ui.dark ? '<?php echo esc_js(__('Switch to day mode', 'ars-petal')); ?>' : '<?php echo esc_js(__('Switch to night mode', 'ars-petal')); ?>'" aria-label="<?php esc_attr_e('Switch color scheme', 'ars-petal'); ?>">
-        <span x-show="$store.ui.dark"><?php Icon::render('sun', 'size-[1.15rem]'); ?></span>
-        <span x-show="!$store.ui.dark" x-cloak><?php Icon::render('moon', 'size-[1.15rem]'); ?></span>
+      <?php // Cycles light -> dark -> follow system; the icon shows the current mode. ?>
+      <button type="button" class="btn-plain size-10 rounded-xl" @click="$store.ui.toggleTheme()" :aria-label="{ light: '<?php echo esc_js(__('Day mode', 'ars-petal')); ?>', dark: '<?php echo esc_js(__('Night mode', 'ars-petal')); ?>', system: '<?php echo esc_js(__('Follow system', 'ars-petal')); ?>' }[$store.ui.mode]" aria-label="<?php esc_attr_e('Switch color scheme', 'ars-petal'); ?>">
+        <span x-show="$store.ui.mode === 'light'" x-cloak><?php Icon::render('sun', 'size-[1.15rem]'); ?></span>
+        <span x-show="$store.ui.mode === 'dark'" x-cloak><?php Icon::render('moon', 'size-[1.15rem]'); ?></span>
+        <span x-show="$store.ui.mode === 'system'" x-cloak><?php Icon::render('monitor', 'size-[1.15rem]'); ?></span>
       </button>
       <?php // The podcast apps filled in under the plugin's Subscription Settings, then the RSS feed. ?>
       <div class="dropdown dropdown-end hidden sm:block">
