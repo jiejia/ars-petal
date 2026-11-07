@@ -89,7 +89,7 @@ $schedule = Podcast::schedule();
   </div>
 
   <dialog x-ref="dialog" class="modal modal-top" @close="q = ''; results = []">
-    <div class="modal-box mx-auto mt-[10vh] max-w-2xl rounded-3xl border border-base-300 bg-base-100 p-3 shadow-2xl">
+    <div class="modal-box mx-auto mt-[18vh] max-w-2xl rounded-3xl border border-base-300 bg-base-100 p-3 shadow-2xl">
       <?php get_search_form(['petal_variant' => 'modal']); ?>
       <div x-ref="panel" class="mt-2 max-h-96 overflow-y-auto transition-[height] duration-200 ease-out motion-reduce:transition-none">
        <div x-ref="inner">
