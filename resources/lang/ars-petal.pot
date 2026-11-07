@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-05T08:29:41+00:00\n"
+"POT-Creation-Date: 2026-11-07T01:44:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ars-petal\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "https://github.com/jiejia/"
 msgstr ""
 
-#: app/Blog/Blog.php:85
+#: app/Blog/Blog.php:86
 #: resources/templates/cards/post-row.php:51
 #: resources/templates/index.php:35
 msgid "Blog"
@@ -139,12 +139,12 @@ msgid "Leave empty for “© year site name”."
 msgstr ""
 
 #: app/Navigation/Menu.php:112
-#: app/View/Archive.php:87
+#: app/View/Archive.php:90
 msgid "Home"
 msgstr ""
 
 #: app/Navigation/Menu.php:116
-#: resources/templates/cards/episode-row.php:47
+#: resources/templates/cards/episode-row.php:51
 #: resources/templates/index.php:32
 msgid "Podcast"
 msgstr ""
@@ -152,10 +152,10 @@ msgstr ""
 #. translators: %s: search terms.
 #: app/Navigation/Menu.php:124
 #: app/View/Archive.php:24
-#: app/View/Archive.php:90
+#: app/View/Archive.php:93
 #: resources/templates/404.php:24
 #: resources/templates/archive-ars_podcast.php:45
-#: resources/templates/front/latest.php:25
+#: resources/templates/front/rail.php:32
 msgid "All episodes"
 msgstr ""
 
@@ -164,25 +164,25 @@ msgstr ""
 msgid "RSS feed"
 msgstr ""
 
-#: app/Setup/Assets.php:104
+#: app/Setup/Assets.php:105
 msgid "Episode"
 msgstr ""
 
-#: app/Setup/Assets.php:105
+#: app/Setup/Assets.php:106
 msgid "Post"
 msgstr ""
 
-#: app/Setup/Assets.php:106
+#: app/Setup/Assets.php:107
 #: resources/templates/cards/post-row.php:51
 msgid "Page"
 msgstr ""
 
-#: app/Setup/Assets.php:107
+#: app/Setup/Assets.php:108
 #: resources/templates/parts/share.php:22
 msgid "Link copied"
 msgstr ""
 
-#: app/Setup/Assets.php:108
+#: app/Setup/Assets.php:109
 #: resources/templates/cards/episode.php:36
 msgid "Now playing"
 msgstr ""
@@ -212,28 +212,28 @@ msgid "Latest posts"
 msgstr ""
 
 #. translators: Month heading of archive lists, a PHP date format.
-#: app/View/Archive.php:59
+#: app/View/Archive.php:60
 msgctxt "archive month heading"
 msgid "F Y"
 msgstr ""
 
-#: app/View/Archive.php:74
+#: app/View/Archive.php:76
 msgid "Newest"
 msgstr ""
 
-#: app/View/Archive.php:75
+#: app/View/Archive.php:77
 msgid "Oldest"
 msgstr ""
 
-#: app/View/Archive.php:76
+#: app/View/Archive.php:80
 msgid "Shortest"
 msgstr ""
 
-#: app/View/Archive.php:127
+#: app/View/Archive.php:130
 msgid "Previous page"
 msgstr ""
 
-#: app/View/Archive.php:139
+#: app/View/Archive.php:142
 msgid "Next page"
 msgstr ""
 
@@ -253,7 +253,6 @@ msgstr[1] ""
 #: resources/templates/front/topics.php:35
 #: resources/templates/index.php:44
 #: resources/templates/index.php:51
-#: resources/templates/index.php:61
 #: resources/templates/single.php:31
 #, php-format
 msgid "%s post"
@@ -268,6 +267,199 @@ msgid "%d min"
 msgid_plural "%d min"
 msgstr[0] ""
 msgstr[1] ""
+
+#: app/Widgets/EpisodeWidget.php:62
+msgctxt "home heading, bold part"
+msgid "Popular"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:63
+msgctxt "home heading, bold part"
+msgid "Picked"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:64
+msgctxt "home heading, bold part"
+msgid "Latest"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:67
+msgctxt "home heading, light part"
+msgid "episodes"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:111
+msgid "Title"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:112
+msgid "Episodes"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:113
+#: app/Widgets/HeroWidget.php:128
+msgid "Latest episodes"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:114
+msgid "Most played episodes"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:115
+msgid "Specific episodes"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:117
+msgid "Number of episodes"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:123
+msgid "Pick the specific episodes"
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:124
+msgid "Used when \"Episodes\" is set to \"Specific episodes\". They show in the order the list below has, and the number above is ignored."
+msgstr ""
+
+#: app/Widgets/EpisodeWidget.php:129
+#: resources/templates/cards/post-row.php:26
+#: resources/templates/cards/post.php:34
+msgid "(no title)"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:32
+msgid "Petal: Banners"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:34
+msgid "A carousel of featured episodes, the latest episodes, or your own images."
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:126
+msgid "Show"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:127
+msgid "Featured episodes (the latest three when none is featured)"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:129
+msgid "Custom banners (image and link)"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:131
+msgid "Number of latest episodes"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:134
+msgid "Custom banners"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:135
+msgid "Used when \"Show\" is set to \"Custom banners\". Slots without an image are skipped."
+msgstr ""
+
+#. translators: %d: banner number.
+#: app/Widgets/HeroWidget.php:138
+#, php-format
+msgid "Banner %d"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:140
+msgid "Image URL"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:141
+msgid "Select image"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:143
+msgid "Link URL"
+msgstr ""
+
+#: app/Widgets/HeroWidget.php:144
+msgid "Alt text"
+msgstr ""
+
+#: app/Widgets/HomeArea.php:55
+msgid "Home Top"
+msgstr ""
+
+#: app/Widgets/HomeArea.php:56
+msgid "The top of the home page. Leave it empty to show the banners, hosts and guests, latest episodes and popular episodes."
+msgstr ""
+
+#: app/Widgets/HomeArea.php:101
+msgid "Select banner image"
+msgstr ""
+
+#: app/Widgets/HomeArea.php:101
+msgid "Use this image"
+msgstr ""
+
+#: app/Widgets/ListWidget.php:18
+msgid "Petal: Episode List"
+msgstr ""
+
+#: app/Widgets/ListWidget.php:20
+msgid "Episodes one per row, with cover, title and a play button."
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:19
+msgid "Petal: Hosts & Guests"
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:21
+msgid "Two cards with the avatars of the hosts and of the guests."
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:38
+msgctxt "home heading, bold part"
+msgid "Host"
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:38
+msgctxt "home heading, light part"
+msgid "lineup"
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:39
+msgctxt "home heading, bold part"
+msgid "Guest"
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:39
+msgctxt "home heading, light part"
+msgid "appearances"
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:54
+msgid "Hosts title"
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:54
+msgid "Host lineup"
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:55
+msgid "Guests title"
+msgstr ""
+
+#: app/Widgets/PeopleWidget.php:55
+msgid "Guest appearances"
+msgstr ""
+
+#: app/Widgets/RailWidget.php:18
+msgid "Petal: Episode Rail"
+msgstr ""
+
+#: app/Widgets/RailWidget.php:20
+msgid "Episode cards in a row that scrolls sideways."
+msgstr ""
+
+#: app/Widgets/RailWidget.php:51
+msgid "Loop: the arrows wrap around at either end"
+msgstr ""
 
 #: resources/templates/404.php:18
 msgid "Page not found"
@@ -297,18 +489,18 @@ msgstr[1] ""
 msgid "All"
 msgstr ""
 
-#. translators: %s: "All episodes", a category or a topic.
-#: resources/templates/archive-ars_podcast.php:46
+#. translators: %s: a category or a tag.
+#: resources/templates/archive-ars_podcast.php:47
 #, php-format
 msgid "Episodes: %s"
 msgstr ""
 
-#: resources/templates/archive-ars_podcast.php:51
+#: resources/templates/archive-ars_podcast.php:52
 #: resources/templates/single-ars_podcast.php:65
 msgid "Topics"
 msgstr ""
 
-#: resources/templates/archive-ars_podcast.php:68
+#: resources/templates/archive-ars_podcast.php:69
 msgid "No episodes match these filters."
 msgstr ""
 
@@ -351,25 +543,20 @@ msgid "Authors"
 msgstr ""
 
 #: resources/templates/author.php:104
-#: resources/templates/index.php:92
+#: resources/templates/index.php:102
 msgid "Nothing has been published here yet."
 msgstr ""
 
-#: resources/templates/cards/episode-row.php:54
+#: resources/templates/cards/episode-row.php:61
 #: resources/templates/single-ars_podcast.php:93
 msgid "Favorite"
 msgstr ""
 
 #: resources/templates/cards/episode.php:35
-#: resources/templates/layouts/footer.php:63
 #: resources/templates/layouts/footer.php:64
-#: resources/templates/layouts/header.php:123
+#: resources/templates/layouts/footer.php:65
+#: resources/templates/layouts/header.php:125
 msgid "Listen"
-msgstr ""
-
-#: resources/templates/cards/post-row.php:26
-#: resources/templates/cards/post.php:34
-msgid "(no title)"
 msgstr ""
 
 #. translators: %d: minutes.
@@ -384,7 +571,7 @@ msgstr[1] ""
 
 #: resources/templates/cards/post-row.php:54
 #: resources/templates/cards/post.php:27
-#: resources/templates/front/hero.php:34
+#: resources/templates/front/hero.php:35
 msgid "Featured"
 msgstr ""
 
@@ -430,67 +617,44 @@ msgstr ""
 msgid "Open the transcript file"
 msgstr ""
 
-#: resources/templates/front/hero.php:24
+#: resources/templates/front/hero.php:25
 msgctxt "home carousel badge"
 msgid "Featured"
 msgstr ""
 
-#: resources/templates/front/hero.php:24
+#: resources/templates/front/hero.php:25
 msgctxt "home carousel badge"
 msgid "Latest"
 msgstr ""
 
 #. translators: 1: slide number, 2: number of slides.
-#: resources/templates/front/hero.php:48
+#: resources/templates/front/hero.php:39
+#: resources/templates/front/hero.php:60
 #, php-format
 msgid "Slide %1$d of %2$d"
 msgstr ""
 
-#: resources/templates/front/hero.php:65
+#: resources/templates/front/hero.php:77
 msgid "Play"
 msgstr ""
 
-#: resources/templates/front/hero.php:68
-#: resources/templates/front/hero.php:70
+#: resources/templates/front/hero.php:80
+#: resources/templates/front/hero.php:82
 msgid "Show notes"
 msgstr ""
 
-#: resources/templates/front/hero.php:70
+#: resources/templates/front/hero.php:82
 msgid "Read more"
 msgstr ""
 
-#: resources/templates/front/hero.php:82
+#: resources/templates/front/hero.php:94
 msgid "Choose a slide"
 msgstr ""
 
 #. translators: %d: slide number.
-#: resources/templates/front/hero.php:84
+#: resources/templates/front/hero.php:96
 #, php-format
 msgid "Slide %d"
-msgstr ""
-
-#: resources/templates/front/latest.php:22
-msgctxt "home heading, bold part"
-msgid "Latest"
-msgstr ""
-
-#: resources/templates/front/latest.php:22
-#: resources/templates/front/popular.php:19
-msgctxt "home heading, light part"
-msgid "episodes"
-msgstr ""
-
-#: resources/templates/front/latest.php:25
-#: resources/templates/front/posts.php:22
-msgid "See all"
-msgstr ""
-
-#: resources/templates/front/latest.php:27
-msgid "Scroll left"
-msgstr ""
-
-#: resources/templates/front/latest.php:28
-msgid "Scroll right"
 msgstr ""
 
 #: resources/templates/front/numbers.php:25
@@ -518,33 +682,8 @@ msgstr ""
 msgid "Podcast in numbers"
 msgstr ""
 
-#: resources/templates/front/people.php:20
+#: resources/templates/front/people.php:31
 msgid "Hosts and guests"
-msgstr ""
-
-#: resources/templates/front/people.php:21
-msgctxt "home heading, bold part"
-msgid "Host"
-msgstr ""
-
-#: resources/templates/front/people.php:21
-msgctxt "home heading, light part"
-msgid "lineup"
-msgstr ""
-
-#: resources/templates/front/people.php:22
-msgctxt "home heading, bold part"
-msgid "Guest"
-msgstr ""
-
-#: resources/templates/front/people.php:22
-msgctxt "home heading, light part"
-msgid "appearances"
-msgstr ""
-
-#: resources/templates/front/popular.php:19
-msgctxt "home heading, bold part"
-msgid "Popular"
 msgstr ""
 
 #: resources/templates/front/posts.php:20
@@ -559,6 +698,19 @@ msgstr ""
 
 #: resources/templates/front/posts.php:22
 msgid "All posts"
+msgstr ""
+
+#: resources/templates/front/posts.php:22
+#: resources/templates/front/rail.php:32
+msgid "See all"
+msgstr ""
+
+#: resources/templates/front/rail.php:34
+msgid "Scroll left"
+msgstr ""
+
+#: resources/templates/front/rail.php:35
+msgid "Scroll right"
 msgstr ""
 
 #: resources/templates/front/subscribe.php:20
@@ -588,7 +740,7 @@ msgid "E-mail address"
 msgstr ""
 
 #: resources/templates/front/subscribe.php:40
-#: resources/templates/layouts/header.php:75
+#: resources/templates/layouts/header.php:77
 msgid "Subscribe"
 msgstr ""
 
@@ -616,8 +768,8 @@ msgid "categories"
 msgstr ""
 
 #: resources/templates/index.php:36
-#: resources/templates/index.php:71
-#: resources/templates/index.php:72
+#: resources/templates/index.php:81
+#: resources/templates/index.php:82
 #: resources/templates/layouts/header.php:65
 #: resources/templates/layouts/header.php:68
 #: searchform.php:21
@@ -635,16 +787,16 @@ msgid_plural "%s results"
 msgstr[0] ""
 msgstr[1] ""
 
-#: resources/templates/index.php:75
+#: resources/templates/index.php:85
 msgid "Type"
 msgstr ""
 
-#: resources/templates/index.php:77
+#: resources/templates/index.php:87
 #: resources/templates/single.php:53
 msgid "Categories"
 msgstr ""
 
-#: resources/templates/index.php:92
+#: resources/templates/index.php:102
 msgid "Nothing matched your search. Try other words."
 msgstr ""
 
@@ -652,12 +804,13 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: resources/templates/layouts/footer.php:64
-#: resources/templates/layouts/header.php:77
+#: resources/templates/layouts/footer.php:65
+#: resources/templates/layouts/header.php:79
 msgid "Follow"
 msgstr ""
 
-#: resources/templates/layouts/footer.php:76
+#: resources/templates/layouts/footer.php:77
+#: resources/templates/layouts/header.php:70
 msgid "Night mode"
 msgstr ""
 
@@ -674,8 +827,8 @@ msgid "New post"
 msgstr ""
 
 #: resources/templates/layouts/header.php:60
-#: resources/templates/layouts/header.php:114
-#: resources/templates/layouts/header.php:117
+#: resources/templates/layouts/header.php:116
+#: resources/templates/layouts/header.php:119
 msgid "Main menu"
 msgstr ""
 
@@ -683,42 +836,42 @@ msgstr ""
 msgid "Search…"
 msgstr ""
 
-#: resources/templates/layouts/header.php:69
-msgid "Switch to day mode"
+#: resources/templates/layouts/header.php:70
+msgid "Day mode"
 msgstr ""
 
-#: resources/templates/layouts/header.php:69
-msgid "Switch to night mode"
+#: resources/templates/layouts/header.php:70
+msgid "Follow system"
 msgstr ""
 
-#: resources/templates/layouts/header.php:69
+#: resources/templates/layouts/header.php:70
 msgid "Switch color scheme"
 msgstr ""
 
-#: resources/templates/layouts/header.php:77
+#: resources/templates/layouts/header.php:79
 msgid "Listen in a podcast app"
 msgstr ""
 
-#: resources/templates/layouts/header.php:84
-#: resources/templates/layouts/header.php:111
+#: resources/templates/layouts/header.php:86
+#: resources/templates/layouts/header.php:113
 msgid "Open menu"
 msgstr ""
 
-#: resources/templates/layouts/header.php:99
+#: resources/templates/layouts/header.php:101
 msgid "See all results"
 msgstr ""
 
-#: resources/templates/layouts/header.php:101
+#: resources/templates/layouts/header.php:103
 msgid "Nothing found. Press Enter for a full search."
 msgstr ""
 
-#: resources/templates/layouts/header.php:102
+#: resources/templates/layouts/header.php:104
 msgid "Type to search"
 msgstr ""
 
-#: resources/templates/layouts/header.php:105
-#: resources/templates/layouts/header.php:113
-#: resources/templates/layouts/header.php:118
+#: resources/templates/layouts/header.php:107
+#: resources/templates/layouts/header.php:115
+#: resources/templates/layouts/header.php:120
 #: resources/templates/parts/sidebar-start.php:21
 #: resources/templates/parts/sidebar-start.php:25
 msgid "Close"
@@ -788,12 +941,6 @@ msgstr ""
 msgid "Clear filters"
 msgstr ""
 
-#. translators: %s: menu item, e.g. "Podcast".
-#: resources/templates/parts/nav-mobile.php:23
-#, php-format
-msgid "All: %s"
-msgstr ""
-
 #: resources/templates/parts/pages-sidebar.php:33
 msgid "Pages"
 msgstr ""
@@ -803,21 +950,21 @@ msgid "Pagination"
 msgstr ""
 
 #. translators: 1: episode number, 2: episode title.
-#: resources/templates/parts/play-button.php:26
+#: resources/templates/parts/play-button.php:28
 #, php-format
 msgid "Play EP.%1$s %2$s"
 msgstr ""
 
-#: resources/templates/parts/play-button.php:33
 #: resources/templates/parts/play-button.php:37
+#: resources/templates/parts/play-button.php:43
 msgid "Pause"
 msgstr ""
 
-#: resources/templates/parts/play-button.php:36
+#: resources/templates/parts/play-button.php:42
 msgid "Resume"
 msgstr ""
 
-#: resources/templates/parts/play-button.php:36
+#: resources/templates/parts/play-button.php:42
 msgid "Play episode"
 msgstr ""
 
@@ -852,19 +999,19 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: resources/templates/parts/title-bar.php:29
+#: resources/templates/parts/title-bar.php:33
 msgid "Sort"
 msgstr ""
 
-#: resources/templates/parts/title-bar.php:38
+#: resources/templates/parts/title-bar.php:42
 msgid "View"
 msgstr ""
 
-#: resources/templates/parts/title-bar.php:39
+#: resources/templates/parts/title-bar.php:43
 msgid "List view"
 msgstr ""
 
-#: resources/templates/parts/title-bar.php:40
+#: resources/templates/parts/title-bar.php:44
 msgid "Grid view"
 msgstr ""
 

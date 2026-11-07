@@ -37,7 +37,7 @@ msgstr "jiejia"
 msgid "https://github.com/jiejia/"
 msgstr "https://github.com/jiejia/"
 
-#: app/Blog/Blog.php:85
+#: app/Blog/Blog.php:86
 #: resources/templates/cards/post-row.php:51
 #: resources/templates/index.php:35
 msgid "Blog"
@@ -133,12 +133,12 @@ msgid "Leave empty for “© year site name”."
 msgstr "留空则显示“© 年份 站点名称”。"
 
 #: app/Navigation/Menu.php:112
-#: app/View/Archive.php:87
+#: app/View/Archive.php:90
 msgid "Home"
 msgstr "首页"
 
 #: app/Navigation/Menu.php:116
-#: resources/templates/cards/episode-row.php:47
+#: resources/templates/cards/episode-row.php:51
 #: resources/templates/index.php:32
 msgid "Podcast"
 msgstr "播客"
@@ -146,10 +146,10 @@ msgstr "播客"
 #. translators: %s: search terms.
 #: app/Navigation/Menu.php:124
 #: app/View/Archive.php:24
-#: app/View/Archive.php:90
+#: app/View/Archive.php:93
 #: resources/templates/404.php:24
 #: resources/templates/archive-ars_podcast.php:45
-#: resources/templates/front/latest.php:25
+#: resources/templates/front/rail.php:32
 msgid "All episodes"
 msgstr "全部节目"
 
@@ -158,25 +158,25 @@ msgstr "全部节目"
 msgid "RSS feed"
 msgstr "RSS 订阅源"
 
-#: app/Setup/Assets.php:104
+#: app/Setup/Assets.php:105
 msgid "Episode"
 msgstr "节目"
 
-#: app/Setup/Assets.php:105
+#: app/Setup/Assets.php:106
 msgid "Post"
 msgstr "文章"
 
-#: app/Setup/Assets.php:106
+#: app/Setup/Assets.php:107
 #: resources/templates/cards/post-row.php:51
 msgid "Page"
 msgstr "页面"
 
-#: app/Setup/Assets.php:107
+#: app/Setup/Assets.php:108
 #: resources/templates/parts/share.php:22
 msgid "Link copied"
 msgstr "链接已复制"
 
-#: app/Setup/Assets.php:108
+#: app/Setup/Assets.php:109
 #: resources/templates/cards/episode.php:36
 msgid "Now playing"
 msgstr "正在播放"
@@ -202,28 +202,28 @@ msgid "Latest posts"
 msgstr "最新文章"
 
 #. translators: Month heading of archive lists, a PHP date format.
-#: app/View/Archive.php:59
+#: app/View/Archive.php:60
 msgctxt "archive month heading"
 msgid "F Y"
 msgstr "Y 年 n 月"
 
-#: app/View/Archive.php:74
+#: app/View/Archive.php:76
 msgid "Newest"
 msgstr "最新"
 
-#: app/View/Archive.php:75
+#: app/View/Archive.php:77
 msgid "Oldest"
 msgstr "最早"
 
-#: app/View/Archive.php:76
+#: app/View/Archive.php:80
 msgid "Shortest"
 msgstr "最短"
 
-#: app/View/Archive.php:127
+#: app/View/Archive.php:130
 msgid "Previous page"
 msgstr "上一页"
 
-#: app/View/Archive.php:139
+#: app/View/Archive.php:142
 msgid "Next page"
 msgstr "下一页"
 
@@ -242,7 +242,6 @@ msgstr[0] "%s 期节目"
 #: resources/templates/front/topics.php:35
 #: resources/templates/index.php:44
 #: resources/templates/index.php:51
-#: resources/templates/index.php:61
 #: resources/templates/single.php:31
 #, php-format
 msgid "%s post"
@@ -283,18 +282,18 @@ msgstr[0] "共 %s 期"
 msgid "All"
 msgstr "全部"
 
-#. translators: %s: "All episodes", a category or a topic.
-#: resources/templates/archive-ars_podcast.php:46
+#. translators: %s: a category or a tag.
+#: resources/templates/archive-ars_podcast.php:47
 #, php-format
 msgid "Episodes: %s"
 msgstr "节目归档：%s"
 
-#: resources/templates/archive-ars_podcast.php:51
+#: resources/templates/archive-ars_podcast.php:52
 #: resources/templates/single-ars_podcast.php:65
 msgid "Topics"
 msgstr "栏目"
 
-#: resources/templates/archive-ars_podcast.php:68
+#: resources/templates/archive-ars_podcast.php:69
 msgid "No episodes match these filters."
 msgstr "没有符合条件的节目"
 
@@ -337,22 +336,23 @@ msgid "Authors"
 msgstr "作者"
 
 #: resources/templates/author.php:104
-#: resources/templates/index.php:92
+#: resources/templates/index.php:102
 msgid "Nothing has been published here yet."
 msgstr "这里还没有发布内容。"
 
-#: resources/templates/cards/episode-row.php:54
+#: resources/templates/cards/episode-row.php:61
 #: resources/templates/single-ars_podcast.php:93
 msgid "Favorite"
 msgstr "收藏"
 
 #: resources/templates/cards/episode.php:35
-#: resources/templates/layouts/footer.php:63
 #: resources/templates/layouts/footer.php:64
-#: resources/templates/layouts/header.php:123
+#: resources/templates/layouts/footer.php:65
+#: resources/templates/layouts/header.php:125
 msgid "Listen"
 msgstr "收听"
 
+#: app/Widgets/EpisodeWidget.php:129
 #: resources/templates/cards/post-row.php:26
 #: resources/templates/cards/post.php:34
 msgid "(no title)"
@@ -369,7 +369,7 @@ msgstr[0] "阅读 %d 分钟"
 
 #: resources/templates/cards/post-row.php:54
 #: resources/templates/cards/post.php:27
-#: resources/templates/front/hero.php:34
+#: resources/templates/front/hero.php:35
 msgid "Featured"
 msgstr "置顶"
 
@@ -415,61 +415,61 @@ msgstr "文字稿以文件形式提供。"
 msgid "Open the transcript file"
 msgstr "打开文字稿文件"
 
-#: resources/templates/front/hero.php:24
+#: resources/templates/front/hero.php:25
 msgctxt "home carousel badge"
 msgid "Featured"
 msgstr "精选"
 
-#: resources/templates/front/hero.php:24
+#: resources/templates/front/hero.php:25
 msgctxt "home carousel badge"
 msgid "Latest"
 msgstr "最新"
 
 #. translators: 1: slide number, 2: number of slides.
-#: resources/templates/front/hero.php:48
+#: resources/templates/front/hero.php:39
+#: resources/templates/front/hero.php:60
 #, php-format
 msgid "Slide %1$d of %2$d"
 msgstr "第 %1$d 张，共 %2$d 张"
 
-#: resources/templates/parts/play-button.php:36
+#: resources/templates/parts/play-button.php:42
 msgid "Play episode"
 msgstr "播放本期"
 
-#: resources/templates/front/hero.php:68
-#: resources/templates/front/hero.php:70
+#: resources/templates/front/hero.php:80
+#: resources/templates/front/hero.php:82
 msgid "Show notes"
 msgstr "节目笔记"
 
-#: resources/templates/front/hero.php:70
+#: resources/templates/front/hero.php:82
 msgid "Read more"
 msgstr "阅读全文"
 
-#: resources/templates/front/hero.php:82
+#: resources/templates/front/hero.php:94
 msgid "Choose a slide"
 msgstr "切换精选"
 
 #. translators: %d: slide number.
-#: resources/templates/front/hero.php:84
+#: resources/templates/front/hero.php:96
 #, php-format
 msgid "Slide %d"
 msgstr "第 %d 张"
 
-#: resources/templates/front/latest.php:22
+#: app/Widgets/EpisodeWidget.php:64
 msgctxt "home heading, bold part"
 msgid "Latest"
 msgstr "最新"
 
-#: resources/templates/front/latest.php:22
-#: resources/templates/front/popular.php:19
+#: app/Widgets/EpisodeWidget.php:67
 msgctxt "home heading, light part"
 msgid "episodes"
 msgstr "节目"
 
-#: resources/templates/front/latest.php:27
+#: resources/templates/front/rail.php:34
 msgid "Scroll left"
 msgstr "向左滚动"
 
-#: resources/templates/front/latest.php:28
+#: resources/templates/front/rail.php:35
 msgid "Scroll right"
 msgstr "向右滚动"
 
@@ -496,31 +496,31 @@ msgstr "累计收听"
 msgid "Podcast in numbers"
 msgstr "播客数据"
 
-#: resources/templates/front/people.php:20
+#: resources/templates/front/people.php:31
 msgid "Hosts and guests"
 msgstr "主播与嘉宾"
 
-#: resources/templates/front/people.php:21
+#: app/Widgets/PeopleWidget.php:38
 msgctxt "home heading, bold part"
 msgid "Host"
 msgstr "主播"
 
-#: resources/templates/front/people.php:21
+#: app/Widgets/PeopleWidget.php:38
 msgctxt "home heading, light part"
 msgid "lineup"
 msgstr "阵容"
 
-#: resources/templates/front/people.php:22
+#: app/Widgets/PeopleWidget.php:39
 msgctxt "home heading, bold part"
 msgid "Guest"
 msgstr "做客"
 
-#: resources/templates/front/people.php:22
+#: app/Widgets/PeopleWidget.php:39
 msgctxt "home heading, light part"
 msgid "appearances"
 msgstr "嘉宾"
 
-#: resources/templates/front/popular.php:19
+#: app/Widgets/EpisodeWidget.php:62
 msgctxt "home heading, bold part"
 msgid "Popular"
 msgstr "热门"
@@ -566,7 +566,7 @@ msgid "E-mail address"
 msgstr "邮箱地址"
 
 #: resources/templates/front/subscribe.php:40
-#: resources/templates/layouts/header.php:75
+#: resources/templates/layouts/header.php:77
 msgid "Subscribe"
 msgstr "订阅"
 
@@ -594,8 +594,8 @@ msgid "categories"
 msgstr "分类"
 
 #: resources/templates/index.php:36
-#: resources/templates/index.php:71
-#: resources/templates/index.php:72
+#: resources/templates/index.php:81
+#: resources/templates/index.php:82
 #: resources/templates/layouts/header.php:65
 #: resources/templates/layouts/header.php:68
 #: searchform.php:21
@@ -612,16 +612,16 @@ msgid "%s result"
 msgid_plural "%s results"
 msgstr[0] "共 %s 条结果"
 
-#: resources/templates/index.php:75
+#: resources/templates/index.php:85
 msgid "Type"
 msgstr "类型"
 
-#: resources/templates/index.php:77
+#: resources/templates/index.php:87
 #: resources/templates/single.php:53
 msgid "Categories"
 msgstr "分类"
 
-#: resources/templates/index.php:92
+#: resources/templates/index.php:102
 msgid "Nothing matched your search. Try other words."
 msgstr "没有找到相关内容，换个关键词试试。"
 
@@ -629,12 +629,13 @@ msgstr "没有找到相关内容，换个关键词试试。"
 msgid "Browse"
 msgstr "浏览"
 
-#: resources/templates/layouts/footer.php:64
-#: resources/templates/layouts/header.php:77
+#: resources/templates/layouts/footer.php:65
+#: resources/templates/layouts/header.php:79
 msgid "Follow"
 msgstr "关注"
 
-#: resources/templates/layouts/footer.php:76
+#: resources/templates/layouts/footer.php:77
+#: resources/templates/layouts/header.php:70
 msgid "Night mode"
 msgstr "夜间模式"
 
@@ -651,8 +652,8 @@ msgid "New post"
 msgstr "最新文章"
 
 #: resources/templates/layouts/header.php:60
-#: resources/templates/layouts/header.php:114
-#: resources/templates/layouts/header.php:117
+#: resources/templates/layouts/header.php:116
+#: resources/templates/layouts/header.php:119
 msgid "Main menu"
 msgstr "主导航"
 
@@ -660,24 +661,16 @@ msgstr "主导航"
 msgid "Search…"
 msgstr "搜索…"
 
-#: resources/templates/layouts/header.php:69
-msgid "Switch to day mode"
-msgstr "切换到日间模式"
-
-#: resources/templates/layouts/header.php:69
-msgid "Switch to night mode"
-msgstr "切换到夜间模式"
-
-#: resources/templates/layouts/header.php:69
+#: resources/templates/layouts/header.php:70
 msgid "Switch color scheme"
 msgstr "切换配色"
 
-#: resources/templates/layouts/header.php:77
+#: resources/templates/layouts/header.php:79
 msgid "Listen in a podcast app"
 msgstr "在播客应用中收听"
 
-#: resources/templates/layouts/header.php:84
-#: resources/templates/layouts/header.php:111
+#: resources/templates/layouts/header.php:86
+#: resources/templates/layouts/header.php:113
 msgid "Open menu"
 msgstr "打开菜单"
 
@@ -689,21 +682,21 @@ msgstr "搜索节目和文章…"
 msgid "Search posts…"
 msgstr "搜索文章…"
 
-#: resources/templates/layouts/header.php:99
+#: resources/templates/layouts/header.php:101
 msgid "See all results"
 msgstr "查看全部结果"
 
-#: resources/templates/layouts/header.php:101
+#: resources/templates/layouts/header.php:103
 msgid "Nothing found. Press Enter for a full search."
 msgstr "没有找到，按回车查看完整搜索结果。"
 
-#: resources/templates/layouts/header.php:102
+#: resources/templates/layouts/header.php:104
 msgid "Type to search"
 msgstr "输入关键词开始搜索"
 
-#: resources/templates/layouts/header.php:105
-#: resources/templates/layouts/header.php:113
-#: resources/templates/layouts/header.php:118
+#: resources/templates/layouts/header.php:107
+#: resources/templates/layouts/header.php:115
+#: resources/templates/layouts/header.php:120
 #: resources/templates/parts/sidebar-start.php:21
 #: resources/templates/parts/sidebar-start.php:25
 msgid "Close"
@@ -771,12 +764,6 @@ msgstr "更多"
 msgid "Clear filters"
 msgstr "清除筛选"
 
-#. translators: %s: menu item, e.g. "Podcast".
-#: resources/templates/parts/nav-mobile.php:23
-#, php-format
-msgid "All: %s"
-msgstr "全部%s"
-
 #: resources/templates/parts/pages-sidebar.php:33
 msgid "Pages"
 msgstr "页面"
@@ -786,17 +773,17 @@ msgid "Pagination"
 msgstr "分页"
 
 #. translators: 1: episode number, 2: episode title.
-#: resources/templates/parts/play-button.php:26
+#: resources/templates/parts/play-button.php:28
 #, php-format
 msgid "Play EP.%1$s %2$s"
 msgstr "播放 EP.%1$s %2$s"
 
-#: resources/templates/parts/play-button.php:33
 #: resources/templates/parts/play-button.php:37
+#: resources/templates/parts/play-button.php:43
 msgid "Pause"
 msgstr "暂停"
 
-#: resources/templates/parts/play-button.php:36
+#: resources/templates/parts/play-button.php:42
 msgid "Resume"
 msgstr "继续收听"
 
@@ -830,19 +817,19 @@ msgstr "分享到 X"
 msgid "Tags"
 msgstr "标签"
 
-#: resources/templates/parts/title-bar.php:29
+#: resources/templates/parts/title-bar.php:33
 msgid "Sort"
 msgstr "排序"
 
-#: resources/templates/parts/title-bar.php:38
+#: resources/templates/parts/title-bar.php:42
 msgid "View"
 msgstr "视图"
 
-#: resources/templates/parts/title-bar.php:39
+#: resources/templates/parts/title-bar.php:43
 msgid "List view"
 msgstr "列表视图"
 
-#: resources/templates/parts/title-bar.php:40
+#: resources/templates/parts/title-bar.php:44
 msgid "Grid view"
 msgstr "网格视图"
 
@@ -997,12 +984,12 @@ msgstr "还没有其他节目。"
 msgid "No topics yet."
 msgstr "还没有栏目。"
 
-#: resources/templates/front/latest.php:25
 #: resources/templates/front/posts.php:22
+#: resources/templates/front/rail.php:32
 msgid "See all"
 msgstr "查看全部"
 
-#: resources/templates/front/hero.php:65
+#: resources/templates/front/hero.php:77
 msgid "Play"
 msgstr "播放"
 
@@ -1014,3 +1001,163 @@ msgstr "打开侧边栏"
 #: resources/templates/parts/sidebar-start.php:24
 msgid "Sidebar"
 msgstr "侧边栏"
+
+#: app/Widgets/EpisodeWidget.php:63
+msgctxt "home heading, bold part"
+msgid "Picked"
+msgstr "精选"
+
+#: app/Widgets/EpisodeWidget.php:111
+msgid "Title"
+msgstr "标题"
+
+#: app/Widgets/EpisodeWidget.php:112
+msgid "Episodes"
+msgstr "节目"
+
+#: app/Widgets/EpisodeWidget.php:113
+#: app/Widgets/HeroWidget.php:128
+msgid "Latest episodes"
+msgstr "最新节目"
+
+#: app/Widgets/EpisodeWidget.php:114
+msgid "Most played episodes"
+msgstr "最热门节目"
+
+#: app/Widgets/EpisodeWidget.php:115
+msgid "Specific episodes"
+msgstr "指定节目"
+
+#: app/Widgets/EpisodeWidget.php:117
+msgid "Number of episodes"
+msgstr "节目数量"
+
+#: app/Widgets/EpisodeWidget.php:123
+msgid "Pick the specific episodes"
+msgstr "选择指定节目"
+
+#: app/Widgets/EpisodeWidget.php:124
+msgid "Used when \"Episodes\" is set to \"Specific episodes\". They show in the order the list below has, and the number above is ignored."
+msgstr "当“节目”设为“指定节目”时使用。按下方列表的顺序显示，上面的数量将被忽略。"
+
+#: app/Widgets/HeroWidget.php:32
+msgid "Petal: Banners"
+msgstr "Petal：横幅"
+
+#: app/Widgets/HeroWidget.php:34
+msgid "A carousel of featured episodes, the latest episodes, or your own images."
+msgstr "精选节目、最新节目或自定义图片的轮播。"
+
+#: app/Widgets/HeroWidget.php:126
+msgid "Show"
+msgstr "显示"
+
+#: app/Widgets/HeroWidget.php:127
+msgid "Featured episodes (the latest three when none is featured)"
+msgstr "精选节目（没有精选时显示最新三期）"
+
+#: app/Widgets/HeroWidget.php:129
+msgid "Custom banners (image and link)"
+msgstr "自定义横幅（图片和链接）"
+
+#: app/Widgets/HeroWidget.php:131
+msgid "Number of latest episodes"
+msgstr "最新节目数量"
+
+#: app/Widgets/HeroWidget.php:134
+msgid "Custom banners"
+msgstr "自定义横幅"
+
+#: app/Widgets/HeroWidget.php:135
+msgid "Used when \"Show\" is set to \"Custom banners\". Slots without an image are skipped."
+msgstr "当“显示”设为“自定义横幅”时使用。没有图片的横幅会被跳过。"
+
+#. translators: %d: banner number.
+#: app/Widgets/HeroWidget.php:138
+#, php-format
+msgid "Banner %d"
+msgstr "横幅 %d"
+
+#: app/Widgets/HeroWidget.php:140
+msgid "Image URL"
+msgstr "图片地址"
+
+#: app/Widgets/HeroWidget.php:141
+msgid "Select image"
+msgstr "选择图片"
+
+#: app/Widgets/HeroWidget.php:143
+msgid "Link URL"
+msgstr "链接地址"
+
+#: app/Widgets/HeroWidget.php:144
+msgid "Alt text"
+msgstr "替代文本"
+
+#: app/Widgets/HomeArea.php:55
+msgid "Home Top"
+msgstr "首页顶部"
+
+#: app/Widgets/HomeArea.php:56
+msgid "The top of the home page. Leave it empty to show the banners, hosts and guests, latest episodes and popular episodes."
+msgstr "首页顶部区域。留空时显示横幅、主播和嘉宾、最新节目和热门节目。"
+
+#: app/Widgets/HomeArea.php:101
+msgid "Select banner image"
+msgstr "选择横幅图片"
+
+#: app/Widgets/HomeArea.php:101
+msgid "Use this image"
+msgstr "使用此图片"
+
+#: app/Widgets/ListWidget.php:18
+msgid "Petal: Episode List"
+msgstr "Petal：节目列表"
+
+#: app/Widgets/ListWidget.php:20
+msgid "Episodes one per row, with cover, title and a play button."
+msgstr "每行一期节目，带封面、标题和播放按钮。"
+
+#: app/Widgets/PeopleWidget.php:19
+msgid "Petal: Hosts & Guests"
+msgstr "Petal：主播和嘉宾"
+
+#: app/Widgets/PeopleWidget.php:21
+msgid "Two cards with the avatars of the hosts and of the guests."
+msgstr "两张卡片，分别显示主播和嘉宾的头像。"
+
+#: app/Widgets/PeopleWidget.php:54
+msgid "Hosts title"
+msgstr "主播标题"
+
+#: app/Widgets/PeopleWidget.php:54
+msgid "Host lineup"
+msgstr "主播阵容"
+
+#: app/Widgets/PeopleWidget.php:55
+msgid "Guests title"
+msgstr "嘉宾标题"
+
+#: app/Widgets/PeopleWidget.php:55
+msgid "Guest appearances"
+msgstr "嘉宾出场"
+
+#: app/Widgets/RailWidget.php:18
+msgid "Petal: Episode Rail"
+msgstr "Petal：横向节目滑动"
+
+#: app/Widgets/RailWidget.php:20
+msgid "Episode cards in a row that scrolls sideways."
+msgstr "可左右滑动的一行节目卡片。"
+
+#: app/Widgets/RailWidget.php:51
+msgid "Loop: the arrows wrap around at either end"
+msgstr "循环：箭头在两端首尾相接"
+
+#: resources/templates/layouts/header.php:70
+msgid "Day mode"
+msgstr ""
+
+#: resources/templates/layouts/header.php:70
+msgid "Follow system"
+msgstr ""

@@ -13,6 +13,7 @@ use Jiejia\ArsPetal\Providers\NavigationServiceProvider;
 use Jiejia\ArsPetal\Providers\PodcastServiceProvider;
 use Jiejia\ArsPetal\Providers\SetupServiceProvider;
 use Jiejia\ArsPetal\Providers\TranslationServiceProvider;
+use Jiejia\ArsPetal\Providers\WidgetServiceProvider;
 
 /**
  * Main theme application class.
@@ -45,6 +46,7 @@ class Theme
         BlogServiceProvider::class,
         CommentServiceProvider::class,
         PodcastServiceProvider::class,
+        WidgetServiceProvider::class,
     ];
 
     /**

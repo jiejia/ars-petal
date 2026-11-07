@@ -3,7 +3,8 @@
  * Home: the featured carousel on a soft glow block. Episodes get a play button with their duration;
  * posts a read button. Slides 3.7:1 on large screens, as in the prototype.
  *
- * @var array<int,\Jiejia\ArsPetal\Podcast\Episode|\WP_Post> $items Featured episodes / sticky posts, else the latest three.
+ * @var array<int,\Jiejia\ArsPetal\Podcast\Episode|\WP_Post|array{image:string,url:string,alt:string}> $items Featured / latest episodes or
+ *     posts, or custom banners (an image, its link and alt text).
  * @var bool $featured Whether $items are the featured ones; the badge then says "Featured", else "Latest".
  * @package ArsPetal
  */
@@ -31,9 +32,20 @@ $colors = [
 ];
 $count = count($items);
 ?>
-<section class="wash relative mt-2 overflow-hidden rounded-[2rem] lg:aspect-[3.7/1]" x-data="heroCarousel" aria-roledescription="carousel" aria-label="<?php esc_attr_e('Featured', 'ars-petal'); ?>" @mouseenter="pause()" @mouseleave="play()" @focusin="pause()" @focusout="play()">
+<section class="wash relative overflow-hidden rounded-[2rem] lg:aspect-[3.7/1]" x-data="heroCarousel" aria-roledescription="carousel" aria-label="<?php esc_attr_e('Featured', 'ars-petal'); ?>" @mouseenter="pause()" @mouseleave="play()" @focusin="pause()" @focusout="play()">
   <div x-ref="track" class="carousel h-full w-full" @scroll.passive="sync()" @touchstart.passive="pause()" @touchend.passive="play()">
     <?php foreach ($items as $index => $item) :
+        if (is_array($item)) : ?>
+      <article class="petal-item carousel-item w-full lg:h-full" :inert="active !== <?php echo (int) $index; ?>" aria-roledescription="slide" aria-label="<?php echo esc_attr(sprintf(/* translators: 1: slide number, 2: number of slides. */ __('Slide %1$d of %2$d', 'ars-petal'), $index + 1, $count)); ?>">
+        <?php $image = '<img src="' . esc_url($item['image']) . '" alt="' . esc_attr($item['alt']) . '"' . ($index > 0 ? ' loading="lazy"' : '') . ' class="aspect-[2/1] h-full w-full object-cover sm:aspect-[3/1] lg:aspect-auto">'; ?>
+        <?php if ($item['url'] !== '') : ?>
+          <a href="<?php echo esc_url($item['url']); ?>" class="block h-full w-full"><?php echo $image; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?></a>
+        <?php else : ?>
+          <?php echo $image; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?>
+        <?php endif; ?>
+      </article>
+        <?php continue;
+        endif;
         $episode = $item instanceof Episode ? $item : null;
         $post = $episode ? $episode->post : $item;
         $url = (string) get_permalink($post);

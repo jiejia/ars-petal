@@ -201,10 +201,24 @@ Alpine.data('heroCarousel', () => ({
   },
 }));
 
-// A horizontally scrolling card rail with ‹ › buttons.
-Alpine.data('rail', () => ({
+// A horizontally scrolling card rail with ‹ › buttons. With `loop`, the buttons wrap around at either end; without it they
+// are disabled there.
+Alpine.data('rail', (loop = false) => ({
+  loop,
+  atStart: true,
+  atEnd: false,
+  init() {
+    this.$nextTick(() => this.update());
+  },
+  update() {
+    const rail = this.$refs.rail;
+    this.atStart = rail.scrollLeft <= 4;
+    this.atEnd = rail.scrollLeft >= rail.scrollWidth - rail.clientWidth - 4;
+  },
   by(direction) {
     const rail = this.$refs.rail;
+    if (this.loop && direction > 0 && this.atEnd) return rail.scrollTo({ left: 0, behavior: 'smooth' });
+    if (this.loop && direction < 0 && this.atStart) return rail.scrollTo({ left: rail.scrollWidth, behavior: 'smooth' });
     rail.scrollBy({ left: direction * rail.clientWidth, behavior: 'smooth' });
   },
 }));

@@ -189,6 +189,49 @@ final class Podcast
     }
 
     /**
+     * The newest published episodes.
+     *
+     * @param int $limit Number of episodes.
+     * @return array<int,Episode>
+     */
+    public static function recent(int $limit): array
+    {
+        if (! self::isActive()) {
+            return [];
+        }
+
+        $posts = get_posts(['post_type' => self::POST_TYPE, 'post_status' => 'publish', 'numberposts' => $limit]);
+
+        return array_map(static fn (\WP_Post $post): Episode => new Episode($post), $posts);
+    }
+
+    /**
+     * Published episodes picked by ID, in the order given. Unknown, unpublished and non-episode IDs are skipped.
+     *
+     * @param array<int,int> $ids Episode (post) IDs.
+     * @return array<int,Episode>
+     */
+    public static function byIds(array $ids): array
+    {
+        $ids = array_values(array_unique(array_filter(array_map('intval', $ids))));
+
+        // An empty post__in would be ignored by WP_Query and return the latest posts instead.
+        if (! self::isActive() || $ids === []) {
+            return [];
+        }
+
+        $posts = get_posts([
+            'post_type' => self::POST_TYPE,
+            'post_status' => 'publish',
+            'post__in' => $ids,
+            'orderby' => 'post__in',
+            'numberposts' => count($ids),
+        ]);
+
+        return array_map(static fn (\WP_Post $post): Episode => new Episode($post), $posts);
+    }
+
+    /**
      * Published episodes switched to "featured" in the admin (the plugin's featured field), newest first.
      *
      * @return array<int,Episode>
