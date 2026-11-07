@@ -102,7 +102,16 @@ Alpine.data('siteSearch', () => ({
   q: '',
   results: [],
   loading: false,
+  done: false,
   timer: 0,
+  init() {
+    // Animate the results panel to the height of its content, so it grows smoothly instead of jumping.
+    const fit = () => {
+      const { panel, inner } = this.$refs;
+      panel.style.height = `${Math.min(inner.offsetHeight, 384)}px`;
+    };
+    new ResizeObserver(fit).observe(this.$refs.inner);
+  },
   open() {
     this.$refs.dialog.showModal();
     this.$nextTick(() => this.$refs.input.focus());
@@ -116,6 +125,7 @@ Alpine.data('siteSearch', () => ({
 
     if (!q) {
       this.results = [];
+      this.done = false;
       return;
     }
 
@@ -134,6 +144,7 @@ Alpine.data('siteSearch', () => ({
         this.results = [];
       } finally {
         this.loading = false;
+        this.done = true;
       }
     }, 200);
   },

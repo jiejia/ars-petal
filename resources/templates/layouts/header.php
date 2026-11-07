@@ -91,7 +91,8 @@ $schedule = Podcast::schedule();
   <dialog x-ref="dialog" class="modal modal-top" @close="q = ''; results = []">
     <div class="modal-box mx-auto mt-[10vh] max-w-2xl rounded-3xl border border-base-300 bg-base-100 p-3 shadow-2xl">
       <?php get_search_form(['petal_variant' => 'modal']); ?>
-      <div class="mt-2 max-h-96 overflow-y-auto">
+      <div x-ref="panel" class="mt-2 max-h-96 overflow-y-auto transition-[height] duration-200 ease-out motion-reduce:transition-none">
+       <div x-ref="inner">
         <template x-for="result in results" :key="result.subtype + result.id">
           <a :href="result.url" @click="close()" class="flex items-center gap-3 rounded-2xl p-3 hover:bg-base-200">
             <span class="badge badge-sm shrink-0" :class="result.subtype === '<?php echo esc_js(Podcast::POST_TYPE); ?>' ? 'badge-primary' : 'badge-secondary'" x-text="label(result)"></span>
@@ -99,9 +100,10 @@ $schedule = Podcast::schedule();
           </a>
         </template>
         <a x-show="q && results.length" x-cloak href="#" @click.prevent="submit()" class="mt-1 flex items-center justify-center gap-1 rounded-2xl p-3 text-sm font-medium hover:bg-base-200"><?php esc_html_e('See all results', 'ars-petal'); ?><?php Icon::render('arrow-right', 'size-4'); ?></a>
-        <p x-show="loading" x-cloak class="px-5 py-8 text-center"><span class="loading loading-dots loading-sm"></span></p>
-        <p x-show="q && !loading && !results.length" x-cloak class="mute px-5 py-8 text-center text-sm"><?php esc_html_e('Nothing found. Press Enter for a full search.', 'ars-petal'); ?></p>
+        <p x-show="loading && !results.length" x-cloak class="px-5 py-8 text-center"><span class="loading loading-dots loading-sm"></span></p>
+        <p x-show="q && done && !loading && !results.length" x-cloak class="mute px-5 py-8 text-center text-sm"><?php esc_html_e('Nothing found. Press Enter for a full search.', 'ars-petal'); ?></p>
         <p x-show="!q" class="mute px-5 py-8 text-center text-sm"><?php esc_html_e('Type to search', 'ars-petal'); ?></p>
+       </div>
       </div>
     </div>
     <form method="dialog" class="modal-backdrop"><button><?php esc_html_e('Close', 'ars-petal'); ?></button></form>
