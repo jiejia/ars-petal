@@ -35,6 +35,9 @@ body { -webkit-font-smoothing: antialiased; background: var(--page); overflow-x:
 /* Headline font: Outfit. Mixing a black (900) and a light (300) part is the theme's signature */
 .display { font-family: "Outfit", "Noto Sans SC", sans-serif; font-weight: 800; letter-spacing: -0.02em; line-height: 1.12; }
 .display-light { font-family: "Outfit", "Noto Sans SC", sans-serif; font-weight: 300; letter-spacing: -0.02em; }
+/* The plugin's playlist drawer title matches the main menu drawer's title (header.php: "display text-xl"), whatever the player skin.
+   !important: the skin stylesheets flatten their cascade layers into .ars-player:not(#\#)×9 selectors, which no plain rule outranks. */
+.ars-queue-title { font-family: "Outfit", "Noto Sans SC", sans-serif !important; font-weight: 800 !important; letter-spacing: -0.02em !important; line-height: 1.12 !important; font-size: 1.25rem !important; }
 .mono { font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace; }
 .only-dark { display: none; }
 [data-theme="petal-dark"] .only-dark { display: block; }
