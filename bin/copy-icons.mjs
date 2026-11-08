@@ -7,7 +7,7 @@ const icons = [
   'book-audio', 'book-open', 'calendar', 'calendar-clock', 'check', 'chevron-down', 'chevron-left', 'chevron-right',
   'circle-help', 'clock', 'copy', 'file-text', 'flame', 'folder', 'globe', 'hash', 'headphones', 'heart',
   'house', 'info', 'layout-grid', 'link', 'list', 'mail', 'menu', 'message-circle', 'messages-square', 'mic',
-  'monitor', 'moon', 'music-2', 'newspaper', 'orbit', 'pause', 'pen-tool', 'play', 'podcast', 'radio', 'rss', 'search',
+  'monitor', 'moon', 'music-2', 'newspaper', 'orbit', 'panel-left-open', 'pause', 'pen-tool', 'play', 'podcast', 'radio', 'rss', 'search',
   'search-x', 'send', 'share-2', 'sparkles', 'sun', 'tag', 'tv', 'user', 'users', 'x',
 ];
 
