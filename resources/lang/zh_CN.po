@@ -348,7 +348,7 @@ msgstr "收藏"
 #: resources/templates/cards/episode.php:35
 #: resources/templates/layouts/footer.php:64
 #: resources/templates/layouts/footer.php:65
-#: resources/templates/layouts/header.php:125
+#: resources/templates/layouts/header.php:127
 msgid "Listen"
 msgstr "收听"
 
@@ -652,8 +652,8 @@ msgid "New post"
 msgstr "最新文章"
 
 #: resources/templates/layouts/header.php:60
-#: resources/templates/layouts/header.php:116
-#: resources/templates/layouts/header.php:119
+#: resources/templates/layouts/header.php:118
+#: resources/templates/layouts/header.php:121
 msgid "Main menu"
 msgstr "主导航"
 
@@ -670,7 +670,7 @@ msgid "Listen in a podcast app"
 msgstr "在播客应用中收听"
 
 #: resources/templates/layouts/header.php:86
-#: resources/templates/layouts/header.php:113
+#: resources/templates/layouts/header.php:115
 msgid "Open menu"
 msgstr "打开菜单"
 
@@ -682,23 +682,23 @@ msgstr "搜索节目和文章…"
 msgid "Search posts…"
 msgstr "搜索文章…"
 
-#: resources/templates/layouts/header.php:101
+#: resources/templates/layouts/header.php:102
 msgid "See all results"
 msgstr "查看全部结果"
 
-#: resources/templates/layouts/header.php:103
+#: resources/templates/layouts/header.php:104
 msgid "Nothing found. Press Enter for a full search."
 msgstr "没有找到，按回车查看完整搜索结果。"
 
-#: resources/templates/layouts/header.php:104
+#: resources/templates/layouts/header.php:105
 msgid "Type to search"
 msgstr "输入关键词开始搜索"
 
-#: resources/templates/layouts/header.php:107
-#: resources/templates/layouts/header.php:115
-#: resources/templates/layouts/header.php:120
+#: resources/templates/layouts/header.php:109
+#: resources/templates/layouts/header.php:117
+#: resources/templates/layouts/header.php:122
 #: resources/templates/parts/sidebar-start.php:21
-#: resources/templates/parts/sidebar-start.php:25
+#: resources/templates/parts/sidebar-start.php:26
 msgid "Close"
 msgstr "关闭"
 
@@ -998,7 +998,7 @@ msgstr "播放"
 msgid "Open sidebar"
 msgstr "打开侧边栏"
 
-#: resources/templates/parts/sidebar-start.php:24
+#: resources/templates/parts/sidebar-start.php:25
 msgid "Sidebar"
 msgstr "侧边栏"
 
@@ -1161,3 +1161,10 @@ msgstr ""
 #: resources/templates/layouts/header.php:70
 msgid "Follow system"
 msgstr ""
+
+#. translators: %d: number of people not shown
+#: resources/templates/parts/people.php:57
+#, php-format
+msgid "%d more person"
+msgid_plural "%d more people"
+msgstr[0] "还有 %d 人"

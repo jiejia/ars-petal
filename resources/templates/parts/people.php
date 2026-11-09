@@ -32,6 +32,10 @@ $heading ??= 'text-base';
 $size ??= 'size-11';
 $letter ??= 'text-base';
 $overlap ??= '-ml-5.5';
+// At most five avatars; the rest collapse into a "+N" tile.
+$max = 5;
+$extra = count($users) - $max;
+$users = array_slice($users, 0, $max);
 ?>
 <section class="panel-sm flex items-center justify-between gap-4 <?php echo esc_attr($class); ?>" aria-label="<?php echo esc_attr($title . $light); ?>">
   <?php if ($light !== '') : ?>
@@ -48,5 +52,12 @@ $overlap ??= '-ml-5.5';
         <span role="tooltip" class="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-neutral px-3 py-1.5 text-xs font-medium text-neutral-content opacity-0 shadow-lg transition-opacity group-focus-within:opacity-100 group-hover:opacity-100"><?php echo esc_html($user->display_name); ?></span>
       </li>
     <?php endforeach; ?>
+    <?php if ($extra > 0) : ?>
+      <li class="relative <?php echo esc_attr($overlap); ?>">
+        <span class="petal-avatar relative grid shrink-0 place-items-center overflow-hidden rounded-full <?php echo esc_attr($size); ?>" role="img" aria-label="<?php echo esc_attr(sprintf(/* translators: %d: number of people not shown */ _n('%d more person', '%d more people', $extra, 'ars-petal'), $extra)); ?>">
+          <span class="absolute inset-0 grid place-items-center rounded-full bg-neutral font-bold tabular-nums text-neutral-content <?php echo esc_attr($letter); ?>"><?php echo esc_html('+' . min($extra, 99)); ?></span>
+        </span>
+      </li>
+    <?php endif; ?>
   </ul>
 </section>
