@@ -25,7 +25,7 @@ $card = [
     'size' => 'size-12',
     'letter' => 'text-lg',
     'overlap' => '-ml-6',
-    'lightClass' => 'sm:max-lg:hidden',
+    'lightClass' => 'max-lg:hidden',
 ];
 ?>
 <section class="grid gap-5 sm:grid-cols-2" aria-label="<?php esc_attr_e('Hosts and guests', 'ars-petal'); ?>">
