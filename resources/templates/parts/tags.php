@@ -7,6 +7,7 @@
  * @var string $current Slug of the selected tag.
  * @var bool $inline Under an article: "#tag" pills with a top rule, no card.
  * @var bool $counts Whether to show the post counts.
+ * @var bool $joined Inline right below another chip row (the categories): no rule of its own.
  * @package ArsPetal
  */
 
@@ -20,9 +21,10 @@ $url ??= static fn (\WP_Term $term): string => (string) get_tag_link($term);
 $current ??= '';
 $inline ??= false;
 $counts ??= false;
+$joined ??= false;
 ?>
 <?php if ($inline) : ?>
-  <div class="mt-8 flex flex-wrap justify-center gap-2 border-t border-base-300 pt-6" aria-label="<?php esc_attr_e('Tags', 'ars-petal'); ?>">
+  <div class="<?php echo $joined ? 'mt-2' : 'mt-8 border-t border-base-300 pt-6'; ?> flex flex-wrap justify-center gap-2" aria-label="<?php esc_attr_e('Tags', 'ars-petal'); ?>">
     <?php foreach ($terms as $term) : ?>
       <a href="<?php echo esc_url($url($term)); ?>" class="rounded-full bg-base-200 px-4 py-1.5 text-sm hover:bg-base-300">#<?php echo esc_html($term->name); ?></a>
     <?php endforeach; ?>

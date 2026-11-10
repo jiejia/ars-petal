@@ -9,6 +9,7 @@
 
 defined('ABSPATH') || exit;
 
+use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Covers;
 use Jiejia\ArsPetal\Setup\TemplateLoader;
@@ -94,7 +95,15 @@ while (have_posts()) :
           <?php the_content(); ?>
           <?php wp_link_pages(); ?>
         </div>
-        <?php Template::render('parts/tags', ['terms' => get_the_tags() ?: [], 'inline' => true]); ?>
+        <?php if (count($categories) > 1) : ?>
+          <?php // The header names the first category only; list them all here. ?>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-2 border-t border-base-300 pt-6" aria-label="<?php esc_attr_e('Categories', 'ars-petal'); ?>">
+            <?php foreach ($categories as $category) : ?>
+              <a href="<?php echo esc_url(get_category_link($category)); ?>" class="inline-flex items-center gap-1.5 rounded-full bg-base-200 px-4 py-1.5 text-sm hover:bg-base-300"><?php Icon::render('folder', 'size-3.5 opacity-60'); ?><?php echo esc_html($category->name); ?></a>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+        <?php Template::render('parts/tags', ['terms' => get_the_tags() ?: [], 'inline' => true, 'joined' => count($categories) > 1]); ?>
       </div>
 
       <?php if ($isPost) : ?>
@@ -103,6 +112,8 @@ while (have_posts()) :
 
       <?php if (comments_open() || get_comments_number()) : ?>
         <?php comments_template(); ?>
+      <?php elseif ($isPost && ! post_password_required()) : ?>
+        <p class="mute mt-8 px-2 text-sm"><?php esc_html_e('Comments are closed.', 'ars-petal'); ?></p>
       <?php endif; ?>
     </div>
   </div>
