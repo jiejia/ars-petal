@@ -275,7 +275,7 @@ body.has-ars-player .site-footer { padding-bottom: calc(var(--ars-player-height,
 
 /* Custom logo. */
 .custom-logo-link { display: flex; flex-shrink: 0; }
-.custom-logo { height: 29.5938px; width: 124.273px; object-fit: contain; }
+.custom-logo { width: auto; height: auto; max-width: 200px; max-height: 3rem; object-fit: contain; }
 
 /* Comments. */
 .comment-list .children { margin-top: 0.75rem; display: grid; gap: 0.75rem; }

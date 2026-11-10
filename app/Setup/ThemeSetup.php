@@ -56,8 +56,8 @@ final class ThemeSetup
         add_theme_support('align-wide');
         add_theme_support('editor-styles');
         add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script', 'navigation-widgets']);
-        // Shown at 124.273 × 29.5938 px (theme.css); cropped at 2x for high-density screens, ratio locked.
-        add_theme_support('custom-logo', ['height' => 59, 'width' => 249, 'flex-width' => false, 'flex-height' => false]);
+        // Shown at most 200 px wide and 48 px tall (theme.css); suggested at 2x for high-density screens, any ratio.
+        add_theme_support('custom-logo', ['height' => 96, 'width' => 400, 'flex-width' => true, 'flex-height' => true]);
         add_editor_style('public/dist/editor.css');
 
         register_nav_menus([
