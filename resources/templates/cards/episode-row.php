@@ -45,15 +45,28 @@ $separator = '<span class="mx-1 opacity-40">/</span>';
     <span class="petal-eq-cover absolute inset-0 place-items-center rounded-xl bg-black/40 text-white sm:rounded-2xl"><span class="eq"><i></i><i></i><i></i></span></span>
   </a>
   <div class="min-w-0 flex-1">
-    <<?php echo tag_escape($heading); ?> class="text-[0.95rem] font-semibold leading-snug sm:line-clamp-1 sm:text-base sm:leading-normal"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($episode->post)); ?></a></<?php echo tag_escape($heading); ?>>
+    <<?php echo tag_escape($heading); ?> class="text-[0.95rem] font-semibold leading-snug line-clamp-2 sm:line-clamp-1 sm:text-base sm:leading-normal"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($episode->post)); ?></a></<?php echo tag_escape($heading); ?>>
     <p class="mute mt-1 flex min-w-0 items-center text-xs sm:mt-0.5 sm:text-sm">
       <?php if ($badge) : ?>
         <span class="mr-2 shrink-0 rounded-full bg-base-200 px-2 py-0.5 text-[0.7rem] font-semibold text-base-content"><?php esc_html_e('Podcast', 'ars-petal'); ?></span>
       <?php endif; ?>
-      <?php // Each part stays whole and the "/" ends its line, so on phones the line wraps between parts. ?>
-      <span class="sm:truncate"><?php
-        $last = count($meta) - 1;
-        echo wp_kses(implode(' ', array_map(static fn (string $part, int $i): string => '<span class="whitespace-nowrap">' . esc_html($part) . ($i < $last ? $separator : '') . '</span>', array_values($meta), array_keys(array_values($meta)))), ['span' => ['class' => true]]);
+      <?php // Phones hide the tag (it appears from sm up); the "/" separators follow the visible parts. ?>
+      <span class="truncate"><?php
+        $parts = array_filter([
+            $tag ? ['text' => $tag->name, 'phone' => false] : null,
+            $episode->duration() > 0 ? ['text' => Format::duration($episode->duration()), 'phone' => true] : null,
+            ['text' => Format::date($episode->post), 'phone' => true],
+        ]);
+        $parts = array_values($parts);
+        $last = count($parts) - 1;
+        foreach ($parts as $i => $part) {
+            $hide = $part['phone'] ? '' : 'hidden sm:inline ';
+            echo '<span class="' . $hide . 'whitespace-nowrap">' . esc_html($part['text']);
+            if ($i < $last) {
+                echo '<span class="mx-1 opacity-40">/</span>';
+            }
+            echo '</span>';
+        }
         ?></span>
     </p>
   </div>
