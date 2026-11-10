@@ -20,8 +20,8 @@ foreach ($items as $item) : ?>
       <details open>
         <summary><?php echo esc_html($item['label']); ?></summary>
         <ul>
-          <?php if ($item['url'] !== '' && $item['url'] !== '#') : ?>
-            <?php // The summary only folds the list, so the parent's own link comes first. ?>
+          <?php if ($item['url'] !== '' && $item['url'] !== '#' && ! in_array($item['url'], array_column($item['children'], 'url'), true)) : ?>
+            <?php // The summary only folds the list, so the parent's own link comes first (unless a child, e.g. "All episodes", already is it). ?>
             <li><a href="<?php echo esc_url($item['url']); ?>"<?php echo $item['current'] && ! Menu::anyCurrent($item['children']) ? ' class="menu-active" aria-current="page"' : ''; ?>><?php echo esc_html($item['label']); ?></a></li>
           <?php endif; ?>
           <?php Template::render('parts/nav-mobile', ['items' => $item['children']]); ?>
