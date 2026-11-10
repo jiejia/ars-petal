@@ -19,7 +19,7 @@ if ($place === 'header' && Logo::usesImage()) {
     return;
 }
 
-$link = $place === 'footer' ? 'inline-flex items-center gap-2.5' : 'flex min-w-0 shrink-0 items-center gap-2.5';
+$link = $place === 'footer' ? 'inline-flex items-center gap-2.5' : 'flex min-w-0 items-center gap-2.5 lg:max-w-[16rem] xl:max-w-xs';
 $name = $place === 'footer' ? 'display text-2xl !font-bold tracking-tight' : 'display truncate text-[1.35rem] !font-bold tracking-tight';
 ?>
 <a href="<?php echo esc_url(home_url('/')); ?>" class="<?php echo esc_attr($link); ?>" rel="home" title="<?php echo esc_attr(get_bloginfo('name')); ?>">

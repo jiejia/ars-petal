@@ -48,13 +48,14 @@ $schedule = Podcast::schedule();
 <?php endif; ?>
 
 <header x-data="siteSearch" @open-search.window="open()" class="topbar sticky top-0 z-40">
-  <div class="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 sm:px-6 lg:h-[4.5rem]">
+  <div class="mx-auto flex min-h-16 max-w-6xl items-center gap-2 px-4 sm:px-6 lg:min-h-[4.5rem] lg:py-2">
     <?php Template::render('parts/brand', ['place' => 'header']); ?>
-    <nav id="petal-nav" data-swup-sync class="topnav mx-auto hidden items-center gap-1 lg:flex" aria-label="<?php esc_attr_e('Main menu', 'ars-petal'); ?>">
+    <?php // A long menu wraps onto a second row instead of pushing the buttons off screen. ?>
+    <nav id="petal-nav" data-swup-sync class="topnav mx-auto hidden min-w-0 flex-wrap items-center justify-center gap-1 lg:flex" aria-label="<?php esc_attr_e('Main menu', 'ars-petal'); ?>">
       <?php Template::render('parts/nav-desktop', ['items' => $menu]); ?>
     </nav>
 
-    <div class="ml-auto flex items-center gap-1 lg:ml-0">
+    <div class="ml-auto flex shrink-0 items-center gap-1 lg:ml-0">
       <?php // The "/" key also opens search (app.js). ?>
       <button type="button" class="btn-plain size-10 rounded-xl" @click="open()" aria-label="<?php esc_attr_e('Search', 'ars-petal'); ?>" title="<?php esc_attr_e('Search ( / )', 'ars-petal'); ?>" aria-keyshortcuts="/"><?php Icon::render('search', 'size-[1.15rem]'); ?></button>
       <?php // Cycles light -> dark -> follow system; the icon shows the current mode. ?>
