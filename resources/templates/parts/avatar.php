@@ -24,6 +24,6 @@ $url = get_option('show_avatars') ? (string) get_avatar_url($user->ID, ['size' =
 <span class="relative block shrink-0 overflow-hidden font-bold petal-avatar <?php echo esc_attr($class); ?>" aria-hidden="true">
   <span class="absolute inset-0 grid place-items-center <?php echo esc_attr($colors[$user->ID % count($colors)] . ' ' . $text); ?>"><?php echo esc_html(Format::initial($user->display_name)); ?></span>
   <?php if ($url !== '') : ?>
-    <img src="<?php echo esc_url($url); ?>" alt="" loading="lazy" decoding="async" class="absolute inset-0 size-full object-cover" onload="this.previousElementSibling?.remove()" onerror="this.remove()">
+    <img src="<?php echo esc_url($url); ?>" alt="" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover" onload="this.previousElementSibling?.remove()" onerror="this.remove()">
   <?php endif; ?>
 </span>
