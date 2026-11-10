@@ -52,7 +52,7 @@ $count = count($items);
         $color = $colors[$index % count($colors)];
         $tag = $episode ? $episode->tag() : (get_the_category($post->ID)[0] ?? null);
         $meta = $episode
-            ? implode(' · ', array_filter(['EP.' . $episode->number(), $tag ? $tag->name : '', $episode->duration() > 0 ? Format::duration($episode->duration()) : '']))
+            ? implode(' · ', array_filter([$episode->label(), $tag ? $tag->name : '', $episode->duration() > 0 ? Format::duration($episode->duration()) : '']))
             : implode(' · ', array_filter([Format::date($post), $tag ? $tag->name : '']));
         $cover = $episode ? $episode->cover('medium_large') : Covers::post($post);
         $heading = $index === 0 ? 'h1' : 'h2';

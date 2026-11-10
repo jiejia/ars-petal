@@ -50,6 +50,17 @@ final class Episode
     }
 
     /**
+     * The short episode label, e.g. "EP.12".
+     *
+     * @return string
+     */
+    public function label(): string
+    {
+        /* translators: %s: episode number. */
+        return sprintf(__('EP.%s', 'ars-petal'), $this->number());
+    }
+
+    /**
      * The explicit episode number, else its place in publish order.
      *
      * @return int

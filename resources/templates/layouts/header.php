@@ -39,7 +39,7 @@ $schedule = Podcast::schedule();
     <?php endif; ?>
     <?php if ($latest) : ?>
       <?php esc_html_e('New episode', 'ars-petal'); ?>
-      <a href="<?php echo esc_url(get_permalink($latest->post)); ?>" class="font-medium hover:underline"><?php echo esc_html(sprintf('EP.%s %s', $latest->number(), wp_strip_all_tags(get_the_title($latest->post)))); ?></a> →
+      <a href="<?php echo esc_url(get_permalink($latest->post)); ?>" class="font-medium hover:underline"><?php echo esc_html($latest->label() . ' ' . wp_strip_all_tags(get_the_title($latest->post))); ?></a> →
     <?php else : ?>
       <?php esc_html_e('New post', 'ars-petal'); ?>
       <a href="<?php echo esc_url(get_permalink($newest)); ?>" class="font-medium hover:underline"><?php echo esc_html(wp_strip_all_tags(get_the_title($newest))); ?></a> →

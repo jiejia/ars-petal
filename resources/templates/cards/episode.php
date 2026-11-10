@@ -43,7 +43,7 @@ $duration = $episode->duration() > 0 ? Format::duration($episode->duration()) : 
     <?php if ($tag) : ?>
       <a href="<?php echo esc_url(Podcast::tagUrl($tag)); ?>" class="badge badge-soft badge-sm <?php echo esc_attr(Topics::badge($tag)); ?>"><?php echo esc_html($tag->name); ?></a>
     <?php endif; ?>
-    <span class="mono mute"><?php echo esc_html(sprintf('EP.%s · %s', $episode->number(), Format::date($episode->post))); ?></span>
+    <span class="mono mute"><?php echo esc_html($episode->label() . ' · ' . Format::date($episode->post)); ?></span>
   </p>
   <<?php echo tag_escape($heading); ?> class="display mt-2 line-clamp-2 text-lg !font-bold leading-snug"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($episode->post)); ?></a></<?php echo tag_escape($heading); ?>>
   <?php if ($excerpt) : ?>
