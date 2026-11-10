@@ -39,7 +39,7 @@ Go to Appearance > Customize > Site Identity. Upload your own logo image, or pic
 
 = How do I build the assets? =
 
-The styles and scripts in public/dist are built from resources/assets with `npm install` and `npm run build`.
+The minified styles and scripts in public/dist are built from the source files in resources/assets/css and resources/assets/js (Tailwind CSS, daisyUI, Alpine.js and Swup). The build tooling (package.json and the bin/ scripts) lives in the theme's GitHub repository: https://github.com/jiejia/ars-petal. Run `npm install` and `npm run build` there.
 
 == Changelog ==
 
