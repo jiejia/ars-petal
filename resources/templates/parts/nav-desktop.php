@@ -1,7 +1,8 @@
 <?php
 /**
  * The header's top-level menu: icon links; an item with children opens a rounded dropdown card
- * whose columns are its children (see Menu::columns()), with a third level as small chips.
+ * whose columns are its children (see Menu::columns()), with a third level as small chips (deeper
+ * levels join those chips).
  *
  * @var array<int,array<string,mixed>> $items Menu tree (Menu::tree()).
  * @package ArsPetal
@@ -44,7 +45,7 @@ foreach ($items as $item) :
                   <a<?php echo $link($child); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped by Html::attributes(). ?>><?php echo esc_html($child['label']); ?></a>
                   <?php if ($child['children'] !== []) : ?>
                     <div class="sub">
-                      <?php foreach ($child['children'] as $grandchild) : ?>
+                      <?php foreach (Menu::flatten($child['children']) as $grandchild) : ?>
                         <a<?php echo $link($grandchild); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped by Html::attributes(). ?>><?php echo esc_html($grandchild['label']); ?></a>
                       <?php endforeach; ?>
                     </div>

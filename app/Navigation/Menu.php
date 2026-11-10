@@ -237,10 +237,12 @@ final class Menu
     }
 
     /**
+     * Whether one of the items is current (a parent already is when a descendant is, see tree()).
+     *
      * @param array<int,Item> $items Items.
      * @return bool
      */
-    private static function anyCurrent(array $items): bool
+    public static function anyCurrent(array $items): bool
     {
         foreach ($items as $item) {
             if ($item['current']) {
@@ -249,6 +251,25 @@ final class Menu
         }
 
         return false;
+    }
+
+    /**
+     * Items and all their descendants in one flat list (depth first), for the deepest level of the
+     * dropdown, which has no room for more nesting.
+     *
+     * @param array<int,Item> $items Items.
+     * @return array<int,Item>
+     */
+    public static function flatten(array $items): array
+    {
+        $flat = [];
+
+        foreach ($items as $item) {
+            $flat[] = $item;
+            array_push($flat, ...self::flatten($item['children']));
+        }
+
+        return $flat;
     }
 
     /**
