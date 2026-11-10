@@ -445,6 +445,52 @@ document.addEventListener('keydown', (event) => {
   window.dispatchEvent(new CustomEvent('open-search'));
 });
 
+/* ---------------- Drawers ---------------- */
+
+// daisyUI drawers open from a hidden checkbox, and a <label> cannot take keyboard focus. Real buttons with
+// data-drawer-open / data-drawer-close="<checkbox id>" drive the checkbox instead: opening moves focus to the
+// panel's close button, closing returns it to the opener, and Escape closes an open drawer.
+let drawerOpener = null;
+
+const setDrawer = (id, open) => {
+  const input = document.getElementById(id);
+  if (!(input instanceof HTMLInputElement) || input.checked === open) return;
+
+  input.checked = open;
+
+  if (!open) {
+    if (drawerOpener instanceof HTMLElement && drawerOpener.isConnected) drawerOpener.focus();
+    drawerOpener = null;
+    return;
+  }
+
+  drawerOpener = document.activeElement;
+  const close = document.querySelector(`.drawer-side [data-drawer-close="${id}"]`);
+  if (!(close instanceof HTMLElement)) return;
+
+  // The panel only becomes visible after daisyUI's short transition delay; retry until it takes focus.
+  let tries = 0;
+  const focusClose = () => {
+    close.focus();
+    if (document.activeElement !== close && ++tries < 30) requestAnimationFrame(focusClose);
+  };
+  focusClose();
+};
+
+document.addEventListener('click', (event) => {
+  const target = event.target instanceof Element ? event.target : null;
+  const opener = target?.closest('[data-drawer-open]');
+  const closer = target?.closest('[data-drawer-close]');
+
+  if (opener instanceof HTMLElement) setDrawer(opener.dataset.drawerOpen, true);
+  else if (closer instanceof HTMLElement) setDrawer(closer.dataset.drawerClose, false);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  document.querySelectorAll('.drawer-toggle:checked').forEach((input) => setDrawer(input.id, false));
+});
+
 window.swup = swup;
 window.Alpine = Alpine;
 

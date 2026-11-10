@@ -30,7 +30,7 @@ $schedule = Podcast::schedule();
 <body <?php body_class('min-h-screen font-sans text-base-content'); ?>>
 <?php wp_body_open(); ?>
 <div class="swup-progress" aria-hidden="true"></div>
-<a href="#swup" class="btn btn-sm sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70]"><?php esc_html_e('Skip to content', 'ars-petal'); ?></a>
+<a href="#swup" data-no-swup class="btn btn-sm sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70]"><?php esc_html_e('Skip to content', 'ars-petal'); ?></a>
 
 <?php if ($latest || $newest) : ?>
   <div id="petal-announce" data-swup-sync class="announce mono px-4 py-2.5 text-center text-[0.8rem] sm:text-sm">
@@ -75,7 +75,7 @@ $schedule = Podcast::schedule();
 
       <?php // Opens the menu drawer below the header (a fixed drawer inside the blurred header would be clipped to it). ?>
       <div class="lg:hidden">
-        <label for="petal-menu" class="btn-plain size-10 cursor-pointer rounded-xl" aria-label="<?php esc_attr_e('Open menu', 'ars-petal'); ?>"><?php Icon::render('menu', 'size-5'); ?></label>
+        <button type="button" class="btn-plain size-10 rounded-xl" data-drawer-open="petal-menu" aria-controls="petal-menu-panel" aria-label="<?php esc_attr_e('Open menu', 'ars-petal'); ?>"><?php Icon::render('menu', 'size-5'); ?></button>
       </div>
     </div>
   </div>
@@ -104,14 +104,15 @@ $schedule = Podcast::schedule();
 
 <?php // Small screens: the main menu in a daisyUI drawer from the left (https://daisyui.com/components/drawer/), above the WordPress admin bar (z-index 99999). ?>
 <div class="drawer lg:hidden">
-  <input id="petal-menu" type="checkbox" class="drawer-toggle" aria-label="<?php esc_attr_e('Open menu', 'ars-petal'); ?>" x-data @keydown.escape.window="$el.checked = false">
+  <?php // Driven by the menu and close buttons (app.js), so the checkbox itself stays out of the tab order. ?>
+  <input id="petal-menu" type="checkbox" class="drawer-toggle" tabindex="-1" aria-hidden="true">
   <div class="drawer-side z-[100001]" x-data @click="if ($event.target.closest('a')) document.getElementById('petal-menu').checked = false">
     <label for="petal-menu" class="drawer-overlay" aria-label="<?php esc_attr_e('Close', 'ars-petal'); ?>"></label>
-    <nav class="flex min-h-full w-72 max-w-[85vw] flex-col bg-base-100 p-4" aria-label="<?php esc_attr_e('Main menu', 'ars-petal'); ?>">
+    <nav id="petal-menu-panel" class="flex min-h-full w-72 max-w-[85vw] flex-col bg-base-100 p-4" aria-label="<?php esc_attr_e('Main menu', 'ars-petal'); ?>">
       <?php // The name of the menu assigned to the header location; "Main menu" for the fallback menu. ?>
       <div class="-mx-4 -mt-4 mb-3 flex items-center justify-between gap-3 border-b border-base-300 px-4 py-3">
         <h2 class="display truncate text-xl"><?php echo esc_html(Menu::name('primary') ?: __('Main menu', 'ars-petal')); ?></h2>
-        <label for="petal-menu" class="grid size-9 shrink-0 cursor-pointer place-items-center rounded-full hover:bg-base-200" aria-label="<?php esc_attr_e('Close', 'ars-petal'); ?>"><?php Icon::render('x', 'size-5'); ?></label>
+        <button type="button" class="grid size-9 shrink-0 cursor-pointer place-items-center rounded-full hover:bg-base-200" data-drawer-close="petal-menu" aria-label="<?php esc_attr_e('Close', 'ars-petal'); ?>"><?php Icon::render('x', 'size-5'); ?></button>
       </div>
       <ul id="petal-nav-mobile" data-swup-sync class="menu w-full flex-nowrap p-0 text-base">
         <?php Template::render('parts/nav-mobile', ['items' => $menu]); ?>
@@ -124,4 +125,5 @@ $schedule = Podcast::schedule();
   </div>
 </div>
 
-<main id="swup" class="transition-lift mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:pt-8">
+<?php // tabindex lets the skip link move keyboard focus here, not just scroll. ?>
+<main id="swup" tabindex="-1" class="outline-none transition-lift mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:pt-8">
