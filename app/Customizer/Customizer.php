@@ -35,7 +35,7 @@ final class Customizer
 
         $customizer->add_setting('logo_mode', [
             'default' => get_theme_mod('custom_logo') ? 'image' : 'icon',
-            'sanitize_callback' => static fn (string $value): string => $value === 'image' ? 'image' : 'icon',
+            'sanitize_callback' => static fn (mixed $value): string => $value === 'image' ? 'image' : 'icon',
         ]);
         $customizer->add_control('logo_mode', [
             'label' => __('Logo style', 'ars-petal'),
@@ -51,7 +51,7 @@ final class Customizer
 
         $customizer->add_setting('logo_icon', [
             'default' => Options::DEFAULTS['logo_icon'],
-            'sanitize_callback' => static fn (string $value): string => in_array($value, \Jiejia\ArsPetal\Branding\Logo::ICONS, true) ? $value : Options::DEFAULTS['logo_icon'],
+            'sanitize_callback' => static fn (mixed $value): string => in_array($value, \Jiejia\ArsPetal\Branding\Logo::ICONS, true) ? $value : Options::DEFAULTS['logo_icon'],
         ]);
         $customizer->add_control(new LogoIconControl($customizer, 'logo_icon', [
             'label' => __('Logo icon', 'ars-petal'),
@@ -126,7 +126,7 @@ final class Customizer
         $sanitize = match ($type) {
             'url' => 'esc_url_raw',
             'textarea' => 'sanitize_textarea_field',
-            'select' => static fn (string $value): string => array_key_exists($value, $control['choices'] ?? []) ? $value : (string) Options::DEFAULTS[$name],
+            'select' => static fn (mixed $value): string => is_string($value) && array_key_exists($value, $control['choices'] ?? []) ? $value : (string) Options::DEFAULTS[$name],
             default => 'sanitize_text_field',
         };
 
