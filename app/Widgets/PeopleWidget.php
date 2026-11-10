@@ -8,7 +8,7 @@ use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Podcast;
 
 /**
- * The hosts and the guests of recent episodes, as two cards side by side.
+ * The hosts and the guests from the plugin's Host & Guest Settings, as two cards side by side.
  */
 final class PeopleWidget extends Widget
 {

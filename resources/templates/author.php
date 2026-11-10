@@ -1,6 +1,6 @@
 <?php
 /**
- * Author page. Left sidebar: the hosts (all people with the plugin, the authors without), this person black.
+ * Author page. Left sidebar: the configured hosts and guests with the plugin, the author-role users without, this person black.
  * Main column: the profile card (big avatar, name, bio, links, counts), then a card with the episodes they
  * host or guest on and the posts they wrote; with both, pill tabs link between them (?tab=, see View\Author).
  *
@@ -24,9 +24,12 @@ $labels = [
     Author::EPISODES => _x('Episodes', 'author page section', 'ars-petal'),
     Author::POSTS => _x('Posts', 'author page section', 'ars-petal'),
 ];
-// Host, guest or both (by the episodes they appear in); else author.
-$hostIds = array_map(static fn (\WP_User $person): int => $person->ID, Podcast::hosts());
-$guestIds = array_map(static fn (\WP_User $person): int => $person->ID, Podcast::guests());
+// Host, guest or both (by the plugin's Host & Guest Settings); else author.
+$podcast = Podcast::isActive();
+$hosts = $podcast ? Podcast::hosts() : [];
+$guests = Podcast::guests();
+$hostIds = array_map(static fn (\WP_User $person): int => $person->ID, $hosts);
+$guestIds = array_map(static fn (\WP_User $person): int => $person->ID, $guests);
 $isHost = $user && in_array($user->ID, $hostIds, true);
 $isGuest = $user && in_array($user->ID, $guestIds, true);
 $role = match (true) {
@@ -43,18 +46,22 @@ $stats = array_filter([
     /* translators: %s: number of posts. */
     $counts[Author::POSTS] > 0 ? sprintf(esc_html(_n('%s post', '%s posts', $counts[Author::POSTS], 'ars-petal')), $bold($counts[Author::POSTS])) : '',
 ]);
-$people = array_map(static fn (\WP_User $person): array => [
+$sideItems = static fn (array $list): array => array_map(static fn (\WP_User $person): array => [
     'label' => $person->display_name,
     'meta' => Author::summary($person),
     'url' => get_author_posts_url($person->ID),
     'current' => $user && $person->ID === $user->ID,
     'user' => $person,
-], Podcast::hosts());
+], $list);
+// Guests get their own card; without the plugin there are none and the first card lists the users with the author role.
+$people = $sideItems($podcast ? $hosts : Podcast::authors());
+$guestItems = $sideItems($guests);
 ?>
 <article>
   <div class="mt-2 drawer lg:drawer-open lg:items-start lg:gap-8">
     <?php Template::render('parts/sidebar-start', ['class' => 'lg:top-24']); ?>
-      <?php Template::render('parts/side-list', ['title' => Podcast::isActive() ? __('Hosts', 'ars-petal') : __('Authors', 'ars-petal'), 'items' => $people]); ?>
+      <?php Template::render('parts/side-list', ['title' => $podcast ? __('Hosts', 'ars-petal') : __('Authors', 'ars-petal'), 'items' => $people]); ?>
+      <?php Template::render('parts/side-list', ['title' => __('Guests', 'ars-petal'), 'items' => $guestItems]); ?>
     <?php Template::render('parts/sidebar-end'); ?>
 
     <div class="drawer-content">

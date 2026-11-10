@@ -1,6 +1,6 @@
 <?php
 /**
- * Home widget: the hosts and the guests of recent episodes, side by side. Prints nothing when there are neither.
+ * Home widget: the hosts and the guests from the plugin's Host & Guest Settings, side by side. Prints nothing when there are neither.
  *
  * @var array{strong:string,light:string} $hostTitle Heading of the hosts card.
  * @var array{strong:string,light:string} $guestTitle Heading of the guests card.

@@ -414,8 +414,8 @@ final class Podcast
     }
 
     /**
-     * The people behind the site: the hosts (members) of recent episodes with the plugin,
-     * the authors of published posts without it.
+     * The people behind the site: the hosts chosen in the plugin's Host & Guest Settings,
+     * the authors of published posts without the plugin.
      *
      * @return array<int,\WP_User>
      */
@@ -425,37 +425,42 @@ final class Podcast
             return get_users(['has_published_posts' => ['post'], 'number' => 6, 'orderby' => 'post_count', 'order' => 'DESC']);
         }
 
-        $hosts = [];
-
-        foreach (get_posts(['post_type' => self::POST_TYPE, 'numberposts' => 50, 'post_status' => 'publish']) as $post) {
-            foreach ((new Episode($post))->members() as $user) {
-                $hosts[$user->ID] = $user;
-            }
-        }
-
-        return array_values($hosts);
+        return self::configuredPeople('members');
     }
 
     /**
-     * The guests of recent episodes, most recent first. Empty without the plugin.
+     * The guests chosen in the plugin's Host & Guest Settings. Empty without the plugin.
      *
      * @return array<int,\WP_User>
      */
     public static function guests(): array
     {
-        if (! self::isActive()) {
-            return [];
-        }
+        return self::configuredPeople('guests');
+    }
 
-        $guests = [];
+    /**
+     * Every user with the author role, by name.
+     *
+     * @return array<int,\WP_User>
+     */
+    public static function authors(): array
+    {
+        return get_users(['role' => 'author', 'orderby' => 'display_name']);
+    }
 
-        foreach (get_posts(['post_type' => self::POST_TYPE, 'numberposts' => 50, 'post_status' => 'publish']) as $post) {
-            foreach ((new Episode($post))->guests() as $user) {
-                $guests[$user->ID] = $user;
-            }
-        }
+    /**
+     * The users saved in a user list of the plugin's Host & Guest Settings, in the saved order.
+     *
+     * @param string $key Either members or guests.
+     * @return array<int,\WP_User>
+     */
+    private static function configuredPeople(string $key): array
+    {
+        $class = self::pluginClass('Settings\\MemberSetting');
+        $ids = $class === null ? [] : (new $class())->ids($key);
 
-        return array_values($guests);
+        // An empty include would return every user.
+        return $ids === [] ? [] : get_users(['include' => $ids, 'orderby' => 'include']);
     }
 
     /**
