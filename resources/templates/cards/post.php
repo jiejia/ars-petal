@@ -10,6 +10,7 @@
 defined('ABSPATH') || exit;
 
 use Jiejia\ArsPetal\Podcast\Covers;
+use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\View\Format;
 
@@ -33,4 +34,5 @@ $minutes = Format::readingMinutes($post);
   </p>
   <<?php echo tag_escape($heading); ?> class="display mt-2 text-lg !font-bold leading-snug"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html(get_the_title($post) ?: __('(no title)', 'ars-petal')); ?></a></<?php echo tag_escape($heading); ?>>
   <p class="mute mt-1.5 line-clamp-2 text-sm leading-relaxed"><?php echo esc_html(get_the_excerpt($post)); ?></p>
+  <a href="<?php echo esc_url(Format::readMoreUrl($post)); ?>" class="mt-2 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"><?php esc_html_e('Read more', 'ars-petal'); ?><span class="screen-reader-text">: <?php echo esc_html(get_the_title($post) ?: __('(no title)', 'ars-petal')); ?></span><?php Icon::render('arrow-right', 'size-3.5'); ?></a>
 </article>

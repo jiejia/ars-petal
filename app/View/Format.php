@@ -21,6 +21,20 @@ final class Format
     }
 
     /**
+     * Where a "Read more" link goes: the post, at its <!--more--> tag when it has one (the_content()
+     * prints the matching #more-{ID} anchor there).
+     *
+     * @param \WP_Post $post Post.
+     * @return string
+     */
+    public static function readMoreUrl(\WP_Post $post): string
+    {
+        $url = (string) get_permalink($post);
+
+        return str_contains($post->post_content, '<!--more') ? $url . '#more-' . $post->ID : $url;
+    }
+
+    /**
      * Duration as 14:12 or 1:02:03.
      *
      * @param int $seconds Seconds.

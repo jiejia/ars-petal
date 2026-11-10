@@ -13,6 +13,7 @@
 defined('ABSPATH') || exit;
 
 use Jiejia\ArsPetal\Podcast\Covers;
+use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\View\Format;
 
@@ -61,6 +62,7 @@ $separator = '<span class="mx-1 opacity-40">/</span>';
     </p>
     <<?php echo tag_escape($heading); ?> class="mt-0.5 font-semibold leading-snug sm:line-clamp-2"><a href="<?php echo esc_url($url); ?>" class="hover:underline"><?php echo esc_html($title); ?></a></<?php echo tag_escape($heading); ?>>
     <p class="mute mt-1 line-clamp-2 hidden text-sm leading-relaxed sm:block"><?php echo esc_html(get_the_excerpt($post)); ?></p>
+    <a href="<?php echo esc_url(Format::readMoreUrl($post)); ?>" class="mt-1.5 hidden items-center gap-1 text-sm font-medium text-primary hover:underline sm:inline-flex"><?php esc_html_e('Read more', 'ars-petal'); ?><span class="screen-reader-text">: <?php echo esc_html($title); ?></span><?php Icon::render('arrow-right', 'size-3.5'); ?></a>
   </div>
 </li>
 <?php endif; ?>
