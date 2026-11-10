@@ -173,7 +173,7 @@ msgid "Page"
 msgstr "页面"
 
 #: app/Setup/Assets.php:108
-#: resources/templates/parts/share.php:22
+#: resources/templates/parts/share.php:15
 msgid "Link copied"
 msgstr "链接已复制"
 
@@ -796,21 +796,9 @@ msgstr "搜索播客和博客"
 msgid "Search posts"
 msgstr "搜索文章"
 
-#: resources/templates/parts/share.php:16
-msgid "Share"
-msgstr "分享"
-
-#: resources/templates/parts/share.php:22
+#: resources/templates/parts/share.php:15
 msgid "Copy link"
 msgstr "复制链接"
-
-#: resources/templates/parts/share.php:25
-msgid "Share on Weibo"
-msgstr "分享到微博"
-
-#: resources/templates/parts/share.php:26
-msgid "Share on X"
-msgstr "分享到 X"
 
 #: resources/templates/parts/tags.php:27
 #: resources/templates/parts/tags.php:33
