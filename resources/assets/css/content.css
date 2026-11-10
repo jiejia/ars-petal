@@ -130,6 +130,21 @@
   color: color-mix(in oklch, var(--color-base-content) 70%, transparent);
 }
 
+/* Classic [gallery] shortcode: core prints no gallery CSS for themes with html5 gallery support. */
+.entry-content .gallery { display: grid; grid-template-columns: repeat(var(--gallery-columns, 3), minmax(0, 1fr)); gap: 0.75rem; }
+.entry-content .gallery-columns-1 { --gallery-columns: 1; }
+.entry-content .gallery-columns-2 { --gallery-columns: 2; }
+.entry-content .gallery-columns-4 { --gallery-columns: 4; }
+.entry-content .gallery-columns-5 { --gallery-columns: 5; }
+.entry-content .gallery-columns-6 { --gallery-columns: 6; }
+.entry-content .gallery-columns-7 { --gallery-columns: 7; }
+.entry-content .gallery-columns-8 { --gallery-columns: 8; }
+.entry-content .gallery-columns-9 { --gallery-columns: 9; }
+@media (max-width: 639px) { .entry-content .gallery:is(.gallery-columns-4, .gallery-columns-5, .gallery-columns-6, .gallery-columns-7, .gallery-columns-8, .gallery-columns-9) { --gallery-columns: 3; } }
+.entry-content .gallery-item { margin: 0; }
+.entry-content .gallery-icon img { display: block; width: 100%; height: auto; border-radius: 0.75rem; }
+.entry-content .gallery-caption { margin-top: 0.35rem; font-size: 0.8rem; line-height: 1.5; }
+
 /* Password form of a protected post (get_the_password_form()): a .field input and a black pill button. */
 .post-password-form p:has(input[type="submit"]) { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
 .post-password-form label { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; max-width: 100%; }
