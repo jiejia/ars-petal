@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T04:07:03+00:00\n"
+"POT-Creation-Date: 2026-11-10T04:23:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ars-petal\n"
@@ -40,7 +40,7 @@ msgid "https://github.com/jiejia/"
 msgstr ""
 
 #: app/Blog/Blog.php:99
-#: resources/templates/cards/post-row.php:51
+#: resources/templates/cards/post-row.php:52
 #: resources/templates/index.php:35
 msgid "Blog"
 msgstr ""
@@ -239,7 +239,7 @@ msgid "Post"
 msgstr ""
 
 #: app/Setup/Assets.php:107
-#: resources/templates/cards/post-row.php:51
+#: resources/templates/cards/post-row.php:52
 msgid "Page"
 msgstr ""
 
@@ -327,7 +327,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. translators: %d: minutes.
-#: app/View/Format.php:64
+#: app/View/Format.php:78
 #, php-format
 msgid "%d min"
 msgid_plural "%d min"
@@ -388,8 +388,9 @@ msgid "Used when \"Episodes\" is set to \"Specific episodes\". They show in the 
 msgstr ""
 
 #: app/Widgets/EpisodeWidget.php:129
-#: resources/templates/cards/post-row.php:26
-#: resources/templates/cards/post.php:34
+#: resources/templates/cards/post-row.php:27
+#: resources/templates/cards/post.php:35
+#: resources/templates/cards/post.php:37
 msgid "(no title)"
 msgstr ""
 
@@ -631,8 +632,8 @@ msgid "Listen"
 msgstr ""
 
 #. translators: %d: minutes.
-#: resources/templates/cards/post-row.php:31
-#: resources/templates/cards/post.php:32
+#: resources/templates/cards/post-row.php:32
+#: resources/templates/cards/post.php:33
 #: resources/templates/single.php:69
 #, php-format
 msgid "%d min read"
@@ -640,10 +641,16 @@ msgid_plural "%d min read"
 msgstr[0] ""
 msgstr[1] ""
 
-#: resources/templates/cards/post-row.php:54
-#: resources/templates/cards/post.php:27
+#: resources/templates/cards/post-row.php:55
+#: resources/templates/cards/post.php:28
 #: resources/templates/front/hero.php:35
 msgid "Featured"
+msgstr ""
+
+#: resources/templates/cards/post-row.php:65
+#: resources/templates/cards/post.php:37
+#: resources/templates/front/hero.php:82
+msgid "Read more"
 msgstr ""
 
 #: resources/templates/comments.php:22
@@ -713,10 +720,6 @@ msgstr ""
 #: resources/templates/front/hero.php:80
 #: resources/templates/front/hero.php:82
 msgid "Show notes"
-msgstr ""
-
-#: resources/templates/front/hero.php:82
-msgid "Read more"
 msgstr ""
 
 #: resources/templates/front/hero.php:94

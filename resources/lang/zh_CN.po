@@ -39,7 +39,7 @@ msgid "https://github.com/jiejia/"
 msgstr "https://github.com/jiejia/"
 
 #: app/Blog/Blog.php:99
-#: resources/templates/cards/post-row.php:51
+#: resources/templates/cards/post-row.php:52
 #: resources/templates/index.php:35
 msgid "Blog"
 msgstr "博客"
@@ -168,7 +168,7 @@ msgid "Post"
 msgstr "文章"
 
 #: app/Setup/Assets.php:107
-#: resources/templates/cards/post-row.php:51
+#: resources/templates/cards/post-row.php:52
 msgid "Page"
 msgstr "页面"
 
@@ -250,7 +250,7 @@ msgid_plural "%s posts"
 msgstr[0] "%s 篇文章"
 
 #. translators: %d: minutes.
-#: app/View/Format.php:64
+#: app/View/Format.php:78
 #, php-format
 msgid "%d min"
 msgid_plural "%d min"
@@ -354,22 +354,23 @@ msgid "Listen"
 msgstr "收听"
 
 #: app/Widgets/EpisodeWidget.php:129
-#: resources/templates/cards/post-row.php:26
-#: resources/templates/cards/post.php:34
+#: resources/templates/cards/post-row.php:27
+#: resources/templates/cards/post.php:35
+#: resources/templates/cards/post.php:37
 msgid "(no title)"
 msgstr "（无标题）"
 
 #. translators: %d: minutes.
-#: resources/templates/cards/post-row.php:31
-#: resources/templates/cards/post.php:32
+#: resources/templates/cards/post-row.php:32
+#: resources/templates/cards/post.php:33
 #: resources/templates/single.php:69
 #, php-format
 msgid "%d min read"
 msgid_plural "%d min read"
 msgstr[0] "阅读 %d 分钟"
 
-#: resources/templates/cards/post-row.php:54
-#: resources/templates/cards/post.php:27
+#: resources/templates/cards/post-row.php:55
+#: resources/templates/cards/post.php:28
 #: resources/templates/front/hero.php:35
 msgid "Featured"
 msgstr "置顶"
@@ -443,6 +444,8 @@ msgstr "播放本期"
 msgid "Show notes"
 msgstr "节目笔记"
 
+#: resources/templates/cards/post-row.php:65
+#: resources/templates/cards/post.php:37
 #: resources/templates/front/hero.php:82
 msgid "Read more"
 msgstr "阅读全文"
@@ -1156,11 +1159,11 @@ msgstr "循环：箭头在两端首尾相接"
 
 #: resources/templates/layouts/header.php:62
 msgid "Day mode"
-msgstr ""
+msgstr "日间模式"
 
 #: resources/templates/layouts/header.php:62
 msgid "Follow system"
-msgstr ""
+msgstr "跟随系统"
 
 #. translators: %d: number of people not shown
 #: resources/templates/parts/people.php:57
