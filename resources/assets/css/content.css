@@ -15,7 +15,9 @@
 :is(.entry-content, .is-root-container) h1 { font-size: 1.75rem; margin-top: 2em; }
 :is(.entry-content, .is-root-container) h2 { font-size: 1.5rem; margin-top: 1.9em; }
 :is(.entry-content, .is-root-container) h3 { font-size: 1.2rem; margin-top: 1.6em; }
-:is(.entry-content, .is-root-container) h4 { font-size: 1rem; margin-top: 1.4em; }
+:is(.entry-content, .is-root-container) h4 { font-size: 1.1rem; margin-top: 1.4em; }
+:is(.entry-content, .is-root-container) h5 { font-size: 1rem; margin-top: 1.4em; }
+:is(.entry-content, .is-root-container) h6 { font-size: 0.8rem; margin-top: 1.4em; text-transform: uppercase; letter-spacing: 0.06em; }
 :is(.entry-content, .is-root-container) > :first-child { margin-top: 0; }
 /* Links: indigo with a thick, faded underline (a lighter indigo at night). */
 :is(.entry-content, .is-root-container) a:not(.wp-block-button__link) {
@@ -35,6 +37,10 @@
 :is(.entry-content, .is-root-container) ol { list-style: decimal; }
 :is(.entry-content, .is-root-container) li + li { margin-top: 0.35em; }
 :is(.entry-content, .is-root-container) strong { font-weight: 600; color: var(--color-base-content); }
+:is(.entry-content, .is-root-container) dt { font-weight: 600; }
+:is(.entry-content, .is-root-container) dd { margin-left: 1.5em; }
+:is(.entry-content, .is-root-container) dd + dt { margin-top: 0.6em; }
+:is(.entry-content, .is-root-container) kbd { font-family: var(--font-mono); font-size: 0.85em; padding: 0.1em 0.4em; border: 1px solid var(--color-base-300); border-bottom-width: 2px; border-radius: 0.375rem; }
 :is(.entry-content, .is-root-container) hr,
 :is(.entry-content, .is-root-container) .wp-block-separator { border: 0; border-top: 1px solid var(--color-base-300); margin: 2.5em auto; opacity: 1; }
 :is(.entry-content, .is-root-container) :is(blockquote, .wp-block-quote) {
@@ -69,6 +75,7 @@
 :is(.entry-content, .is-root-container) :is(.wp-caption-text, .gallery-caption) { margin-top: 0.6em; font-size: 0.875rem; text-align: center; color: color-mix(in oklch, var(--color-base-content) 60%, transparent); }
 :is(.entry-content, .is-root-container) table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
 :is(.entry-content, .is-root-container) :is(th, td) { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--color-base-300); text-align: left; }
+@media (max-width: 639px) { :is(.entry-content, .is-root-container) :is(th, td) { padding: 0.5rem 0.4rem; } }
 :is(.entry-content, .is-root-container) th { font-weight: 700; }
 :is(.entry-content, .is-root-container) .wp-block-table :is(thead, tfoot) { border: 0; }
 
@@ -123,11 +130,26 @@
   color: color-mix(in oklch, var(--color-base-content) 70%, transparent);
 }
 
+/* Password form of a protected post (get_the_password_form()): a .field input and a black pill button. */
+.post-password-form p:has(input[type="submit"]) { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.post-password-form label { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; max-width: 100%; }
+.post-password-form input[type="password"] { height: 3rem; width: 18rem; max-width: 100%; border: 1px solid var(--line); border-radius: 0.9rem; background: var(--color-base-100); padding: 0 1rem; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
+.post-password-form input[type="password"]:focus { border-color: var(--color-primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-primary) 18%, transparent); }
+.post-password-form input[type="submit"] { height: 3rem; padding: 0 1.75rem; border-radius: 9999px; background: var(--color-neutral); color: var(--color-neutral-content); font-size: 0.875rem; font-weight: 500; cursor: pointer; }
+
+/* Page links of a paginated post (wp_link_pages()): small pills, the current page black. */
+.post-nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; font-size: 0.9rem; }
+.entry-content .post-nav-links .post-page-numbers { display: inline-grid; place-items: center; min-width: 2.25rem; height: 2.25rem; padding: 0 0.75rem; border-radius: 9999px; background: var(--color-base-200); color: var(--color-base-content); text-decoration: none; }
+.entry-content .post-nav-links a.post-page-numbers:hover { background: var(--color-base-300); }
+.entry-content .post-nav-links .post-page-numbers.current { background: var(--color-neutral); color: var(--color-neutral-content); }
+
 /* Alignments. */
 :is(.entry-content, .is-root-container) .alignleft { float: left; margin: 0.3em 1.5em 1em 0; }
 :is(.entry-content, .is-root-container) .alignright { float: right; margin: 0.3em 0 1em 1.5em; }
 :is(.entry-content, .is-root-container) .aligncenter { margin-inline: auto; }
-.entry-content .alignwide { margin-inline: clamp(-6rem, -8vw, 0rem); max-width: none; }
-.entry-content .alignfull { margin-inline: calc(50% - 50vw); width: 100vw; max-width: 100vw; }
+/* The content sits in a card (p-4 sm:p-8), often beside a sidebar: wide and full blocks reach the card's edges, not the viewport's. */
+.entry-content :is(.alignwide, .alignfull) { margin-inline: -1rem; width: calc(100% + 2rem); max-width: none; }
+@media (min-width: 640px) { .entry-content :is(.alignwide, .alignfull) { margin-inline: -2rem; width: calc(100% + 4rem); } }
 .entry-content .alignfull :is(img, .wp-block-cover) { border-radius: 0; }
+.entry-content .alignfull:is(img, .wp-block-cover) { border-radius: 0; }
 .entry-content::after { content: ""; display: table; clear: both; }
