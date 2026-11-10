@@ -43,7 +43,7 @@ The minified styles and scripts in public/dist are built from the source files i
 
 == Privacy ==
 
-ARS Petal does not track visitors, does not use cookies and stores no visitor data in the database.
+ARS Petal does not track visitors, sets no cookies of its own (WordPress itself may, for example for comments) and stores no visitor data in the database.
 
 * Fonts: the Outfit and Noto Sans SC fonts are loaded from Google Fonts (fonts.googleapis.com and fonts.gstatic.com), so visitors' browsers connect to Google. See the Google Privacy Policy: https://policies.google.com/privacy
 * Avatars: when "Show Avatars" is on under Settings > Discussion, the server asks Gravatar (secure.gravatar.com) once whether an author has an avatar, sending the hashed e-mail address WordPress already uses for Gravatar URLs, and caches the answer. Turning avatars off stops these requests. See the Gravatar privacy policy: https://automattic.com/privacy/
