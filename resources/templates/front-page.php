@@ -28,7 +28,7 @@ if (Blog::isRequest()) {
     return;
 }
 
-TemplateLoader::part('header');
+get_header();
 
 $latest = Podcast::latest();
 
@@ -57,4 +57,4 @@ if ($latest) {
 
 Template::render('front/subscribe');
 
-TemplateLoader::part('footer');
+get_footer();

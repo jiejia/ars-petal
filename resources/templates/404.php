@@ -9,9 +9,8 @@ defined('ABSPATH') || exit;
 
 use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Podcast\Podcast;
-use Jiejia\ArsPetal\Setup\TemplateLoader;
 
-TemplateLoader::part('header');
+get_header();
 ?>
 <section class="wash relative mt-2 overflow-hidden rounded-[2rem] px-6 py-20 text-center sm:py-24">
   <p class="big-num text-8xl sm:text-9xl">404</p>
@@ -26,4 +25,4 @@ TemplateLoader::part('header');
   </div>
 </section>
 <?php
-TemplateLoader::part('footer');
+get_footer();

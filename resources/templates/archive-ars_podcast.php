@@ -11,11 +11,10 @@ defined('ABSPATH') || exit;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Integration;
 use Jiejia\ArsPetal\Podcast\Podcast;
-use Jiejia\ArsPetal\Setup\TemplateLoader;
 use Jiejia\ArsPetal\View\Archive;
 use Jiejia\ArsPetal\View\Topics;
 
-TemplateLoader::part('header');
+get_header();
 
 // On an episode category page, the sort and topic links stay inside the category.
 $category = is_tax(Podcast::CATEGORY) ? get_queried_object() : null;
@@ -72,4 +71,4 @@ $title = $current === '' && $category === null ? $heading : sprintf(/* translato
   </div>
 </section>
 <?php
-TemplateLoader::part('footer');
+get_footer();

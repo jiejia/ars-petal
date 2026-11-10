@@ -1,6 +1,6 @@
 <?php
 /**
- * Site footer, printed by TemplateLoader::part('footer'): closes the swup container (after the JSON of
+ * Site footer, loaded by get_footer() through footer.php: closes the swup container (after the JSON of
  * the episodes shown on this page), then the footer and wp_footer, where the plugin prints its player.
  *
  * Footer columns: the footer menu's items with children each become a column; items without children

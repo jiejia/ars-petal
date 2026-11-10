@@ -9,9 +9,8 @@
 defined('ABSPATH') || exit;
 
 use Jiejia\ArsPetal\Libraries\Template;
-use Jiejia\ArsPetal\Setup\TemplateLoader;
 
-TemplateLoader::part('header');
+get_header();
 
 while (have_posts()) :
     the_post();
@@ -44,4 +43,4 @@ while (have_posts()) :
     <?php
 endwhile;
 
-TemplateLoader::part('footer');
+get_footer();

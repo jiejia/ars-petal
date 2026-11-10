@@ -12,11 +12,10 @@ defined('ABSPATH') || exit;
 use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Podcast;
-use Jiejia\ArsPetal\Setup\TemplateLoader;
 use Jiejia\ArsPetal\Theme;
 use Jiejia\ArsPetal\View\Format;
 
-TemplateLoader::part('header');
+get_header();
 
 while (have_posts()) :
     the_post();
@@ -109,4 +108,4 @@ while (have_posts()) :
     <?php
 endwhile;
 
-TemplateLoader::part('footer');
+get_footer();

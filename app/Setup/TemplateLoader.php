@@ -4,8 +4,6 @@ namespace Jiejia\ArsPetal\Setup;
 
 defined('ABSPATH') || exit;
 
-use Jiejia\ArsPetal\Theme;
-
 /**
  * Serves the page templates from resources/templates instead of the theme root.
  *
@@ -85,18 +83,5 @@ final class TemplateLoader
         $theme = locate_template(self::DIRECTORY . 'comments.php');
 
         return $theme !== '' ? $theme : $file;
-    }
-
-    /**
-     * Print a layout part (header, footer) the way get_header() / get_footer() would.
-     *
-     * @param string $name "header" or "footer".
-     * @return void
-     */
-    public static function part(string $name): void
-    {
-        // The standard actions, so plugins hooked to get_header / get_footer still run.
-        do_action("get_{$name}", null, []);
-        require locate_template(self::DIRECTORY . "layouts/{$name}.php") ?: Theme::DIR . self::DIRECTORY . "layouts/{$name}.php";
     }
 }

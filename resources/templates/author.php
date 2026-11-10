@@ -12,10 +12,9 @@ defined('ABSPATH') || exit;
 use Jiejia\ArsPetal\Libraries\Icon;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Podcast;
-use Jiejia\ArsPetal\Setup\TemplateLoader;
 use Jiejia\ArsPetal\View\Author;
 
-TemplateLoader::part('header');
+get_header();
 
 $user = Author::user();
 $counts = $user ? Author::counts($user) : [Author::EPISODES => 0, Author::POSTS => 0];
@@ -115,4 +114,4 @@ $guestItems = $sideItems($guests);
   </div>
 </article>
 <?php
-TemplateLoader::part('footer');
+get_footer();

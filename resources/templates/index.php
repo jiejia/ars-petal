@@ -13,11 +13,10 @@ defined('ABSPATH') || exit;
 use Jiejia\ArsPetal\Blog\Blog;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Podcast;
-use Jiejia\ArsPetal\Setup\TemplateLoader;
 use Jiejia\ArsPetal\View\Archive;
 use Jiejia\ArsPetal\View\Topics;
 
-TemplateLoader::part('header');
+get_header();
 
 $found = (int) $GLOBALS['wp_query']->found_posts;
 $sidebar = [];
@@ -105,4 +104,4 @@ $description = Archive::description();
   </div>
 </section>
 <?php
-TemplateLoader::part('footer');
+get_footer();

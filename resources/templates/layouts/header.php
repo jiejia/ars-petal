@@ -1,6 +1,6 @@
 <?php
 /**
- * Site header, printed by TemplateLoader::part('header'): <head>, the monospace announcement bar, the
+ * Site header, loaded by get_header() through header.php: <head>, the monospace announcement bar, the
  * frosted sticky top bar (petal mark, centered icon menu with dropdown cards, ⌘K search, sun / moon
  * button) with the search dialog, and the opening of the swup container. Everything outside
  * <main id="swup"> stays across swup page swaps; the menus are refreshed from the new page ([data-swup-sync]).
