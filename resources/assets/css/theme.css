@@ -268,7 +268,8 @@ body.has-ars-player .site-footer { padding-bottom: calc(var(--ars-player-height,
 [data-view="grid"] .petal-view-list { display: none; }
 
 /* Custom logo. */
-.custom-logo { height: 2.25rem; width: auto; }
+.custom-logo-link { display: flex; flex-shrink: 0; }
+.custom-logo { height: 29.5938px; width: 124.273px; object-fit: contain; }
 
 /* Comments. */
 .comment-list .children { margin-top: 0.75rem; display: grid; gap: 0.75rem; }

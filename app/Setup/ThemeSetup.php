@@ -40,7 +40,8 @@ final class ThemeSetup
         add_theme_support('align-wide');
         add_theme_support('editor-styles');
         add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script', 'navigation-widgets']);
-        add_theme_support('custom-logo', ['height' => 72, 'width' => 72, 'flex-width' => true, 'flex-height' => true]);
+        // Shown at 124.273 × 29.5938 px (theme.css); cropped at 2x for high-density screens, ratio locked.
+        add_theme_support('custom-logo', ['height' => 59, 'width' => 249, 'flex-width' => false, 'flex-height' => false]);
         add_editor_style('public/dist/editor.css');
 
         register_nav_menus([
