@@ -285,7 +285,7 @@ final class Podcast
     /**
      * IDs of the published episodes a user hosts or guests on, newest first.
      *
-     * The plugin stores members and guests as serialized ID arrays, so a LIKE narrows the query
+     * The plugin stores hosts and guests as serialized ID arrays, so a LIKE narrows the query
      * and each match is checked exactly (i:1; also matches array keys).
      *
      * @param int $userId User ID.
@@ -310,7 +310,7 @@ final class Podcast
             'numberposts' => -1,
             'meta_query' => [
                 'relation' => 'OR',
-                ['key' => '_' . self::POST_TYPE . '_members', 'value' => $needle, 'compare' => 'LIKE'],
+                ['key' => '_' . self::POST_TYPE . '_hosts', 'value' => $needle, 'compare' => 'LIKE'],
                 ['key' => '_' . self::POST_TYPE . '_guests', 'value' => $needle, 'compare' => 'LIKE'],
             ],
         ]);
@@ -319,7 +319,7 @@ final class Podcast
 
         foreach ($posts as $post) {
             $episode = new Episode($post);
-            $people = array_map(static fn (\WP_User $user): int => $user->ID, array_merge($episode->members(), $episode->guests()));
+            $people = array_map(static fn (\WP_User $user): int => $user->ID, array_merge($episode->hosts(), $episode->guests()));
 
             if (in_array($userId, $people, true)) {
                 $ids[] = $post->ID;
@@ -425,7 +425,7 @@ final class Podcast
             return get_users(['has_published_posts' => ['post'], 'number' => 6, 'orderby' => 'post_count', 'order' => 'DESC']);
         }
 
-        return self::configuredPeople('members');
+        return self::configuredPeople('hosts');
     }
 
     /**
@@ -451,12 +451,12 @@ final class Podcast
     /**
      * The users saved in a user list of the plugin's Host & Guest Settings, in the saved order.
      *
-     * @param string $key Either members or guests.
+     * @param string $key Either hosts or guests.
      * @return array<int,\WP_User>
      */
     private static function configuredPeople(string $key): array
     {
-        $class = self::pluginClass('Settings\\MemberSetting');
+        $class = self::pluginClass('Settings\\HostSetting');
         $ids = $class === null ? [] : (new $class())->ids($key);
 
         // An empty include would return every user.

@@ -119,13 +119,13 @@ final class Episode
     }
 
     /**
-     * The episode's hosts (the plugin's "Members" field).
+     * The episode's hosts.
      *
      * @return array<int,\WP_User>
      */
-    public function members(): array
+    public function hosts(): array
     {
-        return $this->users($this->meta('members'));
+        return $this->users($this->meta('hosts'));
     }
 
     /**
@@ -145,7 +145,7 @@ final class Episode
      */
     public function hostNames(): string
     {
-        return implode(' / ', array_map(static fn (\WP_User $user): string => $user->display_name, $this->members()));
+        return implode(' / ', array_map(static fn (\WP_User $user): string => $user->display_name, $this->hosts()));
     }
 
     public function plays(): int

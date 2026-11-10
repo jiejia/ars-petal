@@ -15,8 +15,8 @@ use Jiejia\ArsPetal\Podcast\Episode;
 $post = get_post((int) $comment->comment_post_ID);
 $episode = Episode::from($post);
 $userId = (int) $comment->user_id;
-// Hosts: the post author, or the episode's members.
-$host = $userId > 0 && ($userId === (int) $post?->post_author || ($episode && in_array($userId, wp_list_pluck($episode->members(), 'ID'), true)));
+// Hosts: the post author, or the episode's hosts.
+$host = $userId > 0 && ($userId === (int) $post?->post_author || ($episode && in_array($userId, wp_list_pluck($episode->hosts(), 'ID'), true)));
 ?>
 <li id="comment-<?php comment_ID(); ?>" <?php comment_class($depth > 1 ? 'list-none' : 'panel-sm list-none p-5', $comment); ?>>
   <div class="flex gap-3">

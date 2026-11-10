@@ -101,9 +101,9 @@ while (have_posts()) :
         </div>
       </header>
 
-      <?php if ($episode->members() !== [] || $episode->guests() !== []) : ?>
+      <?php if ($episode->hosts() !== [] || $episode->guests() !== []) : ?>
         <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <?php Template::render('parts/people', ['title' => __('Hosts', 'ars-petal'), 'users' => $episode->members()]); ?>
+          <?php Template::render('parts/people', ['title' => __('Hosts', 'ars-petal'), 'users' => $episode->hosts()]); ?>
           <?php Template::render('parts/people', ['title' => __('Guests', 'ars-petal'), 'users' => $episode->guests()]); ?>
         </div>
       <?php endif; ?>
