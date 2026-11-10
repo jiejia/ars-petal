@@ -2,9 +2,10 @@
 /**
  * A user's avatar on a rounded tile, or the first letter of their name on a theme color.
  *
- * The letter is always printed; the avatar image covers it. Gravatar is asked with d=404, so a
- * user without one gets an error and the image removes itself, leaving the letter. Once the image loads, the
- * colored letter is removed, so no color shows around or through the image (as in the prototype).
+ * The letter is always printed; the avatar image covers it. The image is only printed when the user has
+ * an avatar (View\Avatar asks Gravatar on the server), so visitors' browsers see no failed requests; should
+ * it still fail to load, it removes itself and leaves the letter. Once the image loads, the colored letter
+ * is removed, so no color shows around or through the image (as in the prototype).
  *
  * @var \WP_User $user User.
  * @var string $class Size and radius, e.g. "size-12 rounded-2xl".
@@ -14,12 +15,13 @@
 
 defined('ABSPATH') || exit;
 
+use Jiejia\ArsPetal\View\Avatar;
 use Jiejia\ArsPetal\View\Format;
 
 $class ??= 'size-12 rounded-2xl';
 $text ??= 'text-lg';
 $colors = ['bg-accent text-accent-content', 'bg-secondary text-secondary-content', 'bg-info text-info-content', 'bg-success text-success-content', 'bg-warning text-warning-content', 'bg-primary text-primary-content'];
-$url = get_option('show_avatars') ? (string) get_avatar_url($user->ID, ['size' => 192, 'default' => '404']) : '';
+$url = Avatar::url($user);
 ?>
 <span class="relative block shrink-0 overflow-hidden font-bold petal-avatar <?php echo esc_attr($class); ?>" aria-hidden="true">
   <span class="absolute inset-0 grid place-items-center <?php echo esc_attr($colors[$user->ID % count($colors)] . ' ' . $text); ?>"><?php echo esc_html(Format::initial($user->display_name)); ?></span>
