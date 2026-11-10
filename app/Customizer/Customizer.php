@@ -66,6 +66,11 @@ final class Customizer
             $logo->priority = 9;
             $logo->active_callback = $isImage;
         }
+
+        // The header depends on the mode and the image together (no image falls back to icon + title),
+        // so core's selective refresh of .custom-logo-link alone could leave the preview blank.
+        $customizer->get_setting('custom_logo')->transport = 'refresh';
+        $customizer->selective_refresh->remove_partial('custom_logo');
     }
 
     /**

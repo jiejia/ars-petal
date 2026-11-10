@@ -30,8 +30,8 @@ final class LogoIconControl extends \WP_Customize_Control
         $name = '_customize-radio-' . $this->id;
         ?>
         <style>
-          .petal-logo-picker { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-top: 6px; }
-          .petal-logo-picker label { display: grid; place-items: start center; align-content: start; gap: 4px; overflow-wrap: anywhere; padding: 8px 2px 6px; border: 1px solid #dcdcde; border-radius: 8px; background: #fff; cursor: pointer; font-size: 11px; line-height: 1.2; text-align: center; }
+          .petal-logo-picker { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 6px; }
+          .petal-logo-picker label { display: grid; place-items: start center; align-content: start; gap: 4px; padding: 8px 2px 6px; border: 1px solid #dcdcde; border-radius: 8px; background: #fff; cursor: pointer; font-size: 11px; line-height: 1.2; text-align: center; }
           .petal-logo-picker input { position: absolute; opacity: 0; }
           .petal-logo-picker label:has(input:checked) { border-color: #2271b1; box-shadow: 0 0 0 1px #2271b1; }
           .petal-logo-picker label:has(input:focus-visible) { outline: 2px solid #2271b1; outline-offset: 1px; }
