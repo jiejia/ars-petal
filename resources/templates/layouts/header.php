@@ -55,10 +55,8 @@ $schedule = Podcast::schedule();
     </nav>
 
     <div class="ml-auto flex items-center gap-1 lg:ml-0">
-      <button type="button" class="search-box hidden xl:flex" @click="open()" aria-label="<?php esc_attr_e('Search', 'ars-petal'); ?>">
-        <?php Icon::render('search', 'mute size-4'); ?><span><?php esc_html_e('Search…', 'ars-petal'); ?></span><kbd class="kbd kbd-sm">/</kbd>
-      </button>
-      <button type="button" class="btn-plain size-10 rounded-xl xl:hidden" @click="open()" aria-label="<?php esc_attr_e('Search', 'ars-petal'); ?>"><?php Icon::render('search', 'size-[1.15rem]'); ?></button>
+      <?php // The "/" key also opens search (app.js). ?>
+      <button type="button" class="btn-plain size-10 rounded-xl" @click="open()" aria-label="<?php esc_attr_e('Search', 'ars-petal'); ?>" title="<?php esc_attr_e('Search ( / )', 'ars-petal'); ?>" aria-keyshortcuts="/"><?php Icon::render('search', 'size-[1.15rem]'); ?></button>
       <?php // Cycles light -> dark -> follow system; the icon shows the current mode. ?>
       <button type="button" class="btn-plain size-10 rounded-xl" @click="$store.ui.toggleTheme()" :aria-label="{ light: '<?php echo esc_js(__('Day mode', 'ars-petal')); ?>', dark: '<?php echo esc_js(__('Night mode', 'ars-petal')); ?>', system: '<?php echo esc_js(__('Follow system', 'ars-petal')); ?>' }[$store.ui.mode]" aria-label="<?php esc_attr_e('Switch color scheme', 'ars-petal'); ?>">
         <span x-show="$store.ui.mode === 'light'" x-cloak><?php Icon::render('sun', 'size-[1.15rem]'); ?></span>

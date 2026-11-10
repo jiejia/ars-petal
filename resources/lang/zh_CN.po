@@ -14,7 +14,7 @@ msgstr ""
 "X-Domain: ars-petal\n"
 
 #: app/Branding/Logo.php:38
-#: app/Customizer/Customizer.php:80
+#: app/Customizer/Customizer.php:85
 msgid "Petal"
 msgstr "花瓣"
 
@@ -69,67 +69,67 @@ msgstr "邮箱"
 msgid "Website"
 msgstr "网站"
 
-#: app/Customizer/Customizer.php:84
+#: app/Customizer/Customizer.php:89
 msgid "Default color scheme"
 msgstr "默认配色"
 
-#: app/Customizer/Customizer.php:86
+#: app/Customizer/Customizer.php:91
 msgid "Light (day)"
 msgstr "日间（浅色）"
 
-#: app/Customizer/Customizer.php:87
+#: app/Customizer/Customizer.php:92
 msgid "Dark (night)"
 msgstr "夜间（深色）"
 
-#: app/Customizer/Customizer.php:88
+#: app/Customizer/Customizer.php:93
 msgid "Follow the visitor’s system"
 msgstr "跟随访客系统设置"
 
-#: app/Customizer/Customizer.php:90
+#: app/Customizer/Customizer.php:95
 msgid "Visitors can still switch with the sun / moon button."
 msgstr "访客仍可通过太阳 / 月亮按钮切换。"
 
-#: app/Customizer/Customizer.php:92
+#: app/Customizer/Customizer.php:97
 msgid "Home headline, bold part"
 msgstr "首页大标题：粗体部分"
 
-#: app/Customizer/Customizer.php:93
+#: app/Customizer/Customizer.php:98
 msgid "The big two-weight headline on the home page. Leave empty for the site name."
 msgstr "首页粗 / 细两段混排的大标题。留空则用站点名称。"
 
-#: app/Customizer/Customizer.php:95
+#: app/Customizer/Customizer.php:100
 msgid "Home headline, light part"
 msgstr "首页大标题：细体部分"
 
-#: app/Customizer/Customizer.php:96
+#: app/Customizer/Customizer.php:101
 msgid "Leave empty for the tagline."
 msgstr "留空则用副标题。"
 
-#: app/Customizer/Customizer.php:98
+#: app/Customizer/Customizer.php:103
 msgid "Newsletter form action URL"
 msgstr "邮件订阅表单提交地址"
 
-#: app/Customizer/Customizer.php:99
+#: app/Customizer/Customizer.php:104
 msgid "Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section."
 msgstr "邮件订阅表单提交到的地址（你的邮件服务）。留空则不显示订阅区块。"
 
-#: app/Customizer/Customizer.php:101
+#: app/Customizer/Customizer.php:106
 msgid "Newsletter e-mail field name"
 msgstr "邮件订阅的邮箱字段名"
 
-#: app/Customizer/Customizer.php:102
+#: app/Customizer/Customizer.php:107
 msgid "Newsletter title"
 msgstr "邮件订阅标题"
 
-#: app/Customizer/Customizer.php:103
+#: app/Customizer/Customizer.php:108
 msgid "Newsletter text"
 msgstr "邮件订阅说明"
 
-#: app/Customizer/Customizer.php:104
+#: app/Customizer/Customizer.php:109
 msgid "Footer copyright text"
 msgstr "页脚版权文字"
 
-#: app/Customizer/Customizer.php:105
+#: app/Customizer/Customizer.php:110
 msgid "Leave empty for “© year site name”."
 msgstr "留空则显示“© 年份 站点名称”。"
 
@@ -349,7 +349,7 @@ msgstr "收藏"
 #: resources/templates/cards/episode.php:35
 #: resources/templates/layouts/footer.php:62
 #: resources/templates/layouts/footer.php:63
-#: resources/templates/layouts/header.php:120
+#: resources/templates/layouts/header.php:118
 msgid "Listen"
 msgstr "收听"
 
@@ -567,7 +567,7 @@ msgid "E-mail address"
 msgstr "邮箱地址"
 
 #: resources/templates/front/subscribe.php:40
-#: resources/templates/layouts/header.php:70
+#: resources/templates/layouts/header.php:68
 msgid "Subscribe"
 msgstr "订阅"
 
@@ -597,8 +597,7 @@ msgstr "分类"
 #: resources/templates/index.php:36
 #: resources/templates/index.php:81
 #: resources/templates/index.php:82
-#: resources/templates/layouts/header.php:58
-#: resources/templates/layouts/header.php:61
+#: resources/templates/layouts/header.php:59
 #: searchform.php:21
 #: searchform.php:26
 #: searchform.php:36
@@ -631,12 +630,12 @@ msgid "Browse"
 msgstr "浏览"
 
 #: resources/templates/layouts/footer.php:63
-#: resources/templates/layouts/header.php:72
+#: resources/templates/layouts/header.php:70
 msgid "Follow"
 msgstr "关注"
 
 #: resources/templates/layouts/footer.php:75
-#: resources/templates/layouts/header.php:63
+#: resources/templates/layouts/header.php:61
 msgid "Night mode"
 msgstr "夜间模式"
 
@@ -653,25 +652,21 @@ msgid "New post"
 msgstr "最新文章"
 
 #: resources/templates/layouts/header.php:53
-#: resources/templates/layouts/header.php:111
-#: resources/templates/layouts/header.php:114
+#: resources/templates/layouts/header.php:109
+#: resources/templates/layouts/header.php:112
 msgid "Main menu"
 msgstr "主导航"
 
-#: resources/templates/layouts/header.php:59
-msgid "Search…"
-msgstr "搜索…"
-
-#: resources/templates/layouts/header.php:63
+#: resources/templates/layouts/header.php:61
 msgid "Switch color scheme"
 msgstr "切换配色"
 
-#: resources/templates/layouts/header.php:72
+#: resources/templates/layouts/header.php:70
 msgid "Listen in a podcast app"
 msgstr "在播客应用中收听"
 
-#: resources/templates/layouts/header.php:79
-#: resources/templates/layouts/header.php:108
+#: resources/templates/layouts/header.php:77
+#: resources/templates/layouts/header.php:106
 msgid "Open menu"
 msgstr "打开菜单"
 
@@ -683,21 +678,21 @@ msgstr "搜索节目和文章…"
 msgid "Search posts…"
 msgstr "搜索文章…"
 
-#: resources/templates/layouts/header.php:95
+#: resources/templates/layouts/header.php:93
 msgid "See all results"
 msgstr "查看全部结果"
 
-#: resources/templates/layouts/header.php:97
+#: resources/templates/layouts/header.php:95
 msgid "Nothing found. Press Enter for a full search."
 msgstr "没有找到，按回车查看完整搜索结果。"
 
-#: resources/templates/layouts/header.php:98
+#: resources/templates/layouts/header.php:96
 msgid "Type to search"
 msgstr "输入关键词开始搜索"
 
-#: resources/templates/layouts/header.php:102
-#: resources/templates/layouts/header.php:110
-#: resources/templates/layouts/header.php:115
+#: resources/templates/layouts/header.php:100
+#: resources/templates/layouts/header.php:108
+#: resources/templates/layouts/header.php:113
 #: resources/templates/parts/sidebar-start.php:21
 #: resources/templates/parts/sidebar-start.php:26
 msgid "Close"
@@ -1157,11 +1152,11 @@ msgstr "可左右滑动的一行节目卡片。"
 msgid "Loop: the arrows wrap around at either end"
 msgstr "循环：箭头在两端首尾相接"
 
-#: resources/templates/layouts/header.php:63
+#: resources/templates/layouts/header.php:61
 msgid "Day mode"
 msgstr ""
 
-#: resources/templates/layouts/header.php:63
+#: resources/templates/layouts/header.php:61
 msgid "Follow system"
 msgstr ""
 
@@ -1231,3 +1226,7 @@ msgstr "未上传图片时，显示图标和网站标题。"
 #: app/Customizer/Customizer.php:57
 msgid "Logo icon"
 msgstr "Logo 图标"
+
+#: resources/templates/layouts/header.php:59
+msgid "Search ( / )"
+msgstr "搜索（ / ）"
