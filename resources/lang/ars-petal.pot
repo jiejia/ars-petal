@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-10T03:22:56+00:00\n"
+"POT-Creation-Date: 2026-11-10T04:07:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ars-petal\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "https://github.com/jiejia/"
 msgstr ""
 
-#: app/Blog/Blog.php:86
+#: app/Blog/Blog.php:99
 #: resources/templates/cards/post-row.php:51
 #: resources/templates/index.php:35
 msgid "Blog"
@@ -272,8 +272,8 @@ msgid "Search: %s"
 msgstr ""
 
 #: app/View/Archive.php:26
-#: resources/templates/single.php:44
 #: resources/templates/single.php:45
+#: resources/templates/single.php:46
 msgid "Latest posts"
 msgstr ""
 
@@ -319,7 +319,7 @@ msgstr[1] ""
 #: resources/templates/front/topics.php:35
 #: resources/templates/index.php:44
 #: resources/templates/index.php:51
-#: resources/templates/single.php:31
+#: resources/templates/single.php:32
 #, php-format
 msgid "%s post"
 msgid_plural "%s posts"
@@ -626,14 +626,14 @@ msgstr ""
 #: resources/templates/cards/episode.php:35
 #: resources/templates/layouts/footer.php:62
 #: resources/templates/layouts/footer.php:63
-#: resources/templates/layouts/header.php:118
+#: resources/templates/layouts/header.php:119
 msgid "Listen"
 msgstr ""
 
 #. translators: %d: minutes.
 #: resources/templates/cards/post-row.php:31
 #: resources/templates/cards/post.php:32
-#: resources/templates/single.php:68
+#: resources/templates/single.php:69
 #, php-format
 msgid "%d min read"
 msgid_plural "%d min read"
@@ -655,10 +655,15 @@ msgid "Reader comments"
 msgstr ""
 
 #: resources/templates/comments.php:34
+#: resources/templates/single.php:116
 msgid "Comments are closed."
 msgstr ""
 
-#: resources/templates/comments/comment.php:33
+#: resources/templates/comments/comment.php:31
+msgid "Edit"
+msgstr ""
+
+#: resources/templates/comments/comment.php:34
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -807,7 +812,7 @@ msgid "E-mail address"
 msgstr ""
 
 #: resources/templates/front/subscribe.php:40
-#: resources/templates/layouts/header.php:68
+#: resources/templates/layouts/header.php:69
 msgid "Subscribe"
 msgstr ""
 
@@ -837,7 +842,7 @@ msgstr ""
 #: resources/templates/index.php:36
 #: resources/templates/index.php:81
 #: resources/templates/index.php:82
-#: resources/templates/layouts/header.php:59
+#: resources/templates/layouts/header.php:60
 #: searchform.php:21
 #: searchform.php:26
 #: searchform.php:36
@@ -858,7 +863,8 @@ msgid "Type"
 msgstr ""
 
 #: resources/templates/index.php:87
-#: resources/templates/single.php:53
+#: resources/templates/single.php:54
+#: resources/templates/single.php:100
 msgid "Categories"
 msgstr ""
 
@@ -871,12 +877,12 @@ msgid "Browse"
 msgstr ""
 
 #: resources/templates/layouts/footer.php:63
-#: resources/templates/layouts/header.php:70
+#: resources/templates/layouts/header.php:71
 msgid "Follow"
 msgstr ""
 
 #: resources/templates/layouts/footer.php:75
-#: resources/templates/layouts/header.php:61
+#: resources/templates/layouts/header.php:62
 msgid "Night mode"
 msgstr ""
 
@@ -892,52 +898,52 @@ msgstr ""
 msgid "New post"
 msgstr ""
 
-#: resources/templates/layouts/header.php:53
-#: resources/templates/layouts/header.php:109
-#: resources/templates/layouts/header.php:112
+#: resources/templates/layouts/header.php:54
+#: resources/templates/layouts/header.php:110
+#: resources/templates/layouts/header.php:113
 msgid "Main menu"
 msgstr ""
 
-#: resources/templates/layouts/header.php:59
+#: resources/templates/layouts/header.php:60
 msgid "Search ( / )"
 msgstr ""
 
-#: resources/templates/layouts/header.php:61
+#: resources/templates/layouts/header.php:62
 msgid "Day mode"
 msgstr ""
 
-#: resources/templates/layouts/header.php:61
+#: resources/templates/layouts/header.php:62
 msgid "Follow system"
 msgstr ""
 
-#: resources/templates/layouts/header.php:61
+#: resources/templates/layouts/header.php:62
 msgid "Switch color scheme"
 msgstr ""
 
-#: resources/templates/layouts/header.php:70
+#: resources/templates/layouts/header.php:71
 msgid "Listen in a podcast app"
 msgstr ""
 
-#: resources/templates/layouts/header.php:77
-#: resources/templates/layouts/header.php:106
+#: resources/templates/layouts/header.php:78
+#: resources/templates/layouts/header.php:107
 msgid "Open menu"
 msgstr ""
 
-#: resources/templates/layouts/header.php:93
+#: resources/templates/layouts/header.php:94
 msgid "See all results"
 msgstr ""
 
-#: resources/templates/layouts/header.php:95
+#: resources/templates/layouts/header.php:96
 msgid "Nothing found. Press Enter for a full search."
 msgstr ""
 
-#: resources/templates/layouts/header.php:96
+#: resources/templates/layouts/header.php:97
 msgid "Type to search"
 msgstr ""
 
-#: resources/templates/layouts/header.php:100
-#: resources/templates/layouts/header.php:108
-#: resources/templates/layouts/header.php:113
+#: resources/templates/layouts/header.php:101
+#: resources/templates/layouts/header.php:109
+#: resources/templates/layouts/header.php:114
 #: resources/templates/parts/sidebar-start.php:21
 #: resources/templates/parts/sidebar-start.php:26
 msgid "Close"
@@ -1067,9 +1073,9 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: resources/templates/parts/tags.php:25
-#: resources/templates/parts/tags.php:31
-#: resources/templates/parts/tags.php:32
+#: resources/templates/parts/tags.php:27
+#: resources/templates/parts/tags.php:33
+#: resources/templates/parts/tags.php:34
 msgid "Tags"
 msgstr ""
 
@@ -1150,11 +1156,11 @@ msgstr ""
 msgid "This is the first episode"
 msgstr ""
 
-#: resources/templates/single.php:101
+#: resources/templates/single.php:110
 msgid "This is the newest post"
 msgstr ""
 
-#: resources/templates/single.php:101
+#: resources/templates/single.php:110
 msgid "This is the first post"
 msgstr ""
 

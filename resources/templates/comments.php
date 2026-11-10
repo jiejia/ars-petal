@@ -23,7 +23,7 @@ $count = (int) get_comments_number();
     <ol class="comment-list mt-4 space-y-3">
       <?php wp_list_comments(['callback' => [CommentForm::class, 'comment'], 'style' => 'ol', 'avatar_size' => 40]); ?>
     </ol>
-    <?php the_comments_pagination(['class' => 'mt-6 flex justify-center gap-2 text-sm']); ?>
+    <?php the_comments_pagination(); ?>
   <?php endif; ?>
 
   <?php if (comments_open()) : ?>

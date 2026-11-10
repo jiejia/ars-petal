@@ -28,11 +28,12 @@ $host = $userId > 0 && ($userId === (int) $post?->post_author || ($episode && in
           <span class="ml-2 rounded-full bg-primary px-2 py-0.5 text-[0.65rem] text-primary-content"><?php esc_html_e('Host', 'ars-petal'); ?></span>
         <?php endif; ?>
         <a href="<?php echo esc_url(get_comment_link($comment)); ?>" class="mute ml-2 text-xs"><?php echo esc_html(get_comment_date('Y.m.d', $comment)); ?></a>
+        <?php edit_comment_link(__('Edit', 'ars-petal'), '<span class="mute ml-2 text-xs [&_a]:hover:text-base-content">', '</span>', $comment->comment_ID); ?>
       </p>
       <?php if ($comment->comment_approved === '0') : ?>
         <p class="mt-1 text-xs text-warning"><?php esc_html_e('Your comment is awaiting moderation.', 'ars-petal'); ?></p>
       <?php endif; ?>
-      <div class="mt-1 leading-relaxed [&_p+p]:mt-2 <?php echo $depth > 1 ? 'mute text-sm' : ''; ?>"><?php comment_text($comment); ?></div>
+      <div class="comment-content mt-1 leading-relaxed <?php echo $depth > 1 ? 'mute text-sm' : ''; ?>"><?php comment_text($comment); ?></div>
       <?php
       comment_reply_link(array_merge($args, [
           'depth' => $depth,
