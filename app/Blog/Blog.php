@@ -67,11 +67,24 @@ final class Blog
             return $postsPage > 0 ? (string) get_permalink($postsPage) : '';
         }
 
-        if (! get_option('permalink_structure')) {
+        // Plain permalinks, or a real page / post owns /blog/: the query var form.
+        if (! get_option('permalink_structure') || self::slugTaken()) {
             return add_query_arg(array_filter([self::QUERY_VAR => 1, 'paged' => $page > 1 ? $page : null]), home_url('/'));
         }
 
         return user_trailingslashit(home_url(self::SLUG . ($page > 1 ? '/page/' . $page : '')));
+    }
+
+    /**
+     * Whether a page or post with the slug "blog" exists (it keeps /blog/).
+     *
+     * @return bool
+     */
+    private static function slugTaken(): bool
+    {
+        static $taken = null;
+
+        return $taken ??= get_page_by_path(self::SLUG) !== null || get_page_by_path(self::SLUG, OBJECT, 'post') !== null;
     }
 
     /**
@@ -152,7 +165,7 @@ final class Blog
     {
         $slug = $vars['pagename'] ?? $vars['name'] ?? '';
 
-        if ($slug !== self::SLUG || ! self::routed() || get_page_by_path(self::SLUG) || get_page_by_path(self::SLUG, OBJECT, 'post')) {
+        if ($slug !== self::SLUG || ! self::routed() || self::slugTaken()) {
             return $vars;
         }
 
