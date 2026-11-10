@@ -41,6 +41,15 @@ Go to Appearance > Customize > Site Identity. Upload your own logo image, or pic
 
 The minified styles and scripts in public/dist are built from the source files in resources/assets/css and resources/assets/js (Tailwind CSS, daisyUI, Alpine.js and Swup). The build tooling (package.json and the bin/ scripts) lives in the theme's GitHub repository: https://github.com/jiejia/ars-petal. Run `npm install` and `npm run build` there.
 
+== Privacy ==
+
+ARS Petal does not track visitors, does not use cookies and stores no visitor data in the database.
+
+* Fonts: the Outfit and Noto Sans SC fonts are loaded from Google Fonts (fonts.googleapis.com and fonts.gstatic.com), so visitors' browsers connect to Google. See the Google Privacy Policy: https://policies.google.com/privacy
+* Avatars: when "Show Avatars" is on under Settings > Discussion, the server asks Gravatar (secure.gravatar.com) once whether an author has an avatar, sending the hashed e-mail address WordPress already uses for Gravatar URLs, and caches the answer. Turning avatars off stops these requests. See the Gravatar privacy policy: https://automattic.com/privacy/
+* Episode files: with the A Ripple Song plugin, chapter and transcript files that an editor links from another site are downloaded by the server and cached. Files in the media library are read from disk.
+* Browser storage: the visitor's color scheme and list / grid choices are kept in the browser's localStorage. They are never sent to the server.
+
 == Changelog ==
 
 = 0.5.0 =
