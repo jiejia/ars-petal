@@ -14,6 +14,7 @@ defined('ABSPATH') || exit;
 
 use Jiejia\ArsPetal\Customizer\Options;
 use Jiejia\ArsPetal\Libraries\Icon;
+use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Navigation\Menu;
 use Jiejia\ArsPetal\Podcast\EpisodeRegistry;
 use Jiejia\ArsPetal\Podcast\Podcast;
@@ -29,10 +30,7 @@ $listen = Podcast::listenLinks();
 <footer class="site-footer mt-16 border-t border-base-300 bg-base-200 pb-16">
   <div class="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-10 px-4 pt-16 text-center sm:px-6 md:grid-cols-6 md:text-left">
     <div class="col-span-2">
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-flex items-center gap-2.5" rel="home" title="<?php echo esc_attr(get_bloginfo('name')); ?>">
-        <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span class="display text-2xl !font-bold tracking-tight"><?php bloginfo('name'); ?></span>
-      </a>
+      <?php Template::render('parts/brand', ['place' => 'footer']); ?>
       <?php if ($about !== '') : ?>
         <p class="display-light mute mx-auto mt-4 max-w-xs text-lg leading-snug md:mx-0"><?php echo esc_html(wp_trim_words($about, 40)); ?></p>
       <?php endif; ?>

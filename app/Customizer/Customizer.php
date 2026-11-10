@@ -19,6 +19,53 @@ final class Customizer
     public function register(): void
     {
         add_action('customize_register', [$this, 'controls']);
+        // After core's Site Identity controls, so the custom_logo control exists.
+        add_action('customize_register', [$this, 'logoControls'], 20);
+    }
+
+    /**
+     * Logo controls in Site Identity: the style (icon + title or uploaded image) and the icon.
+     *
+     * @param \WP_Customize_Manager $customizer Customizer.
+     * @return void
+     */
+    public function logoControls(\WP_Customize_Manager $customizer): void
+    {
+        $isImage = static fn (\WP_Customize_Control $control): bool => $control->manager->get_setting('logo_mode')?->value() === 'image';
+
+        $customizer->add_setting('logo_mode', [
+            'default' => get_theme_mod('custom_logo') ? 'image' : 'icon',
+            'sanitize_callback' => static fn (string $value): string => $value === 'image' ? 'image' : 'icon',
+        ]);
+        $customizer->add_control('logo_mode', [
+            'label' => __('Logo style', 'ars-petal'),
+            'section' => 'title_tagline',
+            'type' => 'radio',
+            'priority' => 7,
+            'choices' => [
+                'icon' => __('Icon + site title', 'ars-petal'),
+                'image' => __('Uploaded image', 'ars-petal'),
+            ],
+            'description' => __('With no image uploaded, the icon and site title are shown.', 'ars-petal'),
+        ]);
+
+        $customizer->add_setting('logo_icon', [
+            'default' => Options::DEFAULTS['logo_icon'],
+            'sanitize_callback' => static fn (string $value): string => in_array($value, \Jiejia\ArsPetal\Branding\Logo::ICONS, true) ? $value : Options::DEFAULTS['logo_icon'],
+        ]);
+        $customizer->add_control(new LogoIconControl($customizer, 'logo_icon', [
+            'label' => __('Logo icon', 'ars-petal'),
+            'section' => 'title_tagline',
+            'priority' => 8,
+            'active_callback' => static fn (\WP_Customize_Control $control): bool => !$isImage($control),
+        ]));
+
+        $logo = $customizer->get_control('custom_logo');
+
+        if ($logo) {
+            $logo->priority = 9;
+            $logo->active_callback = $isImage;
+        }
     }
 
     /**

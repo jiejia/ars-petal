@@ -27,7 +27,8 @@ ARS Petal follows a simple split: the A Ripple Song plugin owns the podcast data
 - Smooth page transitions with Swup, so playback is never interrupted.
 - Light, dark and follow-system color modes, with a sun / moon toggle for visitors.
 - Header and footer menus, a mega dropdown for nested menus, mobile drawer navigation, and Lucide icons on menu items via an `icon-{name}` CSS class.
-- Search dialog with a keyboard shortcut, announcement bar, newsletter sign-up section, and a custom logo.
+- Two logo styles in `Appearance > Customize > Site Identity`: an uploaded image, or one of 12 bundled multi-color icons next to the site title.
+- Search dialog with a keyboard shortcut, announcement bar, and newsletter sign-up section.
 - Customizer options under `Appearance > Customize > Petal`: default color scheme, home headline, newsletter form and footer text.
 - Works as a plain blog theme when the plugin is not active.
 - Translation-ready, with English and Simplified Chinese included.

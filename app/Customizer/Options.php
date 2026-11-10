@@ -21,6 +21,8 @@ final class Options
         'newsletter_title' => '',
         'newsletter_text' => '',
         'footer_text' => '',
+        'logo_mode' => '',
+        'logo_icon' => 'petal',
     ];
 
     /**
@@ -44,5 +46,34 @@ final class Options
         $scheme = self::get('color_scheme');
 
         return in_array($scheme, ['dark', 'light', 'system'], true) ? $scheme : 'light';
+    }
+
+    /**
+     * Logo style: "icon" (icon + site title) or "image" (the uploaded logo).
+     * Never saved yet: "image" when a logo was uploaded before this option existed, so it keeps showing.
+     *
+     * @return string
+     */
+    public static function logoMode(): string
+    {
+        $mode = self::get('logo_mode');
+
+        if (in_array($mode, ['icon', 'image'], true)) {
+            return $mode;
+        }
+
+        return get_theme_mod('custom_logo') ? 'image' : 'icon';
+    }
+
+    /**
+     * Logo icon slug from Branding\Logo::ICONS.
+     *
+     * @return string
+     */
+    public static function logoIcon(): string
+    {
+        $icon = self::get('logo_icon');
+
+        return in_array($icon, \Jiejia\ArsPetal\Branding\Logo::ICONS, true) ? $icon : 'petal';
     }
 }

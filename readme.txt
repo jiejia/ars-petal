@@ -85,5 +85,5 @@ Fonts: Outfit (Copyright The Outfit Project Authors) and Noto Sans SC (Copyright
 License: SIL Open Font License 1.1
 Source: https://fonts.google.com/
 
-Illustrations and covers in resources/assets/images, and screenshot.png, Copyright 2026 jiejia
+Illustrations and covers in resources/assets/images, logo icons in resources/assets/logos, and screenshot.png, Copyright 2026 jiejia
 License: GPL-3.0

@@ -49,14 +49,7 @@ $schedule = Podcast::schedule();
 
 <header x-data="siteSearch" @open-search.window="open()" class="topbar sticky top-0 z-40">
   <div class="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 sm:px-6 lg:h-[4.5rem]">
-    <?php if (has_custom_logo()) : ?>
-      <?php the_custom_logo(); ?>
-    <?php else : ?>
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="flex min-w-0 shrink-0 items-center gap-2.5" rel="home" title="<?php echo esc_attr(get_bloginfo('name')); ?>">
-        <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span class="display truncate text-[1.35rem] !font-bold tracking-tight"><?php bloginfo('name'); ?></span>
-      </a>
-    <?php endif; ?>
+    <?php Template::render('parts/brand', ['place' => 'header']); ?>
     <nav id="petal-nav" data-swup-sync class="topnav mx-auto hidden items-center gap-1 lg:flex" aria-label="<?php esc_attr_e('Main menu', 'ars-petal'); ?>">
       <?php Template::render('parts/nav-desktop', ['items' => $menu]); ?>
     </nav>
