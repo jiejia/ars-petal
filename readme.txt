@@ -29,6 +29,14 @@ With the A Ripple Song plugin it becomes a podcast site (featured episodes, epis
 
 Go to Appearance > Customize > Petal. There you can set the default color scheme, the home page headline, the newsletter form and the footer text.
 
+= How do I arrange the home page? =
+
+Go to Appearance > Widgets and add widgets to the Home Top area. While it is empty, the default home sections are shown.
+
+= How do I change the logo? =
+
+Go to Appearance > Customize > Site Identity. Upload your own logo image, or pick one of the 12 bundled multi-color icons to show next to the site title.
+
 = How do I build the assets? =
 
 The styles and scripts in public/dist are built from resources/assets with `npm install` and `npm run build`.
@@ -36,12 +44,13 @@ The styles and scripts in public/dist are built from resources/assets with `npm 
 == Changelog ==
 
 = 0.5.0 =
-* Replace an existing tag when releasing a version again
-* Allow releasing a version lower than the current one
-
-= 0.5.1 =
-* Keep build/ out of the translation template
-* Add npm run release to bump the version, tag and push
+* Initial release
+* Home page built from the Home Top widget area, with featured / latest episode carousel, host and guest line-up, episode rail and episode list widgets
+* Episode archive with topic sidebar, sorting, and list or grid views; episode pages with Summary / Chapters / Transcript tabs
+* Styling for the A Ripple Song site-wide player, with Swup page transitions that keep playback running
+* Light, dark and follow-system color modes
+* Two logo styles: an uploaded image or one of 12 bundled icons next to the site title
+* English and Simplified Chinese translations
 
 == Copyright ==
 
