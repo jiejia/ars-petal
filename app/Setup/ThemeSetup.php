@@ -22,6 +22,22 @@ final class ThemeSetup
         add_filter('excerpt_length', static fn (): int => 40);
         add_filter('excerpt_more', static fn (): string => '…');
         add_filter('language_attributes', [$this, 'colorScheme']);
+        add_filter('get_custom_logo', [$this, 'logoTitle']);
+    }
+
+    /**
+     * Give the custom logo link a title (the site name), like the text logo links.
+     *
+     * @param string $html Custom logo markup.
+     * @return string
+     */
+    public function logoTitle(string $html): string
+    {
+        if ($html === '' || str_contains($html, 'title=')) {
+            return $html;
+        }
+
+        return (string) preg_replace('/<a\s/', sprintf('<a title="%s" ', esc_attr(get_bloginfo('name'))), $html, 1);
     }
 
     /**

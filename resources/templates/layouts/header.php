@@ -52,7 +52,7 @@ $schedule = Podcast::schedule();
     <?php if (has_custom_logo()) : ?>
       <?php the_custom_logo(); ?>
     <?php else : ?>
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="flex min-w-0 shrink-0 items-center gap-2.5" rel="home">
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="flex min-w-0 shrink-0 items-center gap-2.5" rel="home" title="<?php echo esc_attr(get_bloginfo('name')); ?>">
         <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
         <span class="display truncate text-[1.35rem] !font-bold tracking-tight"><?php bloginfo('name'); ?></span>
       </a>
