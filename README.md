@@ -46,7 +46,7 @@ ARS Petal follows a simple split: the A Ripple Song plugin owns the podcast data
 3. Upload the zip file, install it, and activate the theme.
 4. Optional: install and activate the A Ripple Song plugin to turn on the podcast features.
 5. Open `Appearance > Customize > Petal` to set the color scheme, newsletter and footer text.
-6. For the podcast landing page as your home page: create a page, choose the `Landing page` template for it, then under `Settings > Reading` pick `A static page` and set that page as the Homepage (and another page as the Posts page). With `Your latest posts` the home page is the post list.
+6. For the podcast landing page as your home page, click `Create and set as homepage` in the notice shown after activation, or do it yourself: create a page, choose the `Landing page` template for it, then under `Settings > Reading` pick `A static page` and set that page as the Homepage (and another page as the Posts page). With `Your latest posts` the home page is the post list.
 7. Open `Appearance > Widgets` to arrange the `Home Top` area of the landing page. While it is empty, the default sections are shown.
 
 ### Runtime requirements

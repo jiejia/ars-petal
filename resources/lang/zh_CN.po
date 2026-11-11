@@ -39,6 +39,7 @@ msgid "https://github.com/jiejia/"
 msgstr "https://github.com/jiejia/"
 
 #: app/Blog/Blog.php:60
+#: app/Setup/LandingSetup.php:189
 #: resources/templates/cards/post-row.php:52
 #: resources/templates/index.php:34
 msgid "Blog"
@@ -118,6 +119,7 @@ msgid "Leave empty for “© year site name”."
 msgstr "留空则显示“© 年份 站点名称”。"
 
 #: app/Navigation/Menu.php:112
+#: app/Setup/LandingSetup.php:175
 #: app/View/Archive.php:90
 msgid "Home"
 msgstr "首页"
@@ -166,6 +168,7 @@ msgstr "链接已复制"
 msgid "Now playing"
 msgstr "正在播放"
 
+#: app/Setup/LandingSetup.php:64
 #: app/Setup/ThemeSetup.php:64
 msgid "Header menu"
 msgstr "页头菜单"
@@ -1219,3 +1222,43 @@ msgstr "EP.%s"
 #: app/Setup/TemplateLoader.php:70
 msgid "Landing page"
 msgstr "落地页"
+
+#: app/Setup/LandingSetup.php:109
+msgid "The landing page is now your homepage."
+msgstr "落地页已设为你的首页。"
+
+#: app/Setup/LandingSetup.php:111
+msgid "View site"
+msgstr "查看站点"
+
+#: app/Setup/LandingSetup.php:113
+msgid "Arrange its sections"
+msgstr "编排落地页板块"
+
+#: app/Setup/LandingSetup.php:120
+msgid "The landing page could not be created. Please try again, or set it up under Pages and Settings > Reading."
+msgstr "落地页创建失败。请重试，或者在“页面”和“设置 > 阅读”里手动设置。"
+
+#: app/Setup/LandingSetup.php:134
+msgid "Use the ARS Petal landing page as your homepage?"
+msgstr "要把 ARS Petal 的落地页设为首页吗？"
+
+#: app/Setup/LandingSetup.php:139
+msgid "This creates a page named “Home” with the Landing page template and sets it as the homepage under Settings > Reading. Your posts page stays as it is."
+msgstr "这会创建一个使用“落地页”模板、名为“首页”的页面，并在“设置 > 阅读”里把它设为主页。你现有的文章页保持不变。"
+
+#: app/Setup/LandingSetup.php:140
+msgid "This creates a page named “Home” with the Landing page template and a page named “Blog” for your posts, and sets them as the homepage and the posts page under Settings > Reading."
+msgstr "这会创建一个使用“落地页”模板、名为“首页”的页面，以及一个放文章的“博客”页面，并在“设置 > 阅读”里把它们分别设为主页和文章页。"
+
+#: app/Setup/LandingSetup.php:145
+msgid "Create and set as homepage"
+msgstr "创建并设为首页"
+
+#: app/Setup/LandingSetup.php:146
+msgid "No, thanks"
+msgstr "不用了"
+
+#: app/Setup/LandingSetup.php:228
+msgid "Sorry, you are not allowed to do that."
+msgstr "抱歉，你没有权限执行此操作。"

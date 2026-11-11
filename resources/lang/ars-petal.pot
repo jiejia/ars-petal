@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-11T00:24:12+00:00\n"
+"POT-Creation-Date: 2026-11-11T00:45:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ars-petal\n"
@@ -40,6 +40,7 @@ msgid "https://github.com/jiejia/"
 msgstr ""
 
 #: app/Blog/Blog.php:60
+#: app/Setup/LandingSetup.php:189
 #: resources/templates/cards/post-row.php:52
 #: resources/templates/index.php:34
 msgid "Blog"
@@ -189,6 +190,7 @@ msgid "Leave empty for “© year site name”."
 msgstr ""
 
 #: app/Navigation/Menu.php:112
+#: app/Setup/LandingSetup.php:175
 #: app/View/Archive.php:90
 msgid "Home"
 msgstr ""
@@ -243,16 +245,57 @@ msgstr ""
 msgid "Now playing"
 msgstr ""
 
+#: app/Setup/LandingSetup.php:64
+#: app/Setup/ThemeSetup.php:64
+msgid "Header menu"
+msgstr ""
+
+#: app/Setup/LandingSetup.php:109
+msgid "The landing page is now your homepage."
+msgstr ""
+
+#: app/Setup/LandingSetup.php:111
+msgid "View site"
+msgstr ""
+
+#: app/Setup/LandingSetup.php:113
+msgid "Arrange its sections"
+msgstr ""
+
+#: app/Setup/LandingSetup.php:120
+msgid "The landing page could not be created. Please try again, or set it up under Pages and Settings > Reading."
+msgstr ""
+
+#: app/Setup/LandingSetup.php:134
+msgid "Use the ARS Petal landing page as your homepage?"
+msgstr ""
+
+#: app/Setup/LandingSetup.php:139
+msgid "This creates a page named “Home” with the Landing page template and sets it as the homepage under Settings > Reading. Your posts page stays as it is."
+msgstr ""
+
+#: app/Setup/LandingSetup.php:140
+msgid "This creates a page named “Home” with the Landing page template and a page named “Blog” for your posts, and sets them as the homepage and the posts page under Settings > Reading."
+msgstr ""
+
+#: app/Setup/LandingSetup.php:145
+msgid "Create and set as homepage"
+msgstr ""
+
+#: app/Setup/LandingSetup.php:146
+msgid "No, thanks"
+msgstr ""
+
+#: app/Setup/LandingSetup.php:228
+msgid "Sorry, you are not allowed to do that."
+msgstr ""
+
 #: app/Setup/TemplateLoader.php:70
 msgid "Landing page"
 msgstr ""
 
 #: app/Setup/TemplateLoader.php:71
 msgid "About the show"
-msgstr ""
-
-#: app/Setup/ThemeSetup.php:64
-msgid "Header menu"
 msgstr ""
 
 #: app/Setup/ThemeSetup.php:65

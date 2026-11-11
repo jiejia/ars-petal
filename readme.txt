@@ -31,7 +31,7 @@ Go to Appearance > Customize > Petal. There you can set the default color scheme
 
 = How do I use the landing page as my home page? =
 
-With "Your latest posts" under Settings > Reading, the home page lists your latest posts. For the landing page (featured episodes, hosts and guests, episode lists), create a page and choose the "Landing page" template for it. Then go to Settings > Reading, select "A static page", and set that page as the Homepage. You can set another page as the Posts page to keep a full post list.
+After you activate the theme, a notice on the Dashboard and Themes screens offers to do this for you: its "Create and set as homepage" button creates the pages and changes Settings > Reading, and nothing changes until you click it. To do it yourself: with "Your latest posts" under Settings > Reading, the home page lists your latest posts. For the landing page (featured episodes, hosts and guests, episode lists), create a page and choose the "Landing page" template for it. Then go to Settings > Reading, select "A static page", and set that page as the Homepage. You can set another page as the Posts page to keep a full post list.
 
 = How do I arrange the landing page? =
 
