@@ -1,5 +1,6 @@
 === ARS Petal ===
 Contributors: jiejia
+Donate link: https://github.com/jiejia/ars-petal
 Tags: blog, two-columns, left-sidebar, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 6.6
 Tested up to: 7.1
@@ -45,6 +46,10 @@ Go to Appearance > Customize > Site Identity. Upload your own logo image, or pic
 
 The minified styles and scripts in public/dist are built from the source files in resources/assets/css and resources/assets/js (Tailwind CSS, daisyUI, Alpine.js and Swup). The build tooling (package.json and the bin/ scripts) lives in the theme's GitHub repository: https://github.com/jiejia/ars-petal. Run `npm install` and `npm run build` there.
 
+== Screenshots ==
+
+1. The landing page in light mode: featured episode, host and guest line-up, latest episodes and the site-wide player.
+
 == Privacy ==
 
 ARS Petal does not track visitors, sets no cookies of its own (WordPress itself may, for example for comments) and stores no visitor data in the database.
@@ -63,6 +68,11 @@ ARS Petal does not track visitors, sets no cookies of its own (WordPress itself 
 * Light, dark and follow-system color modes
 * Two logo styles: an uploaded image or one of 12 bundled icons next to the site title
 * English and Simplified Chinese translations
+
+== Upgrade Notice ==
+
+= 0.5.0 =
+Initial release.
 
 == Copyright ==
 
