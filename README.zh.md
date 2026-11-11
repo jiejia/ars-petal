@@ -2,9 +2,10 @@
 
 ARS Petal 是一款明亮的组件库风格 WordPress 播客主题：大量留白、粗细混排的大标题、靛蓝 / 洋红 / 青绿 / 明黄色块与柔和光晕，并带有蓝灰色夜间模式。搭配 [A Ripple Song](https://github.com/jiejia/a-ripple-song) 插件即可成为完整的播客站点；不启用插件时，它是一款简洁的博客主题。
 
-<img src="docs/screenshots/home-light.png" alt="ARS Petal 首页（日间模式），全站播放器正在播放" />
-
 <table>
+  <tr>
+    <td colspan="2"><img src="docs/screenshots/home-light.png" alt="ARS Petal 首页（日间模式），全站播放器正在播放" /></td>
+  </tr>
   <tr>
     <td width="70%"><img src="docs/screenshots/home-dark.png" alt="ARS Petal 首页（夜间模式）" /></td>
     <td width="30%"><img src="docs/screenshots/home-mobile.png" alt="ARS Petal 移动端首页，播放器已展开" /></td>

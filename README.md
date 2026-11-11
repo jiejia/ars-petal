@@ -2,9 +2,10 @@
 
 ARS Petal is a bright, component-library style WordPress podcast theme: white space, bold / light mixed headlines, indigo, magenta, teal and yellow color blocks, soft glows, and a blue-gray night mode. Paired with the [A Ripple Song](https://github.com/jiejia/a-ripple-song) plugin it becomes a full podcast site; without the plugin it works as a clean blog theme.
 
-<img src="docs/screenshots/home-light.png" alt="ARS Petal home page in light mode, with the site-wide player playing" />
-
 <table>
+  <tr>
+    <td colspan="2"><img src="docs/screenshots/home-light.png" alt="ARS Petal home page in light mode, with the site-wide player playing" /></td>
+  </tr>
   <tr>
     <td width="70%"><img src="docs/screenshots/home-dark.png" alt="ARS Petal home page in night mode" /></td>
     <td width="30%"><img src="docs/screenshots/home-mobile.png" alt="ARS Petal home page on mobile with the expanded player" /></td>
