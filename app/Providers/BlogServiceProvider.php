@@ -8,7 +8,7 @@ use Jiejia\ArsPetal\Abstracts\ServiceProviderAbstract;
 use Jiejia\ArsPetal\Blog\Blog;
 
 /**
- * Registers the post list sort order (?sort=old).
+ * Registers the post list sort order (?petal_sort=old).
  */
 class BlogServiceProvider extends ServiceProviderAbstract
 {

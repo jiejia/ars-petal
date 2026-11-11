@@ -9,13 +9,13 @@ use Jiejia\ArsPetal\Podcast\Podcast;
 /**
  * The author page's two lists: episodes the person hosts or guests on, and posts they wrote.
  *
- * ?tab=episodes|posts picks the list; it falls back to the one with content, episodes first.
+ * ?petal_tab=episodes|posts picks the list; it falls back to the one with content, episodes first.
  * Podcast\Integration::authorQuery() swaps the main query to the episodes for that tab, so both
  * lists page with the normal pagination.
  */
 final class Author
 {
-    public const QUERY_VAR = 'tab';
+    public const QUERY_VAR = 'petal_tab';
 
     public const EPISODES = 'episodes';
 
@@ -87,7 +87,7 @@ final class Author
     }
 
     /**
-     * Link to a list; the default one has no ?tab=.
+     * Link to a list; the default one has no ?petal_tab=.
      *
      * @param \WP_User $user Author.
      * @param string $tab List.

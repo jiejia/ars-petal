@@ -1,13 +1,14 @@
 <?php
 /**
  * Episode archive (A Ripple Song), also used for episode category pages: episode categories and tags (?tag=) in the left sidebar; a title bar with the sort
- * order (?sort=) and the list / grid toggle; episodes grouped by month (list) or as cards (grid); pages.
+ * order (?petal_sort=) and the list / grid toggle; episodes grouped by month (list) or as cards (grid); pages.
  *
  * @package ArsPetal
  */
 
 defined('ABSPATH') || exit;
 
+use Jiejia\ArsPetal\Blog\Blog;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Integration;
 use Jiejia\ArsPetal\Podcast\Podcast;
@@ -22,7 +23,7 @@ $category = $category instanceof \WP_Term ? $category : null;
 $archive = $category ? Podcast::categoryUrl($category) : Podcast::archiveUrl();
 $current = sanitize_title((string) get_query_var('tag'));
 $sort = Integration::sort();
-$url = static fn (array $args): string => (string) add_query_arg(array_filter($args + ['tag' => $current, 'sort' => $sort === 'new' ? '' : $sort]), $archive);
+$url = static fn (array $args): string => (string) add_query_arg(array_filter($args + ['tag' => $current, Blog::SORT_VAR => $sort === 'new' ? '' : $sort]), $archive);
 $tags = Podcast::tags();
 $stats = Podcast::stats();
 /* translators: %s: number of episodes. */
@@ -38,7 +39,7 @@ foreach (array_slice(Podcast::categories(), 0, 8) as $item) {
 $sorts = [];
 
 foreach (Archive::sorts() as $value => $label) {
-    $sorts[] = ['label' => $label, 'url' => $url(['sort' => $value === 'new' ? '' : $value]), 'current' => $sort === $value];
+    $sorts[] = ['label' => $label, 'url' => $url([Blog::SORT_VAR => $value === 'new' ? '' : $value]), 'current' => $sort === $value];
 }
 
 $heading = $current !== '' ? '#' . (get_term_by('slug', $current, 'post_tag')->name ?? $current) : ($category ? $category->name : __('All episodes', 'ars-petal'));

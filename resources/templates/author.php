@@ -2,7 +2,7 @@
 /**
  * Author page. Left sidebar: the configured hosts and guests with the plugin, the author-role users without, this person black.
  * Main column: the profile card (big avatar, name, bio, links, counts), then a card with the episodes they
- * host or guest on and the posts they wrote; with both, pill tabs link between them (?tab=, see View\Author).
+ * host or guest on and the posts they wrote; with both, pill tabs link between them (?petal_tab=, see View\Author).
  *
  * @package ArsPetal
  */

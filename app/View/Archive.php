@@ -65,7 +65,7 @@ final class Archive
     }
 
     /**
-     * Sort orders, ?sort= value => label. Posts have no duration, so only episodes get "Shortest".
+     * Sort orders, ?petal_sort= value => label. Posts have no duration, so only episodes get "Shortest".
      *
      * @param bool $episodes Whether the list is of episodes.
      * @return array<string,string>

@@ -63,10 +63,10 @@ $sorts = [];
 
 if (! is_search()) {
     $sort = Blog::sort();
-    $base = remove_query_arg(['sort', 'paged'], get_pagenum_link(1));
+    $base = remove_query_arg([Blog::SORT_VAR, 'paged'], get_pagenum_link(1));
 
     foreach (Archive::sorts(false) as $value => $label) {
-        $sorts[] = ['label' => $label, 'url' => $value === 'new' ? $base : add_query_arg('sort', $value, $base), 'current' => $sort === $value];
+        $sorts[] = ['label' => $label, 'url' => $value === 'new' ? $base : add_query_arg(Blog::SORT_VAR, $value, $base), 'current' => $sort === $value];
     }
 }
 

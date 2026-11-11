@@ -4,6 +4,7 @@ namespace Jiejia\ArsPetal\Podcast;
 
 defined('ABSPATH') || exit;
 
+use Jiejia\ArsPetal\Blog\Blog;
 use Jiejia\ArsPetal\View\Author;
 
 /**
@@ -17,7 +18,7 @@ final class Integration
     public const PER_PAGE = 12;
 
     /**
-     * Archive sort orders, ?sort= value => query arguments.
+     * Archive sort orders, ?petal_sort= value => query arguments.
      */
     public const SORTS = ['new', 'old', 'short'];
 
@@ -42,14 +43,13 @@ final class Integration
     }
 
     /**
-     * Allow ?sort= on the episode archive and ?tab= on author pages.
+     * Allow ?petal_tab= on author pages (Blog registers ?petal_sort=).
      *
      * @param array<int,string> $vars Public query vars.
      * @return array<int,string>
      */
     public function queryVars(array $vars): array
     {
-        $vars[] = 'sort';
         $vars[] = Author::QUERY_VAR;
 
         return $vars;
@@ -133,7 +133,7 @@ final class Integration
      */
     public static function sort(): string
     {
-        $sort = (string) get_query_var('sort');
+        $sort = (string) get_query_var(Blog::SORT_VAR);
 
         return in_array($sort, self::SORTS, true) ? $sort : 'new';
     }

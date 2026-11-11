@@ -6,10 +6,15 @@ defined('ABSPATH') || exit;
 
 /**
  * The post list, wherever Settings > Reading puts it: the home page with "Your latest posts", else
- * the chosen "Posts page". Also the ?sort=old order of the list and its category / tag archives.
+ * the chosen "Posts page". Also the ?petal_sort=old order of the list and its category / tag archives.
  */
 final class Blog
 {
+    /**
+     * The sort order query var of the post list and the episode archive (prefixed, as the theme directory asks).
+     */
+    public const SORT_VAR = 'petal_sort';
+
     /**
      * Register the hooks.
      *
@@ -66,16 +71,14 @@ final class Blog
     }
 
     /**
-     * Allow ?sort=.
+     * Allow ?petal_sort=.
      *
      * @param array<int,string> $vars Public query vars.
      * @return array<int,string>
      */
     public function queryVars(array $vars): array
     {
-        if (! in_array('sort', $vars, true)) {
-            $vars[] = 'sort';
-        }
+        $vars[] = self::SORT_VAR;
 
         return $vars;
     }
@@ -87,11 +90,11 @@ final class Blog
      */
     public static function sort(): string
     {
-        return get_query_var('sort') === 'old' ? 'old' : 'new';
+        return get_query_var(self::SORT_VAR) === 'old' ? 'old' : 'new';
     }
 
     /**
-     * ?sort=old on the post list and on category / tag archives.
+     * ?petal_sort=old on the post list and on category / tag archives.
      *
      * @param \WP_Query $query Query.
      * @return void
