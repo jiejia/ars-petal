@@ -12,6 +12,7 @@
  * @var string $size Avatar size classes.
  * @var string $letter Letter size of avatars without a picture.
  * @var string $overlap Negative margin that overlaps neighbouring avatars (half an avatar).
+ * @var bool $keepEmpty Still show the card, with a dashed border and no avatars, when there are no users.
  * @package ArsPetal
  */
 
@@ -19,7 +20,8 @@ defined('ABSPATH') || exit;
 
 use Jiejia\ArsPetal\Libraries\Template;
 
-if ($users === []) {
+$keepEmpty ??= false;
+if ($users === [] && !$keepEmpty) {
     return;
 }
 
@@ -36,13 +38,18 @@ $overlap ??= '-ml-5.5';
 $max = 5;
 $extra = count($users) - $max;
 $users = array_slice($users, 0, $max);
+// Empty: a dashed outline, like the missing previous / next episode card.
+$frame = $users === [] ? ' !border-2 !border-dashed !border-base-content/20' : '';
 ?>
-<section class="panel-sm flex items-center justify-between gap-4 <?php echo esc_attr($class); ?>" aria-label="<?php echo esc_attr($title . $light); ?>">
+<section class="panel-sm flex items-center justify-between gap-4 <?php echo esc_attr($class . $frame); ?>" aria-label="<?php echo esc_attr($title . $light); ?>">
   <?php if ($light !== '') : ?>
     <h2 class="<?php echo esc_attr($heading); ?>"><span class="display !font-black"><?php echo esc_html($title); ?></span><span class="display-light <?php echo esc_attr($lightClass); ?>"><?php echo esc_html($space . $light); ?></span></h2>
   <?php else : ?>
     <h2 class="display <?php echo esc_attr($heading); ?>"><?php echo esc_html($title); ?></h2>
   <?php endif; ?>
+  <?php if ($users === []) : ?>
+    <span class="<?php echo esc_attr($size); ?> shrink-0" aria-hidden="true"></span>
+  <?php else : ?>
   <ul class="flex items-center">
     <?php foreach ($users as $index => $user) : ?>
       <li class="group relative transition-transform focus-within:z-10 hover:z-10 hover:-translate-y-1<?php echo $index > 0 ? ' ' . esc_attr($overlap) : ''; ?>">
@@ -60,4 +67,5 @@ $users = array_slice($users, 0, $max);
       </li>
     <?php endif; ?>
   </ul>
+  <?php endif; ?>
 </section>

@@ -100,12 +100,10 @@ while (have_posts()) :
         </div>
       </header>
 
-      <?php if ($episode->hosts() !== [] || $episode->guests() !== []) : ?>
-        <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <?php Template::render('parts/people', ['title' => __('Hosts', 'ars-petal'), 'users' => $episode->hosts()]); ?>
-          <?php Template::render('parts/people', ['title' => __('Guests', 'ars-petal'), 'users' => $episode->guests()]); ?>
-        </div>
-      <?php endif; ?>
+      <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <?php Template::render('parts/people', ['title' => __('Hosts', 'ars-petal'), 'users' => $episode->hosts(), 'keepEmpty' => true]); ?>
+        <?php Template::render('parts/people', ['title' => __('Guests', 'ars-petal'), 'users' => $episode->guests(), 'keepEmpty' => true]); ?>
+      </div>
 
       <div class="panel mt-4 p-4 sm:p-8">
         <div role="tablist" class="mx-auto mb-6 flex w-fit max-w-full overflow-x-auto rounded-full bg-base-200 p-0.5 sm:mx-0 sm:p-1">
