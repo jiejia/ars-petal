@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-11T00:19:27+00:00\n"
+"POT-Creation-Date: 2026-11-11T00:24:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: ars-petal\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "https://github.com/jiejia/"
 msgstr ""
 
-#: app/Blog/Blog.php:55
+#: app/Blog/Blog.php:60
 #: resources/templates/cards/post-row.php:52
 #: resources/templates/index.php:34
 msgid "Blog"
@@ -161,46 +161,30 @@ msgid "Visitors can still switch with the sun / moon button."
 msgstr ""
 
 #: app/Customizer/Customizer.php:97
-msgid "Home headline, bold part"
-msgstr ""
-
-#: app/Customizer/Customizer.php:98
-msgid "The big two-weight headline on the home page. Leave empty for the site name."
-msgstr ""
-
-#: app/Customizer/Customizer.php:100
-msgid "Home headline, light part"
-msgstr ""
-
-#: app/Customizer/Customizer.php:101
-msgid "Leave empty for the tagline."
-msgstr ""
-
-#: app/Customizer/Customizer.php:103
 msgid "Newsletter form action URL"
 msgstr ""
 
-#: app/Customizer/Customizer.php:104
+#: app/Customizer/Customizer.php:98
 msgid "Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section."
 msgstr ""
 
-#: app/Customizer/Customizer.php:106
+#: app/Customizer/Customizer.php:100
 msgid "Newsletter e-mail field name"
 msgstr ""
 
-#: app/Customizer/Customizer.php:107
+#: app/Customizer/Customizer.php:101
 msgid "Newsletter title"
 msgstr ""
 
-#: app/Customizer/Customizer.php:108
+#: app/Customizer/Customizer.php:102
 msgid "Newsletter text"
 msgstr ""
 
-#: app/Customizer/Customizer.php:109
+#: app/Customizer/Customizer.php:103
 msgid "Footer copyright text"
 msgstr ""
 
-#: app/Customizer/Customizer.php:110
+#: app/Customizer/Customizer.php:104
 msgid "Leave empty for “© year site name”."
 msgstr ""
 
@@ -220,7 +204,7 @@ msgstr ""
 #: app/View/Archive.php:24
 #: app/View/Archive.php:93
 #: resources/templates/404.php:23
-#: resources/templates/archive-ars_podcast.php:44
+#: resources/templates/archive-ars_podcast.php:45
 #: resources/templates/front/rail.php:32
 msgid "All episodes"
 msgstr ""
@@ -551,7 +535,7 @@ msgid "Home page"
 msgstr ""
 
 #. translators: %s: number of episodes.
-#: resources/templates/archive-ars_podcast.php:29
+#: resources/templates/archive-ars_podcast.php:30
 #: resources/templates/front/topics.php:35
 #: resources/templates/single-ars_podcast.php:36
 #, php-format
@@ -560,24 +544,24 @@ msgid_plural "%s episodes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: resources/templates/archive-ars_podcast.php:32
+#: resources/templates/archive-ars_podcast.php:33
 #: resources/templates/index.php:28
 #: resources/templates/index.php:43
 msgid "All"
 msgstr ""
 
 #. translators: %s: a category or a tag.
-#: resources/templates/archive-ars_podcast.php:46
+#: resources/templates/archive-ars_podcast.php:47
 #, php-format
 msgid "Episodes: %s"
 msgstr ""
 
-#: resources/templates/archive-ars_podcast.php:51
+#: resources/templates/archive-ars_podcast.php:52
 #: resources/templates/single-ars_podcast.php:64
 msgid "Topics"
 msgstr ""
 
-#: resources/templates/archive-ars_podcast.php:68
+#: resources/templates/archive-ars_podcast.php:69
 msgid "No episodes match these filters."
 msgstr ""
 

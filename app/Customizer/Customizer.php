@@ -5,7 +5,7 @@ namespace Jiejia\ArsPetal\Customizer;
 defined('ABSPATH') || exit;
 
 /**
- * The theme's Customizer section: color scheme, home headline, newsletter, footer.
+ * The theme's Customizer section: color scheme, newsletter, footer.
  */
 final class Customizer
 {
@@ -93,12 +93,6 @@ final class Customizer
                 'system' => __('Follow the visitor’s system', 'ars-petal'),
             ],
             'description' => __('Visitors can still switch with the sun / moon button.', 'ars-petal'),
-        ]);
-        $this->add($customizer, 'headline_strong', __('Home headline, bold part', 'ars-petal'), 'text', [
-            'description' => __('The big two-weight headline on the home page. Leave empty for the site name.', 'ars-petal'),
-        ]);
-        $this->add($customizer, 'headline_light', __('Home headline, light part', 'ars-petal'), 'text', [
-            'description' => __('Leave empty for the tagline.', 'ars-petal'),
         ]);
         $this->add($customizer, 'newsletter_action', __('Newsletter form action URL', 'ars-petal'), 'url', [
             'description' => __('Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section.', 'ars-petal'),

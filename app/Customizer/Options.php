@@ -14,8 +14,6 @@ final class Options
      */
     public const DEFAULTS = [
         'color_scheme' => 'light',
-        'headline_strong' => '',
-        'headline_light' => '',
         'newsletter_action' => '',
         'newsletter_field' => 'email',
         'newsletter_title' => '',

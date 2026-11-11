@@ -38,7 +38,7 @@ msgstr "jiejia"
 msgid "https://github.com/jiejia/"
 msgstr "https://github.com/jiejia/"
 
-#: app/Blog/Blog.php:55
+#: app/Blog/Blog.php:60
 #: resources/templates/cards/post-row.php:52
 #: resources/templates/index.php:34
 msgid "Blog"
@@ -90,46 +90,30 @@ msgid "Visitors can still switch with the sun / moon button."
 msgstr "访客仍可通过太阳 / 月亮按钮切换。"
 
 #: app/Customizer/Customizer.php:97
-msgid "Home headline, bold part"
-msgstr "首页大标题：粗体部分"
-
-#: app/Customizer/Customizer.php:98
-msgid "The big two-weight headline on the home page. Leave empty for the site name."
-msgstr "首页粗 / 细两段混排的大标题。留空则用站点名称。"
-
-#: app/Customizer/Customizer.php:100
-msgid "Home headline, light part"
-msgstr "首页大标题：细体部分"
-
-#: app/Customizer/Customizer.php:101
-msgid "Leave empty for the tagline."
-msgstr "留空则用副标题。"
-
-#: app/Customizer/Customizer.php:103
 msgid "Newsletter form action URL"
 msgstr "邮件订阅表单提交地址"
 
-#: app/Customizer/Customizer.php:104
+#: app/Customizer/Customizer.php:98
 msgid "Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section."
 msgstr "邮件订阅表单提交到的地址（你的邮件服务）。留空则不显示订阅区块。"
 
-#: app/Customizer/Customizer.php:106
+#: app/Customizer/Customizer.php:100
 msgid "Newsletter e-mail field name"
 msgstr "邮件订阅的邮箱字段名"
 
-#: app/Customizer/Customizer.php:107
+#: app/Customizer/Customizer.php:101
 msgid "Newsletter title"
 msgstr "邮件订阅标题"
 
-#: app/Customizer/Customizer.php:108
+#: app/Customizer/Customizer.php:102
 msgid "Newsletter text"
 msgstr "邮件订阅说明"
 
-#: app/Customizer/Customizer.php:109
+#: app/Customizer/Customizer.php:103
 msgid "Footer copyright text"
 msgstr "页脚版权文字"
 
-#: app/Customizer/Customizer.php:110
+#: app/Customizer/Customizer.php:104
 msgid "Leave empty for “© year site name”."
 msgstr "留空则显示“© 年份 站点名称”。"
 
@@ -149,7 +133,7 @@ msgstr "播客"
 #: app/View/Archive.php:24
 #: app/View/Archive.php:93
 #: resources/templates/404.php:23
-#: resources/templates/archive-ars_podcast.php:44
+#: resources/templates/archive-ars_podcast.php:45
 #: resources/templates/front/rail.php:32
 msgid "All episodes"
 msgstr "全部节目"
@@ -269,7 +253,7 @@ msgid "Home page"
 msgstr "回到首页"
 
 #. translators: %s: number of episodes.
-#: resources/templates/archive-ars_podcast.php:29
+#: resources/templates/archive-ars_podcast.php:30
 #: resources/templates/front/topics.php:35
 #: resources/templates/single-ars_podcast.php:36
 #, php-format
@@ -277,24 +261,24 @@ msgid "%s episode"
 msgid_plural "%s episodes"
 msgstr[0] "共 %s 期"
 
-#: resources/templates/archive-ars_podcast.php:32
+#: resources/templates/archive-ars_podcast.php:33
 #: resources/templates/index.php:28
 #: resources/templates/index.php:43
 msgid "All"
 msgstr "全部"
 
 #. translators: %s: a category or a tag.
-#: resources/templates/archive-ars_podcast.php:46
+#: resources/templates/archive-ars_podcast.php:47
 #, php-format
 msgid "Episodes: %s"
 msgstr "节目归档：%s"
 
-#: resources/templates/archive-ars_podcast.php:51
+#: resources/templates/archive-ars_podcast.php:52
 #: resources/templates/single-ars_podcast.php:64
 msgid "Topics"
 msgstr "栏目"
 
-#: resources/templates/archive-ars_podcast.php:68
+#: resources/templates/archive-ars_podcast.php:69
 msgid "No episodes match these filters."
 msgstr "没有符合条件的节目"
 
