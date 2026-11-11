@@ -61,8 +61,10 @@ ARS Petal does not track visitors, sets no cookies of its own (WordPress itself 
 == Changelog ==
 
 = 0.5.1 =
-* Add donate link, Screenshots and Upgrade Notice sections to readme.txt
-* Frame the light screenshot in the README like the other two
+* After activation, a notice offers to create the landing page and set it as the homepage
+* Chapters and transcripts now come from the A Ripple Song plugin instead of being fetched as files
+* The newsletter form is replaced by the podcast feed address
+* The server no longer asks Gravatar whether an avatar exists
 
 = 0.5.0 =
 * Initial release
@@ -74,6 +76,9 @@ ARS Petal does not track visitors, sets no cookies of its own (WordPress itself 
 * English and Simplified Chinese translations
 
 == Upgrade Notice ==
+
+= 0.5.1 =
+Adds a one-click landing page setup and loads chapters and transcripts from the A Ripple Song plugin.
 
 = 0.5.0 =
 Initial release.
