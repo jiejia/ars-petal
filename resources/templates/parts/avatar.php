@@ -2,9 +2,8 @@
 /**
  * A user's avatar on a rounded tile, or the first letter of their name on a theme color.
  *
- * The letter is always printed; the avatar image covers it. The image is only printed when the user has
- * an avatar (View\Avatar asks Gravatar on the server), so visitors' browsers see no failed requests; should
- * it still fail to load, it removes itself and leaves the letter. Once the image loads, the colored letter
+ * The letter is always printed; the avatar image covers it. Without an avatar Gravatar answers 404 (d=404,
+ * see View\Avatar) and the image removes itself, leaving the letter. Once the image loads, the colored letter
  * is removed, so no color shows around or through the image (as in the prototype).
  *
  * @var \WP_User $user User.
