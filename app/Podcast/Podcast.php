@@ -68,6 +68,37 @@ final class Podcast
     }
 
     /**
+     * An episode's chapters, read and parsed by the plugin; the theme fetches no files itself.
+     *
+     * @param \WP_Post $post Episode.
+     * @return array<int,array{start:int,end:int,title:string,url:string}>
+     */
+    public static function chapters(\WP_Post $post): array
+    {
+        $class = self::pluginClass('Episodes\\Chapters');
+
+        return $class ? $class::forPost($post) : [];
+    }
+
+    /**
+     * An episode's transcript URL and cues, read and parsed by the plugin. Without the plugin's
+     * reader the transcript is only linked.
+     *
+     * @param \WP_Post $post Episode.
+     * @return array{url:string,cues:array<int,array{start:int|null,speaker:string,text:string}>}
+     */
+    public static function transcript(\WP_Post $post): array
+    {
+        $class = self::pluginClass('Episodes\\Transcript');
+
+        if ($class) {
+            return $class::forPost($post);
+        }
+
+        return ['url' => (string) get_post_meta($post->ID, '_' . self::POST_TYPE . '_episode_transcript', true), 'cues' => []];
+    }
+
+    /**
      * Read a value of the plugin's podcast settings (title, cover, description, ...).
      *
      * @param string $key Setting key.

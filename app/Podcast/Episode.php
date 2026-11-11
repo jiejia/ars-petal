@@ -175,19 +175,23 @@ final class Episode
     }
 
     /**
+     * The chapters, read and parsed by the plugin (Episodes\Chapters); empty without it.
+     *
      * @return array<int,array{start:int,end:int,title:string,url:string}>
      */
     public function chapters(): array
     {
-        return Chapters::forEpisode($this);
+        return Podcast::chapters($this->post);
     }
 
     /**
+     * The transcript URL and cues, read and parsed by the plugin (Episodes\Transcript).
+     *
      * @return array{url:string,cues:array<int,array{start:int|null,speaker:string,text:string}>}
      */
     public function transcript(): array
     {
-        return Transcript::forEpisode($this);
+        return Podcast::transcript($this->post);
     }
 
     /**

@@ -51,7 +51,6 @@ ARS Petal does not track visitors, sets no cookies of its own (WordPress itself 
 
 * Fonts: the Outfit and Noto Sans SC fonts are loaded from Google Fonts (fonts.googleapis.com and fonts.gstatic.com), so visitors' browsers connect to Google. See the Google Privacy Policy: https://policies.google.com/privacy
 * Avatars: when "Show Avatars" is on under Settings > Discussion, visitors' browsers load author avatars from Gravatar (secure.gravatar.com), as WordPress itself does for comment avatars. The image URL contains a hash of the author's e-mail address. The server sends nothing to Gravatar. Turning avatars off stops these requests. See the Gravatar privacy policy: https://automattic.com/privacy/
-* Episode files: with the A Ripple Song plugin, chapter and transcript files that an editor links from another site are downloaded by the server and cached. Files in the media library are read from disk.
 * Browser storage: the visitor's color scheme and list / grid choices are kept in the browser's localStorage. They are never sent to the server.
 
 == Changelog ==
