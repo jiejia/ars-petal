@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARS Petal 0.5.0\n"
+"Project-Id-Version: ARS Petal 0.5.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/ars-petal\n"
 "Last-Translator: jiejia\n"
 "Language-Team: Chinese (China)\n"
@@ -120,7 +120,7 @@ msgstr "播客"
 msgid "All episodes"
 msgstr "全部节目"
 
-#: app/Podcast/Podcast.php:141
+#: app/Podcast/Podcast.php:172
 #: resources/templates/front/subscribe.php:25
 msgid "RSS feed"
 msgstr "RSS 订阅源"

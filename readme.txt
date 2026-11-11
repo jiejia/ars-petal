@@ -5,7 +5,7 @@ Tags: blog, two-columns, left-sidebar, custom-logo, custom-menu, featured-images
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 License: GPL-3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,6 +59,10 @@ ARS Petal does not track visitors, sets no cookies of its own (WordPress itself 
 * Browser storage: the visitor's color scheme and list / grid choices are kept in the browser's localStorage. They are never sent to the server.
 
 == Changelog ==
+
+= 0.5.1 =
+* Add donate link, Screenshots and Upgrade Notice sections to readme.txt
+* Frame the light screenshot in the README like the other two
 
 = 0.5.0 =
 * Initial release
