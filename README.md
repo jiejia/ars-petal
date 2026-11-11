@@ -28,8 +28,8 @@ ARS Petal follows a simple split: the A Ripple Song plugin owns the podcast data
 - Light, dark and follow-system color modes, with a sun / moon toggle for visitors.
 - Header and footer menus, a mega dropdown for nested menus, mobile drawer navigation, and Lucide icons on menu items via an `icon-{name}` CSS class.
 - Two logo styles in `Appearance > Customize > Site Identity`: an uploaded image, or one of 12 bundled multi-color icons next to the site title.
-- Search dialog with a keyboard shortcut, announcement bar, and newsletter sign-up section.
-- Customizer options under `Appearance > Customize > Petal`: default color scheme, newsletter form and footer text.
+- Search dialog with a keyboard shortcut, announcement bar, and a subscribe section with the feed address.
+- Customizer options under `Appearance > Customize > Petal`: default color scheme and footer text.
 - Works as a plain blog theme when the plugin is not active.
 - Translation-ready, with English and Simplified Chinese included.
 
@@ -45,7 +45,7 @@ ARS Petal follows a simple split: the A Ripple Song plugin owns the podcast data
 2. In WordPress, go to `Appearance > Themes > Add New > Upload Theme`.
 3. Upload the zip file, install it, and activate the theme.
 4. Optional: install and activate the A Ripple Song plugin to turn on the podcast features.
-5. Open `Appearance > Customize > Petal` to set the color scheme, newsletter and footer text.
+5. Open `Appearance > Customize > Petal` to set the color scheme and footer text.
 6. For the podcast landing page as your home page, click `Create and set as homepage` in the notice shown after activation, or do it yourself: create a page, choose the `Landing page` template for it, then under `Settings > Reading` pick `A static page` and set that page as the Homepage (and another page as the Posts page). With `Your latest posts` the home page is the post list.
 7. Open `Appearance > Widgets` to arrange the `Home Top` area of the landing page. While it is empty, the default sections are shown.
 

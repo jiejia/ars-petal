@@ -91,30 +91,10 @@ msgid "Visitors can still switch with the sun / moon button."
 msgstr "访客仍可通过太阳 / 月亮按钮切换。"
 
 #: app/Customizer/Customizer.php:97
-msgid "Newsletter form action URL"
-msgstr "邮件订阅表单提交地址"
-
-#: app/Customizer/Customizer.php:98
-msgid "Where the e-mail sign-up form posts to (your newsletter service). Leave empty to hide the sign-up section."
-msgstr "邮件订阅表单提交到的地址（你的邮件服务）。留空则不显示订阅区块。"
-
-#: app/Customizer/Customizer.php:100
-msgid "Newsletter e-mail field name"
-msgstr "邮件订阅的邮箱字段名"
-
-#: app/Customizer/Customizer.php:101
-msgid "Newsletter title"
-msgstr "邮件订阅标题"
-
-#: app/Customizer/Customizer.php:102
-msgid "Newsletter text"
-msgstr "邮件订阅说明"
-
-#: app/Customizer/Customizer.php:103
 msgid "Footer copyright text"
 msgstr "页脚版权文字"
 
-#: app/Customizer/Customizer.php:104
+#: app/Customizer/Customizer.php:98
 msgid "Leave empty for “© year site name”."
 msgstr "留空则显示“© 年份 站点名称”。"
 
@@ -141,7 +121,7 @@ msgid "All episodes"
 msgstr "全部节目"
 
 #: app/Podcast/Podcast.php:141
-#: resources/templates/front/subscribe.php:44
+#: resources/templates/front/subscribe.php:25
 msgid "RSS feed"
 msgstr "RSS 订阅源"
 
@@ -531,42 +511,30 @@ msgstr "博客"
 msgid "All posts"
 msgstr "全部文章"
 
-#: resources/templates/front/subscribe.php:20
-msgid "New episodes and full notes in your inbox. No ads, unsubscribe any time."
-msgstr "新一期节目和完整笔记寄到你的邮箱，不发广告，随时退订。"
-
-#: resources/templates/front/subscribe.php:21
+#: resources/templates/front/subscribe.php:22
 msgid "Add the feed to your podcast app and every new episode arrives by itself."
 msgstr "把订阅地址加到你的播客 App，新一期会自动送到。"
 
 #. translators: %s: release schedule, e.g. "Every Thu 21:00".
-#: resources/templates/front/subscribe.php:28
+#: resources/templates/front/subscribe.php:17
 #, php-format
 msgid "%s, right on time"
 msgstr "%s，准时更新"
 
-#: resources/templates/front/subscribe.php:33
-msgid "Don’t want to miss one?"
-msgstr "不想错过？"
-
-#: resources/templates/front/subscribe.php:33
+#. translators: %s: release schedule, e.g. "Every Thu 21:00".
+#: resources/templates/front/subscribe.php:17
 msgid "Subscribe to the feed"
 msgstr "订阅节目"
 
-#: resources/templates/front/subscribe.php:38
-msgid "E-mail address"
-msgstr "邮箱地址"
-
-#: resources/templates/front/subscribe.php:40
 #: resources/templates/layouts/header.php:69
 msgid "Subscribe"
 msgstr "订阅"
 
-#: resources/templates/front/subscribe.php:48
+#: resources/templates/front/subscribe.php:29
 msgid "Copied"
 msgstr "已复制"
 
-#: resources/templates/front/subscribe.php:48
+#: resources/templates/front/subscribe.php:29
 msgid "Copy"
 msgstr "复制"
 
