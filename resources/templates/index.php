@@ -40,7 +40,7 @@ if (is_search()) {
     $items = [];
 
     if (Blog::url() !== '') {
-        $items[] = ['label' => __('All', 'ars-petal'), 'meta' => sprintf(/* translators: %s: number of posts. */ _n('%s post', '%s posts', (int) wp_count_posts()->publish, 'ars-petal'), number_format_i18n((int) wp_count_posts()->publish)), 'url' => Blog::url(), 'current' => Blog::isRequest() || is_home(), 'icon' => 'layout-grid'];
+        $items[] = ['label' => __('All', 'ars-petal'), 'meta' => sprintf(/* translators: %s: number of posts. */ _n('%s post', '%s posts', (int) wp_count_posts()->publish, 'ars-petal'), number_format_i18n((int) wp_count_posts()->publish)), 'url' => Blog::url(), 'current' => is_home(), 'icon' => 'layout-grid'];
     }
 
     foreach ($categories as $category) {

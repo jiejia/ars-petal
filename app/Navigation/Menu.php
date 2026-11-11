@@ -103,13 +103,13 @@ final class Menu
 
     /**
      * Links shown before a menu is assigned: home, episodes (with an episode categories dropdown), blog and the top-level pages.
-     * The blog link appears where the home page is not the post list: podcast mode, or a static front page.
+     * The blog link appears where the home page is not the post list: a static front page with a posts page.
      *
      * @return array<int,Item>
      */
     public static function fallback(): array
     {
-        $items = [self::node(__('Home', 'ars-petal'), home_url('/'), is_front_page() && ! Blog::isRequest(), self::FALLBACK_ICONS['home'])];
+        $items = [self::node(__('Home', 'ars-petal'), home_url('/'), is_front_page(), self::FALLBACK_ICONS['home'])];
 
         if (Podcast::isActive()) {
             $episodes = self::node(
@@ -137,8 +137,8 @@ final class Menu
             $items[] = $episodes;
         }
 
-        if (Blog::url() !== '' && (Podcast::isActive() || ! Blog::routed()) && Blog::hasPosts()) {
-            $items[] = self::node(Blog::label(), Blog::url(), Blog::isRequest() || (is_home() && ! is_front_page()) || is_singular('post'), self::FALLBACK_ICONS['blog']);
+        if (Blog::hasPage() && Blog::hasPosts()) {
+            $items[] = self::node(Blog::label(), Blog::url(), is_home() || is_singular('post'), self::FALLBACK_ICONS['blog']);
         }
 
         $exclude = [(int) get_option('page_on_front'), (int) get_option('page_for_posts'), (int) get_option('wp_page_for_privacy_policy')];
@@ -193,10 +193,7 @@ final class Menu
     }
 
     /**
-     * Whether a menu item is the current page.
-     *
-     * The post list is the blog home to core, so core marks a "Home" link current there; the theme
-     * marks a link to the list instead (also on single posts).
+     * Whether a menu item is the current page (core's current-menu-item / current_page_item classes).
      *
      * @param \WP_Post $item Menu item.
      * @return bool
@@ -204,19 +201,8 @@ final class Menu
     private static function isCurrent(\WP_Post $item): bool
     {
         $classes = is_array($item->classes) ? $item->classes : [];
-        $current = (bool) array_intersect($classes, ['current-menu-item', 'current_page_item']);
 
-        if (Blog::routed() && $item->type === 'custom') {
-            $url = untrailingslashit((string) $item->url);
-
-            if ($url === untrailingslashit(home_url('/'))) {
-                $current = is_front_page() && ! Blog::isRequest();
-            } elseif ($url === untrailingslashit(Blog::url())) {
-                $current = Blog::isRequest() || is_singular('post');
-            }
-        }
-
-        return $current;
+        return (bool) array_intersect($classes, ['current-menu-item', 'current_page_item']);
     }
 
     /**

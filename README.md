@@ -19,7 +19,7 @@ ARS Petal follows a simple split: the A Ripple Song plugin owns the podcast data
 
 ## Features
 
-- Home page built from the `Home Top` widget area, with bundled widgets for a featured / latest episode carousel (custom image banners too), host and guest line-ups, an episode rail and an episode list.
+- A `Landing page` page template built from the `Home Top` widget area, with bundled widgets for a featured / latest episode carousel (custom image banners too), host and guest line-ups, an episode rail and an episode list.
 - Featured episodes, latest episodes, popular episodes, real stats (episode count, average duration, total plays) and episode-category topic cards.
 - Episode archive with a topic sidebar, tags, newest / oldest sorting, and a list view (grouped by month) or a grid view.
 - Episode pages with cover, meta, play / share / like / download actions, hosts and guests, and Summary / Chapters / Transcript tabs.
@@ -46,7 +46,8 @@ ARS Petal follows a simple split: the A Ripple Song plugin owns the podcast data
 3. Upload the zip file, install it, and activate the theme.
 4. Optional: install and activate the A Ripple Song plugin to turn on the podcast features.
 5. Open `Appearance > Customize > Petal` to set the color scheme, headline, newsletter and footer text.
-6. Open `Appearance > Widgets` to arrange the `Home Top` area. While it is empty, the default home sections are shown.
+6. For the podcast landing page as your home page: create a page, choose the `Landing page` template for it, then under `Settings > Reading` pick `A static page` and set that page as the Homepage (and another page as the Posts page). With `Your latest posts` the home page is the post list.
+7. Open `Appearance > Widgets` to arrange the `Home Top` area of the landing page. While it is empty, the default sections are shown.
 
 ### Runtime requirements
 

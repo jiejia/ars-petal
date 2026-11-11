@@ -67,6 +67,7 @@ final class TemplateLoader
      */
     public function pageTemplates(array $templates): array
     {
+        $templates[self::DIRECTORY . 'page-landing.php'] = __('Landing page', 'ars-petal');
         $templates[self::DIRECTORY . 'page-about.php'] = __('About the show', 'ars-petal');
 
         return $templates;

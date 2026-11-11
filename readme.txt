@@ -29,9 +29,13 @@ With the A Ripple Song plugin it becomes a podcast site (featured episodes, epis
 
 Go to Appearance > Customize > Petal. There you can set the default color scheme, the home page headline, the newsletter form and the footer text.
 
-= How do I arrange the home page? =
+= How do I use the landing page as my home page? =
 
-Go to Appearance > Widgets and add widgets to the Home Top area. While it is empty, the default home sections are shown.
+With "Your latest posts" under Settings > Reading, the home page lists your latest posts. For the landing page (featured episodes, hosts and guests, episode lists), create a page and choose the "Landing page" template for it. Then go to Settings > Reading, select "A static page", and set that page as the Homepage. You can set another page as the Posts page to keep a full post list.
+
+= How do I arrange the landing page? =
+
+Go to Appearance > Widgets and add widgets to the Home Top area. While it is empty, the default sections are shown.
 
 = How do I change the logo? =
 
@@ -54,7 +58,7 @@ ARS Petal does not track visitors, sets no cookies of its own (WordPress itself 
 
 = 0.5.0 =
 * Initial release
-* Home page built from the Home Top widget area, with featured / latest episode carousel, host and guest line-up, episode rail and episode list widgets
+* Landing page template built from the Home Top widget area, with featured / latest episode carousel, host and guest line-up, episode rail and episode list widgets
 * Episode archive with topic sidebar, sorting, and list or grid views; episode pages with Summary / Chapters / Transcript tabs
 * Styling for the A Ripple Song site-wide player, with Swup page transitions that keep playback running
 * Light, dark and follow-system color modes

@@ -38,7 +38,7 @@ msgstr "jiejia"
 msgid "https://github.com/jiejia/"
 msgstr "https://github.com/jiejia/"
 
-#: app/Blog/Blog.php:99
+#: app/Blog/Blog.php:55
 #: resources/templates/cards/post-row.php:52
 #: resources/templates/index.php:34
 msgid "Blog"
@@ -961,7 +961,7 @@ msgstr "特大"
 msgid "ARS Petal"
 msgstr "花瓣"
 
-#: app/Setup/TemplateLoader.php:70
+#: app/Setup/TemplateLoader.php:71
 msgid "About the show"
 msgstr "关于节目"
 
@@ -1088,8 +1088,8 @@ msgid "Home Top"
 msgstr "首页顶部"
 
 #: app/Widgets/HomeArea.php:56
-msgid "The top of the home page. Leave it empty to show the banners, hosts and guests, latest episodes and popular episodes."
-msgstr "首页顶部区域。留空时显示横幅、主播和嘉宾、最新节目和热门节目。"
+msgid "The top of the Landing page template. Leave it empty to show the banners, hosts and guests, latest episodes and popular episodes."
+msgstr "落地页模板的顶部区域。留空时显示横幅、主播和嘉宾、最新节目和热门节目。"
 
 #: app/Widgets/HomeArea.php:101
 msgid "Select banner image"
@@ -1231,3 +1231,7 @@ msgstr "编辑"
 #, php-format
 msgid "EP.%s"
 msgstr "EP.%s"
+
+#: app/Setup/TemplateLoader.php:70
+msgid "Landing page"
+msgstr "落地页"

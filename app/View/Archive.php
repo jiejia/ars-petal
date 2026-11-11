@@ -22,7 +22,7 @@ final class Archive
         return match (true) {
             is_search() => sprintf(/* translators: %s: search terms. */ __('Search: %s', 'ars-petal'), get_search_query()),
             is_post_type_archive(Podcast::POST_TYPE) => get_query_var('tag') !== '' ? '#' . single_term_title('', false) : __('All episodes', 'ars-petal'),
-            Blog::isRequest(), is_home() && ! is_front_page() => Blog::label(),
+            is_home() && ! is_front_page() => Blog::label(),
             is_home() => __('Latest posts', 'ars-petal'),
             is_tag() => '#' . single_term_title('', false),
             is_category(), is_tax() => single_term_title('', false),
@@ -92,7 +92,7 @@ final class Archive
         if (is_singular(Podcast::POST_TYPE)) {
             $items[] = ['label' => __('All episodes', 'ars-petal'), 'url' => Podcast::archiveUrl()];
         } elseif (is_singular('post')) {
-            if (Blog::url() !== '') {
+            if (Blog::hasPage()) {
                 $items[] = ['label' => Blog::label(), 'url' => Blog::url()];
             }
 

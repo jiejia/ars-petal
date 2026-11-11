@@ -53,7 +53,7 @@ final class HomeArea
         register_sidebar([
             'id' => self::ID,
             'name' => __('Home Top', 'ars-petal'),
-            'description' => __('The top of the home page. Leave it empty to show the banners, hosts and guests, latest episodes and popular episodes.', 'ars-petal'),
+            'description' => __('The top of the Landing page template. Leave it empty to show the banners, hosts and guests, latest episodes and popular episodes.', 'ars-petal'),
             'before_widget' => '<div id="%1$s" class="widget %2$s ' . self::WRAPPER . '">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="display mb-4 text-2xl">',

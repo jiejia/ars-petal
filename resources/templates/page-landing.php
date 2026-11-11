@@ -1,32 +1,18 @@
 <?php
 /**
- * Home page, laid out like a component library's landing page: a widget area on top (by default the featured carousel, the hosts
- * and guests, the latest and popular episodes), then topic color cards, recent posts and the subscribe block. Without A Ripple Song the same sections show posts and categories.
- * A static front page shows that page.
+ * "Landing page" page template, laid out like a component library's landing page: a widget area on top (by default the featured
+ * carousel, the hosts and guests, the latest and popular episodes), then topic color cards, recent posts and the subscribe block.
+ * Without A Ripple Song the same sections show posts and categories. Pick it for a page and set that page as the static
+ * homepage under Settings > Reading; with "Your latest posts" the home page is the post list (index.php).
  *
  * @package ArsPetal
  */
 
 defined('ABSPATH') || exit;
 
-use Jiejia\ArsPetal\Blog\Blog;
 use Jiejia\ArsPetal\Libraries\Template;
 use Jiejia\ArsPetal\Podcast\Podcast;
-use Jiejia\ArsPetal\Setup\TemplateLoader;
 use Jiejia\ArsPetal\Widgets\HomeArea;
-
-if (get_option('show_on_front') === 'page' && ! is_home()) {
-    require locate_template(TemplateLoader::DIRECTORY . 'page.php');
-
-    return;
-}
-
-// The full post list (/blog/) is the blog home with a flag; page 2+ of the home page redirects there.
-if (Blog::isRequest()) {
-    require locate_template(TemplateLoader::DIRECTORY . 'index.php');
-
-    return;
-}
 
 get_header();
 
